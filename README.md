@@ -1,4 +1,4 @@
-# 🔥 SunoForge v1.1 — AI Music Prompt Orchestrator
+# 🎧 SunoForge v1.1 — AI Music Prompt Orchestrator
 
 > **Multi-platform AI producer and prompt engineer for music generation.**
 > Suno AI (v4.5-all / v4.5+ / v5 / v5.5) + Google Gemini Lyria 3.
