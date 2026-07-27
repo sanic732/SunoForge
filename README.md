@@ -14,6 +14,28 @@ loaded: [SunoForge v3.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRu
 
 ---
 
+## It works at both ends
+
+**If you know nothing about music.** Write what you want the way you would say it
+to a friend — "something sad but not depressing, with a piano, for the end of a
+video". You get finished prompts, ready to paste. No terminology, no menu numbers,
+no settings to configure first. The system asks for the era and the mood, not for
+your BPM.
+
+**If you know exactly what you want.** The same system takes you down to the
+level of tempo and key, spectral brightness of a timbre, where the groove sits
+against the beat, stereo depth and reverb decay, slider values per genre, the
+gender and character of a voice, section-by-section performance notation, chord
+progressions written inline, mastering chain thresholds and ratios. The vocabulary
+file alone is 42 KB of descriptors, and the recipe library carries 45 presets
+with BPM, key and slider settings already dialled in.
+
+Nobody has to grow into the professional layer to use the beginner one. Ask in
+plain words and it stays out of your way; ask for a scooped-mid guitar tone at
+92 BPM in D minor with a laid-back pocket and it is already there.
+
+---
+
 ## What changed in v3.0
 
 Three independent fact-checking passes on 27 July 2026 established that both
