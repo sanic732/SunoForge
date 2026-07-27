@@ -219,3 +219,10 @@ respective owners. This project is unaffiliated with and unendorsed by any of
 them. Full source list and legal notes: [docs/CREDITS.md](docs/CREDITS.md).
 
 Version history: [docs/CHANGELOG.md](docs/CHANGELOG.md)
+
+**Where is v2.0?** It exists, but it never came here. The May 2026 edition was
+Russian-only and was published on the 4PDA forum:
+[SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185).
+It introduced the six-layer Style construction and multi-platform support, both
+carried into v3.0 — along with several ideas that later failed fact-checking and
+were removed.
