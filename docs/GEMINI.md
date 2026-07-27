@@ -17,13 +17,18 @@
   CORE_03_DIAGNOSE.md
   CORE_04_WHY.md
 
-  DATA.zip                  ← внутри семь файлов DATA_*
+  DATA_bundle_for_Gemini.zip   ← внутри семь файлов DATA_*
 ```
 
-Собрать архив:
+Архив приложен к [релизу](https://github.com/sanic732/SunoForge/releases/latest)
+готовым — `DATA_bundle_for_Gemini.zip`. В репозитории его нет намеренно: файл
+собирается из тех же семи `DATA_*`, что лежат в `files/`, и, храни мы обе формы
+рядом, они однажды разошлись бы молча.
+
+Собрать самому, если правили файлы под себя:
 
 ```
-zip DATA.zip DATA_SUNO_2026-07.md DATA_GOOGLE_2026-07.md \
+zip DATA_bundle_for_Gemini.zip DATA_SUNO_2026-07.md DATA_GOOGLE_2026-07.md \
              DATA_OTHER_2026-07.md DATA_VOCAB.md \
              DATA_RECIPES.md DATA_POSTPROD.md DATA_LEGAL_2026-07.md
 ```
@@ -51,7 +56,7 @@ zip DATA.zip DATA_SUNO_2026-07.md DATA_GOOGLE_2026-07.md \
 ### Если делаете свой Gem
 
 - Файлы `CORE_*` — в knowledge Gem'а.
-- `DATA.zip` — туда же.
+- `DATA_bundle_for_Gemini.zip` — туда же.
 - В инструкции Gem'а достаточно одной строки: читать `CORE_00_ENTRY.md` первым
   и следовать его preloader и маршрутизации.
 - Язык объяснений задавайте в самом `CORE_00_ENTRY.md` (`OUTPUT_LANG`), а не в
@@ -99,13 +104,18 @@ attach to the chat:
   CORE_03_DIAGNOSE.md
   CORE_04_WHY.md
 
-  DATA.zip                  ← the seven DATA_* files inside
+  DATA_bundle_for_Gemini.zip   ← the seven DATA_* files inside
 ```
 
-Build the archive:
+The archive ships ready-made with the [release](https://github.com/sanic732/SunoForge/releases/latest)
+as `DATA_bundle_for_Gemini.zip`. It is deliberately absent from the repository:
+it is built from the same seven `DATA_*` files that sit in `files/`, and keeping
+both forms side by side is how they quietly drift apart.
+
+Build your own if you edited the files:
 
 ```
-zip DATA.zip DATA_SUNO_2026-07.md DATA_GOOGLE_2026-07.md \
+zip DATA_bundle_for_Gemini.zip DATA_SUNO_2026-07.md DATA_GOOGLE_2026-07.md \
              DATA_OTHER_2026-07.md DATA_VOCAB.md \
              DATA_RECIPES.md DATA_POSTPROD.md DATA_LEGAL_2026-07.md
 ```
@@ -133,7 +143,7 @@ If you would rather not assemble anything, it is already loaded:
 ### Building your own Gem
 
 - Put the `CORE_*` files in the Gem's knowledge.
-- Put `DATA.zip` there too.
+- Put `DATA_bundle_for_Gemini.zip` there too.
 - One line of Gem instruction is enough: read `CORE_00_ENTRY.md` first and
   follow its preloader and routing.
 - Set the explanation language inside `CORE_00_ENTRY.md` (`OUTPUT_LANG`), not in
