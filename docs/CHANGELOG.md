@@ -105,7 +105,10 @@ FOLKLORE_MODE    = "off"      // включить неподтверждённы
 
 ## v2.0 — 13 мая 2026
 
-Файлов: 10 · публиковалась только на 4PDA, русская.
+Файлов: 10 · русская · **на GitHub не выкладывалась**.
+
+📎 Промежуточная версия, доступна только на форуме:
+[4PDA — SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185)
 
 - Шестислойное построение Style вместо формулы GMIV+P.
 - Мультиплатформенность: добавлены Flow Music, ElevenMusic, Udio, Lyria Realtime.
@@ -236,7 +239,10 @@ version.
 
 ## v2.0 — 13 May 2026
 
-10 files · published on the 4PDA forum only, in Russian.
+10 files · Russian · **never released on GitHub**.
+
+📎 An interim version, available on the forum only:
+[4PDA — SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185)
 
 - Six-layer Style construction replacing the GMIV+P formula.
 - Multi-platform: Flow Music, ElevenMusic, Udio, Lyria Realtime added.

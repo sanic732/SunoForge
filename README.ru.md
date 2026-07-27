@@ -221,3 +221,9 @@ Suno, Google, Lyria, ElevenLabs, Stability AI и другие названия �
 источников и правовые оговорки: [docs/CREDITS.md](docs/CREDITS.md).
 
 История версий: [docs/CHANGELOG.md](docs/CHANGELOG.md)
+
+**А где v2.0?** Она есть, но сюда не попала. Майская сборка 2026 года была
+русской и вышла на форуме 4PDA:
+[SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185).
+Из неё в v3.0 перешли шестислойное построение Style и мультиплатформенность —
+вместе с несколькими идеями, которые позже не прошли проверку фактов и были убраны.
