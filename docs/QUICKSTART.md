@@ -1,6 +1,6 @@
 # Quick start — from nothing, in ten minutes
 
-`[EN]` this file · `[RU]` [БЫСТРЫЙ_СТАРТ.md](БЫСТРЫЙ_СТАРТ.md)
+`[EN]` this file · `[RU]` [QUICKSTART.ru.md](QUICKSTART.ru.md)
 
 For people who have never used a music generator. If you have,
 [ADVANCED.md](ADVANCED.md) is the one you want.

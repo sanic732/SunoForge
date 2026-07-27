@@ -1,6 +1,6 @@
 # SunoForge v3.0 — AI Music Prompt Orchestrator
 
-`[EN]` this file · `[RU]` [ПРОЧТИ_МЕНЯ.md](ПРОЧТИ_МЕНЯ.md)
+`[EN]` this file · `[RU]` [README.ru.md](README.ru.md)
 
 A set of instructions that turns any chat assistant into a prompt engineer for
 music generation. Twelve files, five platforms, one principle: **never present a
@@ -173,7 +173,7 @@ The same settings mid-session, without editing the file:
 
 ## Size and tokens
 
-411.9 KB · 9,817 lines · **90,767 tokens** (o200k_base).
+414.7 KB · **~91,300 tokens** (o200k_base).
 
 Two files are lazy and are not loaded by default, so the starting load is
 **78,716 tokens**. Full table: [docs/TOKENS.md](docs/TOKENS.md).
@@ -183,6 +183,30 @@ Two files are lazy and are not loaded by default, so the starting load is
 | 1M | 9.1 % | 7.9 % |
 | 200K | 45.4 % | 39.4 % |
 | 128K | 70.9 % | 61.5 % |
+
+---
+
+## Built with P2P
+
+This system was designed and assembled using **[P2P](https://github.com/sanic732/P2P-4PDA-edition)**
+— an open cross-model meta-prompt framework by the same author.
+
+That is not a badge. P2P shaped how v3.0 is built, and the two share the same
+convictions:
+
+- **A prompt is proven, not admired.** The rule that a technique earns its place
+  by surviving a test — not by looking authoritative — comes straight from P2P's
+  core. It is why MAX MODE and three other "mechanics" were removed here.
+- **Core is not a database.** Invariants and routing belong in one layer,
+  catalogues and reference data in another. Migrating one into the other is an
+  architectural defect, not a shortcut. That principle produced the CORE / DATA
+  split.
+- **Fix a declaration, then check everyone who cites it.** Link connectivity is
+  the defect class both projects fight hardest. Seven build invariants here are
+  mechanical checks for exactly that.
+
+If you write prompt systems rather than prompts, P2P is the tool that makes this
+kind of build repeatable.
 
 ---
 
