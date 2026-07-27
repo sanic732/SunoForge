@@ -1,6 +1,6 @@
 # For people who have used generators before
 
-`[EN]` this file · `[RU]` [ДЛЯ_ПРОФИ.md](ДЛЯ_ПРОФИ.md)
+`[EN]` this file · `[RU]` [ADVANCED.ru.md](ADVANCED.ru.md)
 
 If you used SunoForge v1.1 or v2.0, or write your own prompts, this is what
 changed and why.
