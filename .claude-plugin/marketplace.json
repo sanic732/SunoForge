@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "sunoforge",
+  "description": "SunoForge — prompt engineering for AI music: Suno v6, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models",
+  "owner": {
+    "name": "sanic732",
+    "url": "https://github.com/sanic732"
+  },
+  "plugins": [
+    {
+      "name": "sunoforge",
+      "source": "./plugin",
+      "displayName": "SunoForge",
+      "description": "AI music prompt orchestrator: ready-to-paste prompts, lyrics markup, prompt repair, rights and post-production for Suno v6, Lyria 3.5 and five more music generators",
+      "category": "music",
+      "tags": ["music", "suno", "lyria", "prompt-engineering", "songwriting"]
+    }
+  ]
+}

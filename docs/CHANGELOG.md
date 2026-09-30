@@ -2,6 +2,54 @@
 
 ---
 
+## v4.0 — 2026-09-30
+
+**Why.** Between July and September 2026 Suno retired every model it had and
+shipped v6, Google replaced Lyria 3 Pro with Lyria 3.5 and rewrote its prompt
+guide, ElevenMusic, MiniMax and Stable Audio all moved. Facts were rechecked
+against vendors' own pages (help centres, terms, API docs, a court press release);
+every page is kept as text.
+
+**Platforms**
+- Suno v6 family (`v6`, `v6-wild`, `v6-mini`); every earlier model retired —
+  removed from the menu and settings, recognised by the repair table only
+- Suno Max Mode (official switch, not the old tags), Variety slider (0 keeps the
+  style text), Duration on v6, plain-language edits, single-line lyric edits,
+  multi-source mashup, sampling, image/video/audio references, Studio 2.0
+- Suno rights follow the download (terms in force 2026-09-03); download caps per plan
+- Lyria 3.5 (`lyria-3.5`), Clip at 44.1 kHz, Lyria 3 Pro retiring; Google's
+  2026-09-17 guide: numeric BPM and key, section tags, `Lyrics:` header,
+  timestamp ranges, vocal profiles, genre and instrument keyword lists
+- ElevenMusic v2.5 — ownership on every plan, commercial use on Free with a credit,
+  3 s to 5 min; ElevenLabs' prompting guidance
+- Stable Audio 3.0 corrected (6:20 is Medium) and its DAW plugin; MiniMax Music 3.0
+  with open weights; ACE-Step 1.5 and YuE2 for local generation
+- Legal: GEMA v Suno (Munich, 2026-07-31), the second UMG/Sony suit, Believe/TuneCore,
+  UMG v DistroKid, Spotify AI Persona badges, Deezer AI tagging, EU AI Act Art. 50
+
+**System**
+- Two editions from one source: Claude Edition (XML) and Gemini Edition (Markdown,
+  no XML); one build for every language
+- Claude also gets a Skill and a plugin: a short `SKILL.md` router with the twelve
+  files as references, opened per task. The repository is the plugin marketplace
+  (`/plugin marketplace add sanic732/SunoForge`), and the release carries a Skill ZIP
+  for a manual upload to claude.ai
+- Menu: `[13] STEMS, STUDIO & MASTERING` added at the tail; new sub-entries
+  `2i`–`2k`, `3d`–`3f`, `4d`, `5g`, `6g`–`6h`, `7k`–`7l`; numbers `[1]`–`[12]` unchanged
+- Preloader: `SUNO_VERSION` v6 family, `SUNO_PLAN`, `SUNO_MAX_MODE`, `LYRIA_MODEL 3.5`;
+  `OUTPUT_LANG` "auto" — answers and the menu follow the language the user writes in;
+  `HOST_MODEL` removed, since nothing read it
+- No prices anywhere; plans named where features or rights depend on them
+- Repair engine: symptom index first, 15 checks, rows 20–25 (retired models,
+  Lyria 3 Pro numbers, single-point markers, prices, Variety, Lyria lyrics header);
+  row 11 revised — numeric BPM is no longer a defect on Lyria
+- CORE_04: why no prices, why rights follow the download, a rule that was wrong
+  (Lyria tempo in words), Variety 0
+- RAG to the P2P standard: frontmatter with role and description, a system map in
+  CORE_00, anchors before every zone, `## TAGS`, zones split, every file under
+  50,000 characters; twelve build invariants checked mechanically
+- Fixed v3 cross-references (repair table is CORE_03 §3; delivery CORE_02 §6)
+
 ## v3.0 — 27 июля 2026
 
 Файлов: 12 (было 10) · 411,9 КБ · 90 767 токенов

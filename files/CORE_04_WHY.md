@@ -1,18 +1,25 @@
 ---
 file_id: CORE_04_WHY
-version: "3.0"
+version: "4.0"
 layer: core
+role: explainer
 lazy: "/why"
+description: >
+  The reasoning behind every rule, loaded only on /why: advice → why it is better →
+  what happens if you ignore it, for the thirteen critical rules, the key techniques,
+  the architecture (confidence marks, CORE/DATA split, single source, no prices), and
+  everything that was removed or revised — including the Lyria tempo rule that turned
+  out wrong and the MAX tags versus Suno's real Max Mode.
 scope: pedagogy · rule_rationale · consequences · architecture_rationale
 key_concepts: [why_front_load, why_specific, why_time_and_place, why_gender, why_prose_parameters, why_brackets, why_positive, why_emotion_line, why_iterate_one, why_hints, why_platform_first, why_rights, why_confidence, why_core_data_split]
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE]
 used_by: [CORE_00_ENTRY]
 rag_priority: medium
-updated: "2026-07-27"
-changelog: "v3.0 — pedagogical layer restored from Polymath in the advice/why/consequence format · covers all twelve critical rules plus the architectural decisions · explanations for withdrawn techniques replaced with explanations of why they were withdrawn"
+updated: "2026-09-30"
+changelog: "v4.0 — why there are no prices · why rights now follow the download · why Variety 0 · a rule that was wrong: tempo in words for Lyria · MAX tags versus the real Max Mode · vendors now endorse scene prompting · v3.0 — pedagogical layer restored from Polymath in the advice/why/consequence format · covers all twelve critical rules plus the architectural decisions · explanations for withdrawn techniques replaced with explanations of why they were withdrawn"
 ---
 
-# 🎓 SUNOFORGE v3.0 — WHY
+# 🎓 SUNOFORGE v4.0 — WHY
 # File 5 of 12 · CORE · Loaded only on request
 
 > Reached with `/why <topic>` per CORE_00 §5. Not loaded by default.
@@ -26,15 +33,11 @@ changelog: "v3.0 — pedagogical layer restored from Polymath in the advice/why/
 > if you ignore it**. Nothing here is a new instruction. If this file and a
 > rule file disagree, the rule file is right and this one has drifted.
 
-═══════════════════════════════════════════════════════════════════
-§1. THE TWELVE CRITICAL RULES
-═══════════════════════════════════════════════════════════════════
+## §1. THE CRITICAL RULES
 
 Numbered as in CORE_00 §7.
 
-<rag_zone id="why_front_load">
-
-─── 1 · FRONT-LOAD ───
+### 1 · FRONT-LOAD
 
 **ADVICE.** Put the genre, mood and key instruments in the opening words of
 the Style description. Production detail goes at the end.
@@ -57,11 +60,7 @@ result that contains everything you asked for and sounds like nothing in
 particular — the most common complaint about generated music, and usually a
 word-order problem rather than a model problem.
 
-</rag_zone>
-
-<rag_zone id="why_specific">
-
-─── 2 · BE SPECIFIC, NOT LONG ───
+### 2 · BE SPECIFIC, NOT LONG
 
 **ADVICE.** Five to eight strong descriptors beat a wall of adjectives. Add a
 word only if it changes the sound you are imagining.
@@ -86,11 +85,7 @@ DATA_SUNO §2, marked by confidence, including the parts where sources
 disagree. This is the single clearest example of why the confidence marking
 in §3 exists.
 
-</rag_zone>
-
-<rag_zone id="why_time_and_place">
-
-─── 3 · TIME AND PLACE ───
+### 3 · TIME AND PLACE
 
 **ADVICE.** Instead of a genre name, give an era, a place and a scene.
 "1980s Sunset Strip glam metal" rather than "metal".
@@ -114,11 +109,7 @@ vaporwave, city pop, boom bap. Adding a decade to those restates what the
 name already said. Recognising when a name is already specific is part of
 the skill (CORE_01 §3).
 
-</rag_zone>
-
-<rag_zone id="why_gender">
-
-─── 4 · VOCALS NEED A GENDER ───
+### 4 · VOCALS NEED A GENDER
 
 **ADVICE.** State the singer's gender explicitly, in positive terms. On
 platforms with a dedicated selector, use the selector.
@@ -140,11 +131,7 @@ guesswork.
 **WHY NEGATIVES MAKE IT WORSE.** See rule 7 — this is where that mechanism
 bites hardest.
 
-</rag_zone>
-
-<rag_zone id="why_prose_parameters">
-
-─── 5 · PARAMETERS AS PROSE ───
+### 5 · PARAMETERS AS PROSE
 
 **ADVICE.** Write "120 BPM, C minor, heavily compressed" rather than
 `[BPM: 120] [Key: C minor] [compression: heavy]`.
@@ -170,16 +157,12 @@ expects `parameter: value` to mean something, and a guide showing that
 syntax looks more expert than one showing a sentence. It propagated through
 every previous edition of this system for exactly that reason.
 
-**THE ONE PLACE BRACKETS DO WORK.** Structural section labels in the Lyrics
-field, and timestamps on Lyria. Both are documented; both mark *where*
-something happens rather than *setting* a value. That distinction is the
-whole rule (CORE_02 §1).
+**THE ONE PLACE BRACKETS DO WORK.** Section labels — in Suno's Lyrics field,
+in Lyria 3.5 prompts, in MiniMax and local-model lyrics — and timestamp ranges
+on Lyria. All are documented; all mark *where* something happens rather than
+*setting* a value. That distinction is the whole rule (CORE_02 §1).
 
-</rag_zone>
-
-<rag_zone id="why_brackets">
-
-─── 6 · ROUND BRACKETS ARE SUNG, SQUARE ONES ARE NOT ───
+### 6 · ROUND BRACKETS ARE SUNG, SQUARE ONES ARE NOT
 
 **ADVICE.** Anything in round brackets is performed. Anything in square
 brackets is direction.
@@ -196,11 +179,7 @@ singing the words "play the guitar softly here". It is the most immediately
 audible mistake in this whole system, and the easiest to avoid: if you would
 not want to hear it, do not put it in round brackets.
 
-</rag_zone>
-
-<rag_zone id="why_positive">
-
-─── 7 · NEGATIVES ARE WEAK ───
+### 7 · NEGATIVES ARE WEAK
 
 **ADVICE.** State what you want. Where a platform has a dedicated exclude
 field, use that rather than writing negatives into the description.
@@ -228,14 +207,14 @@ defects appear to cause them (CORE_03 §4). "No clipping" and "no male
 vocals" fail for the same reason. Once you see the pattern, both rules
 collapse into one: describe the destination, not the ditch.
 
-**AND ON LYRIA.** Negative prompting is not supported at all [OFFICIAL]. Not
-weak — absent. An exclude list there is not a poor tool, it is no tool.
+**AND WHERE A VENDOR WRITES A NEGATIVE ITSELF.** Google's own instrumental
+example is "Instrumental only, no vocals."; ElevenLabs' loop example ends "no
+melody — just drums" [OFFICIAL]. Both are a positive statement first and one
+short exclusion after it — the noun you want is already fixed before the one
+you do not want appears. That is the shape to copy. What Lyria has no place for
+is an exclude LIST: there is no negative-prompt field to put it in.
 
-</rag_zone>
-
-<rag_zone id="why_emotion_line">
-
-─── 8 · EMOTION ON ITS OWN LINE ───
+### 8 · EMOTION ON ITS OWN LINE
 
 **ADVICE.** Put delivery direction on a line of its own, immediately above
 the lines it governs.
@@ -258,11 +237,7 @@ second, every section is performed at the same emotional level, and a song
 performed at one level is the definition of flat — the single most common
 reason generated vocals sound synthetic even when the timbre is convincing.
 
-</rag_zone>
-
-<rag_zone id="why_iterate_one">
-
-─── 9 · ITERATE ONE THING ───
+### 9 · ITERATE ONE THING
 
 **ADVICE.** Change a single element between generations.
 
@@ -287,11 +262,7 @@ for music models, including everything this system carried for two versions,
 was produced by people not following this rule. That is why confidence
 marking exists (§3).
 
-</rag_zone>
-
-<rag_zone id="why_hints">
-
-─── 10 · TAGS ARE HINTS ───
+### 10 · TAGS ARE HINTS
 
 **ADVICE.** Treat every label and descriptor as a probabilistic nudge.
 Generate several takes and choose.
@@ -312,18 +283,14 @@ and a choice beats one take and an argument. This is also why the system
 offers two or three interpretations rather than one answer (CORE_00 §3) —
 the variance is not a defect to be engineered away, it is the medium.
 
-</rag_zone>
-
-<rag_zone id="why_platform_first">
-
-─── 11 · PLATFORM BEFORE PROMPT ───
+### 11 · PLATFORM BEFORE PROMPT
 
 **ADVICE.** Decide where the track will be made before writing anything.
 
 **WHY IT IS BETTER.** The platforms differ in ways no prompt can compensate
 for: maximum length, whether you can edit afterward, what rights attach to
-the output, whether tempo is written as a number or described, whether
-negatives work at all. Writing first and choosing second means rewriting.
+the output, whether you can edit a part afterwards, whether there is a
+negative field at all. Writing first and choosing second means rewriting.
 
 Some of these are not preferences but hard walls. A prompt for a six-minute
 piece aimed at a platform that cannot produce one does not produce a
@@ -339,11 +306,7 @@ made (DATA_LEGAL).
 sounds like. "For me" and "for a client" lead to different platforms before
 they lead to different music.
 
-</rag_zone>
-
-<rag_zone id="why_rights">
-
-─── 12 · RIGHTS ARE NOT OWNERSHIP ───
+### 12 · RIGHTS ARE NOT OWNERSHIP
 
 **ADVICE.** "Commercial rights granted by a platform" and "copyright in your
 name" are different things. Do not treat one as the other.
@@ -352,7 +315,8 @@ name" are different things. Do not treat one as the other.
 what it will not sue you for. That is a contract between you and them, it
 can change with the terms, and it says nothing about whether you hold
 copyright, whether a third party might claim something, or what happens if
-the platform loses a case.
+the platform loses a case. Suno's own terms say it outright: "Suno makes no
+representation or warranty to you that any copyright will vest in any Output."
 
 Copyright is a separate question with a different answer in different
 jurisdictions, and for purely generated output the answer is frequently that
@@ -363,15 +327,31 @@ track, cannot register it, or cannot deliver the warranties a commercial
 client asks for — despite having done nothing wrong and having paid for a
 plan that said "commercial use". Full picture: DATA_LEGAL.
 
-</rag_zone>
+**WHY SUNO RIGHTS NOW FOLLOW THE DOWNLOAD.** Since 2026-09-03 Suno ties
+commercial use to a download through its own channel, capped per plan. The
+licensing deals with labels come with fingerprinting and download controls;
+the rights moved to the one moment the platform can count. The practical
+consequence is simple and easy to miss: a song you made on a paid plan and
+never downloaded is not yet something you may sell.
 
-═══════════════════════════════════════════════════════════════════
-§2. TECHNIQUES
-═══════════════════════════════════════════════════════════════════
+### 13 · THE USER'S PLAN AND COUNTRY ARE UNKNOWN
 
-<rag_zone id="why_techniques">
+**ADVICE.** Never assume a plan, a country or a price. Name the plan a feature
+needs; ask once, only when the answer changes the output.
 
-─── WHY A BIOGRAPHY BEATS A DESCRIPTION ───
+**WHY IT IS BETTER.** The same prompt reaches someone on a free account in one
+country and a paid studio in another. Assuming a plan either hides a feature from
+someone who has it or promises one to someone who does not. Asking up front makes
+every conversation start with a form. Naming the requirement ("Advanced Split is
+Premier only") lets the user place themselves.
+
+**IF YOU IGNORE IT.** Confident advice the user's own screen contradicts — the
+fastest way to lose trust in everything else the system says. Prices are the
+extreme case; why they are gone entirely is in §3.
+
+## §2. TECHNIQUES
+
+### WHY A BIOGRAPHY BEATS A DESCRIPTION
 
 **ADVICE.** Describe the singer as a person with a history, not as a setting.
 
@@ -390,7 +370,7 @@ gender, the right mood, and no one home.
 nowhere, and results still vary between takes. It reliably produces a better
 *prompt*, which is a smaller claim than the one usually made for it.
 
-─── WHY TWO OR THREE HERO INSTRUMENTS ───
+### WHY TWO OR THREE HERO INSTRUMENTS
 
 **ADVICE.** Name the two or three instruments that define the sound, with a
 playing-style word each. Let the genre imply the rest.
@@ -404,7 +384,7 @@ buys nothing.
 **IF YOU IGNORE IT.** A full, competent, characterless arrangement where
 everything is present and nothing leads.
 
-─── WHY A BRIDGE GENRE ───
+### WHY A BRIDGE GENRE
 
 **ADVICE.** To combine two distant genres, find the third that touches both,
 and say how they connect.
@@ -423,7 +403,7 @@ theory quantitatively. It is offered because it forces you to think about
 how the genres relate, and that thinking produces a better prompt regardless
 of whether the bridge itself does anything.
 
-─── WHY SCENE PAINTING ───
+### WHY SCENE PAINTING
 
 **ADVICE.** Describe a situation rather than a list of qualities.
 
@@ -434,11 +414,12 @@ ways that agree with each other, because they came from one coherent image.
 A list of adjectives constrains each independently and lets them contradict.
 
 **IF YOU IGNORE IT.** Nothing terrible — adjective lists work. Scenes just
-work better, and Lyria's own documentation leans on scenario prompting,
-which is the closest thing to vendor endorsement any technique in this system
-has.
+work better — and vendors now say so themselves: Suno's own v6 example is
+"Make a song that feels like midnight on a rooftop", and ElevenLabs writes
+that high-level prompts like "ad for a sneaker brand" are often enough
+[OFFICIAL].
 
-─── WHY THE DUET NEEDS THREE ANCHORS ───
+### WHY THE DUET NEEDS THREE ANCHORS
 
 **ADVICE.** State the cast in the Style field, at the top of the lyrics, and
 on every section.
@@ -457,13 +438,14 @@ that point separates them again.
 identity every few seconds, and identity is exactly what it holds least
 firmly. Whole sections give each voice long enough to establish itself.
 
-─── WHY THE TWO PATHS FOR LYRICS ───
+### WHY THE TWO PATHS FOR LYRICS
 
-**ADVICE.** On Suno's web editor, supply clean lyrics and let it label
-sections. Everywhere else, mark them up yourself.
+**ADVICE.** On Suno's web editor, place the section labels with its label
+tool. Everywhere else, type them yourself. Never both on the same section.
 
-**WHY.** The editor now places structural labels itself [OFFICIAL]. Marking
-up by hand on top of that produces two overlapping structures. But the API,
+**WHY.** The editor gives you a tool to "Add labels like "Verse" and "Outro""
+[OFFICIAL] — the labels still come from you. Labelling the same section twice
+produces two overlapping structures. But the API,
 mobile, and every other platform have no such editor, so the manual path
 cannot be retired.
 
@@ -475,33 +457,30 @@ expected them marked.
 technique. The technique does not become wrong — it becomes conditional. A
 prompt system that only knows one path will be wrong for half its users.
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§3. THE ARCHITECTURE
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="why_architecture">
+## §3. THE ARCHITECTURE
 
 Why this system is shaped the way it is. Read this if you are extending it,
 translating it, or wondering why a fact you expected is in another file.
 
-─── WHY CONFIDENCE MARKING ───
+### WHY CONFIDENCE MARKING
 
 **THE DECISION.** Every claim about platform behaviour carries [OFFICIAL],
 [COMMUNITY] or [UNVERIFIED].
 
 **WHY.** Music generation has almost no primary sources. Vendors publish
-release notes and almost no prompting documentation — for most of this field,
-the only vendor-written prompting guide that exists is Google's, and it
-appeared in April 2026. Everything else in circulation is somebody's
-experience retold as fact, including two previous versions of this system.
+release notes and little prompting documentation. In July 2026 the only
+vendor-written prompting guide was Google's; by September Google had rewritten
+it, ElevenLabs and MiniMax had published theirs, and Suno had published a v6
+FAQ with direction but no guide. Everything else in circulation is somebody's
+experience retold as fact, including earlier versions of this system.
 
 Three independent research passes on the same questions, run within
 twenty-four hours of each other, produced three different pictures. They
 disagreed on whether a feature costs credits, on whether a syntax is
 recommended or undocumented, and on whether a product still existed. Each was
-stated confidently.
+stated confidently. In September 2026 it happened again: a research report
+quoted an attribution requirement in Suno's free-tier terms that the current
+terms do not contain. It was caught only because the terms were read directly.
 
 The choice is between pretending to a certainty the field does not have, and
 showing the reader where the ground is solid. A guide that does not
@@ -513,7 +492,7 @@ taught a character limit that was a guess, a quality mode that does not
 exist, and a degradation pattern nobody has measured, all in the same
 declarative voice as the parts that were true.
 
-─── WHY CORE AND DATA ARE SEPARATE FILES ───
+### WHY CORE AND DATA ARE SEPARATE FILES
 
 **THE DECISION.** Rules live in undated CORE files. Facts live in dated DATA
 files.
@@ -527,6 +506,14 @@ editor, and two products that shut down entirely.
 In the same period, not one prompting rule broke. Front-loading still works.
 Time and Place still works. Round brackets are still sung.
 
+Between July and September 2026 the split was tested harder: Suno retired every
+model, Google replaced its flagship music model and rewrote its guide — and
+three rules moved for the first time. All three named a platform: tempo in
+words for Lyria, Lyria's timestamp format, MAX MODE as a Suno topic. A rule
+that names a platform turned out to be a fact about that platform. The craft
+rules — front-loading, Time & Place, positive phrasing, one change at a time —
+did not move at all.
+
 Mixing the two means the whole document ages at the speed of its fastest-
 decaying part. Separating them means a user with an old copy replaces one
 file and keeps everything else.
@@ -536,10 +523,10 @@ file, which means every quarterly update would risk breaking rules that were
 fine — and in practice would not happen, so the whole thing would rot
 together.
 
-─── WHY VERSION FACTS LIVE IN EXACTLY ONE FILE ───
+### WHY VERSION FACTS LIVE IN EXACTLY ONE FILE
 
-**THE DECISION.** Version numbers, limits, prices and plan tiers appear in
-one file each. Everywhere else links.
+**THE DECISION.** Version numbers, limits and plan tiers appear in one file
+each. Everywhere else links. Prices appear nowhere (next entry).
 
 **WHY.** Because the previous version did the opposite and silently
 contradicted itself. A version matrix duplicated across three files diverged
@@ -548,12 +535,28 @@ no error state for a document disagreeing with itself — it just quietly
 misinforms, and the reader has no way to know which copy is current.
 
 **THE COST.** Some files are less self-contained than they could be. A recipe
-saying "genre-faithful slider posture, values in DATA_SUNO §7" is slightly
+saying "genre-faithful slider posture, values in DATA_SUNO §8" is slightly
 less convenient than one with the numbers inline. That is the trade, and it
 is worth it: thirty inline copies would be thirty things to update and thirty
 chances to miss one.
 
-─── WHY MYTHS ARE DOCUMENTED RATHER THAN DELETED ───
+### WHY THERE ARE NO PRICES
+
+**THE DECISION.** No subscription price, API price or credit table appears in
+any file. Plans are named where a feature or a right depends on them.
+
+**WHY.** The system cannot know who is using it: which country, which account,
+which plan, which currency, which promotion. Prices differ between countries
+and change without notice; a price in a prompt system is wrong for most readers
+on the day it ships and wrong for all of them a month later. Plan NAMES are
+different — "v6 needs Pro or Premier" stays true long enough to be useful and
+answers the question the user actually has: can I do this?
+
+**IF THE SYSTEM DID NOT DO THIS.** It would state confident numbers that the
+user's own screen contradicts, and every contradiction would cost the rest of
+the system some trust.
+
+### WHY MYTHS ARE DOCUMENTED RATHER THAN DELETED
 
 **THE DECISION.** Debunked techniques are catalogued with what the evidence
 actually shows.
@@ -565,16 +568,17 @@ MAX MODE cannot repair a prompt containing it, and cannot answer the question
 "why did you take that out?"
 
 Recognising and repairing requires knowing. That is the entire reason
-CORE_03 §3 and DATA_SUNO §13 exist.
+CORE_03 §3 and DATA_SUNO §14 exist.
 
 **THE TONE THAT FOLLOWS FROM IT.** If someone arrives using folklore, they
 were taught it by a confident source — quite possibly this system. Explain
 what changed. Do not imply they should have known better.
 
-─── WHY THE MENU NUMBERS ARE FROZEN ───
+### WHY THE MENU NUMBERS ARE FROZEN
 
-**THE DECISION.** Entries [1]–[12] never change number. New entries go at the
-end. A retired entry keeps its number.
+**THE DECISION.** Entries [1]–[13] never change number. New entries go at the
+end — [13] arrived that way in v4.0. A retired entry keeps its number. The menu
+shows only what can be used today; outdated names live in the repair table.
 
 **WHY.** They are a public interface. Forum posts, screenshots and
 third-party guides reference them, and none of those get updated when a menu
@@ -585,18 +589,12 @@ someone following a year-old guide lands somewhere unexpected.
 **WHAT IT COSTS.** The menu is not in the tidiest order it could be. That is
 the correct trade for a public interface.
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§4. WHY THINGS WERE REMOVED
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="why_removed">
+## §4. WHY THINGS WERE REMOVED
 
 Users of previous versions will notice absences. Each removal has a reason,
 and the reason is always evidence rather than taste.
 
-─── THE QUALITY MODE ───
+### THE QUALITY MODE
 
 Previous versions taught a set of tags said to unlock hidden quality. A
 controlled comparison across multiple genres found no difference beyond
@@ -608,13 +606,19 @@ is a real if modest effect — but it is the same effect you get from writing
 "studio-grade, detailed and dynamic" in plain words, and that version is
 honest about what it is doing.
 
+**THE NAME CAME BACK.** In September 2026 Suno shipped a real feature called
+Max Mode — a switch in the Create form that spends more credits for
+whole-track consistency. The coincidence will revive the folklore ("see, MAX
+MODE was real"). It was not: the tags are text, the switch is a control, and
+Suno has never linked them. Strip the tags; use the switch where it fits.
+
 **WHY IT SURVIVED SO LONG.** It was in the menu, in the output protocol, in
 every recipe and in the reference example. Removing it from one place would
 have left it working in eleven others. Systems propagate their own errors
 through internal consistency — a thing referenced everywhere looks
 load-bearing.
 
-─── THE DEGRADATION PATTERN ───
+### THE DEGRADATION PATTERN
 
 Previous versions treated it as established that tracks reliably lose
 character after a fixed duration, and built an automatic mechanism on that
@@ -623,7 +627,10 @@ assumption — one that modified every prompt by default.
 The evidence is anecdotal. No systematic testing, no vendor acknowledgment,
 no mention in detailed independent reviews. Long generations do vary, and a
 later section can come back weaker; that is ordinary variance and it does not
-arrive on a schedule.
+arrive on a schedule. In September 2026 Suno itself recommended Max Mode for
+songs over two minutes and for whole-track consistency — which confirms the
+concern and refutes the cure: the vendor's answer is a setting, not anchor
+tags in every section.
 
 **WHY IT MATTERED THAT THIS WAS DEFAULT.** A mandatory mechanism built on an
 unverified claim modifies every prompt a user writes, forever, on the basis
@@ -631,18 +638,19 @@ of something nobody checked. The techniques remain available for anyone who
 finds them useful (CORE_03 §5). What is gone is the automatic application and
 the false diagnosis.
 
-─── A PLATFORM ───
+### A PLATFORM
 
-One platform was dropped as a target. It still generates music, but downloads
-were disabled following a settlement, which means output cannot be exported.
-A tool you cannot get your work out of is not a tool.
+One platform was dropped as a target. Downloads were disabled following a
+settlement, which means output cannot be exported, and its licensed successor
+is a fan app where creations belong to the artist's rights holder. A tool you
+cannot get your work out of is not a tool.
 
 It remains in the system as a case study, because what happened to its users
 — work stranded, with a short window to retrieve it — is the most concrete
 argument available for thinking about rights and export before you start
 (DATA_LEGAL).
 
-─── AN ELABORATE WORKAROUND ───
+### AN ELABORATE WORKAROUND
 
 Previous versions carried a three-tier procedure for controlling vocal
 gender: positive framing, then stacked negatives, then bracketed voice tags.
@@ -657,19 +665,36 @@ optional — it becomes wrong, because it is now competing with the real
 control. Retiring workarounds is as important as adding techniques, and far
 easier to forget.
 
-</rag_zone>
+### A RULE THAT WAS WRONG: TEMPO IN WORDS FOR LYRIA
 
-═══════════════════════════════════════════════════════════════════
-§5. IF YOU ONLY REMEMBER FIVE THINGS
-═══════════════════════════════════════════════════════════════════
+Earlier editions told users to describe tempo for Lyria in words and never as
+a number, marked [OFFICIAL]. The mark was honest — Google's Lyria 3 Pro guide
+said so in April 2026. Google's Lyria 3.5 guide of 2026-09-17 says the
+opposite: "Tempo (BPM): Set the tempo directly (e.g. 120 BPM…)".
 
-<rag_zone id="why_summary">
+**THE LESSON.** [OFFICIAL] means "a vendor said it", not "true forever". An
+official rule for one model is a hypothesis for the next one. That is why the
+date sits at the top of every DATA file, and why this rule now lives there
+instead of being taught as craft.
+
+### A NEW RULE WITH A SIMPLE REASON: VARIETY 0
+
+Suno v6 added a Variety slider that rewrites the style prompt before generating,
+"to introduce variety in your outputs" [OFFICIAL]. It is a good feature for a
+loose idea and a quiet saboteur for an engineered one: every layer you chose
+carefully can be paraphrased away, differently in each take. Setting Variety to
+0 keeps your words as written. When someone says "Suno ignored my style", this
+is the first thing to check.
+
+## §5. IF YOU ONLY REMEMBER FIVE THINGS
 
   1. **Put the most specific thing first.** Order matters more than length,
      and the opening words decide what everything else modifies.
 
-  2. **Say what you want, never what you don't.** Negatives are weak at best
-     and self-defeating at worst, in every field and on every platform.
+  2. **Say what you want first.** Negatives in a description are weak at best
+     and self-defeating at worst. Exclusions belong in exclude fields, or in
+     the one-clause shape vendors use themselves ("Instrumental only, no
+     vocals.").
 
   3. **Change one thing at a time.** Otherwise you are collecting
      superstitions instead of knowledge — which is how this field acquired
@@ -684,9 +709,10 @@ easier to forget.
      merely repeated is not excessive caution — it is the honest description
      of a field with almost no primary sources.
 
-</rag_zone>
+// ═══════════════════════════════════════════════════════════════
+// END OF CORE_04_WHY.md · SunoForge v4.0
+// Next: DATA_SUNO_2026-09.md
+// ═══════════════════════════════════════════════════════════════
 
-// ═══════════════════════════════════════════════════════════════
-// END OF CORE_04_WHY.md · SunoForge v3.0
-// Next: DATA_LEGAL_2026-07.md
-// ═══════════════════════════════════════════════════════════════
+## TAGS
+why, rule rationale, advice why consequence, front-loading, specificity, time and place, vocal gender, parameters as prose, brackets, positive phrasing, exclusion clause, emotion line, iterate one thing, tags are hints, platform first, rights not ownership, download-bound rights, confidence marking, core data split, single source, no prices, myths documented, max mode tags vs toggle, drift, udio, gender workaround, lyria tempo rule revised, variety 0, five things

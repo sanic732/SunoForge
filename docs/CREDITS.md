@@ -12,7 +12,7 @@
 Лицензия распространяется на **саму систему** — на текст инструкций. Она ничего
 не говорит о правах на музыку, которую вы с её помощью создадите: те определяются
 условиями платформы, на которой вы генерируете. Об этом — файл
-`files/DATA_LEGAL_2026-07.md` или команда `/legal`.
+`DATA_LEGAL_2026-09.md` (в папках `claude/` и `gemini/`) или команда `/legal`.
 
 ---
 
@@ -102,7 +102,7 @@ is preserving the licence text and the attribution.
 The licence covers **the system itself** — the text of the instructions. It says
 nothing about rights in the music you produce with it: those are set by the
 terms of whichever platform you generate on. See
-`files/DATA_LEGAL_2026-07.md`, or the `/legal` command.
+`DATA_LEGAL_2026-09.md` (in `claude/` and `gemini/`), or the `/legal` command.
 
 ---
 
@@ -180,3 +180,32 @@ Material for v3.0 was gathered and cross-checked using **Perplexity Deep
 Research** — three independent passes on the same questions, whose mutual
 disagreements directly motivated the decision to introduce confidence marking —
 and the **P2P** meta-prompt system.
+
+---
+
+## Sources for v4.0 (checked 2026-09-30) · Источники v4.0
+
+Primary pages read directly and kept as text in the build yard:
+- Suno — help center: v6 FAQ, Current Models, What's new in v6, How long will my song be,
+  How to change models, Stem separation, Custom Models, Voices FAQ, Creating a Voice,
+  Download limits FAQ; suno.com/pricing; suno.com/release-notes; suno.com/blog/introducing-v6;
+  suno.com/blog/suno-updates-tos; suno.com/terms-of-service (revised 2026-08-10, effective 2026-09-03)
+- Google — ai.google.dev: Generate music with Lyria 3.5 (updated 2026-09-23), Lyria prompt guide
+  (2026-09-17), Real-time music generation, Pricing; gemini.google/overview/music-generation;
+  blog.google: Lyria 3.5 in Flow Music (2026-07-29), Lyria 3.5 in Gemini (2026-09-04);
+  flowmusic.app/pricing; Gemini Apps help: upload files
+- ElevenLabs — Music v2.5 announcement (2026-09-11), ElevenMusic blog, Music overview,
+  Best practices, ElevenCreative Music, API pricing
+- Stability AI — Stable Audio 3.0 (2026-05-20), new ways to work with Stable Audio (2026-08-18)
+- MiniMax — Music 3.0 (2026-08-13); ACE-Step 1.5 and YuE2 READMEs
+- Landgericht München I press release, Az. 42 O 763/25 (2026-07-31); Spotify newsroom
+  (2026-08-11); Deezer newsroom (2026-07-21); European Commission, Code of Practice on
+  marking and labelling AI-generated content; Believe press release (2026-09-08)
+- Trade press used as [COMMUNITY]: Variety, Music Business Worldwide, Music Ally,
+  Digital Music News, Billboard (via secondary)
+- Claude Help Center (Upload files) via the local documentation mirror
+
+Research prompts and reports: three Deep Research passes (Suno A+B; Google, other
+platforms, hosts C–E; music generation from Claude Code), then checked against the
+primary pages above. One report claim (an attribution requirement on Suno's Free plan)
+was refuted by the current terms and not used.

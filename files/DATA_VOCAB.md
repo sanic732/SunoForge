@@ -1,18 +1,24 @@
 ---
 file_id: DATA_VOCAB
-version: "3.0"
+version: "4.0"
 layer: data
+role: vocab
+description: >
+  The descriptor dictionary: timbre, dynamics, groove, space, instrument descriptors,
+  production and mix character, key and tempo, modes, theory translated into prompt
+  language by genre, a flat list of instrument names, and how to combine words.
+  Undated — it describes sound, not platforms. Read to sharpen any description.
 scope: timbre · dynamics · groove · space · instrument_descriptors · production_character · key_tempo · modes · theory_to_prompt
 key_concepts: [timbre, spectral_centroid, adsr, compression, groove, pocket, swing, stereo, depth, reverb, instrument_descriptors, mix_character, key_mood, bpm_genre, modal_language, theory_translation]
 depends_on: [CORE_01_STYLE]
 used_by: [CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_RECIPES, DATA_POSTPROD]
 rag_priority: high
 redundancy: high
-updated: "2026-07-27"
-changelog: "v3.0 — undated: this file describes sound, not platforms · all parametric tag forms converted to prose · instrument descriptor catalogue moved here from the style engine · theory→tag table rewritten as theory→prompt-language · pipe-stacked examples unstacked"
+updated: "2026-09-30"
+changelog: "v4.0 — key and tempo now numeric on every covered platform (Google and ElevenLabs document it) · Studio reference updated · v3.0 — undated: this file describes sound, not platforms · all parametric tag forms converted to prose · instrument descriptor catalogue moved here from the style engine · theory→tag table rewritten as theory→prompt-language · pipe-stacked examples unstacked"
 ---
 
-# 🔊 SUNOFORGE v3.0 — SOUND VOCABULARY
+# 🔊 SUNOFORGE v4.0 — SOUND VOCABULARY
 # File 9 of 12 · DATA layer · undated
 
 > **Why this file has no expiry date.** It describes how sound works and what
@@ -27,11 +33,7 @@ changelog: "v3.0 — undated: this file describes sound, not platforms · all pa
 > no values. "Warm, close-mic, heavily compressed" — not `[eq: warm]`. Bracket
 > syntax belongs to structural labels in the Lyrics field only (CORE_02 §1).
 
-═══════════════════════════════════════════════════════════════════
-§1. HOW TO USE THIS
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="how_to_use">
+## §1. HOW TO USE THIS
 
 Four axes describe almost any recorded sound. Between them they cover what a
 listener notices and what a producer adjusts:
@@ -44,7 +46,7 @@ listener notices and what a producer adjusts:
 A useful prompt names one or two of these deliberately rather than all four
 vaguely. "Warm and close" says more than "good production".
 
-─── THE SUBSTITUTION HABIT ───
+### THE SUBSTITUTION HABIT
 
 Whenever you are about to write a generic word, come here and take a specific
 one instead:
@@ -55,21 +57,15 @@ one instead:
   "big sound"           → wide stereo with long hall decay
   "professional"        → balanced, controlled, commercially polished
 
-─── HOW MANY ───
+### HOW MANY
 
 Two or three of these per prompt. This is a catalogue to select from, not a
 list to exhaust. Ten descriptors pulling in different directions produce an
 average, and the average of everything is nothing (CORE_01 §13).
 
-</rag_zone>
+## §2. TIMBRE — the colour of a sound
 
-═══════════════════════════════════════════════════════════════════
-§2. TIMBRE — the colour of a sound
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="timbre_core">
-
-─── THE CORE WORDS ───
+### THE CORE WORDS
 
   BRIGHT      energy high in the spectrum · piercing, clear, cutting
   DARK        energy low in the spectrum · soft, deep, rounded
@@ -94,11 +90,7 @@ average, and the average of everything is nothing (CORE_01 §13).
   LUSH        dense, layered, harmonically rich
   STERILE     technically clean and emotionally flat
 
-</rag_zone>
-
-<rag_zone id="timbre_spectral">
-
-─── SPECTRAL CHARACTER, PRECISELY ───
+### SPECTRAL CHARACTER, PRECISELY
 
 The technical layer. Useful when deconstructing a reference (CORE_01 §12), or
 when a plain adjective is not landing.
@@ -116,7 +108,7 @@ when a plain adjective is not landing.
     positive                       weighted toward the highs, bright slope
     negative                       weighted toward the lows, warm slope
 
-─── FREQUENCY RANGES AND WHAT THEY DO ───
+### FREQUENCY RANGES AND WHAT THEY DO
 
 Knowing which band produces which adjective lets you describe a sound
 accurately instead of approximately, and it is the same map used when
@@ -139,15 +131,9 @@ correcting a mix afterward (DATA_POSTPROD).
   MUDDY        excess in the low midrange
   AIR          lifted extreme top
 
-</rag_zone>
+## §3. DYNAMICS — how a sound moves
 
-═══════════════════════════════════════════════════════════════════
-§3. DYNAMICS — how a sound moves
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="dynamics_adsr">
-
-─── THE SHAPE OF A NOTE ───
+### THE SHAPE OF A NOTE
 
 Four stages. Naming the one that matters is often more useful than naming the
 instrument.
@@ -172,11 +158,7 @@ instrument.
     PERCUSSIVE  fast attack, fast decay — hits and plucks
     SUSTAINED   slow attack, long hold — pads, strings, drones
 
-</rag_zone>
-
-<rag_zone id="dynamics_compression">
-
-─── COMPRESSION CHARACTER ───
+### COMPRESSION CHARACTER
 
   TIGHT / CONTROLLED   consistent levels, small dynamic swings
   PUNCHY               transients survive while peaks are held down
@@ -188,14 +170,14 @@ instrument.
   OPEN                 barely touched, full dynamic range intact
   BRICK-WALL           limited hard for maximum loudness
 
-─── TRANSIENTS ───
+### TRANSIENTS
 
   SNAPPY       sharply defined attacks
   SOFT         rounded, smoothed attacks
   AGGRESSIVE   attacks pushed forward, in your face
   NATURAL      untreated, as played
 
-─── DYNAMIC RANGE AS A DESCRIPTION ───
+### DYNAMIC RANGE AS A DESCRIPTION
 
   WIDE DYNAMICS      quiet passages stay quiet — classical, jazz, film score
   NARROW DYNAMICS    everything at a similar level — radio pop, EDM
@@ -206,18 +188,12 @@ instrument.
   explicitly: it is the defining feature of several genres and the model will
   not infer it from the genre name alone.
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§4. GROOVE — how it sits against the beat
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="groove_feel">
+## §4. GROOVE — how it sits against the beat
 
 The most underused axis in prompt writing, and the one that most determines
 whether music feels alive.
 
-─── FEEL ───
+### FEEL
 
   STRAIGHT       evenly divided, on the grid — rock, pop, techno
   SWUNG          unevenly divided, bouncing — jazz, blues, shuffle
@@ -229,7 +205,7 @@ whether music feels alive.
   MACHINE-TIGHT  quantised, deliberately inhuman
   LOOSE / HUMAN  small timing variations left in
 
-─── POCKET — where notes sit relative to the beat ───
+### POCKET — where notes sit relative to the beat
 
   IN THE POCKET     locked and natural, neither early nor late
   LAID-BACK         deliberately behind the beat — soul, lo-fi, hip-hop
@@ -243,7 +219,7 @@ whether music feels alive.
   instrument decisions. The same notes at the same tempo, played behind the
   beat instead of on it, become a different genre.
 
-─── GROOVE CHARACTER ───
+### GROOVE CHARACTER
 
   TIGHT GROOVE      rhythm section locked together
   LOOSE GROOVE      relaxed, elastic, breathing
@@ -257,7 +233,7 @@ whether music feels alive.
   STUTTERING        deliberately interrupted, glitching
   MARCHING          even, deliberate, inevitable
 
-─── TIME SIGNATURES ───
+### TIME SIGNATURES
 
   4/4      the default; state it only to be explicit
   3/4      waltz feel, circular
@@ -267,20 +243,14 @@ whether music feels alive.
   7/8      progressive, tense, off-balance
   odd meter, changing meter — describe the effect as well as the number
 
-  Suno's editing environment supports meters beyond 4/4 [OFFICIAL], and the
-  details are in DATA_SUNO §8. In a prompt, saying "in a rolling 6/8" usually
+  Suno Studio supports meters beyond 4/4 [OFFICIAL]; details in DATA_SUNO §9.
+  MiniMax Music 3.0 names time signature as part of its captions [OFFICIAL]. In a prompt, saying "in a rolling 6/8" usually
   works better than the number alone, because the description carries the feel
   and the number does not.
 
-</rag_zone>
+## §5. SPACE — where the sound is
 
-═══════════════════════════════════════════════════════════════════
-§5. SPACE — where the sound is
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="spatial">
-
-─── STEREO PLACEMENT ───
+### STEREO PLACEMENT
 
   MONO                 single point, centred, no width
   STEREO               ordinary two-channel width
@@ -291,7 +261,7 @@ whether music feels alive.
                        practice and worth stating for dance music
   HARD-PANNED          elements pushed fully to one side — 1960s character
 
-─── DEPTH — how far away things are ───
+### DEPTH — how far away things are
 
   CLOSE / INTIMATE     little reverb, full frequency range, present
   DISTANT / RECESSED   more reverb, softened highs, further back
@@ -300,7 +270,7 @@ whether music feels alive.
   FLAT                 everything at the same distance, deliberately or not
   FORWARD              pushed toward the listener, confrontational
 
-─── REVERB ───
+### REVERB
 
   DRY                  almost none; direct and immediate
   WET / DRENCHED       heavily reverberant, swimming in reflections
@@ -313,7 +283,7 @@ whether music feels alive.
   GATED                cut off abruptly; the 1980s drum signature
   SLAPBACK             a single short echo; rockabilly, early rock and roll
 
-─── DECAY LENGTH IN WORDS ───
+### DECAY LENGTH IN WORDS
 
   a tight room             very short
   a live room              short
@@ -322,7 +292,7 @@ whether music feels alive.
   a cathedral              very long, several seconds
   an endless wash          diffuse, no discernible end
 
-─── ROOMS AS SHORTHAND ───
+### ROOMS AS SHORTHAND
 
 Naming a space carries reverb, tone and era in one phrase:
 
@@ -331,18 +301,12 @@ Naming a space carries reverb, tone and era in one phrase:
   a stone church · a scoring stage · an empty stadium
   a parked car · a bedroom with a duvet on the wall
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§6. INSTRUMENT DESCRIPTORS — the catalogue
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="instruments_guitars">
+## §6. INSTRUMENT DESCRIPTORS — the catalogue
 
 The instrument name is a category. The adjective is the record. Method for
 choosing between these: CORE_01 §5.
 
-─── GUITARS, ELECTRIC ───
+### GUITARS, ELECTRIC
 
   jangly clean tone                       1960s pop, indie
   overdriven amp crunch                   hard rock
@@ -359,7 +323,7 @@ choosing between these: CORE_01 §5.
   swampy tremolo                          southern gothic, noir
   scratchy post-punk angularity           post-punk
 
-─── GUITARS, ACOUSTIC ───
+### GUITARS, ACOUSTIC
 
   warm nylon-string fingerpicking         folk, bossa nova
   bright steel-string strumming           singer-songwriter
@@ -369,11 +333,7 @@ choosing between these: CORE_01 §5.
   twelve-string shimmer                   1970s folk rock
   travis-picked alternating bass          country, folk
 
-</rag_zone>
-
-<rag_zone id="instruments_keys">
-
-─── PIANO AND KEYBOARDS ───
+### PIANO AND KEYBOARDS
 
   intimate close-miked grand              ballad, chamber
   bright hammered upright                 honky-tonk, ragtime
@@ -385,14 +345,14 @@ choosing between these: CORE_01 §5.
   prepared piano, damped and percussive   experimental
   cascading concert grand                 romantic, cinematic
 
-─── ORGANS ───
+### ORGANS
 
   swirling drawbar organ through a rotary speaker   rock, gospel
   church pipe organ, enormous and sustained          sacred, gothic
   cheap combo organ, thin and buzzing                garage rock
   warm pumping gospel organ                          soul, gospel
 
-─── SYNTHESISERS ───
+### SYNTHESISERS
 
   lush analog bass, round and warm        synthwave, funk
   crystalline digital bells               1980s pop, city pop
@@ -406,11 +366,7 @@ choosing between these: CORE_01 §5.
   tape-warped mellotron strings            prog rock, cinematic
   glassy FM electric piano                 1980s ballad
 
-</rag_zone>
-
-<rag_zone id="instruments_drums">
-
-─── DRUMS, ACOUSTIC ───
+### DRUMS, ACOUSTIC
 
   tight punchy kit, close-miked           pop, rock
   roomy kit with natural ambience         classic rock, indie
@@ -425,7 +381,7 @@ choosing between these: CORE_01 §5.
   timpani rolls under the orchestra       symphonic
   tambourine on the backbeat              1960s pop, gospel
 
-─── DRUMS, PROGRAMMED ───
+### DRUMS, PROGRAMMED
 
   deep 808 kick with crisp hi-hat rolls   trap
   four-on-the-floor drum machine          house, techno
@@ -437,7 +393,7 @@ choosing between these: CORE_01 §5.
   reverse-reversed snare fills             modern pop
   handclaps and finger snaps in place of a snare   soul, indie pop
 
-─── BASS ───
+### BASS
 
   round warm sub                          lo-fi, chill
   distorted 808 sub                       trap, phonk
@@ -450,11 +406,7 @@ choosing between these: CORE_01 §5.
   fretless bass, sliding between notes    jazz fusion, 1980s ballad
   tuba or sousaphone as the bass          new orleans brass
 
-</rag_zone>
-
-<rag_zone id="instruments_orchestral">
-
-─── STRINGS ───
+### STRINGS
 
   sweeping cinematic swells               trailer, epic
   intimate string quartet, close-miked    chamber, indie
@@ -466,7 +418,7 @@ choosing between these: CORE_01 §5.
   fiddle, driving and rhythmic            celtic, bluegrass
   sul ponticello, glassy and scraping     avant-garde, horror
 
-─── BRASS AND WIND ───
+### BRASS AND WIND
 
   smoky tenor saxophone, club tone        jazz, noir
   bright mariachi trumpet                 latin
@@ -480,7 +432,7 @@ choosing between these: CORE_01 §5.
   bagpipes, droning and martial           celtic, cinematic
   french horn, noble and distant          orchestral, pastoral
 
-─── VOICE AS AN INSTRUMENT ───
+### VOICE AS AN INSTRUMENT
 
   wordless choir on open vowels           cinematic
   gospel choir answering the lead         gospel, soul
@@ -490,11 +442,7 @@ choosing between these: CORE_01 §5.
   throat singing, low and overtone-rich   world, cinematic
   spoken crowd chant                      anthem, stadium
 
-</rag_zone>
-
-<rag_zone id="instruments_world">
-
-─── INSTRUMENTS THAT CARRY A PLACE WITH THEM ───
+### INSTRUMENTS THAT CARRY A PLACE WITH THEM
 
 Naming one of these does more genre work than an adjective can, because each
 arrives with a tradition attached.
@@ -519,15 +467,9 @@ arrives with a tradition attached.
   ⚠️ These carry cultural weight, not just a timbre. Use them because the
   music belongs there, not as decoration.
 
-</rag_zone>
+## §7. PRODUCTION AND MIX CHARACTER
 
-═══════════════════════════════════════════════════════════════════
-§7. PRODUCTION AND MIX CHARACTER
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="production_character">
-
-─── OVERALL CHARACTER, IN ONE PHRASE ───
+### OVERALL CHARACTER, IN ONE PHRASE
 
   WARM        analog saturation, tape warmth, vinyl crackle
   POLISHED    clean, balanced, commercially finished
@@ -542,7 +484,7 @@ arrives with a tradition attached.
   VINTAGE     period-accurate limitations, embraced
   MODERN      loud, wide, controlled
 
-─── TEXTURE AND DEGRADATION ───
+### TEXTURE AND DEGRADATION
 
   tape saturation · tape hiss · wow and flutter · vinyl crackle
   bit reduction · sample-rate degradation · radio bandpass
@@ -553,7 +495,7 @@ arrives with a tradition attached.
   enough — stacking three produces something that sounds broken rather than
   characterful.
 
-─── EFFECTS, DESCRIBED ───
+### EFFECTS, DESCRIBED
 
   ping-pong delay bouncing across the field
   a single slapback echo
@@ -568,7 +510,7 @@ arrives with a tradition attached.
   filter sweep opening across a build
   reverse reverb swelling into a hit
 
-─── ERA SHORTHAND ───
+### ERA SHORTHAND
 
 Each of these carries a full production aesthetic:
 
@@ -581,19 +523,15 @@ Each of these carries a full production aesthetic:
   2010s     very loud, very wide, heavily tuned vocals
   2020s     deliberately imperfect again, lo-fi textures on clean recordings
 
-</rag_zone>
+## §8. KEY AND TEMPO
 
-═══════════════════════════════════════════════════════════════════
-§8. KEY AND TEMPO
-═══════════════════════════════════════════════════════════════════
+Written as prose inside the description — "96 BPM, A minor". Numbers work on
+every covered platform now: Google's Lyria guide asks for "Tempo (BPM)" and "Key
+and Scale", ElevenLabs says its model "accurately follows BPM and often captures
+the intended musical key" [OFFICIAL]. Add a feel word when the number alone
+does not say how the beat sits ("a lazy 96 BPM, behind the beat").
 
-<rag_zone id="key_tempo">
-
-⚠️ Written as prose inside the Style description, and only for platforms where
-a numeric tempo works. Lyria wants tempo described in words instead
-(DATA_GOOGLE §3).
-
-─── KEY AND ITS ASSOCIATIONS ───
+### KEY AND ITS ASSOCIATIONS
 
 These associations are conventional rather than acoustic — they come from
 repertoire, not physics. They are still useful, because the model learned the
@@ -612,7 +550,7 @@ same conventions.
   flat keys. Stating a key that fits the instrumentation makes the
   arrangement more idiomatic.
 
-─── TEMPO BY GENRE ───
+### TEMPO BY GENRE
 
   60–70      ballads, ambient, drone, drift phonk
   70–80      lo-fi hip-hop, slow soul
@@ -630,19 +568,13 @@ same conventions.
   ⚠️ Tempo and feel interact. Trap written at 140 with a half-time feel sounds
   slower than folk at 90. Say the feel as well as the number.
 
-─── LENGTH AND MATERIAL ───
+### LENGTH AND MATERIAL
 
-Roughly one minute of song is a verse plus a chorus at a moderate tempo. This
+A minute of song holds about one verse and one chorus at a moderate tempo (CORE_02 §12). This
 is the arithmetic that decides whether a long target produces a full song or
 padding (CORE_02 §12).
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§9. MODES AND SCALES
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="modal_language">
+## §9. MODES AND SCALES
 
 Mode names are not reliably understood [COMMUNITY]. Describe the effect
 instead — and if you want to name the mode, do both.
@@ -661,7 +593,7 @@ instead — and if you want to name the mode, do both.
   Names that do tend to land as written: pentatonic, blues scale, harmonic
   minor, chromatic.
 
-─── HARMONIC CHARACTER WITHOUT THEORY ───
+### HARMONIC CHARACTER WITHOUT THEORY
 
 Often more effective than naming a mode at all:
 
@@ -678,18 +610,14 @@ Often more effective than naming a mode at all:
   Chord progressions themselves, and how to write them into a lyric, are in
   CORE_02 §10.
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§10. THEORY → PROMPT LANGUAGE, BY GENRE
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="theory_to_prompt">
+## §10. THEORY → PROMPT LANGUAGE, BY GENRE
 
 What actually makes each genre recognisable, translated into words that go
 into a Style description. Written as prose — the previous edition presented
 this table in a bracketed, pipe-separated form that was never a documented
 syntax (CORE_02 §4).
+
+### Rock and metal
 
   GENRE            WHAT DEFINES IT      WRITE THIS
   ──────────────── ──────────────────── ──────────────────────────────────────
@@ -723,6 +651,11 @@ syntax (CORE_02 §4).
                                         emotional cracked vocal
   Post-punk        angular and cold     angular scratchy guitar, melodic high
                                         bass, deadpan vocal, dry production
+
+### Hip-hop and electronic
+
+  GENRE            WHAT DEFINES IT      WRITE THIS
+  ──────────────── ──────────────────── ──────────────────────────────────────
   Lo-fi hip-hop    dust and swing       dusty jazz piano samples, swung
                                         boom-bap, vinyl crackle, no vocal
   Boom-bap         sampled soul         chopped soul sample, hard snare,
@@ -743,6 +676,11 @@ syntax (CORE_02 §4).
                                         drums, neon 1980s atmosphere
   Hyperpop         joyful damage        pitch-shifted vocals, distorted 808,
                                         glitching, deliberately overloaded
+
+### Roots, world, jazz, cinematic and classical
+
+  GENRE            WHAT DEFINES IT      WRITE THIS
+  ──────────────── ──────────────────── ──────────────────────────────────────
   Amapiano         log drum             log drum bassline, shaker-driven
                                         percussion, spacious mid-tempo groove
   Afrobeats        polyrhythm           interlocking percussion, melodic bass,
@@ -778,13 +716,7 @@ syntax (CORE_02 §4).
   Classical        idiom by period      name the period — baroque counterpoint,
                                         romantic sweep, minimalist repetition
 
-</rag_zone>
-
-═══════════════════════════════════════════════════════════════════
-§11. INSTRUMENT NAMES — a flat reference
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="instrument_names">
+## §11. INSTRUMENT NAMES — a flat reference
 
 For recall. Combine with a descriptor from §6 before use — a bare name is a
 category, not a sound.
@@ -829,15 +761,9 @@ category, not a sound.
   section labels in a Lyrics field depends on the field, not the instrument —
   CORE_01 §5 and CORE_02 §3.
 
-</rag_zone>
+## §12. PUTTING WORDS TOGETHER
 
-═══════════════════════════════════════════════════════════════════
-§12. PUTTING WORDS TOGETHER
-═══════════════════════════════════════════════════════════════════
-
-<rag_zone id="combining">
-
-─── A DESCRIPTOR STACK THAT WORKS ───
+### A DESCRIPTOR STACK THAT WORKS
 
   [instrument] + [how it is played] + [how it is recorded]
 
@@ -847,7 +773,7 @@ category, not a sound.
 
   Three decisions, one phrase, and no ambiguity left for the model to resolve.
 
-─── DESCRIBING A WHOLE MIX ───
+### DESCRIBING A WHOLE MIX
 
 Pick one word from each axis rather than three from one:
 
@@ -856,7 +782,7 @@ Pick one word from each axis rather than three from one:
     dark, loose, distant                    — murky and dreamlike
     clean, tight, dry                       — clinical and precise
 
-─── CONTRADICTIONS TO AVOID ───
+### CONTRADICTIONS TO AVOID
 
   ❌ warm and bright and airy and dark      picks a fight with itself
   ❌ tight, punchy, loose and breathing     opposite dynamic requests
@@ -866,16 +792,17 @@ Pick one word from each axis rather than three from one:
   Depth contrast is the one apparent contradiction that is real and useful:
   a close vocal in a distant room is a deliberate arrangement, not a conflict.
 
-─── WHERE THIS VOCABULARY IS USED ───
+### WHERE THIS VOCABULARY IS USED
 
   Building a Style prompt                   CORE_01 §5, §9
   Deconstructing a reference recording      CORE_01 §12
   Ready-made genre configurations           DATA_RECIPES
   Correcting a mix after generation         DATA_POSTPROD
 
-</rag_zone>
-
 // ═══════════════════════════════════════════════════════════════
-// END OF DATA_VOCAB.md · SunoForge v3.0
+// END OF DATA_VOCAB.md · SunoForge v4.0
 // Next: DATA_RECIPES.md
 // ═══════════════════════════════════════════════════════════════
+
+## TAGS
+vocabulary, descriptors, timbre, bright, dark, warm, spectral, dynamics, adsr, attack, compression, groove, swing, pocket, behind the beat, space, stereo width, depth, reverb types, decay, instrument descriptors, guitars, keys, synths, strings, brass, drums, production character, mix, key and mood, bpm by genre, time signatures, modes, scales, theory to prompt language, instrument names, combining words
