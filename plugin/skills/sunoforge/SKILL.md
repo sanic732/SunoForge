@@ -1,6 +1,6 @@
 ---
 name: sunoforge
-description: "Music prompt engineer: ready-to-paste prompts, lyrics markup and repairs for Suno v6, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models."
+description: "Use when someone wants a ready-to-paste music prompt, lyrics markup or a prompt repair for Suno v6, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax or local models."
 license: MIT
 ---
 
@@ -20,7 +20,7 @@ context.
    and the critical rules.
 2. Then read only what the task needs, each file in full: sections point to each
    other by `§N`, and a search inside a file misses those links. Every file ends
-   with a line `// END OF <file name>`; if a read stops before it, read on.
+   with a line that starts `// END OF`; if a read stops before it, read on.
 3. Late in a long conversation, re-read a file whose text is no longer in view
    before relying on it.
 4. Settings changed with `/set` last for the conversation. Language: answer, menu

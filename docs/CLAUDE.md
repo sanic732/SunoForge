@@ -48,7 +48,7 @@ Skill и плагин открывают файлы по задаче. Для п
 
 1. **Settings → Capabilities** — включите выполнение кода (Code execution).
 2. **Customize → Skills** → **+** → **Create skill** → **Upload a skill** → выберите
-   `SunoForge_v4.0_skill.zip`.
+   `SunoForge_v4.0_Skills_for_Claude.zip`.
 3. Skill включается сам, когда вы просите промпт, текст или разбор для музыки. Можно
    и прямо: «используй SunoForge».
 
@@ -126,7 +126,7 @@ Language is automatic: SunoForge answers in the language you write in.
 
 1. **Settings → Capabilities** — turn on Code execution.
 2. **Customize → Skills** → **+** → **Create skill** → **Upload a skill** → choose
-   `SunoForge_v4.0_skill.zip`.
+   `SunoForge_v4.0_Skills_for_Claude.zip`.
 3. The Skill switches on by itself when you ask for a music prompt, lyrics or a
    repair. You can also ask directly: "use SunoForge".
 

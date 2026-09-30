@@ -168,7 +168,7 @@ including previous versions of this system.
 
 ## Tokens
 
-v4.0: Claude Edition ~114,100 tokens (o200k_base), ~98,400 without the lazy files; Gemini Edition ~104,300 / ~90,100. Breakdown in
+v4.0: Claude Edition ~114,200 tokens (o200k_base), ~98,500 without the lazy files; Gemini Edition ~104,400 / ~90,200. Breakdown in
 [TOKENS.md](TOKENS.md).
 
 On a 128K window the full set takes 71 %, which is a lot: keep the lazy files

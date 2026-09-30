@@ -31,12 +31,14 @@ SunoForge — не программа. Это текст, который вы д
 
 ## Шаг 2. Загрузите файлы
 
-Из папки вашей редакции — `claude/` или `gemini/` — все двенадцать `.md`.
+Из архива `SunoForge_v4.0_Prompt.zip`, папка вашей редакции — `claude/` или `gemini/` —
+все двенадцать `.md`.
 
 - **Claude** — Claude Edition (XML). Файлы — в знания Project или вложением в чат.
   Или без файлов: поставьте плагин SunoForge либо загрузите архив Skill.
   Подробнее — [CLAUDE.md](CLAUDE.md).
-- **Gemini** — Gemini Edition (Markdown). Пять файлов `CORE_*` и `DATA.zip` из той же папки.
+- **Gemini** — Gemini Edition (Markdown). Пять файлов `CORE_*` и `DATA.zip` из той же папки —
+  или готовый навык `SunoForge_v4.0_Skills_for_Gemini.zip` на странице «Навыки».
   Подробнее — [GEMINI.md](GEMINI.md).
 - **ChatGPT, Grok** — файлы Gemini Edition вложением или в проект.
 - **Если приложить файлы нельзя** — вставьте содержимое всех файлов первым

@@ -33,13 +33,16 @@ That lets you skip steps 2 and 3.
 
 ## Step 2. Load the files
 
-All twelve `.md` files from your folder — `claude/` or `gemini/`.
+All twelve `.md` files from your folder in `SunoForge_v4.0_Prompt.zip` — `claude/` or
+`gemini/`.
 
 - **Claude** — the Claude Edition (XML). Add the files to a Project's knowledge,
   or attach them to a chat — or skip the files entirely: install the SunoForge plugin
   or upload the Skill ZIP. Details in [CLAUDE.md](CLAUDE.md).
 - **Gemini** — the Gemini Edition (Markdown). Attach the five `CORE_*` files and
-  `DATA.zip` from the same folder. Details in [GEMINI.md](GEMINI.md).
+  `DATA.zip` from the same folder — or upload the ready Skill,
+  `SunoForge_v4.0_Skills_for_Gemini.zip`, on the Skills page. Details in
+  [GEMINI.md](GEMINI.md).
 - **ChatGPT, Grok** — the Gemini Edition files, attached or added to a project.
 - **If you cannot attach files** — paste the contents as the first message,
   starting with `CORE_00_ENTRY.md`, which is the entry point.

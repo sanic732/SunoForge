@@ -13,6 +13,31 @@
 контексте Gemini работает хуже, поэтому структура держится на заголовках. Содержание
 то же, что в папке `claude/`.
 
+**Навык — самый короткий путь.** В Gemini появились навыки (Skills), и Google переводит
+в них Gem-боты — по объявлению в приложении, с 17 ноября 2026. Навык SunoForge — это
+`SKILL.md` и двенадцать файлов, которые Gemini открывает по мере надобности, а не
+держит все сразу.
+
+1. Распакуйте `SunoForge_v4.0_Skills_for_Gemini.zip`. Внутри — папка `sunoforge`: в ней
+   `SKILL.md` и двенадцать файлов.
+2. Страница **Навыки** → **Загрузить** → выберите папку `sunoforge` целиком. Имя папки
+   должно совпадать с именем навыка — `sunoforge`; другое Gemini не примет.
+3. Проверьте и нажмите **Создать**.
+
+Окно загрузки принимает файлы и папки в форматах CSV, PY, TXT и MD — архив целиком там
+может не пройти, поэтому сначала распаковка.
+
+Включённый навык Gemini применяет сам, когда просите промпт для музыки; вызвать явно —
+`/` и выбрать `sunoforge`. Поэтому команды SunoForge в Gemini надёжнее писать без
+слеша: `set lang ru`, `menu`. По справке Google навыки есть в веб-версии, мобильном
+приложении и на Mac, для личного аккаунта Google и с 18 лет.
+
+Google предупреждает: большинство инструментов Gem с навыками не работает, в том числе
+«Создать музыку» (Create music). Если в чате с навыком генерации нет, вставьте готовый
+промпт для Lyria в обычный чат Gemini. Автоматический перенос Gem берёт только
+поддерживаемые файлы; архива среди них нет, поэтому навык лучше загрузить из релиза, а
+не ждать переноса.
+
 **Как загружать.** Gemini принимает в одно сообщение до 10 вложений, а в архиве может
 быть до 10 файлов. Поэтому ядро идёт файлами, а данные — одним архивом:
 
@@ -46,6 +71,31 @@
 Gemini gets its own edition: plain Markdown with no XML tags at all. XML in the system
 context works worse on Gemini, so the structure rides on headings. The content is the
 same as in the `claude/` folder.
+
+**A Skill — the shortest way.** Gemini now has skills, and Google is turning Gems into
+them — from 17 November 2026, by the notice in the app. The SunoForge Skill is
+`SKILL.md` plus the twelve files, which Gemini opens as it needs them instead of
+holding them all at once.
+
+1. Unpack `SunoForge_v4.0_Skills_for_Gemini.zip`. Inside is a folder `sunoforge` holding
+   `SKILL.md` and the twelve files.
+2. The **Skills** page → **Upload** → choose the whole `sunoforge` folder. The folder
+   name must match the skill name, `sunoforge`; Gemini refuses any other.
+3. Review it and click **Create**.
+
+The upload window takes files and folders in CSV, PY, TXT and MD — a whole archive may
+not pass there, hence unpacking first.
+
+Gemini applies a skill that is turned on by itself when you ask for a music prompt; to
+call it directly, type `/` and pick `sunoforge`. That is why SunoForge commands are
+safer without the slash in Gemini: `set lang ru`, `menu`. Google's help lists skills in
+the web app, the mobile app and on Mac, for personal Google Accounts, 18 and over.
+
+Google warns that most tools available in Gems do not work with skills, Create music
+among them. If a chat with the skill cannot generate, paste the finished Lyria prompt
+into a regular Gemini chat. The automatic move from Gems carries only supported files,
+and an archive is not one of them — so upload the skill from the release rather than
+waiting for the move.
 
 **How to load it.** Gemini takes up to 10 attachments per message, and an archive can
 hold up to 10 files. So the core goes as files and the data as one archive:
