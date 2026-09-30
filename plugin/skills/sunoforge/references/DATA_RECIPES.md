@@ -1,4 +1,5 @@
----
+<sunoforge_file id="DATA_RECIPES" version="4.0" layer="data" role="templates" source="DATA_RECIPES.md">
+<file_meta>
 file_id: DATA_RECIPES
 version: "4.0"
 layer: data
@@ -16,7 +17,7 @@ rag_priority: high
 redundancy: high
 updated: "2026-09-30"
 changelog: "v4.0 — slider references moved to DATA_SUNO §8 · Variety 0 for every recipe on Suno v6 · one-idea-every-platform rewritten for Lyria 3.5 (BPM, key, ranges) and extended to MiniMax and local models · v3.0 — undated · MAX MODE tags and the slash-asterisk separator removed from every recipe · per-section anti-drift reminders removed · parametric and colon-prefixed sound tags converted · slider values and exclude vocabularies now referenced rather than restated · Udio templates dropped, Stable Audio added"
----
+</file_meta>
 
 # 📋 SUNOFORGE v4.0 — RECIPES & PRESETS
 # File 10 of 12 · DATA layer · undated
@@ -33,7 +34,10 @@ changelog: "v4.0 — slider references moved to DATA_SUNO §8 · Variety 0 for e
 > Recipes are meant to be edited — a template followed exactly is a large part
 > of why so much generated music sounds alike.
 
-## §1. HOW TO READ A RECIPE
+<section id="§1" title="HOW TO READ A RECIPE">
+
+<!-- rag_anchor: recipe_format -->
+<rag_zone id="recipe_format">
 
 Each recipe carries five things:
 
@@ -78,7 +82,14 @@ per-section style reminders repeated down the page. Those were in the previous
 edition, none of them did anything, and the reasons are in CORE_00 §2 and
 CORE_03 §3.
 
-## §2. CORE GENRE RECIPES
+</rag_zone>
+
+</section>
+
+<section id="§2" title="CORE GENRE RECIPES">
+
+<!-- rag_anchor: recipe_edm -->
+<rag_zone id="recipe_edm">
 
 ### EDM · FESTIVAL MAIN STAGE
 
@@ -118,6 +129,11 @@ EXCLUDE    start from the pop/radio list, DATA_SUNO §3; add acoustic guitar,
 NOTES      The drop is instrumental. Putting a sung lead over it is the most
            common way this recipe fails — the vocal and the lead fight for the
            same space. Keep words in the breakdown, chops in the drop.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_pop -->
+<rag_zone id="recipe_pop">
 
 ### POP · MODERN RADIO
 
@@ -159,6 +175,11 @@ NOTES      The verse-to-chorus contrast is the whole recipe. If the verse is
            already full, the chorus has nowhere to go. Keep the verse sparse
            even when it feels too empty while you are writing it.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_trap -->
+<rag_zone id="recipe_trap">
+
 ### TRAP
 
 STYLE
@@ -198,6 +219,11 @@ NOTES      140 with a half-time feel sounds slower than 90 straight — say the
            feel as well as the number (DATA_VOCAB §8). Ad-libs go in the gaps
            between lines, not on top of them (CORE_02 §7).
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_grunge -->
+<rag_zone id="recipe_grunge">
+
 ### GRUNGE · ALT-ROCK
 
 STYLE
@@ -235,6 +261,11 @@ EXCLUDE    rock/metal list, DATA_SUNO §3; add autotune, polished pop
 NOTES      The quiet-loud contrast is the genre. Mark the verse as quiet
            explicitly — left alone, the model plays the verse at chorus
            volume and the song has no shape.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_metal -->
+<rag_zone id="recipe_metal">
 
 ### METAL · MODERN HEAVY
 
@@ -281,6 +312,11 @@ NOTES      Alternating harsh and clean is what makes this genre legible.
            Label the switch on every section — it is the one thing the model
            will not infer.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_country -->
+<rag_zone id="recipe_country">
+
 ### COUNTRY · OUTLAW
 
 STYLE
@@ -315,6 +351,11 @@ EXCLUDE    country list, DATA_SUNO §3
 NOTES      Country is a lyric-first genre. The structure is deliberately
            plain because the words carry it. Write a story with a turn in the
            last verse and this recipe works with no other changes.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_lofi -->
+<rag_zone id="recipe_lofi">
 
 ### LO-FI HIP-HOP
 
@@ -355,6 +396,11 @@ VARIATION — with a vocal
 spoken, barely above the piano
 ```
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_cinematic -->
+<rag_zone id="recipe_cinematic">
+
 ### CINEMATIC · TRAILER
 
 STYLE
@@ -390,6 +436,11 @@ EXCLUDE    cinematic/epic list, DATA_SUNO §3
 NOTES      "Wordless choir on open vowels" is doing important work — ask for
            a choir without it and you get lyrics you did not write. Consider
            Lyria for orchestral material with timestamps (DATA_GOOGLE §4).
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_gospel -->
+<rag_zone id="recipe_gospel">
 
 ### GOSPEL
 
@@ -433,6 +484,11 @@ NOTES      Gospel builds. Starting at full power leaves nowhere to go — the
            between the lead and the choir is the defining feature; write the
            lyric so the choir has something to answer.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_rnb -->
+<rag_zone id="recipe_rnb">
+
 ### R&B · NEO-SOUL
 
 STYLE
@@ -470,6 +526,11 @@ NOTES      The pocket is the genre. "Laid-back", "behind the beat" — say it
            explicitly (DATA_VOCAB §4). Played straight, this becomes ordinary
            pop with a Rhodes.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_folk -->
+<rag_zone id="recipe_folk">
+
 ### FOLK · SINGER-SONGWRITER
 
 STYLE
@@ -505,6 +566,11 @@ NOTES      No bridge. Folk often uses a third verse where pop would put a
            bridge, and the difference is audible. Arrangement should stay
            almost empty until the last chorus.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_jazz -->
+<rag_zone id="recipe_jazz">
+
 ### JAZZ · SMALL GROUP
 
 STYLE
@@ -536,6 +602,11 @@ EXCLUDE    jazz list, DATA_SUNO §3
 NOTES      "Medium swing" matters more than the tempo number. A vocal
            version works — ask for a crooned close-miked delivery and add
            verses around the head.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_punk -->
+<rag_zone id="recipe_punk">
 
 ### PUNK
 
@@ -571,6 +642,11 @@ EXCLUDE    rock/metal list, DATA_SUNO §3; add polished production, layered
            harmonies
 NOTES      "Slightly ahead of the beat" is the genre in four words
            (DATA_VOCAB §4). Under two minutes. Resist adding a bridge.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_synthwave -->
+<rag_zone id="recipe_synthwave">
 
 ### SYNTHWAVE
 
@@ -610,6 +686,11 @@ NOTES      Works well instrumental — drop the vocal sections and extend the
            solo. The era is inside the genre name, so no additional decade
            is needed (CORE_01 §3).
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_ambient -->
+<rag_zone id="recipe_ambient">
+
 ### AMBIENT · LONG-FORM
 
 STYLE
@@ -641,6 +722,11 @@ NOTES      "Unresolved" is the important word — without it the model writes
            toward an ending, which is wrong for something meant to loop or
            sit under a scene. For long durations, consider Stable Audio
            (DATA_OTHER §2).
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_house -->
+<rag_zone id="recipe_house">
 
 ### HOUSE · DEEP
 
@@ -676,6 +762,11 @@ NOTES      House vocals are fragments, not songs. Writing full verses turns
            this into dance-pop. Long intro and outro are structural — they
            exist so a DJ can mix in and out.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_techno -->
+<rag_zone id="recipe_techno">
+
 ### TECHNO
 
 STYLE
@@ -709,6 +800,11 @@ EXCLUDE    pop/radio list, DATA_SUNO §3; add melody, chord progression,
 NOTES      Excluding "melody" is deliberate and unusual. Techno is texture
            and repetition; a tune makes it something else. Change should
            happen through filtering, not through new material.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_dnb -->
+<rag_zone id="recipe_dnb">
 
 ### DRUM AND BASS · LIQUID
 
@@ -745,6 +841,11 @@ NOTES      The bass sits at half the drum tempo, which is what makes it feel
            calm at 174. Saying "rolling" rather than "fast" for the sub keeps
            the two layers apart.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_dubstep -->
+<rag_zone id="recipe_dubstep">
+
 ### BASS MUSIC · DUBSTEP
 
 STYLE
@@ -778,6 +879,11 @@ EXCLUDE    pop/radio list, DATA_SUNO §3; add acoustic instruments, gentle,
            orchestral strings
 NOTES      Everything serves the drop. The build should be longer than feels
            comfortable — dubstep tension is mostly anticipation.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_reggae -->
+<rag_zone id="recipe_reggae">
 
 ### REGGAE · ROOTS
 
@@ -818,6 +924,11 @@ NOTES      The bass carries the melody and the guitar carries the rhythm —
            the reverse of most genres. Say so explicitly or you get rock
            played slowly.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_afrobeat -->
+<rag_zone id="recipe_afrobeat">
+
 ### AFROBEAT
 
 STYLE
@@ -853,6 +964,11 @@ SETTINGS   112 BPM · E minor · genre-faithful posture
 EXCLUDE    pop/radio list, DATA_SUNO §3; add electronic drums, synthesiser
 NOTES      Long instrumental sections are structural, not filler. The groove
            is the song. Resist shortening the solo.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_latin -->
+<rag_zone id="recipe_latin">
 
 ### LATIN · SALSA
 
@@ -893,6 +1009,11 @@ EXCLUDE    pop/radio list, DATA_SUNO §3; add electronic drums, distorted
 NOTES      Naming the clave is what makes this genuinely salsa rather than
            generic Latin pop. The final section traditionally opens up into
            call-and-response — leave room for it.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_disco -->
+<rag_zone id="recipe_disco">
 
 ### DISCO · FUNK
 
@@ -937,6 +1058,11 @@ NOTES      The stripped break before the final chorus is the genre's
            signature move. Fade the outro — disco records almost never end
            cleanly.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_dreampop -->
+<rag_zone id="recipe_dreampop">
+
 ### DREAM POP · SHOEGAZE
 
 STYLE
@@ -973,6 +1099,11 @@ EXCLUDE    pop/radio list, DATA_SUNO §3; add clear vocals, dry mix, close-mic
 NOTES      "Buried in the mix" contradicts every other recipe here and is
            correct for this one. If the words are intelligible, it is not
            shoegaze.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_kpop -->
+<rag_zone id="recipe_kpop">
 
 ### K-POP
 
@@ -1020,6 +1151,11 @@ NOTES      The genre's signature is sudden section changes — a rap passage
            and a beat switch inside a pop song. Mark both explicitly. More
            sections than a Western pop track by design.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_blues -->
+<rag_zone id="recipe_blues">
+
 ### BLUES
 
 STYLE
@@ -1054,6 +1190,11 @@ EXCLUDE    jazz list, DATA_SUNO §3; add polished production, synthesiser
 NOTES      No chorus. Blues repeats the first line of each verse — write it
            that way and the form does the rest. Twelve-bar structure:
            CORE_02 §10.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_classical -->
+<rag_zone id="recipe_classical">
 
 ### ORCHESTRAL · CONCERT
 
@@ -1090,8 +1231,14 @@ NOTES      Naming the period does more than naming the instruments —
            entirely different. Consider Lyria for orchestral work
            (DATA_OTHER §7).
 
-## §3. HYBRID RECIPES
+</rag_zone>
 
+</section>
+
+<section id="§3" title="HYBRID RECIPES">
+
+<!-- rag_anchor: recipe_hybrids -->
+<rag_zone id="recipe_hybrids">
 Method behind these — bridge genres, narrative blending, what refuses to
 combine — is CORE_01 §10.
 
@@ -1128,6 +1275,11 @@ NOTES      The tempo band is narrow and it matters — outside roughly 108–116
            this stops sounding like amapiano. Long builds, late payoffs;
            resist a Western-style drop.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_hybrids_lo_fi_trap -->
+<rag_zone id="recipe_hybrids_lo_fi_trap">
+
 ### LO-FI TRAP
 
 STYLE
@@ -1163,6 +1315,11 @@ SETTINGS   84 BPM, half-time feel · D minor · balanced posture
 NOTES      Bridge genre is the production aesthetic, not the rhythm. The
            dust holds the two halves together — remove the crackle and it
            becomes plain trap.
+
+</rag_zone>
+
+<!-- rag_anchor: recipe_hybrids_drift_phonk -->
+<rag_zone id="recipe_hybrids_drift_phonk">
 
 ### DRIFT PHONK
 
@@ -1231,6 +1388,11 @@ NOTES      The bridge genre is bedroom production — both halves are
            intimate and homemade. The contrast only works if the quiet parts
            are genuinely quiet.
 
+</rag_zone>
+
+<!-- rag_anchor: recipe_hybrids_cinematic_choir_electronica -->
+<rag_zone id="recipe_hybrids_cinematic_choir_electronica">
+
 ### CINEMATIC CHOIR ELECTRONICA
 
 STYLE
@@ -1295,7 +1457,14 @@ NOTES      Write for speech, not for song — sentence rhythm, sparing rhyme,
            shorter than feels right (CORE_02 §8). Flow Music suits this well
            if you want to build it in passes (DATA_GOOGLE §7).
 
-## §4. DUET
+</rag_zone>
+
+</section>
+
+<section id="§4" title="DUET">
+
+<!-- rag_anchor: recipe_duet -->
+<rag_zone id="recipe_duet">
 
 ### DUET · EMOTIONAL BALLAD
 
@@ -1346,8 +1515,14 @@ NOTES      Whole sections per singer. Do not alternate line by line — that
            one. Two voices in the same range blur regardless of labelling,
            so keep the ranges genuinely apart.
 
-## §5. STYLE PRESETS
+</rag_zone>
 
+</section>
+
+<section id="§5" title="STYLE PRESETS">
+
+<!-- rag_anchor: style_presets -->
+<rag_zone id="style_presets">
 Single-line Style descriptions, ready to paste and edit. Shorter than the
 full recipes above and useful when you know what you want.
 
@@ -1363,6 +1538,11 @@ full recipes above and useful when you know what you want.
   5  modern doom metal, immense and slow, downtuned crushing riffs with
      feedback, low growled vocal, murky heavy mix, 62 BPM, C minor
 
+</rag_zone>
+
+<!-- rag_anchor: style_presets_electronic -->
+<rag_zone id="style_presets_electronic">
+
 ### ELECTRONIC
   6  late-80s Chicago acid house, hypnotic, squelching resonant bassline over
      a drum machine, no vocals, dry direct mix, 122 BPM, A minor
@@ -1375,6 +1555,11 @@ full recipes above and useful when you know what you want.
   10 modern melodic house, warm and open, plucked synth over a four-on-the-
      floor pulse, wordless vocal hook, wide bright mix, 124 BPM, A minor
 
+</rag_zone>
+
+<!-- rag_anchor: style_presets_hip_hop_and_r_b -->
+<rag_zone id="style_presets_hip_hop_and_r_b">
+
 ### HIP-HOP AND R&B
   11 1994 East Coast boom bap, dusty, chopped soul sample over a hard snare,
      male conversational rap, narrow warm mix, 92 BPM, C minor
@@ -1384,6 +1569,11 @@ full recipes above and useful when you know what you want.
      section, male tenor with falsetto, wide vintage mix, 104 BPM, E♭ major
   14 contemporary alternative R&B, hazy, sparse electric piano and a soft
      sub, female voice layered and pitched, spacious dark mix, 76 BPM, B minor
+
+</rag_zone>
+
+<!-- rag_anchor: style_presets_acoustic_and_roots -->
+<rag_zone id="style_presets_acoustic_and_roots">
 
 ### ACOUSTIC AND ROOTS
   15 1970s Nashville outlaw country, weathered, pedal steel and Telecaster
@@ -1396,6 +1586,11 @@ full recipes above and useful when you know what you want.
      harmonium, female alto barely projecting, close dry room, 72 BPM, C major
   19 celtic folk, rolling, fiddle and tin whistle over a bodhrán, mixed-voice
      unison singing, live room sound, 116 BPM in 6/8, D minor
+
+</rag_zone>
+
+<!-- rag_anchor: style_presets_jazz_and_lounge -->
+<rag_zone id="style_presets_jazz_and_lounge">
 
 ### JAZZ AND LOUNGE
   20 1959 cool jazz, restrained, muted trumpet and brushed drums over walking
@@ -1415,6 +1610,11 @@ full recipes above and useful when you know what you want.
   26 dark ambient drone, oppressive, low sustained textures with metallic
      resonance, no melody, enormous diffuse space, no fixed tempo, no key
 
+</rag_zone>
+
+<!-- rag_anchor: style_presets_world_and_latin -->
+<rag_zone id="style_presets_world_and_latin">
+
 ### WORLD AND LATIN
   27 1970s Lagos afrobeat, insistent, interlocking guitars with a horn
      section and dense percussion, group vocal chant, live room, 112 BPM,
@@ -1425,6 +1625,11 @@ full recipes above and useful when you know what you want.
      accents, instrumental, close vintage recording, 120 BPM, D minor
   30 flamenco, urgent, fast spanish guitar with palmas and cajón, male voice
      raw and ornamented, close live recording, 140 BPM, phrygian on E
+
+</rag_zone>
+
+<!-- rag_anchor: style_presets_pop_and_songwriting -->
+<rag_zone id="style_presets_pop_and_songwriting">
 
 ### POP AND SONGWRITING
   31 early-2000s Scandinavian pop, glossy and precise, layered synth hooks
@@ -1438,6 +1643,11 @@ full recipes above and useful when you know what you want.
   35 chamber pop, ornate, piano and string quartet with woodwind touches,
      female alto, close intimate recording, 88 BPM, A major
 
+</rag_zone>
+
+<!-- rag_anchor: style_presets_atmospheric_and_experimental -->
+<rag_zone id="style_presets_atmospheric_and_experimental">
+
 ### ATMOSPHERIC AND EXPERIMENTAL
   36 dungeon synth, lonely and primitive, thin sustained synth choirs and a
      simple modal melody, no vocals, deliberately degraded, slow, D minor
@@ -1449,6 +1659,11 @@ full recipes above and useful when you know what you want.
      and no percussion, no vocals, overwhelming and slow, no fixed tempo, C
   40 musique concrète collage, disorienting, field recordings and processed
      objects with sparse piano, no vocals, close and dry, no tempo, no key
+
+</rag_zone>
+
+<!-- rag_anchor: style_presets_more_roots_and_world -->
+<rag_zone id="style_presets_more_roots_and_world">
 
 ### MORE ROOTS AND WORLD
   41 New Orleans second line, celebratory, sousaphone and snare with a full
@@ -1462,8 +1677,14 @@ full recipes above and useful when you know what you want.
   45 Andean folk, plaintive, charango and pan flute over a gentle percussion
      pattern, male voice high and open, natural mountain space, 108 BPM, A minor
 
-## §6. TASK SCENARIOS
+</rag_zone>
 
+</section>
+
+<section id="§6" title="TASK SCENARIOS">
+
+<!-- rag_anchor: task_scenarios -->
+<rag_zone id="task_scenarios">
 Recipes organised by what the music is *for* rather than by genre. This is
 how most requests actually arrive.
 
@@ -1480,6 +1701,11 @@ itself, slow, C major
   music that wants to be listened to, which is the opposite of a bed. If the
   music must hit specific cut points, use Lyria with timestamps
   (DATA_GOOGLE §4) rather than a generic bed.
+
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_podcast_intro -->
+<rag_zone id="task_scenarios_podcast_intro">
 
 ### PODCAST INTRO
 
@@ -1504,6 +1730,11 @@ lands on its biggest moment two thirds of the way through, then falls away,
   Name where the hero moment lands. For anything a client will pay for,
   generate on a platform with clean licensing (DATA_OTHER §7).
 
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_game_music_exploration -->
+<rag_zone id="task_scenarios_game_music_exploration">
+
 ### GAME MUSIC · EXPLORATION
 
 ```
@@ -1524,6 +1755,11 @@ without resolving, loops seamlessly, 150 BPM, D minor
 ```
 
   Same key as the exploration loop above so the two can cross-fade.
+
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_workout -->
+<rag_zone id="task_scenarios_workout">
 
 ### WORKOUT
 
@@ -1547,6 +1783,11 @@ that could startle, enormous soft space, no fixed tempo, A minor
   "Nothing that could startle" prevents the sudden dynamic events that ruin
   this category. For long durations, Stable Audio (DATA_OTHER §2).
 
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_wedding_or_ceremony -->
+<rag_zone id="task_scenarios_wedding_or_ceremony">
+
 ### WEDDING OR CEREMONY
 
 ```
@@ -1568,6 +1809,11 @@ phrase, starts at full energy, seamless loop, 128 BPM, A minor
 
   No introduction. Start at full energy — the listener may arrive at any
   point and will leave in seconds.
+
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_corporate_presentation -->
+<rag_zone id="task_scenarios_corporate_presentation">
 
 ### CORPORATE PRESENTATION
 
@@ -1593,6 +1839,11 @@ tempo, D major
   melancholy to most listeners. No arrival points at all: anything that
   sounds like an event pulls attention back out.
 
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_children_s_music -->
+<rag_zone id="task_scenarios_children_s_music">
+
 ### CHILDREN'S MUSIC
 
 ```
@@ -1615,6 +1866,11 @@ to a handful of voices, dry and direct, loops seamlessly, 150 BPM, A minor
 
   "Deliberately limited to a handful of voices" is what makes it read as
   authentic rather than as a synth pastiche. Loops matter: state it.
+
+</rag_zone>
+
+<!-- rag_anchor: task_scenarios_documentary_sting -->
+<rag_zone id="task_scenarios_documentary_sting">
 
 ### DOCUMENTARY STING
 
@@ -1639,7 +1895,14 @@ close and unhurried, vintage warm mono-leaning mix, 92 BPM, E♭ major
   crooned delivery do more work than any amount of seasonal vocabulary in
   the lyric.
 
-## §7. ONE IDEA, EVERY PLATFORM
+</rag_zone>
+
+</section>
+
+<section id="§7" title="ONE IDEA, EVERY PLATFORM">
+
+<!-- rag_anchor: cross_platform_pointer -->
+<rag_zone id="cross_platform_pointer">
 
 The worked example of menu [8] ALL mode — one brief rendered for Suno v6, Lyria
 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models — moved in
@@ -1647,7 +1910,14 @@ v4.0 to **DATA_OTHER §11**. It is written in each platform's current syntax, an
 platform syntax is dated, so it now lives in a dated file. The recipes here stay
 timeless.
 
-## §8. BUILDING YOUR OWN LIBRARY
+</rag_zone>
+
+</section>
+
+<section id="§8" title="BUILDING YOUR OWN LIBRARY">
+
+<!-- rag_anchor: style_library -->
+<rag_zone id="style_library">
 
 The most useful thing in this file is the habit, not the contents: when a
 generation comes back right, save the Style description before you change
@@ -1701,10 +1971,14 @@ If you want a consistent sound across dozens of tracks and a saved Style is
 not holding it, the next step is a model trained on your own catalogue —
 requirements, limits and the rights you must hold are in DATA_SUNO §6.
 
+</rag_zone>
+
+</section>
+
 // ═══════════════════════════════════════════════════════════════
 // END OF DATA_RECIPES.md · SunoForge v4.0
 // Next: DATA_POSTPROD.md
 // ═══════════════════════════════════════════════════════════════
 
-## TAGS
-recipes, presets, menu 9, genre recipes, pop, edm, trap, rock, metal, country, lo-fi, cinematic, gospel, jazz, folk, hybrids, duet, style presets, task scenarios, video bed, podcast intro, game music, advert, slider posture, exclude lists, variety 0, max mode, one idea every platform, suno v6, lyria 3.5, flow music, elevenmusic, stable audio, minimax, style library
+<tags>recipes, presets, menu 9, genre recipes, pop, edm, trap, rock, metal, country, lo-fi, cinematic, gospel, jazz, folk, hybrids, duet, style presets, task scenarios, video bed, podcast intro, game music, advert, slider posture, exclude lists, variety 0, max mode, one idea every platform, suno v6, lyria 3.5, flow music, elevenmusic, stable audio, minimax, style library</tags>
+</sunoforge_file>

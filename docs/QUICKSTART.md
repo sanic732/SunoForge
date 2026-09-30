@@ -24,32 +24,30 @@ the second one for you.
 
 ## Step 1. Pick an assistant
 
-Anything with a long context window: **Claude**, **Gemini**, **ChatGPT**,
+Anything with a long context window (200K tokens or more): **Claude**, **Gemini**, **ChatGPT**,
 **Grok**.
 
 The shortest path is the **ready-made Gem**, where everything is preloaded:
-[SunoForge v3.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing).
+[SunoForge v4.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing).
 That lets you skip steps 2 and 3.
 
 ## Step 2. Load the files
 
-All twelve `.md` files from the `files/` folder.
+All twelve `.md` files from your folder — `claude/` or `gemini/`.
 
-- **Claude, ChatGPT** — attach them to the chat or add them to a project.
-- **Gemini** — attach the five `CORE_*` files individually, and put the seven
-  `DATA_*` files into a single `.zip` and attach that. This combination is
-  tested and works. Details in [GEMINI.md](GEMINI.md).
+- **Claude** — the Claude Edition (XML). Add the files to a Project's knowledge,
+  or attach them to a chat — or skip the files entirely: install the SunoForge plugin
+  or upload the Skill ZIP. Details in [CLAUDE.md](CLAUDE.md).
+- **Gemini** — the Gemini Edition (Markdown). Attach the five `CORE_*` files and
+  `DATA.zip` from the same folder. Details in [GEMINI.md](GEMINI.md).
+- **ChatGPT, Grok** — the Gemini Edition files, attached or added to a project.
 - **If you cannot attach files** — paste the contents as the first message,
   starting with `CORE_00_ENTRY.md`, which is the entry point.
 
-## Step 3. Set your language
+## Step 3. Language
 
-Open `files/CORE_00_ENTRY.md`, find the settings block at the top, and set the
-language of explanations:
-
-```
-OUTPUT_LANG      = "en"       // en | ru
-```
+Nothing to set: SunoForge answers, menu included, in the language you write in. To
+pin one language, type `/set lang en` or `/set lang ru`; `/set lang auto` goes back.
 
 The prompts themselves stay English regardless — the generators understand it
 best.
@@ -60,7 +58,7 @@ best.
 start
 ```
 
-A twelve-entry menu appears. You do not need to read all of it.
+A thirteen-entry menu appears. You do not need to read all of it.
 
 ## Step 5. Just describe what you want
 

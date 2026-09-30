@@ -1,16 +1,21 @@
-# SunoForge v3.0 — AI Music Prompt Orchestrator
+# SunoForge v4.0 — AI Music Prompt Orchestrator
 
 `[EN]` this file · `[RU]` [README.ru.md](README.ru.md)
 
-A set of instructions that turns any chat assistant into a prompt engineer for
-music generation. Twelve files, five platforms, one principle: **never present a
-guess as a fact**.
+A set of instructions that turns a chat assistant into a prompt engineer for music
+generation. Twelve files, seven platforms, two editions, one principle: **never
+present a guess as a fact**.
 
-Runs in Claude, Gemini, ChatGPT, Grok — anything you can paste a long text into
-or attach files to.
+- **Claude Edition** — XML-native, for Claude: a plugin, a Skill or a Project (chat on
+  the web, the apps, Cowork, Claude Code).
+- **Gemini Edition** — pure Markdown with no XML, for Gemini Gems and the Gemini app;
+  it also suits ChatGPT and Grok.
 
-**Try it without installing anything** — a ready-made Gem with everything already
-loaded: [SunoForge v3.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
+Same content, same menu, same rules. Only the packaging differs, because each model
+reads its own format best. One archive holds both: the `claude/` and `gemini/` folders.
+
+**Try it without installing anything** — the Gem with everything loaded:
+[SunoForge v4.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
 
 ---
 
@@ -18,217 +23,221 @@ loaded: [SunoForge v3.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRu
 
 **If you know nothing about music.** Write what you want the way you would say it
 to a friend — "something sad but not depressing, with a piano, for the end of a
-video". You get finished prompts, ready to paste. No terminology, no menu numbers,
-no settings to configure first. The system asks for the era and the mood, not for
-your BPM.
+video" — or hand it a photo, a video or a hummed voice memo. You get finished
+prompts, ready to paste. No terminology, no menu numbers, no settings first.
 
-**If you know exactly what you want.** The same system takes you down to the
-level of tempo and key, spectral brightness of a timbre, where the groove sits
-against the beat, stereo depth and reverb decay, slider values per genre, the
-gender and character of a voice, section-by-section performance notation, chord
-progressions written inline, mastering chain thresholds and ratios. The vocabulary
-file alone is 42 KB of descriptors, and the recipe library carries 45 presets
-with BPM, key and slider settings already dialled in.
+**If you know exactly what you want.** The same system goes down to tempo and key,
+spectral brightness of a timbre, where the groove sits against the beat, stereo
+depth and reverb decay, slider postures per genre, Suno's Variety and Max Mode,
+section-by-section performance notation, chord progressions inline, timestamp
+ranges for scoring video, mastering thresholds and ratios. The vocabulary file
+alone is 40 KB of descriptors; the recipe library carries 45 presets with BPM, key
+and slider posture already dialled in.
 
-Nobody has to grow into the professional layer to use the beginner one. Ask in
-plain words and it stays out of your way; ask for a scooped-mid guitar tone at
-92 BPM in D minor with a laid-back pocket and it is already there.
+Nobody has to grow into the professional layer to use the beginner one.
 
 ---
 
-## What changed in v3.0
+## What changed in v4.0
 
-Three independent fact-checking passes on 27 July 2026 established that both
-previous editions had been presenting community folklore in the voice of
-documentation. Four load-bearing "mechanics" did not survive the check:
+Between July and September 2026 the ground moved under every platform:
 
-| Taught as fact | What checking found |
+| What happened | What v4.0 does with it |
 |---|---|
-| **MAX MODE** — a hidden quality mode | No such mode. Controlled comparison found no difference |
-| **Two-Minute Drift** — tracks degrade after ~2 min | Anecdotes only. No testing, no vendor acknowledgment |
-| **Tags like `[Reverb: 30%]`, `[BPM: 120]`** | Never parsed by any covered platform |
-| **A ~200 character Style limit** | Wrong. It cut prompts to a fifth of the working range |
+| **Suno v6** (9 Sep): v6, v6-wild, v6-mini — every earlier model retired | the whole Suno file rewritten; old model names are recognised and repaired, never offered |
+| Suno added a real **Max Mode** switch and a **Variety** slider | when to use Max Mode; Variety 0 for any engineered style — above zero v6 rewrites your style text |
+| Suno v6 edits finished songs in plain words: one section, one line, mashups, samples | new menu entries `2i`, `3d`–`3f`, `6g` |
+| Suno **rights now follow the download** (terms in force 3 Sep), downloads capped per plan | release planning and the legal file rewritten |
+| **Lyria 3.5** replaced Lyria 3 Pro; Google's prompt guide rewritten (17 Sep) | numeric BPM and key, section tags, `Lyrics:` header, timestamp **ranges** — three old rules reversed |
+| **ElevenMusic v2.5**: ownership on every plan, commercial use on Free with a credit | new position in platform choice and `/free` |
+| **Stable Audio 3.0** DAW plugin; **MiniMax Music 3.0** with open weights; **ACE-Step 1.5** and **YuE2** run locally | a section on music you can run on your own hardware |
+| GEMA v Suno (Munich, 31 Jul), a second UMG/Sony suit, Spotify AI Persona badges, Deezer AI tagging, EU AI Act transparency rules | `/legal` updated from court and vendor texts |
 
-Two principles follow from that.
+And two decisions:
 
-**Confidence marking.** Every claim about platform behaviour carries
-`[OFFICIAL]` (vendor documentation), `[COMMUNITY]` (independent testing and
-guides) or `[UNVERIFIED]` (widely repeated, no primary source). An unmarked
-claim is a defect.
+**No prices.** Nobody knows which country, account or plan the reader has, and
+prices change without notice. Plans are named where a feature or a right depends on
+them; nothing is priced.
 
-**A CORE / DATA split.** Rules and facts live in separate files because they
-decay at different rates. Between March and July 2026 every platform fact broke
-— the default model version, Lyria's track length, the name of Flow Music, the
-Studio version, stem mechanics, the lyrics editor — and two products shut down
-entirely. **Not one prompting rule broke in the same period.** So updating means
-replacing one `DATA_*` file, not rebuilding the system.
+**Only what exists.** The menu and the settings show only models and features you
+can select today. Retired names live in one place: the repair table of `[12] AUDIT`,
+which needs them to fix old prompts.
+
+---
+
+## What did not change
+
+**Confidence marking.** Every claim about platform behaviour carries `[OFFICIAL]`
+(vendor documentation), `[COMMUNITY]` (independent testing and guides) or
+`[UNVERIFIED]` (widely repeated, no primary source). This time the facts were
+checked against the vendors' own pages — help centres, terms of service, API docs,
+a court's press release — and every page is kept as text for the record.
+
+**The CORE / DATA split.** Rules and facts live in separate files. v4.0 is honest
+about the one place it strained: three rules moved this quarter, and all three
+named a platform. A rule about one platform is a fact about that platform, so it
+now lives in that platform's DATA file.
+
+**Myths stay catalogued.** MAX MODE tags, the "two-minute drift", `[Reverb: 30%]`,
+the 200-character limit. Suno's real Max Mode shares a name with the old tags and
+nothing else; the system says so.
 
 ---
 
 ## Platforms
 
-- **Suno** — the strongest vocals, your own voice, a model trained on your catalogue, full editing
-- **Google Lyria 3** Pro / Clip / RealTime — the only platform with a vendor-published prompting guide
+- **Suno v6** — the strongest vocals, your own voice, a model trained on your catalogue, edits in plain words, Studio 2.0
+- **Google Lyria 3.5 / 3 Clip / RealTime** — full songs, 30-second sketches, a live stream; in the Gemini app, API, AI Studio, Vids
 - **Google Flow Music** — change one part without regenerating the rest
-- **ElevenMusic** — licensed training data, mid-track genre switching, per-section regeneration
-- **Stable Audio 3.0** — open weights, the longest single generation, you own the output
+- **ElevenMusic v2.5** — made with rights holders, ownership on every plan, section-by-section editing
+- **Stable Audio 3.0** — licensed data, open weights, you own the output, a DAW plugin
+- **MiniMax Music 3.0** — open weights, full songs with vocals
+- **Local models** — ACE-Step 1.5 and YuE2 on your own GPU
 
-Udio is not a target platform: downloads were disabled following its settlement.
-It remains in the system as a cautionary case.
+Udio is not a target: downloads stayed disabled after its settlement, and its
+licensed successor is a walled fan app. It remains in the system as a case study.
 
 ---
 
 ## Quick start
 
-1. Open an assistant with a long context window.
-2. Load the contents of `files/` — all twelve files, or the five `CORE_*` files plus an archive of the `DATA_*` files (see [docs/GEMINI.md](docs/GEMINI.md)).
+1. Download the release archive and unpack it. SunoForge answers in the language you
+   write in; `/set lang en` or `/set lang ru` pins one.
+2. Load the folder for your assistant:
+   - **Claude**, any of three ways ([docs/CLAUDE.md](docs/CLAUDE.md)):
+     - the plugin, paid plans: **Customize → Plugins → Add → Add marketplace** →
+       `sanic732/SunoForge`; in Claude Code `/plugin marketplace add sanic732/SunoForge`,
+       then `/plugin install sunoforge@sunoforge`; or upload `sunoforge.plugin` with
+       **Customize → Plugins → Add → Upload plugin**
+     - the Skill: upload `SunoForge_v4.0_skill.zip` in **Customize → Skills**
+       (Code execution on)
+     - a Project with the twelve files from `claude/` as knowledge
+   - **Gemini** — the five `CORE_*` files from `gemini/` plus `gemini/DATA.zip` ([docs/GEMINI.md](docs/GEMINI.md))
+   - **ChatGPT, Grok** — the files from `gemini/`, attached or pasted
 3. Type `start` or `/menu`.
-4. Then pick a menu entry, or just describe the task in plain words.
+4. Pick a menu entry, or just describe the task.
 
-In detail: [docs/QUICKSTART.md](docs/QUICKSTART.md) ·
-for experienced users: [docs/ADVANCED.md](docs/ADVANCED.md)
+In detail: [docs/QUICKSTART.md](docs/QUICKSTART.md) · for experienced users:
+[docs/ADVANCED.md](docs/ADVANCED.md)
 
 ---
 
 ## How to use it
 
-You never have to name a menu number. Describe the task and the system routes it:
+You never have to name a menu number:
 
 | You write | Where it goes |
 |---|---|
 | "a dark cinematic track with cello" | Quick start, 2–3 variants |
+| "a song from this photo" | Quick start — Suno v6 or Lyria 3.5 |
+| "change the chorus to a gospel choir, keep the rest" | `2i` — an edit instruction for Suno v6 |
 | "like this track, but slower" | Clone mode `[3]` |
-| "blend phonk and jazz" | Hybrid lab `[4]` — finds a bridge genre |
+| "blend phonk and jazz" | Hybrid lab `[4]` — a bridge genre, or v6-wild |
 | "I need a raspy female vocalist" | Persona workshop `[5]` — a biography, not a tag |
-| "I need a five-minute track" | Platform compare `[10]` |
-| "here's my prompt, why does it sound bad" | Audit `[12]` — diagnosis and repair |
+| "score my video to the cuts" | Platform lab `[7]` — Lyria 3.5 with timestamp ranges |
+| "can I run this offline?" | Platform compare `[10]` — open weights and local models |
 | "can I monetise this?" | `/legal` |
+| "split the stems and master it" | `[13]` — stems, Studio, mastering |
+| "here's my old prompt" | Audit `[12]` — diagnosis and repair |
 
-Every request returns **two or three interpretations** rather than one "correct"
-answer. Usually the genre changes while mood and vocal hold steady — the same
-intent as several different records.
+Every request returns **two or three interpretations**, not one "correct" answer.
 
 ---
 
 ## Configuring the core
 
-All settings live at the top of `files/CORE_00_ENTRY.md`, in the `<preloader>`
-block. Edit the values in the file before loading, or change them mid-session
-with `/set`.
+Settings live at the top of `CORE_00_ENTRY.md`, in the preloader. Edit them
+before loading, or change them mid-session with `/set`.
 
 ```
-HOST_MODEL       = "auto"     // auto | claude | gemini | gpt | grok
-TARGET_PLATFORM  = "auto"     // auto | suno | lyria | flow | eleven | stable | dual | all
-SUNO_VERSION     = "v5.5"     // v5.5 | v5 | v4.5-all (free tier)
-LYRIA_MODEL      = "pro"      // pro | clip | realtime
-DURATION         = "auto"     // auto | a target track length
-OUTPUT_LANG      = "en"       // en | ru — language of explanations
-VARIANT_COUNT    = 2          // 1 | 2 | 3 — interpretations per idea
-USER_LEVEL       = "auto"     // auto | beginner | pro — depth of explanation
-SESSION_MODE     = "creative" // creative | technical | clone
-VOICES_ENABLED   = false      // true if Suno Pro/Premier and a voice is uploaded
-CUSTOM_MODEL     = ""         // name of your trained Suno model
-SHOW_CONFIDENCE  = true       // show reliability marks
-FOLKLORE_MODE    = "off"      // off | on — unproven techniques
+TARGET_PLATFORM  = "auto"      // auto | suno | lyria | flow | eleven | stable | minimax | local | dual | all
+SUNO_VERSION     = "v6"        // v6 | v6-wild | v6-mini | custom
+SUNO_PLAN        = "unknown"   // unknown | free | pro | premier — only gates features
+SUNO_MAX_MODE    = "suggest"   // suggest | on | off
+LYRIA_MODEL      = "3.5"       // 3.5 | clip | realtime
+DURATION         = "auto"      // auto | a target length
+OUTPUT_LANG      = "auto"      // auto | en | ru — auto: the language you write in
+VARIANT_COUNT    = 2           // 1 | 2 | 3
+USER_LEVEL       = "auto"      // auto | beginner | pro
+SESSION_MODE     = "creative"  // creative | technical | clone
+VOICES_ENABLED   = false       // true once you have a Suno Voice
+CUSTOM_MODEL     = ""          // name of your trained Suno model
+SHOW_CONFIDENCE  = true
+FOLKLORE_MODE    = "off"
 ```
 
 **Change these first**
 
-- `OUTPUT_LANG` sets the language of explanations. Prompts themselves are always
-  English — the platforms understand it best.
-
-  ⚙️ The release ships as two archives, `_ru` and `_en`, but **you do not have to
-  choose by language**: they hold the same twelve files and differ by exactly
-  this line. Whichever you downloaded is fine — switch any time with
-  `/set lang en` or `/set lang ru`.
-- `TARGET_PLATFORM` — set it if you only use one platform, and you stop getting
-  variants you cannot use. `all` renders one idea for every platform at once.
-- `VARIANT_COUNT` — set `1` when you know exactly what you want, `3` when you
-  are still looking for the idea.
-- `SUNO_VERSION` — on the free tier set `v4.5-all`, or the system will offer
-  features your account does not have.
-
-**Finer adjustments**
-
-- `SHOW_CONFIDENCE = false` hides the `[OFFICIAL]`/`[COMMUNITY]` marks if they
-  make output harder to read. The system keeps applying the distinction — it
-  just stops printing it.
-- `FOLKLORE_MODE = "on"` restores unproven techniques such as MAX MODE. They
-  stay labelled as unproven. Turn it on if you want to compare for yourself.
-- `USER_LEVEL = "pro"` drops the explanations and returns prompts only.
-
-The same settings mid-session, without editing the file:
+- `SUNO_PLAN` — tell it `free` and it stops offering v6, v6-wild, stems and Studio;
+  leave it `unknown` and it names the plan a feature needs and asks only when it
+  matters.
+- `TARGET_PLATFORM` — set it if you use one platform only.
+- `VARIANT_COUNT` — `1` when you know what you want, `3` when you are searching.
+- `OUTPUT_LANG` — the language of answers and the menu; `auto` follows the language
+  you write in. Prompts are English, except Lyria, which sings in the language of
+  the prompt.
 
 ```
-/set lang en          /set platform suno       /set variants 3
-/set suno v4.5-all    /set duration 3:30       /confidence off
-/set lyria clip       /folklore on             /menu
+/set suno v6-mini     /set plan free          /set maxmode on
+/set platform lyria   /set duration 3:30      /set variants 3
+/set lang ru          /confidence off         /menu
 ```
 
 ---
 
 ## What is inside
 
-**The CORE layer — rules. Undated, they last for years.**
+**CORE — rules. Undated.**
 
 | File | Covers |
 |---|---|
-| `CORE_00_ENTRY.md` | Preloader, the 12-entry menu, routing, output protocols, confidence marking |
-| `CORE_01_STYLE.md` | Six-layer Style construction, Time & Place, personas, hybrids, style cloning |
-| `CORE_02_LYRICS.md` | Section labels, performance notation, ad-libs, duets, chords, two markup paths |
-| `CORE_03_DIAGNOSE.md` | The repair engine: 14 checks and 19 replacement rows for dead constructs |
-| `CORE_04_WHY.md` | Why each rule is shaped the way it is. Loaded on `/why` |
+| `CORE_00_ENTRY.md` | Preloader, system map, the menu `[1]`–`[13]`, routing, output formats, critical rules |
+| `CORE_01_STYLE.md` | Six layers and how four vendor guides line up with them, Time & Place, personas, hybrids, cloning |
+| `CORE_02_LYRICS.md` | Section labels, notation, ad-libs, duets, chords; what carries over to Lyria, MiniMax, local models |
+| `CORE_03_DIAGNOSE.md` | Symptom index, 15 checks, 25 repair rows, early Suno v6 failure reports |
+| `CORE_04_WHY.md` | Why each rule is shaped the way it is — including the ones that turned out wrong. On `/why` |
 
-**The DATA layer — facts. Dated, replaced quarterly.**
+**DATA — facts. Dated, replaced when platforms move.**
 
 | File | Covers |
 |---|---|
-| `DATA_SUNO_2026-07.md` | Versions, fields, sliders, voice training, custom models, stems, plans |
-| `DATA_GOOGLE_2026-07.md` | The Lyria 3 family, Flow Music, `[MM:SS]` prompting, multimodal input |
-| `DATA_OTHER_2026-07.md` | ElevenMusic, Stable Audio, MiniMax, aggregators, free-tier comparison |
-| `DATA_VOCAB.md` | Sound vocabulary: timbre, dynamics, groove, space, instrument descriptors |
-| `DATA_RECIPES.md` | Genre recipes, 45 presets, task-driven scenarios |
-| `DATA_POSTPROD.md` | Mastering chain, stems, DAW handoff, loudness targets |
-| `DATA_LEGAL_2026-07.md` | Rights, consent, litigation, platform policies. Loaded on `/legal` |
+| `DATA_SUNO_2026-09.md` | v6 family, Max Mode, Variety, Duration, edits, Voices, Custom Models, Studio 2.0, stems, plans, downloads |
+| `DATA_GOOGLE_2026-09.md` | Lyria 3.5 / Clip / RealTime, Google's prompt guide, timestamp ranges, the Gemini app, Flow Music |
+| `DATA_OTHER_2026-09.md` | ElevenMusic, Stable Audio, MiniMax, local models, `/free`, platform compare, one idea for every platform |
+| `DATA_VOCAB.md` | Timbre, dynamics, groove, space, instruments, key and tempo, theory as prompt language |
+| `DATA_RECIPES.md` | Genre recipes, 45 presets, task scenarios |
+| `DATA_POSTPROD.md` | Stems, Studio, mastering chain, loudness, DAW handoff — menu `[13]` |
+| `DATA_LEGAL_2026-09.md` | Rights, terms, voices, catalogues, litigation, streaming and distributor policies, EU AI Act. On `/legal` |
+
+Every file is prepared for retrieval: frontmatter with a description, a system map,
+anchored zones, tags — assembled to the RAG standard of P2P.
+
+For Claude the same twelve files also ship as a Skill: a short `SKILL.md` router plus
+the files in `references/`, opened per task. This repository is its marketplace —
+`.claude-plugin/marketplace.json` and the plugin in `plugin/`; the release carries the
+Skill as a ZIP for a manual upload.
 
 ---
 
 ## Size and tokens
 
-414.7 KB · **~91,300 tokens** (o200k_base).
+| Edition | Size | Tokens (o200k_base) | Without the two lazy files |
+|---|---|---|---|
+| Claude (XML) | 457 KB | ~114,100 | ~98,400 |
+| Gemini (Markdown) | 420 KB | ~104,300 | ~90,100 |
 
-Two files are lazy and are not loaded by default, so the starting load is
-**78,716 tokens**. Full table: [docs/TOKENS.md](docs/TOKENS.md).
-
-| Context window | Full set | Without lazy files |
-|---|---|---|
-| 1M | 9.1 % | 7.9 % |
-| 200K | 45.4 % | 39.4 % |
-| 128K | 70.9 % | 61.5 % |
+Comfortable in a 1M or 200K window; too tight for 128K. Details: [docs/TOKENS.md](docs/TOKENS.md).
 
 ---
 
 ## Built with P2P
 
-This system was designed and assembled using **[P2P](https://github.com/sanic732/P2P-4PDA-edition)**
-— an open cross-model meta-prompt framework by the same author.
-
-That is not a badge. P2P shaped how v3.0 is built, and the two share the same
-convictions:
-
-- **A prompt is proven, not admired.** The rule that a technique earns its place
-  by surviving a test — not by looking authoritative — comes straight from P2P's
-  core. It is why MAX MODE and three other "mechanics" were removed here.
-- **Core is not a database.** Invariants and routing belong in one layer,
-  catalogues and reference data in another. Migrating one into the other is an
-  architectural defect, not a shortcut. That principle produced the CORE / DATA
-  split.
-- **Fix a declaration, then check everyone who cites it.** Link connectivity is
-  the defect class both projects fight hardest. Seven build invariants here are
-  mechanical checks for exactly that.
-
-If you write prompt systems rather than prompts, P2P is the tool that makes this
-kind of build repeatable.
+Designed and assembled with **[P2P](https://github.com/sanic732/P2P)** — an open
+cross-model meta-prompt framework by the same author. P2P supplied the method:
+a technique earns its place by surviving a test; the core is not a database; fix
+a declaration, then check everyone who cites it. For v4.0 it also supplied the RAG
+standard the files are built to, the rule that Gemini gets Markdown and Claude gets
+XML, and a QUORUM review of the finished build.
 
 ---
 
@@ -236,15 +245,10 @@ kind of build repeatable.
 
 MIT. Free to use, modify and redistribute, commercially included.
 
-Suno, Google, Lyria, ElevenLabs, Stability AI and other names belong to their
-respective owners. This project is unaffiliated with and unendorsed by any of
-them. Full source list and legal notes: [docs/CREDITS.md](docs/CREDITS.md).
+Suno, Google, Lyria, Gemini, ElevenLabs, Stability AI, MiniMax and other names belong
+to their owners. This project is unaffiliated with and unendorsed by any of them.
+Sources and legal notes: [docs/CREDITS.md](docs/CREDITS.md) · history:
+[docs/CHANGELOG.md](docs/CHANGELOG.md)
 
-Version history: [docs/CHANGELOG.md](docs/CHANGELOG.md)
-
-**Where is v2.0?** It exists, but it never came here. The May 2026 edition was
-Russian-only and was published on the 4PDA forum:
-[SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185).
-It introduced the six-layer Style construction and multi-platform support, both
-carried into v3.0 — along with several ideas that later failed fact-checking and
-were removed.
+**Where is v2.0?** The May 2026 edition was Russian-only and published on the 4PDA
+forum: [SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185).

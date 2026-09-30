@@ -77,20 +77,53 @@ primary sources, and a guide that hides that ages badly.
 
 ---
 
-## What is genuinely new
+## What changed in v4.0 (September 2026)
+
+**Suno v6.** Three models — `v6`, `v6-wild`, `v6-mini` — and every earlier model
+retired on 9 September. Two new controls matter for prompt engineers:
+**Variety**, which rewrites your style text above zero (set it to 0 for any
+engineered Style), and **Max Mode**, a real switch for songs over two minutes,
+close covers and whole-track consistency — unrelated to the old MAX tags. v6 edits
+finished songs in plain words: one section, one lyric line, a mashup of several
+songs, a sampled riff. Commercial rights now follow a **download** on a paid plan,
+and downloads are capped per plan.
+
+**Lyria 3.5.** Google replaced Lyria 3 Pro and rewrote its prompt guide on
+17 September. Three rules from v3.0 reversed: tempo and key are written as
+**numbers** ("at 92 BPM, in D minor"); structure goes into **section tags**
+(`[Intro] -> [Verse 1] -> [Chorus]`) or **timestamp ranges**
+(`[0:00 - 0:10] Intro: …`); own lyrics go under a `Lyrics:` header with tagged
+sections and parentheses for backing vocals. PDF input is no longer documented.
+
+**Convergence.** Google, ElevenLabs and MiniMax now publish guidance that matches
+the six-layer order almost exactly — genre with an era first, named instruments,
+BPM and key, a vocal described by gender, range and timbre, section tags. The same
+content now moves between platforms with little translation.
+
+**New coverage.** ElevenMusic v2.5 (ownership on every plan), Stable Audio's DAW
+plugin, MiniMax Music 3.0 with open weights, ACE-Step 1.5 and YuE2 for local
+generation. Menu entry `[13]` for stems, Studio and mastering. No prices anywhere.
+
+**Two editions.** Claude gets XML, Gemini gets Markdown with no XML at all — built
+from one source by a script, so the content cannot drift apart.
+
+---
+
+## What v3.0 introduced (July 2026) — partly superseded
+
 
 **Google's official Lyria prompting guide** (April 2026) — the first and so far
 only vendor-written prompting document across this entire coverage. From it:
 
-- Timestamps in `[MM:SS]` format followed by a description. Our previous
+- *(superseded in v4.0 by ranges `[0:00 - 0:10] Intro: …`)* Timestamps in `[MM:SS]` format followed by a description. Our previous
   `Intro (0–15s)` / `[End - 2:15]` was invented.
 - A marker describes an **event**, not a section name: "the beat enters", "only
   the organ remains". That is a different way of thinking about structure.
-- Tempo is given in **words**, not numbers. Suno is the opposite. Carrying the
+- *(reversed in v4.0: Google now asks for BPM as a number)* Tempo is given in **words**, not numbers. Suno is the opposite. Carrying the
   habit across degrades results in both directions.
 - Google's framework nearly matches our six-layer one, but has `Tempo and
   rhythm` where we have Structure and Production.
-- Multimodal input: text, **PDF** and up to **10 images**.
+- Multimodal input: text, **PDF** and up to **10 images** *(PDF not documented for Lyria 3.5)*.
 - Multi-vocal generation with **different languages in one track**.
 - The vocal can be directed to change across the track — "calmer and quieter
   toward the end".
@@ -99,7 +132,7 @@ only vendor-written prompting document across this entire coverage. From it:
 homemade technique. A duration slider. Stem separation in three modes, where the
 top mode **regenerates** stems with the model instead of subtracting them from
 the mix — hence dramatically fewer artefacts, and external tools demoted to a
-fallback. Studio 1.2 is **Premier only**; v1.1 said "Pro", which misled people
+fallback. Studio (1.2 then, 2.0 now) is **Premier only**; v1.1 said "Pro", which misled people
 about which subscription to buy. The web lyrics editor now places section labels
 itself, which is why there are two markup paths.
 
@@ -135,7 +168,7 @@ including previous versions of this system.
 
 ## Tokens
 
-90,767 total (o200k_base), 78,716 without the lazy files. Breakdown in
+v4.0: Claude Edition ~114,100 tokens (o200k_base), ~98,400 without the lazy files; Gemini Edition ~104,300 / ~90,100. Breakdown in
 [TOKENS.md](TOKENS.md).
 
 On a 128K window the full set takes 71 %, which is a lot: keep the lazy files

@@ -1,4 +1,5 @@
----
+<sunoforge_file id="DATA_POSTPROD" version="4.0" layer="data" role="postprod" source="DATA_POSTPROD.md">
+<file_meta>
 file_id: DATA_POSTPROD
 version: "4.0"
 layer: data
@@ -16,7 +17,7 @@ used_by: [CORE_00_ENTRY, CORE_03_DIAGNOSE, DATA_RECIPES]
 rag_priority: medium
 updated: "2026-09-30"
 changelog: "v4.0 — menu [13] points here · Suno Studio 2.0 (MIDI, chat bar, effects, synth, automation) · Suno downloads now start commercial rights and are capped — archive-on-download step added · Flow Music export formats · Stable Audio DAW plugin · v3.0 — stems reordered: built-in separation is now the default path and external tools the fallback · Studio and Flow Music feature lists replaced with references · unverified track-length claims removed · rights claims moved to DATA_LEGAL · loudness targets added"
----
+</file_meta>
 
 # 🎛️ SUNOFORGE v4.0 — POST-PRODUCTION
 # File 11 of 12 · DATA layer · mostly undated · menu [13]
@@ -26,7 +27,10 @@ changelog: "v4.0 — menu [13] points here · Suno Studio 2.0 (MIDI, chat bar, e
 > ships an update. What does change is which editing environment can do what,
 > and those parts point at DATA_SUNO and DATA_GOOGLE rather than restating.
 
-## §1. SHOULD YOU PROCESS THIS AT ALL?
+<section id="§1" title="SHOULD YOU PROCESS THIS AT ALL?">
+
+<!-- rag_anchor: whether_to_process -->
+<rag_zone id="whether_to_process">
 
 The first question, and the one most people skip.
 
@@ -62,8 +66,14 @@ with this material, and it is worth stating before anything else.
   Reaching for the third when the first would do is how people spend an hour
   rescuing a take they could have regenerated in ninety seconds.
 
-## §2. THE MASTERING CHAIN
+</rag_zone>
 
+</section>
+
+<section id="§2" title="THE MASTERING CHAIN">
+
+<!-- rag_anchor: mastering_chain -->
+<rag_zone id="mastering_chain">
 Five stages, in this order. The order matters more than the tools — each
 stage assumes the previous one has already happened.
 
@@ -84,6 +94,11 @@ stage assumes the previous one has already happened.
   Generated vocals tend to sibilance more than recorded ones. This stage is
   rarely skippable on vocal material and rarely needed on instrumentals.
 
+</rag_zone>
+
+<!-- rag_anchor: mastering_chain_stage_2_glue_compression -->
+<rag_zone id="mastering_chain_stage_2_glue_compression">
+
 ### STAGE 2 · GLUE COMPRESSION
 
   PURPOSE     hold the whole track together and even out level
@@ -99,6 +114,11 @@ stage assumes the previous one has already happened.
   "Glue" is the goal, not loudness. If you can hear it working, it is doing
   too much.
 
+</rag_zone>
+
+<!-- rag_anchor: mastering_chain_stage_3_harmonic_enrichment -->
+<rag_zone id="mastering_chain_stage_3_harmonic_enrichment">
+
 ### STAGE 3 · HARMONIC ENRICHMENT
 
   PURPOSE     vintage warmth and definition; makes digital material feel
@@ -112,6 +132,11 @@ stage assumes the previous one has already happened.
   This stage is optional and the most stylistic. Skip it on material that is
   already warm — it is a corrective for clinical digital output, and lo-fi
   material does not need help sounding analog.
+
+</rag_zone>
+
+<!-- rag_anchor: mastering_chain_stage_4_surgical_eq -->
+<rag_zone id="mastering_chain_stage_4_surgical_eq">
 
 ### STAGE 4 · SURGICAL EQ
 
@@ -131,6 +156,11 @@ stage assumes the previous one has already happened.
 
   ⚠️ Order note: EQ after saturation, because saturation generates new
   harmonic content that you may then need to correct.
+
+</rag_zone>
+
+<!-- rag_anchor: mastering_chain_stage_5_limiting -->
+<rag_zone id="mastering_chain_stage_5_limiting">
 
 ### STAGE 5 · LIMITING
 
@@ -153,7 +183,14 @@ de-ess  →  glue compress  →  saturate  →  EQ  →  limit
   On generated material that arrives already mastered, stages 2 and 5 are
   often unnecessary and actively harmful (§3).
 
-## §3. WHAT NOT TO DO
+</rag_zone>
+
+</section>
+
+<section id="§3" title="WHAT NOT TO DO">
+
+<!-- rag_anchor: what_not_to_do -->
+<rag_zone id="what_not_to_do">
 
 ### ❌ DOUBLE MASTERING
 
@@ -207,7 +244,14 @@ clearer instrumentation instruction (CORE_01 §5).
 Process last. Every change upstream invalidates the decisions you made
 downstream.
 
-## §4. STEMS
+</rag_zone>
+
+</section>
+
+<section id="§4" title="STEMS">
+
+<!-- rag_anchor: postprod_stems -->
+<rag_zone id="postprod_stems">
 
 ### THE DEFAULT PATH HAS CHANGED
 
@@ -261,7 +305,14 @@ Separation cannot recover information that was never distinct. Two guitars
 playing the same part in the same register will not come apart, no matter
 which tool you use. If you need them separate, generate them separately.
 
-## §5. PROCESSING INDIVIDUAL STEMS
+</rag_zone>
+
+</section>
+
+<section id="§5" title="PROCESSING INDIVIDUAL STEMS">
+
+<!-- rag_anchor: stem_processing -->
+<rag_zone id="stem_processing">
 
 Once separated, each stem wants a different treatment. Starting points, all
 [COMMUNITY]:
@@ -324,8 +375,14 @@ Make room rather than making things louder. Every boost costs headroom and
 crowds something else. Most mixes improve more from three well-placed cuts
 than from any boost.
 
-## §6. EDITING ENVIRONMENTS
+</rag_zone>
 
+</section>
+
+<section id="§6" title="EDITING ENVIRONMENTS">
+
+<!-- rag_anchor: editing_environments -->
+<rag_zone id="editing_environments">
 Three places to do this work, with different strengths.
 
 ### THE PLATFORM'S OWN EDITOR
@@ -347,6 +404,11 @@ Feature list, version and which plan it requires: **DATA_SUNO §9** (menu [13b])
   multitrack takes, turning a MIDI idea into audio, precise time alignment to
   picture, and anything involving a trained voice or a custom model.
 
+</rag_zone>
+
+<!-- rag_anchor: editing_environments_generative_editing -->
+<rag_zone id="editing_environments_generative_editing">
+
 ### GENERATIVE EDITING
 
 Google Flow Music works differently: instead of editing audio, you ask for
@@ -364,6 +426,11 @@ instructions: **DATA_GOOGLE §7**.
   ⚠️ Earlier editions claimed a specific maximum track length here and built
   a recommendation on it. That figure is not published (DATA_GOOGLE §7).
 
+</rag_zone>
+
+<!-- rag_anchor: editing_environments_generation_inside_the_daw -->
+<rag_zone id="editing_environments_generation_inside_the_daw">
+
 ### GENERATION INSIDE THE DAW
 
 Stable Audio's plugin (beta, August 2026; macOS AU and VST3, Logic and Ableton)
@@ -380,6 +447,11 @@ final delivery to a specification.
   Also the only environment where you own the session and it will still open
   in five years.
 
+</rag_zone>
+
+<!-- rag_anchor: editing_environments_choosing -->
+<rag_zone id="editing_environments_choosing">
+
 ### CHOOSING
 
   Change what is played              → generative editing
@@ -388,7 +460,14 @@ final delivery to a specification.
   Deliver to a loudness spec         → a DAW
   Match several tracks to each other → a DAW
 
-## §7. HANDING OFF TO A DAW
+</rag_zone>
+
+</section>
+
+<section id="§7" title="HANDING OFF TO A DAW">
+
+<!-- rag_anchor: daw_handoff -->
+<rag_zone id="daw_handoff">
 
 ### EXPORT BEFORE YOU LEAVE
 
@@ -430,7 +509,14 @@ into individual parts, edits may not fall on bar lines, and tempo may drift
 slightly. Warp and time-alignment tools exist for exactly this. Treat the
 material as a live recording rather than a programmed session.
 
-## §8. RESTORATION
+</rag_zone>
+
+</section>
+
+<section id="§8" title="RESTORATION">
+
+<!-- rag_anchor: restoration -->
+<rag_zone id="restoration">
 
 For fixing specific defects rather than shaping tone.
 
@@ -462,7 +548,14 @@ For fixing specific defects rather than shaping tone.
   double-mastering problem (§3) with no warning. It cannot tell the
   difference between a raw mix and a finished master.
 
-## §9. LOUDNESS AND DELIVERY
+</rag_zone>
+
+</section>
+
+<section id="§9" title="LOUDNESS AND DELIVERY">
+
+<!-- rag_anchor: loudness -->
+<rag_zone id="loudness">
 
 ### TARGETS
 
@@ -506,7 +599,14 @@ on playback, and yours will have lost its dynamics for nothing.
   ☐ Original unprocessed export archived
   ☐ Rights position understood before it goes anywhere — DATA_LEGAL
 
-## §10. MOVING MATERIAL BETWEEN PLATFORMS
+</rag_zone>
+
+</section>
+
+<section id="§10" title="MOVING MATERIAL BETWEEN PLATFORMS">
+
+<!-- rag_anchor: transfer_workflows -->
+<rag_zone id="transfer_workflows">
 
 ### A SKETCH INTO A FULL TRACK
 
@@ -554,8 +654,14 @@ Workable, with two cautions:
   Step 4 is where this usually fails. A generated bed is mixed to be complete
   on its own, so it has no gap for a lead. Make one.
 
-## §11. THREE WALKTHROUGHS
+</rag_zone>
 
+</section>
+
+<section id="§11" title="THREE WALKTHROUGHS">
+
+<!-- rag_anchor: walkthroughs -->
+<rag_zone id="walkthroughs">
 ### A · A SONG YOU INTEND TO RELEASE
 
 ```
@@ -581,6 +687,11 @@ Workable, with two cautions:
   Steps 5 and 6 are the ones people skip, and skipping them is how a track
   gets an hour of processing it did not need.
 
+</rag_zone>
+
+<!-- rag_anchor: walkthroughs_b_a_bed_that_sits_under_a_voice -->
+<rag_zone id="walkthroughs_b_a_bed_that_sits_under_a_voice">
+
 ### B · A BED THAT SITS UNDER A VOICE
 
 ```
@@ -598,6 +709,11 @@ Workable, with two cautions:
 8   Listen once with your attention on the words. If you notice the music,
     it is still too loud.
 ```
+
+</rag_zone>
+
+<!-- rag_anchor: walkthroughs_c_rebuilding_a_track_from_its_stems -->
+<rag_zone id="walkthroughs_c_rebuilding_a_track_from_its_stems">
 
 ### C · REBUILDING A TRACK FROM ITS STEMS
 
@@ -624,10 +740,14 @@ For when the material is right and the balance is wrong.
   not. If the goal was the original mix with one thing changed, generative
   editing is the better route (§6).
 
+</rag_zone>
+
+</section>
+
 // ═══════════════════════════════════════════════════════════════
 // END OF DATA_POSTPROD.md · SunoForge v4.0
 // Next: DATA_LEGAL_2026-09.md
 // ═══════════════════════════════════════════════════════════════
 
-## TAGS
-post-production, menu 13, mastering chain, de-esser, glue compression, eq, limiting, loudness, lufs, true peak, double mastering, stems, auto split, split from mix, advanced split, external separation, per-stem processing, suno studio 2.0, midi, chat bar, generative editing, flow music, elevenmusic composer, stable audio daw plugin, daw handoff, restoration, transfer between platforms, walkthroughs, download-bound rights
+<tags>post-production, menu 13, mastering chain, de-esser, glue compression, eq, limiting, loudness, lufs, true peak, double mastering, stems, auto split, split from mix, advanced split, external separation, per-stem processing, suno studio 2.0, midi, chat bar, generative editing, flow music, elevenmusic composer, stable audio daw plugin, daw handoff, restoration, transfer between platforms, walkthroughs, download-bound rights</tags>
+</sunoforge_file>

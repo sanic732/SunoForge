@@ -1,4 +1,5 @@
----
+<sunoforge_file id="CORE_02_LYRICS" version="4.0" layer="core" role="engine" source="CORE_02_LYRICS.md">
+<file_meta>
 file_id: CORE_02_LYRICS
 version: "4.0"
 layer: core
@@ -17,7 +18,7 @@ used_by: [CORE_03_DIAGNOSE, CORE_04_WHY, DATA_RECIPES, DATA_SUNO, DATA_GOOGLE]
 rag_priority: critical
 updated: "2026-07-27"
 changelog: "v4.0 — Suno v6: Simple mode may expand supplied lyrics; single-line edits after generation · section tags and parentheses now documented by Google for Lyria 3.5 and by MiniMax, so §14 rewritten · v3.0 — two paths documented (Suno's rebuilt editor labels sections itself) · verbose section labels demoted from mandatory to optional · pipe stacking presented as genuinely disputed · DRIFT_GUARD per-section reminders removed as a mechanism · parametric tags stripped from top-load template and chord section · duet protocol consolidated here from CORE_01"
----
+</file_meta>
 
 # 📝 SUNOFORGE v4.0 — LYRICS ENGINE
 # File 3 of 12 · CORE · Structure, notation, and how words are sung
@@ -29,7 +30,10 @@ changelog: "v4.0 — Suno v6: Simple mode may expand supplied lyrics; single-lin
 > field decides what happens, when, and how it is delivered. They are different
 > instruments and the most common mistake is playing one on the other.
 
-## §1. THE BRACKET RULE
+<section id="§1" title="THE BRACKET RULE">
+
+<!-- rag_anchor: bracket_rule -->
+<rag_zone id="bracket_rule">
 
 This is the rule that breaks the most tracks. It is also the easiest to get
 right, because it has no exceptions.
@@ -89,8 +93,14 @@ described in §10. Repair procedure for prompts that contain it: CORE_03 §7.
 The second version produces a backing vocal singing the words "say this next
 part as spoken word".
 
-## §2. TWO PATHS — the editor and the markup
+</rag_zone>
 
+</section>
+
+<section id="§2" title="TWO PATHS — the editor and the markup">
+
+<!-- rag_anchor: two_paths -->
+<rag_zone id="two_paths">
 Suno rebuilt its lyrics editor in July 2026 [OFFICIAL]. It does not label your
 sections for you: it gives you a labelling tool — "Song structure labels: Add
 labels like "Verse" and "Outro" to organize your lyrics tell Suno how you want
@@ -119,6 +129,11 @@ Both paths are live. A prompt system has to support both.
   rhyme and reference suggestions, and autosave. Feature details and dates:
   DATA_SUNO §11.
 
+</rag_zone>
+
+<!-- rag_anchor: two_paths_path_b_you_place_the_labels -->
+<rag_zone id="two_paths_path_b_you_place_the_labels">
+
 ### PATH B · YOU PLACE THE LABELS
 
   WHEN: the API · the mobile app · pasting lyrics written elsewhere ·
@@ -138,6 +153,11 @@ Both paths are live. A prompt system has to support both.
   Automating anything                                 → Path B
   Targeting Lyria 3.5, MiniMax or a local model  → Path B travels; see §14
   Targeting Flow, ElevenMusic or Stable Audio    → see §14
+
+</rag_zone>
+
+<!-- rag_anchor: two_paths_what_not_to_do -->
+<rag_zone id="two_paths_what_not_to_do">
 
 ### WHAT NOT TO DO
 
@@ -159,7 +179,14 @@ Two overlapping structures confuse the model. Look at the field after pasting.
   Listen through the whole track afterwards — whether an edit bleeds into other
   sections has not been tested publicly [COMMUNITY].
 
-## §3. SECTION LABELS — the catalogue
+</rag_zone>
+
+</section>
+
+<section id="§3" title="SECTION LABELS — the catalogue">
+
+<!-- rag_anchor: section_labels -->
+<rag_zone id="section_labels">
 
 ### MAIN STRUCTURE
 
@@ -218,8 +245,14 @@ Write the qualifier as words. Do not write it as a measured value.
   5. Section labels are hints, not guarantees (CORE_00 §7 rule 10). Generate
      several takes.
 
-## §4. HOW MUCH TO PUT IN A LABEL — three styles, honestly rated
+</rag_zone>
 
+</section>
+
+<section id="§4" title="HOW MUCH TO PUT IN A LABEL — three styles, honestly rated">
+
+<!-- rag_anchor: label_density -->
+<rag_zone id="label_density">
 There are three ways people write section labels. Previous editions of this
 system declared a winner. The evidence does not support declaring one, so this
 version describes all three and says what is actually known about each.
@@ -253,6 +286,11 @@ We rise above the storm
   DO NOT: put the same enrichment on every section. If every label says "full
   arrangement, stacked harmonies", the label has stopped carrying information.
 
+</rag_zone>
+
+<!-- rag_anchor: label_density_pipe_stacked -->
+<rag_zone id="label_density_pipe_stacked">
+
 ### PIPE STACKED
 
 ```
@@ -277,6 +315,11 @@ We rise above the storm
   ⚠️ Previous editions of this system stated that stacks beyond three or four
   modifiers cause hissing and vocal clipping. That claim had one source, was
   never reproduced, and is withdrawn.
+
+</rag_zone>
+
+<!-- rag_anchor: label_density_the_one_thing_all_three_agree_on -->
+<rag_zone id="label_density_the_one_thing_all_three_agree_on">
 
 ### THE ONE THING ALL THREE AGREE ON
 
@@ -305,7 +348,14 @@ name — "say everything twice": once in Style, once in the matching section lab
 Long-track consistency is discussed as a failure
 mode in **CORE_03 §5**.
 
-## §5. PERFORMANCE NOTATION — symbols inside the words
+</rag_zone>
+
+</section>
+
+<section id="§5" title="PERFORMANCE NOTATION — symbols inside the words">
+
+<!-- rag_anchor: performance_notation -->
+<rag_zone id="performance_notation">
 
 These are not labels. They are marks inside the sung text that change how a
 syllable is delivered [COMMUNITY — widely used, easy to verify, never
@@ -365,8 +415,14 @@ voice changes across the whole song", that is the vocal arc and it belongs in
 the Style field on Lyria (CORE_01 §6); on Suno it is a delivery line on each
 section (§6).
 
-## §6. DELIVERY AND EMOTION
+</rag_zone>
 
+</section>
+
+<section id="§6" title="DELIVERY AND EMOTION">
+
+<!-- rag_anchor: delivery_labels -->
+<rag_zone id="delivery_labels">
 ### DELIVERY STYLE
 
   [Whisper]              intimacy, ballads, ambient
@@ -386,6 +442,11 @@ section (§6).
   [Raspy lead vocal]     hoarse, textured
   [Cinematic vocal pacing]  deliberate, unhurried, dramatic
   [Spoken word verse]    an entire verse spoken
+
+</rag_zone>
+
+<!-- rag_anchor: delivery_labels_vocal_treatment -->
+<rag_zone id="delivery_labels_vocal_treatment">
 
 ### VOCAL TREATMENT
 
@@ -420,6 +481,11 @@ Why did you leave me standing there
   ✅  the direction is unmistakably attached to the line beneath it
   ❌  buried among five other modifiers in a section label, where it competes
 
+</rag_zone>
+
+<!-- rag_anchor: delivery_labels_the_emotion_catalogue -->
+<rag_zone id="delivery_labels_the_emotion_catalogue">
+
 ### THE EMOTION CATALOGUE
 
   [Crying voice]        [Angry tone]         [Mocking laughter]
@@ -447,7 +513,14 @@ Persona is who is singing and lives in the Style field (CORE_01 §7).
 Delivery is how they sing this passage and lives here.
 Do not restate the persona in every section label — it is already established.
 
-## §7. AD-LIBS AND BACKING VOCALS
+</rag_zone>
+
+</section>
+
+<section id="§7" title="AD-LIBS AND BACKING VOCALS">
+
+<!-- rag_anchor: adlibs -->
+<rag_zone id="adlibs">
 
 Ad-libs are the interjections between lines — the bounce in hip-hop, trap, pop
 and R&B. There are two ways to write them and they do different things.
@@ -505,7 +578,14 @@ And here I am
 Two to four ad-libs per verse is a groove. Ten is a mess. They compete with the
 lead vocal for the same space, and the lead vocal is carrying the song.
 
-## §8. SPOKEN WORD
+</rag_zone>
+
+</section>
+
+<section id="§8" title="SPOKEN WORD">
+
+<!-- rag_anchor: spoken_word -->
+<rag_zone id="spoken_word">
 
 ### THE BASIC FORM
 
@@ -552,8 +632,14 @@ writing:
   Asking for one and writing for the other is a common source of "the vocal
   feels wrong" with no obvious cause.
 
-## §9. DUET AND MULTI-VOICE — menu [5c]
+</rag_zone>
 
+</section>
+
+<section id="§9" title="DUET AND MULTI-VOICE — menu [5c]">
+
+<!-- rag_anchor: duet_protocol -->
+<rag_zone id="duet_protocol">
 Two voices are unstable unless the same information appears in three places.
 Any single anchor drifts; the three together hold [COMMUNITY].
 
@@ -580,6 +666,11 @@ Before any section, restate the cast:
   broken version. The label above says the same thing without the colon.
   The detailed voice description belongs in Style, where Anchor 1 already put it.
   [COMMUNITY] — the three-anchor method is community practice, not documented.
+
+</rag_zone>
+
+<!-- rag_anchor: duet_protocol_anchor_3_on_every_section -->
+<rag_zone id="duet_protocol_anchor_3_on_every_section">
 
 ### ANCHOR 3 · ON EVERY SECTION
 
@@ -609,6 +700,11 @@ If the lyric genuinely needs line-by-line trading — an argument, a
 call-and-response — you can write it, but expect more takes and expect the
 separation to be less clean. It is a real trade-off, not a solved problem.
 
+</rag_zone>
+
+<!-- rag_anchor: duet_protocol_handling_both -->
+<rag_zone id="duet_protocol_handling_both">
+
 ### HANDLING [Both]
 
 `[Both]` produces two voices together, which is not the same as two voices in
@@ -633,6 +729,11 @@ Lyrics:  [Chorus]
   each. Beyond three, the model stops keeping them distinct and you are better
   served by treating the extra voices as a choir (§6) than as characters.
 
+</rag_zone>
+
+<!-- rag_anchor: duet_protocol_names -->
+<rag_zone id="duet_protocol_names">
+
 ### NAMES
 
 Named characters help the model keep the parts separate and make the lyrics
@@ -647,7 +748,14 @@ with "Ana, a female alto; Mikhail, a male baritone" written into Style.
 But the gender and range descriptors are doing the actual work. A name alone
 never implies a voice type — never rely on it to.
 
-## §10. CHORDS
+</rag_zone>
+
+</section>
+
+<section id="§10" title="CHORDS">
+
+<!-- rag_anchor: chord_engine -->
+<rag_zone id="chord_engine">
 
 ### INLINE, IN ROUND BRACKETS, BEFORE THE WORD THEY LAND ON
 
@@ -709,7 +817,14 @@ levels:
 Writing all four minutes of harmony by hand is possible and rarely improves the
 result over the firm level.
 
-## §11. ATMOSPHERE AT SECTION LEVEL
+</rag_zone>
+
+</section>
+
+<section id="§11" title="ATMOSPHERE AT SECTION LEVEL">
+
+<!-- rag_anchor: section_atmosphere -->
+<rag_zone id="section_atmosphere">
 
 Track-wide atmosphere belongs in the Style field as prose (CORE_01 §11). What
 belongs here is atmosphere that happens *at a specific point*.
@@ -763,7 +878,14 @@ belongs here is atmosphere that happens *at a specific point*.
   live recording than any amount of "live" in the Style field, because it
   places events rather than describing a quality.
 
-## §12. STRUCTURE TEMPLATES
+</rag_zone>
+
+</section>
+
+<section id="§12" title="STRUCTURE TEMPLATES">
+
+<!-- rag_anchor: structure_templates -->
+<rag_zone id="structure_templates">
 
 Starting shapes. Modify them — a template followed exactly is why so much
 generated music sounds the same.
@@ -827,7 +949,14 @@ generation and Suno recommends Max Mode past two (**DATA_SUNO §4**). Lyria 3.5 
 a couple of minutes (**DATA_GOOGLE §1**). The relevant craft point is
 version-independent: **set the length and supply enough words to fill it.**
 
-## §13. THE TOP OF THE LYRICS FIELD
+</rag_zone>
+
+</section>
+
+<section id="§13" title="THE TOP OF THE LYRICS FIELD">
+
+<!-- rag_anchor: top_of_field -->
+<rag_zone id="top_of_field">
 
 ### THE TEMPLATE
 
@@ -887,7 +1016,14 @@ than words:
   the switch and the label is the reliable combination — the switch alone
   occasionally still produces a vocal line [COMMUNITY].
 
-## §14. OTHER PLATFORMS
+</rag_zone>
+
+</section>
+
+<section id="§14" title="OTHER PLATFORMS">
+
+<!-- rag_anchor: lyrics_markup_other_platforms -->
+<rag_zone id="other_platforms">
 
 Part of this file transfers to other platforms: Google documents section tags and
 parentheses for Lyria 3.5, and MiniMax documents section tags for Music 3.0
@@ -932,7 +1068,14 @@ to any platform:
   2. Emotional direction attached to a specific passage beats a global mood.
   3. Enough words to fill the intended length, and not more.
 
-## §15. CHECKLIST
+</rag_zone>
+
+</section>
+
+<section id="§15" title="CHECKLIST">
+
+<!-- rag_anchor: lyrics_checklist -->
+<rag_zone id="lyrics_checklist">
 
   ☐ Nothing in round brackets that you would not want to hear sung
   ☐ Nothing in square brackets that is a measurement or a mix setting
@@ -950,10 +1093,14 @@ to any platform:
   ☐ Exact lyrics on Suno v6 go in the Lyrics field, not the Simple-mode box
   ☐ For Lyria: a `Lyrics:` header above the tagged sections
 
+</rag_zone>
+
+</section>
+
 // ═══════════════════════════════════════════════════════════════
 // END OF CORE_02_LYRICS.md · SunoForge v4.0
 // Next: CORE_03_DIAGNOSE.md
 // ═══════════════════════════════════════════════════════════════
 
-## TAGS
-lyrics, structure, round brackets, square brackets, bracket rule, section labels, suno lyrics editor, simple mode, exact lyrics, edit one line, v6 lyric edit, label density, enriched labels, pipe stacking, performance notation, delivery, emotion line, ad-libs, backing vocals, spoken word, duet protocol, three anchors, inline chords, chord progressions, section atmosphere, structure templates, song length, instrumental structure, lyria lyrics header, minimax section tags, portability
+<tags>lyrics, structure, round brackets, square brackets, bracket rule, section labels, suno lyrics editor, simple mode, exact lyrics, edit one line, v6 lyric edit, label density, enriched labels, pipe stacking, performance notation, delivery, emotion line, ad-libs, backing vocals, spoken word, duet protocol, three anchors, inline chords, chord progressions, section atmosphere, structure templates, song length, instrumental structure, lyria lyrics header, minimax section tags, portability</tags>
+</sunoforge_file>

@@ -1,4 +1,5 @@
----
+<sunoforge_file id="CORE_04_WHY" version="4.0" layer="core" role="explainer" source="CORE_04_WHY.md">
+<file_meta>
 file_id: CORE_04_WHY
 version: "4.0"
 layer: core
@@ -17,7 +18,7 @@ used_by: [CORE_00_ENTRY]
 rag_priority: medium
 updated: "2026-09-30"
 changelog: "v4.0 — why there are no prices · why rights now follow the download · why Variety 0 · a rule that was wrong: tempo in words for Lyria · MAX tags versus the real Max Mode · vendors now endorse scene prompting · v3.0 — pedagogical layer restored from Polymath in the advice/why/consequence format · covers all twelve critical rules plus the architectural decisions · explanations for withdrawn techniques replaced with explanations of why they were withdrawn"
----
+</file_meta>
 
 # 🎓 SUNOFORGE v4.0 — WHY
 # File 5 of 12 · CORE · Loaded only on request
@@ -33,9 +34,12 @@ changelog: "v4.0 — why there are no prices · why rights now follow the downlo
 > if you ignore it**. Nothing here is a new instruction. If this file and a
 > rule file disagree, the rule file is right and this one has drifted.
 
-## §1. THE CRITICAL RULES
+<section id="§1" title="THE CRITICAL RULES">
 
 Numbered as in CORE_00 §7.
+
+<!-- rag_anchor: why_front_load -->
+<rag_zone id="why_front_load">
 
 ### 1 · FRONT-LOAD
 
@@ -59,6 +63,11 @@ as a generic sad song, and "rock" arrives too late to change that. You get a
 result that contains everything you asked for and sounds like nothing in
 particular — the most common complaint about generated music, and usually a
 word-order problem rather than a model problem.
+
+</rag_zone>
+
+<!-- rag_anchor: why_specific -->
+<rag_zone id="why_specific">
 
 ### 2 · BE SPECIFIC, NOT LONG
 
@@ -85,6 +94,11 @@ DATA_SUNO §2, marked by confidence, including the parts where sources
 disagree. This is the single clearest example of why the confidence marking
 in §3 exists.
 
+</rag_zone>
+
+<!-- rag_anchor: why_time_and_place -->
+<rag_zone id="why_time_and_place">
+
 ### 3 · TIME AND PLACE
 
 **ADVICE.** Instead of a genre name, give an era, a place and a scene.
@@ -109,6 +123,11 @@ vaporwave, city pop, boom bap. Adding a decade to those restates what the
 name already said. Recognising when a name is already specific is part of
 the skill (CORE_01 §3).
 
+</rag_zone>
+
+<!-- rag_anchor: why_gender -->
+<rag_zone id="why_gender">
+
 ### 4 · VOCALS NEED A GENDER
 
 **ADVICE.** State the singer's gender explicitly, in positive terms. On
@@ -130,6 +149,11 @@ guesswork.
 
 **WHY NEGATIVES MAKE IT WORSE.** See rule 7 — this is where that mechanism
 bites hardest.
+
+</rag_zone>
+
+<!-- rag_anchor: why_prose_parameters -->
+<rag_zone id="why_prose_parameters">
 
 ### 5 · PARAMETERS AS PROSE
 
@@ -162,6 +186,11 @@ in Lyria 3.5 prompts, in MiniMax and local-model lyrics — and timestamp ranges
 on Lyria. All are documented; all mark *where* something happens rather than
 *setting* a value. That distinction is the whole rule (CORE_02 §1).
 
+</rag_zone>
+
+<!-- rag_anchor: why_brackets -->
+<rag_zone id="why_brackets">
+
 ### 6 · ROUND BRACKETS ARE SUNG, SQUARE ONES ARE NOT
 
 **ADVICE.** Anything in round brackets is performed. Anything in square
@@ -178,6 +207,11 @@ containing "(play the guitar softly here)" produces a backing vocalist
 singing the words "play the guitar softly here". It is the most immediately
 audible mistake in this whole system, and the easiest to avoid: if you would
 not want to hear it, do not put it in round brackets.
+
+</rag_zone>
+
+<!-- rag_anchor: why_positive -->
+<rag_zone id="why_positive">
 
 ### 7 · NEGATIVES ARE WEAK
 
@@ -214,6 +248,11 @@ short exclusion after it — the noun you want is already fixed before the one
 you do not want appears. That is the shape to copy. What Lyria has no place for
 is an exclude LIST: there is no negative-prompt field to put it in.
 
+</rag_zone>
+
+<!-- rag_anchor: why_emotion_line -->
+<rag_zone id="why_emotion_line">
+
 ### 8 · EMOTION ON ITS OWN LINE
 
 **ADVICE.** Put delivery direction on a line of its own, immediately above
@@ -236,6 +275,11 @@ the whole track. Delivery sets how they sing this passage. Without the
 second, every section is performed at the same emotional level, and a song
 performed at one level is the definition of flat — the single most common
 reason generated vocals sound synthetic even when the timbre is convincing.
+
+</rag_zone>
+
+<!-- rag_anchor: why_iterate_one -->
+<rag_zone id="why_iterate_one">
 
 ### 9 · ITERATE ONE THING
 
@@ -262,6 +306,11 @@ for music models, including everything this system carried for two versions,
 was produced by people not following this rule. That is why confidence
 marking exists (§3).
 
+</rag_zone>
+
+<!-- rag_anchor: why_hints -->
+<rag_zone id="why_hints">
+
 ### 10 · TAGS ARE HINTS
 
 **ADVICE.** Treat every label and descriptor as a probabilistic nudge.
@@ -282,6 +331,11 @@ a system that does not offer it.
 and a choice beats one take and an argument. This is also why the system
 offers two or three interpretations rather than one answer (CORE_00 §3) —
 the variance is not a defect to be engineered away, it is the medium.
+
+</rag_zone>
+
+<!-- rag_anchor: why_platform_first -->
+<rag_zone id="why_platform_first">
 
 ### 11 · PLATFORM BEFORE PROMPT
 
@@ -305,6 +359,11 @@ made (DATA_LEGAL).
 **THE HABIT TO BUILD.** Ask what the track is *for* before asking what it
 sounds like. "For me" and "for a client" lead to different platforms before
 they lead to different music.
+
+</rag_zone>
+
+<!-- rag_anchor: why_rights -->
+<rag_zone id="why_rights">
 
 ### 12 · RIGHTS ARE NOT OWNERSHIP
 
@@ -334,6 +393,11 @@ the rights moved to the one moment the platform can count. The practical
 consequence is simple and easy to miss: a song you made on a paid plan and
 never downloaded is not yet something you may sell.
 
+</rag_zone>
+
+<!-- rag_anchor: why_plan_unknown -->
+<rag_zone id="why_plan_unknown">
+
 ### 13 · THE USER'S PLAN AND COUNTRY ARE UNKNOWN
 
 **ADVICE.** Never assume a plan, a country or a price. Name the plan a feature
@@ -349,8 +413,14 @@ Premier only") lets the user place themselves.
 fastest way to lose trust in everything else the system says. Prices are the
 extreme case; why they are gone entirely is in §3.
 
-## §2. TECHNIQUES
+</rag_zone>
 
+</section>
+
+<section id="§2" title="TECHNIQUES">
+
+<!-- rag_anchor: why_techniques -->
+<rag_zone id="why_techniques">
 ### WHY A BIOGRAPHY BEATS A DESCRIPTION
 
 **ADVICE.** Describe the singer as a person with a history, not as a setting.
@@ -370,6 +440,11 @@ gender, the right mood, and no one home.
 nowhere, and results still vary between takes. It reliably produces a better
 *prompt*, which is a smaller claim than the one usually made for it.
 
+</rag_zone>
+
+<!-- rag_anchor: why_techniques_why_two_or_three_hero_instruments -->
+<rag_zone id="why_techniques_why_two_or_three_hero_instruments">
+
 ### WHY TWO OR THREE HERO INSTRUMENTS
 
 **ADVICE.** Name the two or three instruments that define the sound, with a
@@ -383,6 +458,11 @@ buys nothing.
 
 **IF YOU IGNORE IT.** A full, competent, characterless arrangement where
 everything is present and nothing leads.
+
+</rag_zone>
+
+<!-- rag_anchor: why_techniques_why_a_bridge_genre -->
+<rag_zone id="why_techniques_why_a_bridge_genre">
 
 ### WHY A BRIDGE GENRE
 
@@ -403,6 +483,11 @@ theory quantitatively. It is offered because it forces you to think about
 how the genres relate, and that thinking produces a better prompt regardless
 of whether the bridge itself does anything.
 
+</rag_zone>
+
+<!-- rag_anchor: why_techniques_why_scene_painting -->
+<rag_zone id="why_techniques_why_scene_painting">
+
 ### WHY SCENE PAINTING
 
 **ADVICE.** Describe a situation rather than a list of qualities.
@@ -418,6 +503,11 @@ work better — and vendors now say so themselves: Suno's own v6 example is
 "Make a song that feels like midnight on a rooftop", and ElevenLabs writes
 that high-level prompts like "ad for a sneaker brand" are often enough
 [OFFICIAL].
+
+</rag_zone>
+
+<!-- rag_anchor: why_techniques_why_the_duet_needs_three_anchors -->
+<rag_zone id="why_techniques_why_the_duet_needs_three_anchors">
 
 ### WHY THE DUET NEEDS THREE ANCHORS
 
@@ -438,6 +528,11 @@ that point separates them again.
 identity every few seconds, and identity is exactly what it holds least
 firmly. Whole sections give each voice long enough to establish itself.
 
+</rag_zone>
+
+<!-- rag_anchor: why_techniques_why_the_two_paths_for_lyrics -->
+<rag_zone id="why_techniques_why_the_two_paths_for_lyrics">
+
 ### WHY THE TWO PATHS FOR LYRICS
 
 **ADVICE.** On Suno's web editor, place the section labels with its label
@@ -457,8 +552,14 @@ expected them marked.
 technique. The technique does not become wrong — it becomes conditional. A
 prompt system that only knows one path will be wrong for half its users.
 
-## §3. THE ARCHITECTURE
+</rag_zone>
 
+</section>
+
+<section id="§3" title="THE ARCHITECTURE">
+
+<!-- rag_anchor: why_architecture -->
+<rag_zone id="why_architecture">
 Why this system is shaped the way it is. Read this if you are extending it,
 translating it, or wondering why a fact you expected is in another file.
 
@@ -492,6 +593,11 @@ taught a character limit that was a guess, a quality mode that does not
 exist, and a degradation pattern nobody has measured, all in the same
 declarative voice as the parts that were true.
 
+</rag_zone>
+
+<!-- rag_anchor: why_architecture_why_core_and_data_are_separate_files -->
+<rag_zone id="why_architecture_why_core_and_data_are_separate_files">
+
 ### WHY CORE AND DATA ARE SEPARATE FILES
 
 **THE DECISION.** Rules live in undated CORE files. Facts live in dated DATA
@@ -523,6 +629,11 @@ file, which means every quarterly update would risk breaking rules that were
 fine — and in practice would not happen, so the whole thing would rot
 together.
 
+</rag_zone>
+
+<!-- rag_anchor: why_architecture_why_version_facts_live_in_exactly_one_file -->
+<rag_zone id="why_architecture_why_version_facts_live_in_exactly_one_file">
+
 ### WHY VERSION FACTS LIVE IN EXACTLY ONE FILE
 
 **THE DECISION.** Version numbers, limits and plan tiers appear in one file
@@ -540,6 +651,11 @@ less convenient than one with the numbers inline. That is the trade, and it
 is worth it: thirty inline copies would be thirty things to update and thirty
 chances to miss one.
 
+</rag_zone>
+
+<!-- rag_anchor: why_architecture_why_there_are_no_prices -->
+<rag_zone id="why_architecture_why_there_are_no_prices">
+
 ### WHY THERE ARE NO PRICES
 
 **THE DECISION.** No subscription price, API price or credit table appears in
@@ -555,6 +671,11 @@ answers the question the user actually has: can I do this?
 **IF THE SYSTEM DID NOT DO THIS.** It would state confident numbers that the
 user's own screen contradicts, and every contradiction would cost the rest of
 the system some trust.
+
+</rag_zone>
+
+<!-- rag_anchor: why_architecture_why_myths_are_documented_rather_than_deleted -->
+<rag_zone id="why_architecture_why_myths_are_documented_rather_than_deleted">
 
 ### WHY MYTHS ARE DOCUMENTED RATHER THAN DELETED
 
@@ -574,6 +695,11 @@ CORE_03 §3 and DATA_SUNO §14 exist.
 were taught it by a confident source — quite possibly this system. Explain
 what changed. Do not imply they should have known better.
 
+</rag_zone>
+
+<!-- rag_anchor: why_architecture_why_the_menu_numbers_are_frozen -->
+<rag_zone id="why_architecture_why_the_menu_numbers_are_frozen">
+
 ### WHY THE MENU NUMBERS ARE FROZEN
 
 **THE DECISION.** Entries [1]–[13] never change number. New entries go at the
@@ -589,8 +715,14 @@ someone following a year-old guide lands somewhere unexpected.
 **WHAT IT COSTS.** The menu is not in the tidiest order it could be. That is
 the correct trade for a public interface.
 
-## §4. WHY THINGS WERE REMOVED
+</rag_zone>
 
+</section>
+
+<section id="§4" title="WHY THINGS WERE REMOVED">
+
+<!-- rag_anchor: why_removed -->
+<rag_zone id="why_removed">
 Users of previous versions will notice absences. Each removal has a reason,
 and the reason is always evidence rather than taste.
 
@@ -618,6 +750,11 @@ have left it working in eleven others. Systems propagate their own errors
 through internal consistency — a thing referenced everywhere looks
 load-bearing.
 
+</rag_zone>
+
+<!-- rag_anchor: why_removed_the_degradation_pattern -->
+<rag_zone id="why_removed_the_degradation_pattern">
+
 ### THE DEGRADATION PATTERN
 
 Previous versions treated it as established that tracks reliably lose
@@ -637,6 +774,11 @@ unverified claim modifies every prompt a user writes, forever, on the basis
 of something nobody checked. The techniques remain available for anyone who
 finds them useful (CORE_03 §5). What is gone is the automatic application and
 the false diagnosis.
+
+</rag_zone>
+
+<!-- rag_anchor: why_removed_a_platform -->
+<rag_zone id="why_removed_a_platform">
 
 ### A PLATFORM
 
@@ -665,6 +807,11 @@ optional — it becomes wrong, because it is now competing with the real
 control. Retiring workarounds is as important as adding techniques, and far
 easier to forget.
 
+</rag_zone>
+
+<!-- rag_anchor: why_removed_a_rule_that_was_wrong_tempo_in_words_for_lyria -->
+<rag_zone id="why_removed_a_rule_that_was_wrong_tempo_in_words_for_lyria">
+
 ### A RULE THAT WAS WRONG: TEMPO IN WORDS FOR LYRIA
 
 Earlier editions told users to describe tempo for Lyria in words and never as
@@ -677,6 +824,11 @@ official rule for one model is a hypothesis for the next one. That is why the
 date sits at the top of every DATA file, and why this rule now lives there
 instead of being taught as craft.
 
+</rag_zone>
+
+<!-- rag_anchor: why_removed_a_new_rule_with_a_simple_reason_variety_0 -->
+<rag_zone id="why_removed_a_new_rule_with_a_simple_reason_variety_0">
+
 ### A NEW RULE WITH A SIMPLE REASON: VARIETY 0
 
 Suno v6 added a Variety slider that rewrites the style prompt before generating,
@@ -686,7 +838,14 @@ carefully can be paraphrased away, differently in each take. Setting Variety to
 0 keeps your words as written. When someone says "Suno ignored my style", this
 is the first thing to check.
 
-## §5. IF YOU ONLY REMEMBER FIVE THINGS
+</rag_zone>
+
+</section>
+
+<section id="§5" title="IF YOU ONLY REMEMBER FIVE THINGS">
+
+<!-- rag_anchor: why_summary -->
+<rag_zone id="why_summary">
 
   1. **Put the most specific thing first.** Order matters more than length,
      and the opening words decide what everything else modifies.
@@ -709,10 +868,14 @@ is the first thing to check.
      merely repeated is not excessive caution — it is the honest description
      of a field with almost no primary sources.
 
+</rag_zone>
+
+</section>
+
 // ═══════════════════════════════════════════════════════════════
 // END OF CORE_04_WHY.md · SunoForge v4.0
 // Next: DATA_SUNO_2026-09.md
 // ═══════════════════════════════════════════════════════════════
 
-## TAGS
-why, rule rationale, advice why consequence, front-loading, specificity, time and place, vocal gender, parameters as prose, brackets, positive phrasing, exclusion clause, emotion line, iterate one thing, tags are hints, platform first, rights not ownership, download-bound rights, confidence marking, core data split, single source, no prices, myths documented, max mode tags vs toggle, drift, udio, gender workaround, lyria tempo rule revised, variety 0, five things
+<tags>why, rule rationale, advice why consequence, front-loading, specificity, time and place, vocal gender, parameters as prose, brackets, positive phrasing, exclusion clause, emotion line, iterate one thing, tags are hints, platform first, rights not ownership, download-bound rights, confidence marking, core data split, single source, no prices, myths documented, max mode tags vs toggle, drift, udio, gender workaround, lyria tempo rule revised, variety 0, five things</tags>
+</sunoforge_file>
