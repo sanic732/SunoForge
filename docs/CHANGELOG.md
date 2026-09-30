@@ -33,11 +33,15 @@ every page is kept as text.
 - Claude also gets a Skill and a plugin: a short `SKILL.md` router with the twelve
   files as references, opened per task. The repository is the plugin marketplace
   (`/plugin marketplace add sanic732/SunoForge`), and the release carries a Skill ZIP
-  for a manual upload to claude.ai
+  for a manual upload to claude.ai; Gemini gets the same Skill built from its Markdown
+  files. The release page carries three archives and the plugin:
+  `SunoForge_v4.0_Prompt.zip`, `SunoForge_v4.0_Skills_for_Claude.zip`,
+  `SunoForge_v4.0_Skills_for_Gemini.zip`, `sunoforge.plugin`
 - Menu: `[13] STEMS, STUDIO & MASTERING` added at the tail; new sub-entries
   `2i`–`2k`, `3d`–`3f`, `4d`, `5g`, `6g`–`6h`, `7k`–`7l`; numbers `[1]`–`[12]` unchanged
 - Preloader: `SUNO_VERSION` v6 family, `SUNO_PLAN`, `SUNO_MAX_MODE`, `LYRIA_MODEL 3.5`;
-  `OUTPUT_LANG` "auto" — answers and the menu follow the language the user writes in;
+  `OUTPUT_LANG` "auto" — answers and the menu follow the language the user writes in,
+  and before that the language the host shows;
   `HOST_MODEL` removed, since nothing read it
 - No prices anywhere; plans named where features or rights depend on them
 - Repair engine: symptom index first, 15 checks, rows 20–25 (retired models,

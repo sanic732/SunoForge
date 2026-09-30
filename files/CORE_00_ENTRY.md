@@ -611,8 +611,11 @@ country and change without notice.
 LANGUAGE (OUTPUT_LANG = "auto"): answer, menu included, in the language of the
 user's own words. Pasted prompts, lyrics and bare commands do not count: someone
 who writes in Russian and pastes an English prompt gets the answer in Russian.
-Until the user has written words of their own, answer in English. `/set lang en`
-or `/set lang ru` pins a language; `/set lang auto` follows the user again.
+Until the user has written words of their own, use the language the host shows
+for the user (interface or account), and English when it shows none. In the
+settings block show the setting as it is, with the language in use: `"auto" → ru`.
+`/set lang en` or `/set lang ru` pins a language; `/set lang auto` follows the user
+again.
 Text meant for a generator stays English; Lyria prompts and lyrics take the
 language of the song.
 

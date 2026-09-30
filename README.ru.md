@@ -12,7 +12,8 @@
   подходит и для ChatGPT, и для Grok.
 
 Содержание одно, меню одно, правила одни. Отличается только упаковка: каждая модель
-лучше всего читает свой формат. В одном архиве обе: папки `claude/` и `gemini/`.
+лучше всего читает свой формат. Архив с промптом содержит обе: папки `claude/` и
+`gemini/`; навыки и плагин — отдельными файлами.
 
 **Попробовать без установки** — Gem, где всё уже загружено:
 [SunoForge v4.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
@@ -102,18 +103,27 @@ Udio — не целевая платформа: скачивание так и 
 
 ## Быстрый старт
 
-1. Скачайте архив релиза и распакуйте. SunoForge отвечает на том языке, на котором вы
-   пишете; закрепить один — `/set lang ru` или `/set lang en`.
-2. Загрузите папку под своего ассистента:
+1. Возьмите нужное со страницы релиза:
+   - `SunoForge_v4.0_Prompt.zip` — сам промпт: редакции `claude/` и `gemini/`,
+     документация, README
+   - `SunoForge_v4.0_Skills_for_Claude.zip` — навык (Skill) для claude.ai
+   - `SunoForge_v4.0_Skills_for_Gemini.zip` — навык для Gemini
+   - `sunoforge.plugin` — плагин для Claude
+
+   SunoForge отвечает на том языке, на котором вы пишете; закрепить один —
+   `/set lang ru` или `/set lang en`.
+2. Установите под своего ассистента:
    - **Claude**, любым из трёх способов ([docs/CLAUDE.md](docs/CLAUDE.md)):
      - плагин, платные тарифы: **Customize → Plugins → Add → Add marketplace** →
        `sanic732/SunoForge`; в Claude Code `/plugin marketplace add sanic732/SunoForge`,
        затем `/plugin install sunoforge@sunoforge`; или загрузите `sunoforge.plugin` через
        **Customize → Plugins → Add → Upload plugin**
-     - Skill: загрузите `SunoForge_v4.0_skill.zip` в **Customize → Skills**
+     - Skill: загрузите `SunoForge_v4.0_Skills_for_Claude.zip` в **Customize → Skills**
        (с включённым Code execution)
      - Project, двенадцать файлов из `claude/` в знания
-   - **Gemini** — пять файлов `CORE_*` из `gemini/` и `gemini/DATA.zip` ([docs/GEMINI.md](docs/GEMINI.md))
+   - **Gemini** — навык: распакуйте `SunoForge_v4.0_Skills_for_Gemini.zip` и загрузите папку
+     `sunoforge` на странице **Навыки**; или пять файлов `CORE_*` из `gemini/` и `gemini/DATA.zip`
+     ([docs/GEMINI.md](docs/GEMINI.md))
    - **ChatGPT, Grok** — файлы из `gemini/` вложением или вставкой
 3. Напишите `start` или `/menu`.
 4. Выберите пункт меню или просто опишите задачу.
@@ -215,7 +225,9 @@ FOLKLORE_MODE    = "off"
 Для Claude те же двенадцать файлов собраны ещё и в Skill: короткий маршрутизатор
 `SKILL.md` и файлы в `references/`, которые открываются по задаче. Этот репозиторий —
 его маркетплейс: `.claude-plugin/marketplace.json` и плагин в `plugin/`; в релизе Skill
-лежит архивом для ручной загрузки.
+лежит архивом `SunoForge_v4.0_Skills_for_Claude.zip`, плагин — файлом
+`sunoforge.plugin`. Для Gemini тот же навык собран из файлов в Markdown:
+`SunoForge_v4.0_Skills_for_Gemini.zip`.
 
 ---
 
@@ -223,8 +235,8 @@ FOLKLORE_MODE    = "off"
 
 | Редакция | Размер | Токенов (o200k_base) | Без двух ленивых файлов |
 |---|---|---|---|
-| Claude (XML) | 457 КБ | ~114 100 | ~98 400 |
-| Gemini (Markdown) | 420 КБ | ~104 300 | ~90 100 |
+| Claude (XML) | 457 КБ | ~114 200 | ~98 500 |
+| Gemini (Markdown) | 420 КБ | ~104 400 | ~90 200 |
 
 Свободно в окне 1M или 200K; для 128K тесно. Подробно: [docs/TOKENS.md](docs/TOKENS.md).
 
