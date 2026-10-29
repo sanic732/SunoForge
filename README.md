@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.png" alt="SunoForge" width="100%"></p>
+
 # SunoForge v4.0 — AI Music Prompt Orchestrator
 
 `[EN]` this file · `[RU]` [README.ru.md](README.ru.md)
