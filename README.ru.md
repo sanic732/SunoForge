@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.png" alt="SunoForge" width="100%"></p>
+
 # SunoForge v4.0 — оркестратор промптов для AI-музыки
 
 `[RU]` этот файл · `[EN]` [README.md](README.md)
