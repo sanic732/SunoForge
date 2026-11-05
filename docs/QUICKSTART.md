@@ -44,8 +44,8 @@ Every host, step by step, is in [INSTALL.md](INSTALL.md). In short:
   Details in [CLAUDE.md](CLAUDE.md).
 - **Gemini** — the Skill, `SunoForge_v4.0_Skills_for_Gemini.zip`, on the Skills page.
   Details in [GEMINI.md](GEMINI.md).
-- **ChatGPT, Antigravity** — their plugins, `SunoForge_v5.0_plugin_chatgpt.zip` *(not released yet)* and
-  `SunoForge_v5.0_plugin_antigravity.zip` *(not released yet)* ([INSTALL.md](INSTALL.md)).
+- **ChatGPT, Antigravity** — their plugins are not out yet; until then both run from the
+  Markdown files of `SunoForge_v4.0_Prompt.zip` ([INSTALL.md](INSTALL.md)).
 - **Grok** — the files from the `gemini/` folder of the prompt archive in a project.
 - **If you cannot attach files** — paste the contents as the first message,
   starting with `CORE_00_ENTRY.md`, which is the entry point.
