@@ -58,7 +58,7 @@ and "this one" or "like the example" fills the blank with it.
 
 <section id="§2" title="[1] QUICK START — the song brief">
 
-SUB-ENTRIES — plain words are enough; a photo, a video or a hummed memo works too.
+SUB-ENTRIES — plain words are enough; a photo works too, and with a Suno server connected a video or a hummed memo goes in through Suno's uploader.
 VARIANT_COUNT variants (two by default), each a different reading of the idea. No sub-entries:
 the first answer is the result.
 

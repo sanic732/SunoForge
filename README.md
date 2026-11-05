@@ -63,7 +63,7 @@ Udio is not a target: downloads stayed disabled after its settlement.
 | Antigravity | — *the 5.0 plugin is not out yet* | plugin |
 | grok.com, other long-context assistants | — *the 5.0 prompt package is not out yet; the 4.0 one still works* | Project or attached files |
 
-**Release 5.0.0 is the Claude plugin, and nothing else yet.** The Skill packages for Claude and
+**Version 5.0 is the Claude plugin, and nothing else yet.** The Skill packages for Claude and
 Gemini, the ChatGPT, Antigravity and Grok plugins and `Prompt.zip` are built separately and are
 still to come. Until they do, the
 [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) carries working packages for
@@ -195,7 +195,7 @@ plugin's estimate about 235,000, more than a 200K window holds with a conversati
 
 ## Release files
 
-On the [5.0.0 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.0):
+On the [5.0.1 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.1):
 
 | File | What it is |
 |---|---|
