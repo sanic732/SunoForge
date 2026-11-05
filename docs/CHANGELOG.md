@@ -2,7 +2,18 @@
 
 ---
 
-## 5.0.0 — 2026-11-05
+## 5.0.1 — 2026-11-05
+
+**Six more interface languages:** German, Spanish, French, Italian, Brazilian Portuguese and Indonesian,
+next to English, Russian and Ukrainian. Every screen exists ready-made in each of them, so nothing is
+translated on the fly; the language setting lists all nine. Each copy is checked against the English one
+at 360 px on 37 screens: the same buttons sending the same codes, no clipped or wrapped text, no script
+error. Suno still receives English values; only the labels are translated.
+
+Russian and Ukrainian: the editor's "Brighter" now reads as on the edit card, and the Suno panel's
+example status line is in the output language.
+
+## 5.0.0-rc.1 — pre-release, 2026-11-05
 
 The first public build of v5.0, marked as a pre-release on GitHub: the plugin only. It is
 betas 27–30, below, plus the licence and source work in this entry. Not yet run end to end in

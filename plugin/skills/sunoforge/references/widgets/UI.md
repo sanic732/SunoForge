@@ -31,7 +31,8 @@ attributes.
 ## 2. Which language
 
 The screen's language is OUTPUT_LANG (CORE_00 §9). Ready translated copies: `widgets/<lang>/<file>` for
-**ru uk** (Russian and Ukrainian; more languages come later); English is
+**ru uk de es fr it pt-BR id** (Russian, Ukrainian, German, Spanish, French, Italian, Brazilian Portuguese,
+Indonesian); English is
 `widgets/<file>`.
 - A copy exists → take it as it is and fill the attributes or slots. Translate nothing: every label, the
   script dictionaries included, is already in that language. Text you write into a slot (a status, a title,

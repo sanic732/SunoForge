@@ -24,7 +24,7 @@ SunoForge command `config` — a word typed in the chat once SunoForge is active
 3. `config folder` (or "where are my files") → say where settings and library live now, in
    the WHERE order, and how to choose the folder: it is the plugin's own setting "Folder for
    your SunoForge data" (`library_dir`) — in the Claude desktop app: Settings → the SunoForge
-   plugin → the Settings tab, type the path (e.g. `D:\SunoForge`) and Save — the same tab sets the language (`language`: auto, en, ru, uk); in Claude Code:
+   plugin → the Settings tab, type the path (e.g. `D:\SunoForge`) and Save — the same tab sets the language (`language`: auto, en, ru, uk, de, es, fr, it, pt-BR, id); in Claude Code:
    `/plugin` → SunoForge → configure, or `/config`. A folder there survives an uninstall and
    an update. The app says so itself: the value is kept on that computer and used by new
    sessions started on it, not by SSH, WSL or cloud sessions. The claude.ai web and phone apps

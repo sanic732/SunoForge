@@ -112,7 +112,7 @@ of the working folder in Cowork and with a standalone Skill, and in the chat and
 app a Project file `sunoforge-settings.md` / `sunoforge-library.md`: no disk there, so
 SunoForge prints the file as a block and you keep it in the Project. The first run asks one
 question after the menu (which generators); `config` on demand also sets the view and
-prices on the card. The same Settings tab sets the language (auto, en, ru, uk); `set lang`
+prices on the card. The same Settings tab sets the language (auto, en, ru, uk, de, es, fr, it, pt-BR, id); `set lang`
 in the chat wins over it. Entries `[2]` Studio, `[5b]` custom persona, `[9]` recipes and
 `[14]` Speech open a form when you ask for one — one choice per field, **Build** → a
 blueprint; any result can be kept with `save`, and `library export` prints the whole
