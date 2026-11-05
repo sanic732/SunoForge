@@ -5,8 +5,8 @@
 SunoForge is a set of instructions that turns a chat assistant into a prompt engineer for
 music generation. Describe what you want in plain words or show it a photo, and get finished
 prompts, ready to paste: Style, lyrics markup, speech scripts, edits, repair of old prompts,
-rights and post-production notes. With Suno's server connected, a recording of your own goes in
-through Suno's uploader.
+rights and post-production notes. With Suno's server connected, a voice memo or a video goes in
+too, through Suno's uploader (audio, MP4, MOV, WebM, up to 100 MB), and Suno listens to it.
 
 Fourteen files, one principle: **never present a guess as a fact**.
 
