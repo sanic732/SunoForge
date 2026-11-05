@@ -14,10 +14,6 @@ Fourteen files, two editions, one principle: **never present a guess as a fact**
 
 Same content, same menu, same rules; only the packaging differs.
 
-**Try it without installing anything:**
-[SunoForge Gem](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
-(refreshed separately from the release).
-
 ---
 
 ## What it looks like
