@@ -1,6 +1,6 @@
 # Running in Gemini
 
-> **Note on packages.** Release 5.0.0 ships the Claude plugin only
+> **Note on packages.** Version 5.0 ships the Claude plugin only
 > (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
 > plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
 > that is the working package you can download today, from the
