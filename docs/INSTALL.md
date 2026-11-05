@@ -127,12 +127,14 @@ More: [GEMINI.md](GEMINI.md).
 
 ## ChatGPT and Antigravity — the plugins
 
-**ChatGPT.** Upload `SunoForge_v5.0_plugin_chatgpt.zip` *(not released yet)* as a plugin where your ChatGPT
-offers plugins. Its `INSTALL.md` has the steps and how to add Suno's server by hand.
+These two plugins are not built yet, so there is nothing to upload for them.
 
-**Antigravity.** Unpack `SunoForge_v5.0_plugin_antigravity.zip` *(not released yet)* into
-`~/.gemini/config/plugins/` (every project) or `.agents/plugins/` (one project), then
-restart. Its `INSTALL.md` has the check and the Suno MCP entry.
+Until they are out, both hosts run SunoForge from the Markdown files: take
+`SunoForge_v4.0_Prompt.zip` from the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) and use the thirteen
+`.md` files from its `gemini/` folder — in ChatGPT as a Project or a custom GPT (next
+section), in Antigravity as files in the project. Suno's MCP server is added by hand on
+either host: [SUNO_MCP.md](SUNO_MCP.md).
 
 ---
 
