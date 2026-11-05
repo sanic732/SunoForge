@@ -20,6 +20,26 @@ Same content, same menu, same rules; only the packaging differs.
 
 ---
 
+## What it looks like
+
+<table>
+<tr>
+<td width="33%" valign="top"><img src="assets/screens/menu.webp" alt="The SunoForge menu: fifteen entries in two columns"></td>
+<td width="33%" valign="top"><img src="assets/screens/price-card.webp" alt="The price card, shown before anything is spent"></td>
+<td width="33%" valign="top"><img src="assets/screens/editor.webp" alt="The editor, extending a song"></td>
+</tr>
+<tr>
+<td valign="top"><b>The menu.</b> Fifteen entries, buttons instead of a wall of text. English, Russian and Ukrainian.</td>
+<td valign="top"><b>The price card.</b> Model, length, takes, credits — shown <i>before</i> anything is spent. Nothing goes without your yes.</td>
+<td valign="top"><b>The editor.</b> Extending a song without a gap at the seam.</td>
+</tr>
+</table>
+
+All forty screens, in three languages:
+**[SunoForge_v5.0.0_screens.zip](https://github.com/sanic732/SunoForge/releases/latest)** — unpack,
+open `index.html`, works offline.
+
+
 ## Generators
 
 | Generator | What SunoForge covers |
