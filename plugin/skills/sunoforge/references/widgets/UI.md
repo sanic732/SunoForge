@@ -59,13 +59,13 @@ characters a second [first-hand, claude.ai data export, 2026-11-05]. Keep it sho
 | Screen (English copy, header stripped) | Characters printed |
 |---|---|
 | `menu.html`, every submenu inside | ≈9.9k |
-| `take.html`, two takes | ≈4.2k |
+| `take.html`, two takes | ≈4.7k |
 | `songs.html`, ten rows | ≈5.7k |
 | `edit.html` | ≈7.1k |
 | `voices.html` | ≈4.1k |
-| `hub.html`, the Suno panel's first screen | ≈5.0k |
+| `hub.html`, the Suno panel's first screen | ≈5.1k |
 | `next.html`, three steps | ≈2.3k |
-| `mcp.html`, the whole template (one screen is kept: less) | ≈19.7k |
+| `mcp.html`, the whole template (one screen is kept: less) | ≈21.8k |
 | `editor.html` | ≈46.3k |
 
 ## 4. No external files
