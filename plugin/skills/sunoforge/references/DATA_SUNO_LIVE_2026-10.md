@@ -43,13 +43,13 @@ field (`additionalProperties: false`; audio-wait's schema does not say so): a fi
 
 | Tool | Class | Fields (2026-11-04) |
 |---|---|---|
-| account-usage | read | — (plan, allowed_models, features, credits, download credits) |
+| account-usage | read | — (plan, allowed_models, features, credits, download credits); uploads, library reads and organizing spend no credits, and uploads have no count limit [OFFICIAL, the tool description, 2026-11-05] |
 | account-me | read | — |
 | account-upgrade | read | — (a link or button to buy credits; on 402) |
 | audio-create | **spend** | controls {audio_influence, style_influence, variety 0–4, weirdness}, description ≤3000, duration 15–360, duration_guidance, duration_strict, idempotency_key, instrumental, lyrics ≤5000, max_mode, model, negative_style ≤1000, reference_audio_ids ≤10 (Simple mode only), style ≤1000, title ≤256, vocal_gender, voice_id, workspace_id |
 | speech-create | **spend** | backing_music, duration, duration_guidance, duration_strict, idempotency_key, negative_style, prompt ≤2947 (2887 with backing_music), script ≤5000, style ≤1000, title, vocal_gender, voice_id, workspace_id |
 | audio-covers-create | **spend** | **id**, controls, duration, idempotency_key, lyrics, max_mode, model, negative_style, style, title, voice_id, workspace_id — `title` is in the schema ("defaults to the source clip's title") while the tool's description says there is no title field (2026-11-05): send none, the cover keeps its source's |
-| audio-extensions-create | **spend** | **id**, **continue_at** ≥0.4, controls, duration, idempotency_key, instrumental, lyrics, max_mode, model, negative_style, style, title, voice_id, workspace_id |
+| audio-extensions-create | **spend** | **id**, **continue_at** ≥0.4, controls, duration, idempotency_key, instrumental, lyrics, max_mode, model, negative_style, style, title, voice_id, workspace_id — `instrumental` left out matches the source: a sung source keeps singing, an instrumental stays instrumental; a voice_id always sings [OFFICIAL, the tool description, 2026-11-05] |
 | audio-mashups-create | **spend** | **id**, **additional_audio_id**, controls, duration, idempotency_key, lyrics, max_mode, model, negative_style, style, title, workspace_id |
 | audio-download | **spend** only with `confirm: true` | **id**, confirm, format (mp3, wav) |
 | audio-full-song | read (free join) | **id**, idempotency_key |
@@ -60,15 +60,15 @@ field (`additionalProperties: false`; audio-wait's schema does not say so): a fi
 | sounds-create | **spend** (two sounds a call, 1 credit each; Pro and up) | **description** ≤500, loop, tempo 1–300, key (C … B, Cm … Bm), title, idempotency_key |
 | library-list · library-search | read | cursor, limit ≤50, downloaded, liked, origin, visibility, workspace_id; search adds **query** ≤200 |
 | library-liked | read | cursor, limit ≤50 |
-| playlists-list · playlists-list-clips | read | cursor, limit, query ≤200 / **id**, cursor, limit |
+| playlists-list · playlists-list-clips | read | cursor, limit, query ≤200 / **id**, cursor, limit — another user's playlist or an album is a 404 [OFFICIAL, the tool description, 2026-11-05] |
 | workspaces-list | read | cursor, query ≤200 |
-| voices-list | read | collection (own, loved), cursor, limit ≤100, query |
+| voices-list | read | collection (own, loved), cursor, limit ≤100, query — a name is searched within `collection` (no match in own → try loved); a voice id finds the user's own voice or any public one they may sing in [OFFICIAL, the tool description, 2026-11-05] |
 | voices-start | read | — (a suno.com link to make a voice) |
 | audio-edit | write | **id**, title, lyrics — the library entry only, never the audio |
-| audio-like · audio-unlike | write | **id**; audio-like also takes `dislike: true` — a dislike replaces a like, and the other way round |
+| audio-like · audio-unlike | write | **id**; audio-like also takes `dislike: true` — a dislike replaces a like, and the other way round; any song the user can open by link [OFFICIAL, the tool description, 2026-11-05] |
 | playlists-create · -add-clips · -remove-clips | write | name ≤100, description, visibility / **id**, **clip_ids** ≤100 |
 | workspaces-create · workspaces-update-clips | write | name, description / **id**, add ≤50, remove ≤50 |
-| audio-upload-create · audio-upload-complete | write | file {download_url, file_id, file_name, mime_type}, title / **id**, title |
+| audio-upload-create · audio-upload-complete | write | file {download_url, file_id, file_name, mime_type}, title / **id**, title — the uploader takes audio (any audio type, M4A, AAC, Opus) and video (MP4, MOV, WebM), up to 100 MB [first-hand, the uploader page, 2026-11-05] |
 
 GONE (present 2026-10-29, gone 2026-11-04): `clip_count` on every creation tool — a call always makes two takes
 now (§3). NEW: `max_mode` on create, cover, extension and mashup (§3). NEW 2026-11-05: `variety` (0–4)
@@ -593,7 +593,7 @@ Everything else comes back as data that SunoForge draws itself (the panel, the c
 | a continuation | audio-extensions-create (`id`, `continue_at`) | `15m … extend` `15d` `15f` | card | two continuations, each the end of its own chain |
 | one long song | extensions … → audio-full-song | `15f` `2k` | card each extend; join free | one joined clip, up to 20 segments |
 | two songs blended | audio-mashups-create (`id`, `additional_audio_id`, lyrics) | `15m … mashup` → the list in pick mode, a tap picks the second song · `3e` | card | two takes; sings only with lyrics |
-| to start from own audio | audio-upload-create (opens Suno's uploader; a chat attachment as `file` after a yes) → audio-upload-complete | `15e upload` `3a` | free | the uploader card, then the clip with its sung lyrics, a style line, a description |
+| to start from own audio or a video | audio-upload-create (opens Suno's uploader: audio, or video as MP4, MOV, WebM, up to 100 MB; a chat attachment as `file` after a yes) → audio-upload-complete | `15e upload` `3a` | free | the uploader card, then the clip with its sung lyrics, a style line, a description |
 | to hear a song | audio-wait (`ids` ≤4) and the song's `song_url` | `15c … play` | free | Suno's player card; the link when the card stays silent |
 | what Suno stored | audio-retrieve | `15c` | free | stored style, lyrics, duration, status, error |
 | tempo, key, sections, beats, tags | audio-analysis | `15g` `12b` `13d` | free | bpm, key, time signature, every beat with its bar position, sections, labels, terms |
@@ -621,7 +621,7 @@ album, a playlist for the running order) · move a song made on suno.com into an
 chain, a cover or a mashup (any song the user may remix there, by id).
 
 NOT REACHABLE THROUGH THE MCP [OFFICIAL by absence; the app's menus first-hand, 2026-11-04]:
-Create — Personalize · Inspiration (a playlist) · an image, a video or MIDI as input ·
+Create — Personalize · Inspiration (a playlist) · an image or MIDI as input (a video goes in only as a file through the uploader; whether Suno uses its picture or only its sound is not checked) ·
 recording audio · saved lyrics and styles · Style Personas (Voices menu) · Custom Models (making one) · Lyricist · visibility at creation (songs land
 private; a playlist can be public). A song — queue · song radio · report · publish ·
 trash · sample this song · use as inspiration · the Song Editor (crop, remove a section,

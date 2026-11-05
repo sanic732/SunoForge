@@ -2,6 +2,26 @@
 
 ---
 
+## 5.0.1 — 2026-11-05
+
+Suno's server, checked again against its own tool descriptions and its uploader page.
+
+- **Video goes in.** Suno's uploader takes audio (any audio type, M4A, AAC, Opus) and video (MP4,
+  MOV, WebM), up to 100 MB. A video or a hummed memo now reaches SunoForge through it when a Suno
+  server is connected; the hint of menu `[1]` says so. Whether Suno uses a video's picture or only its
+  sound is not checked.
+- **Someone else's voice.** `voices-list` finds a voice by its id: the user's own, or any public voice
+  they may sing in.
+- **Uploads are free and unlimited:** uploads, library reads and organizing spend no credits.
+- **Extensions keep the source's character** when `instrumental` is left out: a sung song keeps
+  singing, an instrumental stays instrumental.
+- Smaller: a like works on any song the user can open by link; another user's playlist or an album
+  is a 404.
+
+Nothing else changed: the screens, the menu and the nine languages are those of 5.0.0.
+
+---
+
 ## 5.0.0 — 2026-11-05
 
 > Released: the Claude plugin (`sunoforge.plugin`) with nine interface
