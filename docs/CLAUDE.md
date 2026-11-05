@@ -1,5 +1,11 @@
 # Running in Claude
 
+> **Note on packages.** Release 5.0.0 ships the Claude plugin only
+> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
+> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> that is the working package you can download today, from the
+> [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
+
 ---
 
 ## Claude Edition
@@ -49,7 +55,7 @@ Language is automatic: SunoForge answers in the language you write in.
 
 1. **Settings → Capabilities** — turn on Code execution.
 2. **Customize → Skills** → **+** → **Create skill** → **Upload a skill** → choose
-   `SunoForge_v5.0_Skills_for_Claude.zip`.
+   `SunoForge_v4.0_Skills_for_Claude.zip`.
 3. The Skill switches on by itself when you ask for a music prompt, lyrics or a
    repair. You can also ask directly: "use SunoForge".
 
