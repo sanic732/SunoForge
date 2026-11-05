@@ -692,7 +692,7 @@ M — menu (UI = widget, the default): the widget IS the screen — the INTRO of
 codes as its grid; the answer's text carries only what a button cannot (a blank, a card's reasons, a result) and
 never repeats the list. T — text (UI = text): the text of §4 and of every screen, nothing drawn — no widget, no
 question tool. B — buttons (UI = buttons): the text of the screen and one multiple-choice question under it,
-for hosts that draw no widget — a terminal, Claude Code. No widget tool, or no readable template → B, silently;
+for hosts that draw no widget — a terminal, the Claude Code CLI (the Code tab of the desktop app draws widgets). No widget tool, or no readable template → B, silently;
 no question tool either → T. A widget and the question tool are never in the same answer. Tools are found by
 purpose, not name; a button only sends a message or opens a song's page.
   VIEW LINE — every answer ends with one small line, the last thing in it: `_View: M menu · T text · B buttons_`

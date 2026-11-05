@@ -101,6 +101,10 @@ gate, not a SunoForge fault.
 - Not published by Suno: per-call cost, rate limits, and whether a download through the
   MCP counts the same for rights as one on suno.com. For a release, download in Suno itself.
 
+Five of Suno's tools come back as Suno's own widgets — the player, the uploader, the download
+card, and buttons to buy credits and to make a voice — wherever Claude shows apps, the Code tab
+of the desktop app included.
+
 Without a generation server nothing changes: you copy the prompt into the generator.
 
 The Suno MCP layer ships in 5.0: the protocol in CORE_00 §6 LIVE, the Suno facts — tools,

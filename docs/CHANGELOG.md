@@ -4,8 +4,16 @@
 
 ## 5.0.1 — 2026-11-05
 
-Suno's server, checked again against its own tool descriptions and its uploader page.
+Suno's server, checked again: every one of its 35 tools called on a Pro account, its uploader page read.
 
+- **Five of Suno's own widgets.** The player, the uploader, the download card and the buttons
+  "Get more credits" and "Create your voice on Suno" come back as Suno's interface, drawn by Claude
+  where it shows apps — checked in the Code tab of the desktop app. The last one was a bare link before.
+- **The Code tab draws widgets.** SunoForge no longer treats Claude Code as a host without them; only
+  the terminal CLI falls back to buttons.
+- **After an upload, read the words back.** Suno hears the lyrics rather than reading them and gets
+  some wrong; the cover inside an mp3 is not taken. A downloaded mp3 carries the title, the lyrics,
+  the cover and a C2PA manifest.
 - **Video goes in.** Suno's uploader takes audio (any audio type, M4A, AAC, Opus) and video (MP4,
   MOV, WebM), up to 100 MB. A video or a hummed memo now reaches SunoForge through it when a Suno
   server is connected; the hint of menu `[1]` says so. Whether Suno uses a video's picture or only its
