@@ -1,268 +1,204 @@
-<p align="center"><img src="assets/banner.png" alt="SunoForge" width="100%"></p>
+![SunoForge](assets/banner.png)
 
-# SunoForge v4.0 — AI Music Prompt Orchestrator
+# SunoForge v5.0 — AI Music Prompt Orchestrator
 
-`[EN]` this file · `[RU]` [README.ru.md](README.ru.md)
+SunoForge is a set of instructions that turns a chat assistant into a prompt engineer for
+music generation. Describe what you want in plain words — or hand it a photo, a video or a
+voice memo — and get finished prompts, ready to paste: Style, lyrics markup, speech
+scripts, edits, repair of old prompts, rights and post-production notes.
 
-A set of instructions that turns a chat assistant into a prompt engineer for music
-generation. Twelve files, seven platforms, two editions, one principle: **never
-present a guess as a fact**.
+Fourteen files, two editions, one principle: **never present a guess as a fact**.
 
-- **Claude Edition** — XML-native, for Claude: a plugin, a Skill or a Project (chat on
-  the web, the apps, Cowork, Claude Code).
-- **Gemini Edition** — pure Markdown with no XML, for Gemini Gems and the Gemini app;
-  it also suits ChatGPT and Grok.
+- **Claude Edition** — XML, for Claude: a plugin, a Skill or a Project.
+- **Gemini Edition** — plain Markdown, for Gemini and any long-context assistant.
 
-Same content, same menu, same rules. Only the packaging differs, because each model
-reads its own format best. The prompt archive holds both: the `claude/` and `gemini/`
-folders; the Skills and the plugin come as separate files.
+Same content, same menu, same rules; only the packaging differs.
 
-**Try it without installing anything** — the Gem with everything loaded:
-[SunoForge v4.0](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
+**Try it without installing anything:**
+[SunoForge Gem](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
+(refreshed separately from the release).
 
 ---
 
-## It works at both ends
+## Generators
 
-**If you know nothing about music.** Write what you want the way you would say it
-to a friend — "something sad but not depressing, with a piano, for the end of a
-video" — or hand it a photo, a video or a hummed voice memo. You get finished
-prompts, ready to paste. No terminology, no menu numbers, no settings first.
-
-**If you know exactly what you want.** The same system goes down to tempo and key,
-spectral brightness of a timbre, where the groove sits against the beat, stereo
-depth and reverb decay, slider postures per genre, Suno's Variety and Max Mode,
-section-by-section performance notation, chord progressions inline, timestamp
-ranges for scoring video, mastering thresholds and ratios. The vocabulary file
-alone is 40 KB of descriptors; the recipe library carries 45 presets with BPM, key
-and slider posture already dialled in.
-
-Nobody has to grow into the professional layer to use the beginner one.
-
----
-
-## What changed in v4.0
-
-Between July and September 2026 the ground moved under every platform:
-
-| What happened | What v4.0 does with it |
+| Generator | What SunoForge covers |
 |---|---|
-| **Suno v6** (9 Sep): v6, v6-wild, v6-mini — every earlier model retired | the whole Suno file rewritten; old model names are recognised and repaired, never offered |
-| Suno added a real **Max Mode** switch and a **Variety** slider | when to use Max Mode; Variety 0 for any engineered style — above zero v6 rewrites your style text |
-| Suno v6 edits finished songs in plain words: one section, one line, mashups, samples | new menu entries `2i`, `3d`–`3f`, `6g` |
-| Suno **rights now follow the download** (terms in force 3 Sep), downloads capped per plan | release planning and the legal file rewritten |
-| **Lyria 3.5** replaced Lyria 3 Pro; Google's prompt guide rewritten (17 Sep) | numeric BPM and key, section tags, `Lyrics:` header, timestamp **ranges** — three old rules reversed |
-| **ElevenMusic v2.5**: ownership on every plan, commercial use on Free with a credit | new position in platform choice and `/free` |
-| **Stable Audio 3.0** DAW plugin; **MiniMax Music 3.0** with open weights; **ACE-Step 1.5** and **YuE2** run locally | a section on music you can run on your own hardware |
-| GEMA v Suno (Munich, 31 Jul), a second UMG/Sony suit, Spotify AI Persona badges, Deezer AI tagging, EU AI Act transparency rules | `/legal` updated from court and vendor texts |
+| **Suno v6** (`v6`, `v6-wild`, `v6-mini`) | Style and lyrics, Max Mode, Variety, edits in plain words, Voices, Custom Models, Studio 2.0, stems |
+| **Suno Speech** (beta) | narration with its own soundtrack in one take — menu `[14]` |
+| **Google Lyria 3.5 / 3 Clip / RealTime** | full songs, 30-second sketches, a live stream; timestamp ranges for video |
+| **Google Flow Music** | changing one part without regenerating the rest |
+| **ElevenMusic v2.5** | section-by-section editing; release rights by plan |
+| **Stable Audio 3.0** | licensed data, open weights, a DAW plugin |
+| **MiniMax Music 3.0** | open weights, full songs with vocals |
+| **Local models** | ACE-Step 1.5 and YuE2 on your own GPU |
+| **Any music-generation MCP server** | Suno's own (beta), ElevenLabs' hosted MCP or your own — send from the chat, menu `[15] LIVE` |
 
-And two decisions:
+Udio is not a target: downloads stayed disabled after its settlement.
 
-**No prices.** Nobody knows which country, account or plan the reader has, and
-prices change without notice. Plans are named where a feature or a right depends on
-them; nothing is priced.
+## Hosts
 
-**Only what exists.** The menu and the settings show only models and features you
-can select today. Retired names live in one place: the repair table of `[12] AUDIT`,
-which needs them to fix old prompts.
+| Host | v5.0 package | How |
+|---|---|---|
+| Claude — chat on the web, Claude Desktop, Cowork | `sunoforge.plugin` or the marketplace `sanic732/SunoForge` · `SunoForge_v5.0_Skills_for_Claude.zip` · `SunoForge_v5.0_Prompt.zip` (`claude/`) | plugin (paid plans) · Skill · Project |
+| Claude Code | the marketplace `sanic732/SunoForge` | plugin |
+| Gemini | `SunoForge_v5.0_Skills_for_Gemini.zip` · `SunoForge_v5.0_Prompt.zip` (`gemini/`) | Skill · files in a chat |
+| ChatGPT | `SunoForge_v5.0_plugin_chatgpt.zip` | plugin |
+| Antigravity | `SunoForge_v5.0_plugin_antigravity.zip` | plugin |
+| grok.com, other long-context assistants | `SunoForge_v5.0_Prompt.zip` (`gemini/`) | Project or attached files |
 
----
+The **Grok** plugin follows; until then Grok runs SunoForge from the Markdown files.
 
-## What did not change
-
-**Confidence marking.** Every claim about platform behaviour carries `[OFFICIAL]`
-(vendor documentation), `[COMMUNITY]` (independent testing and guides) or
-`[UNVERIFIED]` (widely repeated, no primary source). This time the facts were
-checked against the vendors' own pages — help centres, terms of service, API docs,
-a court's press release — and every page is kept as text for the record.
-
-**The CORE / DATA split.** Rules and facts live in separate files. v4.0 is honest
-about the one place it strained: three rules moved this quarter, and all three
-named a platform. A rule about one platform is a fact about that platform, so it
-now lives in that platform's DATA file.
-
-**Myths stay catalogued.** MAX MODE tags, the "two-minute drift", `[Reverb: 30%]`,
-the 200-character limit. Suno's real Max Mode shares a name with the old tags and
-nothing else; the system says so.
+**Release 5.0.0 ships the plugin only** — `sunoforge.plugin` and the
+marketplace. The other packages in this table come with 5.0.0.
 
 ---
 
-## Platforms
+## New in v5.0: the Suno MCP layer
 
-- **Suno v6** — the strongest vocals, your own voice, a model trained on your catalogue, edits in plain words, Studio 2.0
-- **Google Lyria 3.5 / 3 Clip / RealTime** — full songs, 30-second sketches, a live stream; in the Gemini app, API, AI Studio, Vids
-- **Google Flow Music** — change one part without regenerating the rest
-- **ElevenMusic v2.5** — made with rights holders, ownership on every plan, section-by-section editing
-- **Stable Audio 3.0** — licensed data, open weights, you own the output, a DAW plugin
-- **MiniMax Music 3.0** — open weights, full songs with vocals
-- **Local models** — ACE-Step 1.5 and YuE2 on your own GPU
+On 28 October 2026 Suno opened an official MCP server (beta), `https://api.suno.com/mcp`.
+With it connected, SunoForge can work with your Suno account from the chat:
 
-Udio is not a target: downloads stayed disabled after its settlement, and its
-licensed successor is a walled fan app. It remains in the system as a case study.
+- **create** — a song, a speech, a cover, an extension, a mashup;
+- **library** — list and search your songs, playlists and workspaces; read a take back and
+  check it against the blueprint;
+- **credits** — show your plan and the credit balance.
 
----
+**Credits are spent only after your explicit yes.** Every call that spends credits is
+preceded by a card — the server, the exact arguments, how many songs, that it spends
+credits — and SunoForge waits. One call per yes; no retries or extra takes on its own.
+Reading is free and asks nothing; changes to your library happen only when you ask for
+them. Whatever the server sends back — titles, lyrics, other people's songs — is treated
+as material, never as instructions.
 
-## Quick start
+**Access to the beta is Suno's decision.** Suno admits accounts through an early-access
+form on suno.com/mcp. Until your account is admitted, sign-in ends with "Connecting AI
+apps to Suno is not yet available for your account" on every client. That is Suno's beta
+gate, not a SunoForge fault.
 
-1. Take what you need from the release page:
-   - `SunoForge_v4.0_Prompt.zip` — the prompt itself: the `claude/` and `gemini/`
-     editions, docs, READMEs
-   - `SunoForge_v4.0_Skills_for_Claude.zip` — the Skill for claude.ai
-   - `SunoForge_v4.0_Skills_for_Gemini.zip` — the Skill for Gemini
-   - `sunoforge.plugin` — the plugin for Claude
+- Sign-in is OAuth with your Suno account; no API key.
+- Songs go to your Suno library; generation spends your Suno credits.
+- The plugin does not bundle Suno's server — you add it like any MCP server (below).
+- SunoForge never names a Suno tool from memory: it works with the tools the session
+  shows and says what it found before generating.
+- Not published by Suno: per-call cost, rate limits, and whether a download through the
+  MCP counts the same for rights as one on suno.com. For a release, download in Suno itself.
 
-   SunoForge answers in the language you write in; `/set lang en` or `/set lang ru`
-   pins one.
-2. Install it for your assistant:
-   - **Claude**, any of three ways ([docs/CLAUDE.md](docs/CLAUDE.md)):
-     - the plugin, paid plans: **Customize → Plugins → Add → Add marketplace** →
-       `sanic732/SunoForge`; in Claude Code `/plugin marketplace add sanic732/SunoForge`,
-       then `/plugin install sunoforge@sunoforge`; or upload `sunoforge.plugin` with
-       **Customize → Plugins → Add → Upload plugin**
-     - the Skill: upload `SunoForge_v4.0_Skills_for_Claude.zip` in **Customize → Skills**
-       (Code execution on)
-     - a Project with the twelve files from `claude/` as knowledge
-   - **Gemini** — the Skill: unpack `SunoForge_v4.0_Skills_for_Gemini.zip` and upload the
-     `sunoforge` folder on the **Skills** page; or the five `CORE_*` files from `gemini/` plus `gemini/DATA.zip`
-     ([docs/GEMINI.md](docs/GEMINI.md))
-   - **ChatGPT, Grok** — the files from `gemini/`, attached or pasted
-3. Type `start` or `/menu`.
-4. Pick a menu entry, or just describe the task.
+Without a generation server nothing changes: you copy the prompt into the generator.
 
-In detail: [docs/QUICKSTART.md](docs/QUICKSTART.md) · for experienced users:
-[docs/ADVANCED.md](docs/ADVANCED.md)
+The Suno MCP layer ships in 5.0: the protocol in CORE_00 §6 LIVE, the Suno facts — tools,
+field map, defaults that cost credits, plan gating — in `DATA_SUNO_LIVE_2026-10.md`, a
+snapshot of 2026-10-29. The ChatGPT and Antigravity plugins ship in the same release;
+on every host you add Suno's server yourself.
+
+Also new: menu `[14] SPEECH` (Speech Blueprint: Script and Tone), the words `send` and
+`mcp-info`, and two small files of your own data — `settings.md` and `library.md` — via
+`config`, `save` and `library`. Menu entries `[1]`–`[13]` are unchanged. Still no prices anywhere.
 
 ---
 
-## How to use it
+## Install
 
-You never have to name a menu number:
-
-| You write | Where it goes |
-|---|---|
-| "a dark cinematic track with cello" | Quick start, 2–3 variants |
-| "a song from this photo" | Quick start — Suno v6 or Lyria 3.5 |
-| "change the chorus to a gospel choir, keep the rest" | `2i` — an edit instruction for Suno v6 |
-| "like this track, but slower" | Clone mode `[3]` |
-| "blend phonk and jazz" | Hybrid lab `[4]` — a bridge genre, or v6-wild |
-| "I need a raspy female vocalist" | Persona workshop `[5]` — a biography, not a tag |
-| "score my video to the cuts" | Platform lab `[7]` — Lyria 3.5 with timestamp ranges |
-| "can I run this offline?" | Platform compare `[10]` — open weights and local models |
-| "can I monetise this?" | `/legal` |
-| "split the stems and master it" | `[13]` — stems, Studio, mastering |
-| "here's my old prompt" | Audit `[12]` — diagnosis and repair |
-
-Every request returns **two or three interpretations**, not one "correct" answer.
-
----
-
-## Configuring the core
-
-Settings live at the top of `CORE_00_ENTRY.md`, in the preloader. Edit them
-before loading, or change them mid-session with `/set`.
+### Claude Code
 
 ```
-TARGET_PLATFORM  = "auto"      // auto | suno | lyria | flow | eleven | stable | minimax | local | dual | all
-SUNO_VERSION     = "v6"        // v6 | v6-wild | v6-mini | custom
-SUNO_PLAN        = "unknown"   // unknown | free | pro | premier — only gates features
-SUNO_MAX_MODE    = "suggest"   // suggest | on | off
-LYRIA_MODEL      = "3.5"       // 3.5 | clip | realtime
-DURATION         = "auto"      // auto | a target length
-OUTPUT_LANG      = "auto"      // auto | en | ru — auto: the language you write in
-VARIANT_COUNT    = 2           // 1 | 2 | 3
-USER_LEVEL       = "auto"      // auto | beginner | pro
-SESSION_MODE     = "creative"  // creative | technical | clone
-VOICES_ENABLED   = false       // true once you have a Suno Voice
-CUSTOM_MODEL     = ""          // name of your trained Suno model
-SHOW_CONFIDENCE  = true
-FOLKLORE_MODE    = "off"
+/plugin install sunoforge --marketplace sanic732/SunoForge
 ```
 
-**Change these first**
-
-- `SUNO_PLAN` — tell it `free` and it stops offering v6, v6-wild, stems and Studio;
-  leave it `unknown` and it names the plan a feature needs and asks only when it
-  matters.
-- `TARGET_PLATFORM` — set it if you use one platform only.
-- `VARIANT_COUNT` — `1` when you know what you want, `3` when you are searching.
-- `OUTPUT_LANG` — the language of answers and the menu; `auto` follows the language
-  you write in. Prompts are English, except Lyria, which sings in the language of
-  the prompt.
+On Claude Code older than 2.1.275:
 
 ```
-/set suno v6-mini     /set plan free          /set maxmode on
-/set platform lyria   /set duration 3:30      /set variants 3
-/set lang ru          /confidence off         /menu
+/plugin marketplace add sanic732/SunoForge
+/plugin install sunoforge@sunoforge
 ```
+
+Check: `/sunoforge` (or the word `SunoForge`) opens the menu `[1]`–`[15]`.
+Update: `claude plugin update sunoforge@sunoforge`.
+
+### Claude chat, Claude Desktop, Cowork
+
+- **Plugin** (paid plans): **Customize → Plugins → Add → Add marketplace** →
+  `sanic732/SunoForge` → install **SunoForge**. Without GitHub: **Upload plugin** →
+  `sunoforge.plugin` from the release page.
+- **Skill**: turn on Code execution, then **Customize → Skills → Upload a skill** →
+  `SunoForge_v5.0_Skills_for_Claude.zip`.
+- **Project**: upload the thirteen files from `claude/` to Project knowledge; instructions:
+  `Read CORE_00_ENTRY.md first and follow it.`
+
+Check: in a new chat, type `start`.
+
+### Gemini
+
+Unpack `SunoForge_v5.0_Skills_for_Gemini.zip`, then **Skills → Upload** → the whole
+`sunoforge` folder. The folder name must stay `sunoforge`.
+
+### ChatGPT, grok.com, anything else
+
+Upload the thirteen `.md` files from `gemini/` in `SunoForge_v5.0_Prompt.zip` to a Project
+(or attach them), and tell the assistant to read `CORE_00_ENTRY.md` first.
+
+### Suno, optional (beta)
+
+- Claude Code: `claude mcp add --transport http suno https://api.suno.com/mcp`, then
+  `/mcp` → `suno` → sign in to Suno.
+- Claude chat, Desktop, Cowork: **Customize → Connectors → Add custom connector** →
+  `https://api.suno.com/mcp` → sign in to Suno.
+
+A music MCP server of your own is added like any MCP server: `claude mcp add` in Claude
+Code, a connector in Claude chat and Cowork. `mcp-info` shows what the session sees.
+
+Every host step by step: [docs/INSTALL.md](docs/INSTALL.md) · Suno in detail:
+[docs/SUNO_MCP.md](docs/SUNO_MCP.md) · plugin: [plugin/README.md](plugin/README.md)
 
 ---
 
-## What is inside
+## How it works
 
-**CORE — rules. Undated.**
+- **Confidence marking.** Every claim about platform behaviour carries `[OFFICIAL]`,
+  `[COMMUNITY]` or `[UNVERIFIED]`.
+- **Rules and facts apart.** `CORE_*` files hold rules and are undated; `DATA_*` files hold
+  platform facts, are dated, and are replaced when platforms move.
+- **No prices.** Plans are named where a feature or a right depends on them.
+- **Two or three interpretations** per request, not one "correct" answer.
+- **Language.** SunoForge answers in the language you write in; `set lang` pins one. In
+  Claude Code and the desktop app the plugin's Settings tab also sets a language and a
+  folder for your settings and library.
+- **Views.** The small line at the foot of every answer switches them: **M** menu
+  (widgets with buttons), **T** text, **B** buttons (one multiple-choice question, for the
+  terminal). In view M an answer without its own screen ends with its next steps and Menu.
 
-| File | Covers |
+Size: about 116,500 tokens (Claude Edition, o200k_base). A Skill or a plugin opens only
+the files a task needs. Details: [docs/TOKENS.md](docs/TOKENS.md).
+
+## Release files
+
+| File | What it is |
 |---|---|
-| `CORE_00_ENTRY.md` | Preloader, system map, the menu `[1]`–`[13]`, routing, output formats, critical rules |
-| `CORE_01_STYLE.md` | Six layers and how four vendor guides line up with them, Time & Place, personas, hybrids, cloning |
-| `CORE_02_LYRICS.md` | Section labels, notation, ad-libs, duets, chords; what carries over to Lyria, MiniMax, local models |
-| `CORE_03_DIAGNOSE.md` | Symptom index, 15 checks, 25 repair rows, early Suno v6 failure reports |
-| `CORE_04_WHY.md` | Why each rule is shaped the way it is — including the ones that turned out wrong. On `/why` |
+| `sunoforge.plugin` | the Claude plugin as one file |
+| `SunoForge_v5.0_Skills_for_Claude.zip` | the Skill for Claude: `SKILL.md` and the thirteen files |
+| `SunoForge_v5.0_Skills_for_Gemini.zip` | the same Skill with the Markdown files |
+| `SunoForge_v5.0_plugin_chatgpt.zip` | the ChatGPT plugin, Markdown edition |
+| `SunoForge_v5.0_plugin_antigravity.zip` | the Antigravity plugin, Markdown edition |
+| `SunoForge_v5.0_Prompt.zip` | both editions (`claude/`, `gemini/`), docs, README |
 
-**DATA — facts. Dated, replaced when platforms move.**
-
-| File | Covers |
-|---|---|
-| `DATA_SUNO_2026-09.md` | v6 family, Max Mode, Variety, Duration, edits, Voices, Custom Models, Studio 2.0, stems, plans, downloads |
-| `DATA_GOOGLE_2026-09.md` | Lyria 3.5 / Clip / RealTime, Google's prompt guide, timestamp ranges, the Gemini app, Flow Music |
-| `DATA_OTHER_2026-09.md` | ElevenMusic, Stable Audio, MiniMax, local models, `/free`, platform compare, one idea for every platform |
-| `DATA_VOCAB.md` | Timbre, dynamics, groove, space, instruments, key and tempo, theory as prompt language |
-| `DATA_RECIPES.md` | Genre recipes, 45 presets, task scenarios |
-| `DATA_POSTPROD.md` | Stems, Studio, mastering chain, loudness, DAW handoff — menu `[13]` |
-| `DATA_LEGAL_2026-09.md` | Rights, terms, voices, catalogues, litigation, streaming and distributor policies, EU AI Act. On `/legal` |
-
-Every file is prepared for retrieval: frontmatter with a description, a system map,
-anchored zones, tags — assembled to the RAG standard of P2P.
-
-For Claude the same twelve files also ship as a Skill: a short `SKILL.md` router plus
-the files in `references/`, opened per task. This repository is its marketplace —
-`.claude-plugin/marketplace.json` and the plugin in `plugin/`; the release carries the
-Skill as `SunoForge_v4.0_Skills_for_Claude.zip` and the plugin as `sunoforge.plugin`.
-Gemini gets the same Skill, built from its Markdown files:
-`SunoForge_v4.0_Skills_for_Gemini.zip`.
-
----
-
-## Size and tokens
-
-| Edition | Size | Tokens (o200k_base) | Without the two lazy files |
-|---|---|---|---|
-| Claude (XML) | 457 KB | ~114,200 | ~98,500 |
-| Gemini (Markdown) | 420 KB | ~104,400 | ~90,200 |
-
-Comfortable in a 1M or 200K window; too tight for 128K. Details: [docs/TOKENS.md](docs/TOKENS.md).
+This repository is also the Claude plugin marketplace: `.claude-plugin/marketplace.json`
+and the plugin in `plugin/`. Privacy: [PRIVACY.md](PRIVACY.md).
 
 ---
 
 ## Built with P2P
 
-Designed and assembled with **[P2P](https://github.com/sanic732/P2P)** — an open
-cross-model meta-prompt framework by the same author. P2P supplied the method:
-a technique earns its place by surviving a test; the core is not a database; fix
-a declaration, then check everyone who cites it. For v4.0 it also supplied the RAG
-standard the files are built to, the rule that Gemini gets Markdown and Claude gets
-XML, and a QUORUM review of the finished build.
+Designed with [P2P](https://github.com/sanic732/P2P), an open cross-model meta-prompt
+framework by the same author.
 
----
+## Licence
 
-## Licence and sources
+Apache 2.0, from 5.0.0 on: free to use, modify and redistribute, commercially included;
+keep the notices in [NOTICE](NOTICE) and say which files you changed. See [LICENSE](LICENSE).
+Releases before 5.0.0 were MIT and stay MIT. Quotes from Suno, Google, ElevenLabs and
+other vendors are theirs, not covered by this licence; each is marked and sourced in place.
 
-MIT. Free to use, modify and redistribute, commercially included.
-
-Suno, Google, Lyria, Gemini, ElevenLabs, Stability AI, MiniMax and other names belong
-to their owners. This project is unaffiliated with and unendorsed by any of them.
-Sources and legal notes: [docs/CREDITS.md](docs/CREDITS.md) · history:
-[docs/CHANGELOG.md](docs/CHANGELOG.md)
-
-**Where is v2.0?** The May 2026 edition was Russian-only and published on the 4PDA
-forum: [SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185).
+Suno, Google, Lyria, Gemini, ElevenLabs, Stability AI, MiniMax, OpenAI, ChatGPT, xAI,
+Grok, Anthropic, Claude and other names belong to their owners. This project is
+unaffiliated with and unendorsed by any of them. Sources and notices:
+[docs/CREDITS.md](docs/CREDITS.md) · history: [docs/CHANGELOG.md](docs/CHANGELOG.md)

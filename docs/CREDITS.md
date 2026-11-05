@@ -1,116 +1,51 @@
-# Лицензия, источники и оговорки · Licence, sources and notices
+# Licence, sources and notices
 
----
-
-## Лицензия
-
-**MIT.** © 2026 Sanic (`sanic732`). Полный текст — в файле `LICENSE` в корне.
-
-Можно свободно использовать, изменять, распространять и применять коммерчески.
-Единственное требование — сохранять текст лицензии и указание авторства.
-
-Лицензия распространяется на **саму систему** — на текст инструкций. Она ничего
-не говорит о правах на музыку, которую вы с её помощью создадите: те определяются
-условиями платформы, на которой вы генерируете. Об этом — файл
-`DATA_LEGAL_2026-09.md` (в папках `claude/` и `gemini/`) или команда `/legal`.
-
----
-
-## Стороннего кода в поставке нет
-
-SunoForge — это набор текстовых инструкций. В поставке нет ни библиотек, ни
-исполняемого кода, ни заимствованных исходников. Вопрос совместимости лицензий
-не возникает.
-
----
-
-## На чём построено
-
-Система выросла из трёх собственных предшественников:
-
-| | |
-|---|---|
-| **SunoForge v1.1** | март 2026, MIT, английская, опубликована на GitHub |
-| **SunoForge v2.0** | май 2026, русская, публиковалась на 4PDA |
-| **Suno AI Architect «Polymath»** | предшественник, русский монолит |
-
-Из них перенесены приёмы, структуры и словари. Факты о платформах из них **не**
-переносились без повторной проверки — часть оказалась устаревшей или неверной.
-
----
-
-## Источники фактов
-
-Уровни достоверности в файлах системы соответствуют типу источника.
-
-**`[OFFICIAL]` — документация вендоров.**
-
-- **Google Cloud Blog, «Ultimate prompting guide for Lyria 3 models»**,
-  8 апреля 2026, авторы Katie Nguyen и Hussain Chinoy. Единственный вендорский
-  документ по промптингу во всём покрытии системы. Использован как источник
-  фактов; формулировки не воспроизводятся — за ними следует идти в оригинал.
-- Карточки моделей, справка и release notes Suno, Google, ElevenLabs,
-  Stability AI, MiniMax.
-
-**`[COMMUNITY]` — независимые тесты, гайды и обзоры.** Собраны и сверены между
-собой; там, где источники расходятся, расхождение показано, а не разрешено
-волевым решением.
-
-**`[UNVERIFIED]` — то, что широко повторяется без первоисточника.** Оставлено в
-системе намеренно: удалить недостаточно, иначе она не сможет распознать и
-починить чужой промпт, где это встретится.
-
----
-
-## Оговорки
-
-**Товарные знаки.** Suno, Google, Gemini, Lyria, Flow Music, ElevenLabs,
-ElevenMusic, Stability AI, Stable Audio, MiniMax, Udio, Spotify, YouTube и
-прочие названия принадлежат их владельцам. Проект с ними **не связан**, ими не
-поддерживается и не одобрен.
-
-**Не юридическая консультация.** Файл `DATA_LEGAL` — фактическая сводка публично
-известных позиций, а не совет. Для всего, где есть деньги или заказчик, читайте
-действующие условия сами и обращайтесь к юристу.
-
-**Срок годности.** Файлы `DATA_*` с датой в имени описывают состояние на
-27.07.2026. Область меняется ежемесячно. Через квартал считайте любое число
-здесь гипотезой, а не фактом.
-
-**Ответственность.** Система даёт рекомендации по составлению промптов.
-Результат генерации, его качество и правовые последствия его использования
-остаются на пользователе.
-
----
-
-## Сборка
-
-Материалы для v3.0 собраны и проверены с помощью **Perplexity Deep Research**
-(три независимых прогона по одной теме — расхождения между ними прямо повлияли
-на решение ввести разметку достоверности) и метапромпт-системы **P2P**.
-
----
 ---
 
 ## Licence
 
-**MIT.** © 2026 Sanic (`sanic732`). Full text in `LICENSE` at the root.
+**Apache 2.0**, from 5.0.0 on. © 2026 Sanic (`sanic732`). Full text in `LICENSE`,
+notices in `NOTICE`, both at the root and inside the plugin.
 
-Free to use, modify, redistribute and apply commercially. The only requirement
-is preserving the licence text and the attribution.
+Free to use, modify, redistribute and apply commercially. Keep `LICENSE` and
+`NOTICE` with any copy, and mark the files you changed.
+
+Releases before 5.0.0 (v1.1, v3.0, v4.0) were published under MIT; copies obtained
+under MIT stay under MIT.
 
 The licence covers **the system itself** — the text of the instructions. It says
 nothing about rights in the music you produce with it: those are set by the
 terms of whichever platform you generate on. See
-`DATA_LEGAL_2026-09.md` (in `claude/` and `gemini/`), or the `/legal` command.
+`DATA_LEGAL_2026-10.md` (in `claude/` and `gemini/`), or the `/legal` command.
 
 ---
 
 ## No third-party code ships here
 
 SunoForge is a body of text instructions. The distribution contains no
-libraries, no executable code and no borrowed source. Licence compatibility does
-not arise.
+libraries and no borrowed source code. Its screens (`widgets/`) are the
+author's own HTML.
+
+## Quoted material
+
+SunoForge does quote third-party text: short passages from vendors' terms,
+documentation and announcements, so that every rule about a platform can be
+checked against its source. Each quote is marked (`[OFFICIAL]`, `[COMMUNITY]`)
+and its source is named next to it. Quotes stay their owners' and are not
+covered by SunoForge's licence.
+
+- **Google** — the Lyria prompt guide and "Generate music with Lyria" on
+  ai.google.dev. Their text is licensed under Creative Commons Attribution 4.0
+  and their code samples under Apache 2.0; `DATA_GOOGLE` uses lists, example
+  prompts and sentences from them word for word or shortened, credited at the
+  top of that file.
+- **Suno, ElevenLabs, MiniMax, Stability AI, Spotify, Believe, the European
+  Commission, Variety, Music Business Worldwide** — short quotes, each with its
+  page named beside it.
+
+Checked on 2026-11-05: every file was compared word for word with the saved
+copies of the v4.0 source pages (below). Each run of twelve or more words that
+matches one of them sits inside a sourced block.
 
 ---
 
@@ -137,9 +72,13 @@ The confidence levels used throughout the files correspond to source type.
 **`[OFFICIAL]` — vendor documentation.**
 
 - **Google Cloud Blog, "Ultimate prompting guide for Lyria 3 models"**,
-  8 April 2026, by Katie Nguyen and Hussain Chinoy. The only vendor-written
-  prompting document across this system's entire coverage. Used as a source of
-  fact; its wording is not reproduced — go to the original for that.
+  8 April 2026, by Katie Nguyen and Hussain Chinoy. The first vendor-written
+  prompting document this system used (v3.0). Used as a source of fact; its
+  wording is not reproduced — checked on 2026-11-05 against the saved copy: no
+  run of eight words in common.
+- **Google's Lyria prompt guide** (ai.google.dev, edition of 2026-09-17) and
+  **ElevenLabs' music best practices** — the vendor prompting documents of
+  v4.0 and later; quoted with their sources (see Quoted material).
 - Model cards, help centres and release notes from Suno, Google, ElevenLabs,
   Stability AI and MiniMax.
 
@@ -165,7 +104,7 @@ positions, not counsel. For anything with money or a client attached, read the
 current terms yourself and take professional advice.
 
 **Shelf life.** The dated `DATA_*` files describe the state of things on
-27 July 2026. This field changes monthly. A quarter later, treat every figure
+29 October 2026. This field changes monthly. A quarter later, treat every figure
 here as a hypothesis rather than a fact.
 
 **Liability.** The system offers guidance on composing prompts. The generated
@@ -183,9 +122,12 @@ and the **P2P** meta-prompt system.
 
 ---
 
-## Sources for v4.0 (checked 2026-09-30) · Источники v4.0
+## Sources for v4.0 (checked 2026-09-30)
 
-Primary pages read directly and kept as text in the build yard:
+Primary pages read directly on 2026-09-30. The author keeps private copies of them
+(the page and its extracted text, 38 pages) to re-check quotes; they are not
+distributed, and no v3.0 or v4.0 package contained them. The same holds for the
+saved copy of the Google Cloud Blog guide used in v3.0:
 - Suno — help center: v6 FAQ, Current Models, What's new in v6, How long will my song be,
   How to change models, Stem separation, Custom Models, Voices FAQ, Creating a Voice,
   Download limits FAQ; suno.com/pricing; suno.com/release-notes; suno.com/blog/introducing-v6;
@@ -209,3 +151,23 @@ Research prompts and reports: three Deep Research passes (Suno A+B; Google, othe
 platforms, hosts C–E; music generation from Claude Code), then checked against the
 primary pages above. One report claim (an attribution requirement on Suno's Free plan)
 was refuted by the current terms and not used.
+
+---
+
+## Sources for v5.0 (checked 2026-10-28 and 2026-10-29)
+
+Primary pages read directly; no copies were kept, only notes:
+- Suno — suno.com/mcp (the Suno MCP page, setup per host, early-access form); help
+  center, category "Suno MCP (Beta)"; suno.com/release-notes (Speech 2026-10-01, Albums
+  2026-10-05, Studio 2026-10-08, Collaboration 2026-10-15, iOS 2026-10-23, Suno MCP
+  2026-10-28); suno.com/safety (Content Credentials, Check Content, Community
+  Guidelines); platform.suno.com (the Suno API portal, checked 2026-10-29); help center,
+  "Can I monetize a Remix?" (songs made while not subscribed and paid download credits,
+  checked 2026-10-29)
+- ElevenLabs — elevenlabs.io/music-terms (Music Terms of 2026-10-09, checked 2026-10-29)
+- Google — ai.google.dev: Gemini API changelog (Lyria 3.5 generally available) and
+  Deprecations (Lyria 3 Pro, checked 2026-10-29)
+
+Used as `[COMMUNITY]`:
+- HookGenius, Suno v6 guide (Variety measurements, Max Mode notes)
+

@@ -1,29 +1,26 @@
-<sunoforge_file id="CORE_03_DIAGNOSE" version="4.0" layer="core" role="troubleshoot" source="CORE_03_DIAGNOSE.md">
+<sunoforge_file id="CORE_03_DIAGNOSE" version="5.0" layer="core" role="troubleshoot" source="CORE_03_DIAGNOSE.md">
 <file_meta>
 file_id: CORE_03_DIAGNOSE
-version: "4.0"
+version: "5.0"
 layer: core
 role: troubleshoot
 description: >
-  The engine behind menu [12] AUDIT and every "why does it sound like this": a symptom
+  The engine behind menu [12] FIX A PROMPT and every "why does it sound like this": a symptom
   index, fifteen diagnostic checks, the repair table for dead and stale constructs
   (MAX tags, parametric tags, retired Suno models, old Lyria timestamp forms, prices),
   the single trigger-word list, failure modes including early Suno v6 reports, what is
   not a defect, and platform-specific problems. Read to fix or explain a prompt.
 scope: audit_protocol · repair_engine · failure_modes · trigger_words · session_health · platform_troubleshoot
-key_concepts: [audit_12, diagnostic_checks, repair_table, dead_constructs, migration_repair, failure_modes, hallucinations, trigger_words, long_track_consistency, session_health]
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS]
 used_by: [CORE_00_ENTRY, CORE_04_WHY, DATA_SUNO, DATA_GOOGLE, DATA_OTHER]
-rag_priority: critical
 authority: "THIS FILE IS THE SINGLE SOURCE FOR THE TRIGGER-WORD LIST"
-updated: "2026-09-30"
-changelog: "v4.0 — symptom index moved to the top (§0) · check 15 and repair rows 20–25 for retired Suno models, Lyria 3 Pro numbers, single-point Lyria markers, prices, Variety, Lyria lyrics without a header · row 11 retired: numeric BPM is right on Lyria now · MAX tags separated from the official Max Mode toggle · early v6 failure reports · v3.0 — repair engine for menu [12] rebuilt around dead constructs from CORE_00 §10 · trigger-word list consolidated here as the only copy · two-minute drift demoted from a diagnosis to an unverified belief · pipe-artifact section withdrawn · MAX MODE troubleshooting replaced with MAX MODE removal · Udio section replaced by retired-platform repairs"
+updated: "2026-11-05"
 </file_meta>
 
-# 🩺 SUNOFORGE v4.0 — DIAGNOSE & REPAIR
-# File 4 of 12 · CORE · The engine behind menu [12] AUDIT
+# 🩺 SUNOFORGE v5.0 — DIAGNOSE & REPAIR
+# File 4 of 14 · CORE · The engine behind menu [12] FIX A PROMPT
 
-> Menu entry **[12] AUDIT** per CORE_00 §4: the user pastes a prompt, gets a
+> Menu entry **[12] FIX A PROMPT** per CORE_00 §4: the user pastes a prompt, gets a
 > diagnosis and a repaired version. This file is that engine.
 >
 > 📌 **Single source.** The trigger-word list (§4) exists here and nowhere else.
@@ -36,9 +33,6 @@ changelog: "v4.0 — symptom index moved to the top (§0) · check 15 and repair
 
 <section id="§0" title="SYMPTOM INDEX — start here">
 
-<!-- rag_anchor: symptom_index_table -->
-<rag_zone id="triage_index">
-
 | The user says | Go to |
 |---|---|
 | generic, boring, characterless | §5 · then CORE_01 §3 |
@@ -46,9 +40,12 @@ changelog: "v4.0 — symptom index moved to the top (§0) · check 15 and repair
 | muddy, too many instruments | §2 check 3 |
 | structure not followed | §5 · CORE_02 §3 |
 | nonsense lyrics, missing words | §5 |
+| a take's analysis tags do not match the Style | DATA_SUNO_LIVE §5 · one change at the front of the Style |
+| the words sung differ from the lyrics (alignment) | DATA_SUNO_LIVE §5 · §5 |
 | unwanted talking or narration | §5 · §2 check 5 |
 | vocals in an instrumental | §5 |
 | loud finish nobody asked for | §5 |
+| a pause, silence or a second intro where an extension joins · parts don't fit | §5 PAUSE AT A SEAM · DATA_SUNO §7 joins |
 | quality falling over a session | §5 |
 | metallic ring on the high end | §5 |
 | character fades later in the track | §5 — read the status note; Max Mode |
@@ -61,15 +58,16 @@ changelog: "v4.0 — symptom index moved to the top (§0) · check 15 and repair
 | prompt names v5.5, v4.5, Lyria 3 Pro | §3 rows 20, 22 |
 | prompt aimed at the wrong platform | §2 check 12 · §3 rows 9–11, 21, 25 |
 | a guide contradicts this system | §3 rows 16–19 · DATA_SUNO §14 |
-
-</rag_zone>
+| "Suno can't be used from Claude / ChatGPT" | §3 row 26 · menu [15] |
+| "it didn't sing my lyrics as written" | §3 row 27 · DATA_SUNO §7 (one-line test) |
+| "can my Free song be released?" · "ElevenMusic Free is commercial" | §3 rows 28–29 |
+| Speech read my [tags] aloud · wrong accent · odd pauses | §3 row 30 · CORE_02 §16 |
+| Lyria API refuses an ordinary lyric (PROHIBITED_CONTENT) | §3 row 31 |
+| "not yet available for your account" when connecting Suno | not a prompt problem: Suno MCP early access (DATA_SUNO §16) |
 
 </section>
 
 <section id="§1" title="WHAT AUDIT IS FOR">
-
-<!-- rag_anchor: audit_purpose -->
-<rag_zone id="audit_purpose">
 
 Three kinds of request arrive at [12], and they need different answers:
 
@@ -105,14 +103,10 @@ write instead. Do not imply the user should have known.
   - `///*****///` and other harmless remnants — say they do nothing, leave them
     if the user likes them.
 
-</rag_zone>
-
 </section>
 
 <section id="§2" title="THE DIAGNOSTIC PROTOCOL — fifteen checks, in order">
 
-<!-- rag_anchor: diagnostic_checks -->
-<rag_zone id="diagnostic_checks">
 Run in order. Earlier checks change what later checks are looking at.
 
 ### CHECK 1 · FRONT-LOADING
@@ -131,11 +125,6 @@ Run in order. Earlier checks change what later checks are looking at.
   FIX:   cut to two or three hero instruments plus one texture word
   WHY:   an undifferentiated list produces an undifferentiated arrangement
 
-</rag_zone>
-
-<!-- rag_anchor: diagnostic_checks_check_4_mood_conflict -->
-<rag_zone id="diagnostic_checks_check_4_mood_conflict">
-
 ### CHECK 4 · MOOD CONFLICT
   Contradictory moods, or more than two?
   FAIL:  "happy dark aggressive peaceful"
@@ -151,11 +140,6 @@ Run in order. Earlier checks change what later checks are looking at.
   Any `[parameter: value]` forms?
   FIX:   rewrite as prose in Style; see the repair table §3
   NOTE:  this is the highest-volume defect in circulating prompts
-
-</rag_zone>
-
-<!-- rag_anchor: diagnostic_checks_check_7_genre_conflict -->
-<rag_zone id="diagnostic_checks_check_7_genre_conflict">
 
 ### CHECK 7 · GENRE CONFLICT
   Is the pairing on the incompatible list?
@@ -175,11 +159,6 @@ Run in order. Earlier checks change what later checks are looking at.
          and point at the Vocal Gender control (DATA_SUNO §8)
   WHY:   naming a voice type to exclude it can summon it
 
-</rag_zone>
-
-<!-- rag_anchor: diagnostic_checks_check_10_trigger_words -->
-<rag_zone id="diagnostic_checks_check_10_trigger_words">
-
 ### CHECK 10 · TRIGGER WORDS
   Any of the words in §4?
   FIX:   swap for the positive equivalent given there
@@ -196,11 +175,6 @@ Run in order. Earlier checks change what later checks are looking at.
   Tempo given only in words, with no BPM? (a suggestion, not a defect)
   FIX:   repair table §3, rows 9–11, 21 and 25
 
-</rag_zone>
-
-<!-- rag_anchor: diagnostic_checks_check_13_length_and_substance -->
-<rag_zone id="diagnostic_checks_check_13_length_and_substance">
-
 ### CHECK 13 · LENGTH AND SUBSTANCE
   Is there enough lyric material for the intended track length?
   FIX:   add material, or shorten the target
@@ -214,16 +188,11 @@ Run in order. Earlier checks change what later checks are looking at.
   WHERE: the catalogue of debunked claims is DATA_SUNO §14
 
 ### CHECK 15 · STALE VERSIONS, NUMBERS AND PRICES
-  Does the prompt or the guide it came from name a retired model (Suno v5.5,
-  v5, v4.5-all; Lyria 3 Pro), quote its old limits (184 s, 48 kHz Clip, PDF
-  input), or quote prices?
+  Does the prompt or the guide it came from name a retired or superseded model
+  (Suno v5.5, v5, v4.5-all; Lyria 3 Pro — superseded, still served), quote its old
+  limits (184 s, 48 kHz Clip, PDF input), or quote prices?
   FIX:   repair table §3, rows 20, 22 and 23
-  WHY:   the text may still work; the label points at something that is gone
-
-</rag_zone>
-
-<!-- rag_anchor: diagnostic_checks_output_format -->
-<rag_zone id="diagnostic_checks_output_format">
+  WHY:   the text may still work; the label points at something old
 
 ### OUTPUT FORMAT
 
@@ -249,18 +218,14 @@ WHAT CHANGED AND WHY
 Report what passed as well as what failed. A user who only sees failures cannot
 tell which of their habits are good ones.
 
-</rag_zone>
-
 </section>
 
 <section id="§3" title="THE REPAIR TABLE — dead constructs">
 
-<!-- rag_anchor: repair_table -->
-<rag_zone id="repair_table">
 Every row: what to find, what to write instead, and what to tell the user.
 This is the mechanical core of [12]. Rows 1–8 are syntax, 9–11 are
 cross-platform, 12–15 are retired products, 16–19 are stale facts, 20–25 are the
-v4.0 migrations (September 2026). Rows are numbered for reference; new rows go at
+v4.0 migrations (September 2026), 26–31 the v5.0 ones (October 2026). Rows are numbered for reference; new rows go at
 the end.
 
 ### 1 · MAX MODE TAGS
@@ -274,14 +239,9 @@ the end.
            Since 2026-09-09 Suno has a REAL Max Mode — a switch in the Create
            form, for songs over two minutes, close covers, style transfer and
            whole-track consistency. The tags do not turn it on.
-  THEN     for a long track or a release, set "Max Mode: on" in the blueprint
-           and say that it costs more credits (DATA_SUNO §4)
+  THEN     for a long track or a release, offer Max Mode in words — it goes into the
+           blueprint only when the user names it, at twice the credits (DATA_SUNO §4)
   MARK     tags [UNVERIFIED] · origin: a single forum post · toggle [OFFICIAL]
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_2_the_slash_asterisk_separator -->
-<rag_zone id="repair_table_2_the_slash_asterisk_separator">
 
 ### 2 · THE SLASH-ASTERISK SEPARATOR
   FIND     ///*****/// as the first line of the Lyrics field
@@ -296,11 +256,6 @@ the end.
   SAY      Bracketed mix parameters were never parsed. The same words work
            as ordinary description — that part was always doing the work.
   MARK     [UNVERIFIED]
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_4_musical_parameter_tags -->
-<rag_zone id="repair_table_4_musical_parameter_tags">
 
 ### 4 · MUSICAL PARAMETER TAGS
   FIND     [BPM: 120] · [Tempo: 120 BPM] · [Key: A minor]
@@ -318,11 +273,6 @@ the end.
   SAY      Parametric form again. The words were carrying the meaning; the
            brackets and colon were not.
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_6_atmosphere_tags_with_a_colon -->
-<rag_zone id="repair_table_6_atmosphere_tags_with_a_colon">
-
 ### 6 · ATMOSPHERE TAGS WITH A COLON
   FIND     [Sound: Rain] · [sound:thunder] · [Sound: City ambience]
   REPLACE  section-level: [Rain] · [Thunder] · [City ambience]
@@ -339,11 +289,6 @@ the end.
   SAY      Delivery direction belongs in plain brackets; who is singing
            belongs in the Style field.
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_8_gender_negatives -->
-<rag_zone id="repair_table_8_gender_negatives">
-
 ### 8 · GENDER NEGATIVES
   FIND     "no male vocals" · "without male voice" · "not a female singer"
            stacked gender exclusions of any kind
@@ -351,14 +296,9 @@ the end.
            soprano, intimate delivery" — plus the interface gender selector
   SAY      Gender negatives are unreliable and sometimes produce the opposite,
            because naming a voice type puts it in front of the model. The
-           selector in Advanced Options is the reliable control.
+           selector in More Options is the reliable control.
   WHERE    DATA_SUNO §8 for the Vocal Gender control; §3 for Exclude Styles
   MARK     [COMMUNITY, widely reproduced]
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_9_lyria_structure_in_the_old_format -->
-<rag_zone id="repair_table_9_lyria_structure_in_the_old_format">
 
 ### 9 · LYRIA STRUCTURE IN THE OLD FORMAT
   FIND     "Intro (0–15s)" · "[End - 2:15]" · "verse (15-45s)"
@@ -375,11 +315,6 @@ the end.
            one short clause: "Instrumental only, no vocals."
   SAY      Lyria 3.5 has no negative-prompt field. A list has nowhere to go.
   MARK     no field [COMMUNITY: API reviewers] · the one-clause example [OFFICIAL]
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_11_tempo_without_a_number_rule_revised_in_v4_0 -->
-<rag_zone id="repair_table_11_tempo_without_a_number_rule_revised_in_v4_0">
 
 ### 11 · TEMPO WITHOUT A NUMBER — rule revised in v4.0
   FIND     a tempo given only in words, on any platform
@@ -402,11 +337,6 @@ the end.
   MARK     [OFFICIAL + COMMUNITY] — see DATA_LEGAL §7 for the sourcing
   WHERE    DATA_LEGAL
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_13_musicfx_and_musicfx_dj -->
-<rag_zone id="repair_table_13_musicfx_and_musicfx_dj">
-
 ### 13 · MUSICFX AND MUSICFX DJ
   FIND     MusicFX · MusicFX DJ · "MusicFX DJ in AI Studio" as a live tool
   REPLACE  Google Flow Music or the Gemini app; for interactive streams, Lyria
@@ -426,11 +356,6 @@ the end.
            no stated affiliation. Direct users to Flow Music by name only.
   WHERE    DATA_GOOGLE
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_15_old_menu_numbers -->
-<rag_zone id="repair_table_15_old_menu_numbers">
-
 ### 15 · OLD MENU NUMBERS
   FIND     a guide instructing "press 10" and meaning audit
   REPLACE  audit is [12]
@@ -448,11 +373,6 @@ the end.
            result. Front-loading matters; that arbitrary ceiling did not.
   WHERE    DATA_SUNO §2 for what is actually known about length
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_17_adherence_percentages -->
-<rag_zone id="repair_table_17_adherence_percentages">
-
 ### 17 · ADHERENCE PERCENTAGES
   FIND     "88% prompt adherence" or any similar cited accuracy figure
   REPLACE  delete the number
@@ -468,15 +388,12 @@ the end.
 ### 19 · CREDIT COSTS QUOTED FROM GUIDES
   FIND     a specific per-generation credit cost for a feature
   REPLACE  point the user at their own account; keep only the relative fact
-           where it matters ("Max Mode costs more", "stems cost the most")
+           where it matters ("Max Mode costs more", "stems cost the most").
+           Not touched: the figures a SunoForge card shows from the user's own
+           MCP calls (DATA_SUNO_LIVE §3, [first-hand])
   SAY      Several widely repeated figures are contradicted by other guides
            and were never published by the vendor.
   WHERE    DATA_SUNO
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_20_retired_suno_model_names -->
-<rag_zone id="repair_table_20_retired_suno_model_names">
 
 ### 20 · RETIRED SUNO MODEL NAMES
   FIND     v5.5 · v5 · v4.5-all · v4.5+ · v4 and older, as a target or setting
@@ -493,17 +410,13 @@ the end.
            docs show ranges with section names.
   MARK     [OFFICIAL example] · WHERE DATA_GOOGLE §4
 
-</rag_zone>
-
-<!-- rag_anchor: repair_table_22_lyria_3_pro_and_its_numbers -->
-<rag_zone id="repair_table_22_lyria_3_pro_and_its_numbers">
-
 ### 22 · LYRIA 3 PRO AND ITS NUMBERS
   FIND     "Lyria 3 Pro" as the current model · "184 seconds" · lyria-3-pro-preview
            · Clip "48 kHz" · PDF input promised for Lyria
   REPLACE  Lyria 3.5 · "a couple of minutes" (up to 3 in the Gemini app) ·
            lyria-3.5 · 44.1 kHz · images only
-  SAY      Lyria 3.5 replaced 3 Pro in September 2026.
+  SAY      Lyria 3.5 replaced 3 Pro in September 2026; 3 Pro is still served with
+           no shutdown date, but new work goes to 3.5.
   MARK     [OFFICIAL] · WHERE DATA_GOOGLE §1
 
 ### 23 · PRICES
@@ -512,11 +425,6 @@ the end.
   SAY      Prices differ by country and change without notice. This system
            names plans and never prices them.
   WHERE    CORE_00 §7 rule 13
-
-</rag_zone>
-
-<!-- rag_anchor: repair_table_24_an_engineered_style_with_variety_left_on -->
-<rag_zone id="repair_table_24_an_engineered_style_with_variety_left_on">
 
 ### 24 · AN ENGINEERED STYLE WITH VARIETY LEFT ON
   FIND     "Suno changed my style" · "it ignored my tags" · or a carefully built
@@ -536,28 +444,77 @@ the end.
            sing your directions or ignore your words.
   MARK     [OFFICIAL] · WHERE DATA_GOOGLE §5
 
-</rag_zone>
+### 26 · "SUNO HAS NO API" ADVICE
+  FIND     "Suno cannot be used from an AI assistant" · "copy the prompt into Suno
+           by hand, there is no other way" · third-party "Suno API" or "Suno MCP"
+           tool names presented as Suno's
+  REPLACE  the paste route stays valid; add: the official Suno MCP (beta) can send
+           the blueprint from the chat once connected (menu [15]; its tools as this
+           edition saw them: DATA_SUNO_LIVE §1); never quote a tool name that the
+           session does not show
+  SAY      Since 2026-10-28 Suno runs an official MCP server; its tools are read from
+           the session, and third-party wrappers are not Suno.
+  MARK     [OFFICIAL] · WHERE DATA_SUNO §16
 
-<!-- rag_anchor: repair_table_how_to_apply_the_table -->
-<rag_zone id="repair_table_how_to_apply_the_table">
+### 27 · EXACT LYRICS IN THE SIMPLE-MODE BOX
+  FIND     a finished lyric pasted into Suno's Simple prompt, with "sing exactly
+           this" expectations
+  REPLACE  the full form: words in the Lyrics field, the description in Style;
+           plant one checkable line to confirm the take sang the text
+  SAY      Simple mode treats text as a brief and may expand it; even the Lyrics
+           field drifts sometimes — the one-line test catches it.
+  MARK     [COMMUNITY] · WHERE DATA_SUNO §7
+
+### 28 · "A FREE SONG CAN NEVER BE COMMERCIAL"
+  FIND     advice that a song made on Suno's Free plan stays non-commercial forever,
+           or that only songs made while subscribed count
+  REPLACE  a song made without a subscription becomes eligible when downloaded with
+           a paid download credit; trial downloads stay personal
+  SAY      Suno's help center changed this in October 2026.
+  MARK     [OFFICIAL] · WHERE DATA_SUNO §12 · DATA_LEGAL §2
+
+### 29 · ELEVENMUSIC FREE "COMMERCIAL WITH CREDIT"
+  FIND     "on ElevenMusic Free you own it and can use it commercially if you
+           credit ElevenMusic" · "five lossless downloads a day on Free" · "cleared
+           for film and television" for a self-serve plan
+  REPLACE  the Music Terms of 2026-10-09: no downloads on Free, no streaming release
+           on Free or Starter, film, TV, radio and games excluded below Enterprise
+           Music
+  SAY      The launch posts were broader than the binding terms; the terms rule
+           for tracks made after 2026-10-09, earlier tracks keep their permissions.
+  MARK     [OFFICIAL] · WHERE DATA_OTHER §1 · DATA_LEGAL §2
+
+### 30 · TAGS AND STAGE DIRECTIONS IN A SPEECH SCRIPT
+  FIND     `[pause]`, `(laughs)`, `[Narrator]:`, `*whispers*`, section labels or
+           a second speaker inside a Suno Speech script
+  REPLACE  only the words to be spoken; pauses by punctuation and line breaks;
+           delivery, accent and music in Tone; a second voice as a second take
+  SAY      Nothing documents tags in Speech; the model may read them aloud.
+  MARK     [UNVERIFIED: tags] · [COMMUNITY: punctuation] · WHERE DATA_SUNO §15 ·
+           CORE_02 §16
+
+### 31 · A CLEAN LYRIC REFUSED BY LYRIA IN THE API
+  FIND     PROHIBITED_CONTENT on an ordinary lyric in the Gemini API, with no
+           artist name or copyrighted line in it
+  REPLACE  nothing in the prompt is broken; try the same text in Flow Music, or
+           shorten and resend; do not water the song down to appease the filter
+  SAY      Developers reported false blocks in October 2026 — up to 19 of 22
+           ordinary requests — while Flow Music accepted the same text.
+  MARK     [COMMUNITY] · WHERE DATA_GOOGLE §1
 
 ### HOW TO APPLY THE TABLE
 
-  1. Repair silently in bulk. Do not narrate twenty-five rows.
+  1. Repair silently in bulk. Do not narrate thirty-one rows.
   2. Group the explanation: "I removed the bracketed parameters — none of
      those were ever read — and rewrote them as description."
   3. Never return only a diagnosis. Always return the repaired prompt.
   4. If a repair changes what the user asked for musically, ask first. If it
      only changes syntax, just do it.
 
-</rag_zone>
-
 </section>
 
 <section id="§4" title="TRIGGER WORDS — the single copy">
 
-<!-- rag_anchor: trigger_words -->
-<rag_zone id="trigger_words">
 📌 This list exists in this file only. Other files reference it. Do not copy it.
 
 Words that describe audio defects appear to make those defects more likely,
@@ -591,11 +548,6 @@ has to represent it first.
   ³ "heavily compressed" is a legitimate production instruction. The trigger
     is "over-compressed" and similar complaint phrasing.
 
-</rag_zone>
-
-<!-- rag_anchor: trigger_words_the_principle -->
-<rag_zone id="trigger_words_the_principle">
-
 ### THE PRINCIPLE
 
 State what you want, not what you are afraid of.
@@ -618,14 +570,10 @@ it takes musical categories rather than defect words. Both the field and what
 to put in it are documented in DATA_SUNO §3. The list above is about the Style
 text, not that field.
 
-</rag_zone>
-
 </section>
 
 <section id="§5" title="FAILURE MODES">
 
-<!-- rag_anchor: failure_modes -->
-<rag_zone id="failure_modes">
 Matched by what the user describes hearing.
 
 ### LYRICS COME OUT AS NONSENSE, OR WORDS GO MISSING
@@ -639,15 +587,13 @@ Matched by what the user describes hearing.
             2. Note every dropped word and swallowed line ending.
             3. Correct the full lyric text first.
             4. Only then regenerate the affected section.
+            Every word right but some unclear: Remaster at Subtle ("clearer
+            pronunciation") [OFFICIAL, help center, ed. 2026-09-09]. Invented or
+            dropped words are not a Remaster job — it keeps the lyrics; use 1–4.
   WHY THAT ORDER  Replacing one section against an already-misaligned lyric
             re-creates the same misalignment.
   PREVENT   Fewer words per line in fast passages. Avoid dense consonant
             clusters at line ends.
-
-</rag_zone>
-
-<!-- rag_anchor: failure_modes_unasked_for_talking_dialogue_or_narration -->
-<rag_zone id="failure_modes_unasked_for_talking_dialogue_or_narration">
 
 ### UNASKED-FOR TALKING, DIALOGUE OR NARRATION
 
@@ -660,11 +606,6 @@ Matched by what the user describes hearing.
               label the model may read as words.
             - If the track should have no speech, say so positively in Style:
               "sung throughout, no spoken passages".
-
-</rag_zone>
-
-<!-- rag_anchor: failure_modes_quality_degrades_over_a_long_working_session -->
-<rag_zone id="failure_modes_quality_degrades_over_a_long_working_session">
 
 ### QUALITY DEGRADES OVER A LONG WORKING SESSION
 
@@ -685,7 +626,7 @@ Matched by what the user describes hearing.
             so a big finish is a likely continuation even when nothing in the
             song was building toward one.
   FIX       - State the ending explicitly: [Outro — fade out] or
-              [Outro — ends on a single held note].
+              [Outro — ends on a single held note] — on the final part only.
             - Describe the intended end in the Style field: "ends quietly,
               unresolved".
             - When extending, restate the energy: "continue calmly, no drums,
@@ -695,10 +636,25 @@ Matched by what the user describes hearing.
   NOTE      Repeated extension compounds this. Past two, regenerating whole
             usually beats extending again [COMMUNITY].
 
-</rag_zone>
+### PAUSE AT A SEAM
 
-<!-- rag_anchor: failure_modes_vocals_in_a_track_that_should_be_instrumental -->
-<rag_zone id="failure_modes_vocals_in_a_track_that_should_be_instrumental">
+  SYMPTOM   Where an extension or a second part joins: a stretch of silence, a
+            fade and a fresh intro, or "the same song, then another song".
+  CAUSE     [COMMUNITY, pre-v6] An ending tag — [Outro], [End], [Fade Out],
+            [Silence], [Stop] — in the part before the seam, or an extend point
+            placed in the tail or the silence after it.
+  FIX       - Before generating: no ending tag in any part but the last; the
+              point on a phrase end or a bar line before the tail; the new
+              part's lyrics start with the next section, never [Intro].
+            - The take already fades: Crop to just before the tail, then extend
+              from the cropped version.
+            - The gap is already in the joined song: Replace Section across the
+              boundary, or cut the gap (editor Remove, Studio delete time)
+              [OFFICIAL tools] — not a fade-out plus a fade-in.
+            - Through Suno's tools (15m): continue_at before the tail; how finely
+              Suno cuts there is not tested (DATA_SUNO_LIVE §8).
+  NOTE      Not tested on v6 — listen to the seam ±10–20 s. Rules and sources:
+            DATA_SUNO §7 JOINS AND SEAMS.
 
 ### VOCALS IN A TRACK THAT SHOULD BE INSTRUMENTAL
 
@@ -711,11 +667,6 @@ Matched by what the user describes hearing.
   NOTE      On Lyria write "Instrumental only, no vocals." [OFFICIAL]; in the
             Gemini app there is also a Vocals menu with Instrumental. On
             ElevenMusic, "instrumental only" [OFFICIAL]. See DATA_GOOGLE §5.
-
-</rag_zone>
-
-<!-- rag_anchor: failure_modes_the_track_is_technically_fine_and_completely_bor -->
-<rag_zone id="failure_modes_the_track_is_technically_fine_and_completely_bor">
 
 ### THE TRACK IS TECHNICALLY FINE AND COMPLETELY BORING
 
@@ -751,8 +702,8 @@ Matched by what the user describes hearing.
             the vendor's cure is a setting, not anchor tags in every section.
 
   IF IT HAPPENS TO YOU:
-            - On Suno v6: turn Max Mode on for anything past two minutes
-              (DATA_SUNO §4). This is the first thing to try now.
+            - On Suno v6: offer Max Mode for anything past two minutes — on only
+              when the user names it, at twice the credits (DATA_SUNO §4).
             - Regenerate. Variance is variance; the next take may be fine.
             - Make the genre anchor more specific in the opening words.
             - Restate genre and production in the later section labels
@@ -768,11 +719,6 @@ Matched by what the user describes hearing.
   DO NOT    Do not tell a user their track will drift at two minutes. Do not
             add anti-drift machinery to every prompt by default. Recommend the
             toggle where it fits, and nothing more.
-
-</rag_zone>
-
-<!-- rag_anchor: failure_modes_a_metallic_ring_on_the_high_end -->
-<rag_zone id="failure_modes_a_metallic_ring_on_the_high_end">
 
 ### A METALLIC RING ON THE HIGH END
 
@@ -795,11 +741,6 @@ Matched by what the user describes hearing.
             - Generate several takes and choose
   DO NOT    Do not stack more modifiers in response. That is not a fix, and it
             has no evidence behind it in either direction (CORE_02 §4).
-
-</rag_zone>
-
-<!-- rag_anchor: failure_modes_the_voice_is_the_wrong_gender -->
-<rag_zone id="failure_modes_the_voice_is_the_wrong_gender">
 
 ### THE VOICE IS THE WRONG GENDER
 
@@ -829,11 +770,6 @@ Matched by what the user describes hearing.
             v6" action [COMMUNITY]. Check that the voice was upgraded and that a
             compatible model is selected before judging the result.
 
-</rag_zone>
-
-<!-- rag_anchor: suno_v6_early_reports -->
-<rag_zone id="v6_early_reports">
-
 ### EARLY SUNO v6 REPORTS (September 2026)
 
 All [COMMUNITY], none controlled. Collected so a user hearing one of these knows
@@ -845,6 +781,9 @@ it is not their prompt alone. Try the fix, listen, keep what works.
             vocal, bright and upfront"); raise Style Influence; one user fixed it
             on v6-wild with Weirdness ~20 and Style Influence ~80; Max Mode for
             the final take.
+            Before regenerating a take you like: Remaster at Subtle, Suno's setting
+            for "a slightly cleaner mix, smoother balance" [OFFICIAL, help center,
+            ed. 2026-09-09; not tested on this complaint].
   HUMMING OR VOCALISE BEFORE THE FIRST LINE
     TRY     "humming, vocalise, wordless vocals" in Exclude Styles — asking in
             the prompt to remove humming produced more humming.
@@ -867,14 +806,9 @@ it is not their prompt alone. Try the fix, listen, keep what works.
             grammar and field limits did not change. Run the audit, set
             Variety to 0 for engineered styles, and compare two takes.
 
-</rag_zone>
-
 </section>
 
 <section id="§6" title="WHAT IS NOT A DEFECT">
-
-<!-- rag_anchor: not_a_defect -->
-<rag_zone id="not_a_defect">
 
 An audit that flags everything unusual is worse than no audit, because the user
 stops reading it.
@@ -908,14 +842,10 @@ model sings in the language of the prompt [OFFICIAL, DATA_GOOGLE §5]. No
 independent test of Russian or Ukrainian pronunciation on Suno v6 or Lyria 3.5
 exists yet; stress marks and phonetic spellings are community tricks, not syntax.
 
-</rag_zone>
-
 </section>
 
 <section id="§7" title="PLATFORM-SPECIFIC PROBLEMS">
 
-<!-- rag_anchor: platform_troubleshoot -->
-<rag_zone id="platform_troubleshoot">
 ### LYRIA
 
   STRUCTURE IGNORED
@@ -952,11 +882,6 @@ exists yet; stress marks and phonetic spellings are community tricks, not syntax
     Lyria generation is single-turn [OFFICIAL]. Regenerate, or take the idea to
     Flow Music, which edits part by part.
 
-</rag_zone>
-
-<!-- rag_anchor: platform_troubleshoot_google_flow_music -->
-<rag_zone id="platform_troubleshoot_google_flow_music">
-
 ### GOOGLE FLOW MUSIC
 
   A REPLACE BREAKS THE MIX
@@ -979,11 +904,6 @@ exists yet; stress marks and phonetic spellings are community tricks, not syntax
     The track references another artist's song — ElevenMusic blocks downloads
     of those by design [OFFICIAL].
 
-</rag_zone>
-
-<!-- rag_anchor: platform_troubleshoot_stable_audio -->
-<rag_zone id="platform_troubleshoot_stable_audio">
-
 ### STABLE AUDIO
 
   UNWANTED VOCAL ARTEFACTS
@@ -996,8 +916,6 @@ exists yet; stress marks and phonetic spellings are community tricks, not syntax
   documented in DATA_SUNO. This file covers what is diagnosable from the text of
   a prompt, plus the early v6 reports in §5.
 
-</rag_zone>
-
 </section>
 
 <section id="§8" title="FAST TRIAGE">
@@ -1008,9 +926,7 @@ finds it first.
 </section>
 
 // ═══════════════════════════════════════════════════════════════
-// END OF CORE_03_DIAGNOSE.md · SunoForge v4.0
+// END OF CORE_03_DIAGNOSE.md · SunoForge v5.0
 // Next: CORE_04_WHY.md
 // ═══════════════════════════════════════════════════════════════
-
-<tags>audit, diagnose, repair, symptom index, diagnostic checks, repair table, max mode tags, max mode toggle, parametric tags, gender negatives, lyria timestamp ranges, lyria exclude list, tempo bpm, retired platforms, udio, musicfx, riffusion, retired suno models, v5.5, lyria 3 pro, prices, variety 0, lyrics header, trigger words, failure modes, hallucinated lyrics, unwanted talking, session degradation, loud finish, vocals in instrumental, long-track consistency, metallic ring, v6 early reports, muffled vocals, humming, cut-off ending, not a defect, non-english lyrics, platform problems</tags>
 </sunoforge_file>
