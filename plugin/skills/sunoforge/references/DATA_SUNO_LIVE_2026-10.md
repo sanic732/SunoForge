@@ -345,7 +345,7 @@ that sounds wrong goes to `12b` and CORE_03, not to a silent re-roll.
 [15a] status       account-usage → plan, credits, downloads, models; tool set vs §1 (account-me only when asked)
       upgrade      account-upgrade → Suno's buy button (also at once on a 402)
 [15b] send         PRE-FLIGHT → card → yes → audio-create | speech-create → audio-wait (all ids)
-[15c] listen       audio-wait (`ids` ≤4) → the connector's own player · audio-retrieve → analysis + alignment (§5) → [12] → next blueprint
+[15c] listen       audio-wait (`ids` ≤4) → the connector's own player; `15c #a #b №n №m play` (the take card's Listen to all takes) = one audio-wait with every id · audio-retrieve → analysis + alignment (§5) → [12] → next blueprint
 [15d] remix        library-search → id → covers | extensions | mashups (§3) → audio-wait
 [15e] upload       audio-upload-create at once → Suno's uploader → upload-complete → audio-analysis → [3a]
       voices       voices-list (own, loved) → voice_id; `15e voice`: voices-start → a button to suno.com
@@ -385,13 +385,13 @@ server: status line from account-usage (free; the balance lags 1–2 min, so "�
 refresh): plan · credits · monthly use · download credits · models · renews on · tools: 35 as
 in §1 (or "changed: …"). One screen at a time, as in the Suno app: the HUB shows the status
 line and the sections — Create (`15m`) · My songs with the count 10 · 50 · 100 · Liked · Mix two
-songs (`15n`) · Sounds (`15m loop`) · From my songs (`15o`) · Playlists · Workspaces · My voices · Upload · Credits · Send the last prompt — and
+songs (`15n`) · Sounds (`15m loop`) · From my songs (`15o`) · Playlists · Workspaces · My voices · New voice (`15e voice`) · Upload audio or video · Credits · More credits (`15a upgrade`, on the first screen) · Send the last prompt — and
 NO song; the songs load only when one of those is picked (MY SONGS). The groups, every item with
 its code:
   Create   `15m` the Create screen and the song editor · `15b` song · `14` speech · `15d` cover ·
            extend · mashup · `15f` long song · `15m loop` sounds · `15o` a new song from your songs
   Check    `15c` listen · `15g` analysis and sung words · `15g … ask` a question to Suno's own listener
-  Own      `15e` upload audio · your voices
+  Own      `15e` upload audio or video (up to 100 MB) · your voices · `15e voice` a new voice: Suno's button to suno.com
   Library  `15h` your songs, find, liked, dislike · `15i` playlists · `15j` workspaces · `15k` edit
            title or stored lyrics · `15l` download
   Account  `15a` balance and plan · more credits (account-upgrade)
@@ -516,7 +516,7 @@ blueprint says, or "default" — left out); Max Mode on only when asked by name 
 the Tone; not in the MCP: Variety"; a cover adds "the source's lyrics go in; length is a
 target"; a download shows mp3/wav, one download credit, and "whether an MCP download carries
 the rights of a suno.com download is not stated — for a release, download on suno.com"
-(DATA_SUNO §12). Buttons or answers: Send · Edit · Cancel. "Send" is the
+(DATA_SUNO §12). Buttons or answers: Send · Edit · Cancel; when the balance after would fall below zero, More credits (`15a upgrade` → Suno's buy button) INSTEAD of Send. "Send" is the
 explicit yes to exactly what the card shows; its message carries the card's retry key
 (`[suno] send <key>`) — another key, or a field changed after the card, means a new card.
 
@@ -527,9 +527,9 @@ doubled BPM are observations, not errors); Next take = `12b`; extend · join · 
 mashup; like · playlist · workspace · download; Export = `save` (the SunoForge library,
 not the Suno library — the label says so). Playback is the host's own player on
 audio-wait; no sound in the widget. UI = widget → `widgets/take.html`, after EVERY spend:
-one card for the takes of the call, numbered (CORE_00 §9 TAKE NUMBERS) — Listen · Analysis
-and words · Extend · Edit (`12c`) · Download · Next take, and "Keep in my library" (`save`);
-the rest (join, cover, mashup, like, playlist, workspace) from the song's actions in My
+one card for the takes of the call, numbered (CORE_00 §9 TAKE NUMBERS) — Listen to all takes on top (one player for every id), then per take Like (`15h #id like`) · To a playlist (`15i #id`) · Analysis
+and words · Extend · Cover · Edit (`12c`) · Download · Next take, and "Keep the prompt in SunoForge" (`save`);
+the rest (join, mashup, workspace, dislike, wav) from the song's actions in My
 songs. Not finished yet → the same card, `data-wait="1"`: one Check button a take.
 
 QUESTION TOOL (phone, Claude Code, Cowork; up to four options): MCP menu → song · speech ·

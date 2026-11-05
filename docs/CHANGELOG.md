@@ -26,7 +26,18 @@ Suno's server, checked again: every one of its 35 tools called on a Pro account,
 - Smaller: a like works on any song the user can open by link; another user's playlist or an album
   is a 404.
 
-Nothing else changed: the screens, the menu and the nine languages are those of 5.0.0.
+**The screens, in all nine languages:**
+
+- **The take card** opens with **Listen to all takes**, one Suno player for every take. Each take gets
+  **Like**, **To a playlist** and **Cover** next to Analysis, Extend, Edit, Download and Next take; the
+  last button says what it does: **Keep the prompt in SunoForge**.
+- **The Suno panel** has **New voice** next to My voices, **Upload audio or video** (up to 100 MB), and
+  **More credits** on the first screen next to Credits and plan. The 10 · 50 · 100 chips fit on one line.
+- **The song sheet** puts **Create a voice** next to In one of my voices.
+- **The price card**, when the balance would fall below zero, shows Suno's **More credits** instead of Send.
+- Russian and Ukrainian labels read better ("Liked, anyone's", "one-shot").
+- **The screens archive** had the two Suno panel screens empty, in all three languages; they are
+  shot again. The archive is now `SunoForge_v5.0.1_screens.zip`.
 
 ---
 
