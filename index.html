@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>SunoForge v5.0.0 — screens</title>
+<style>
+:root{
+  --bg:#f3f3f1; --panel:#fff; --ink:#17191d; --muted:#5d636c; --line:#dcdfd9;
+  --accent:#2450c8; --accent-ink:#fff; --shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);
+  --f:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --m:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#141518; --panel:#1c1d21; --ink:#eceae6; --muted:#a3a7ae; --line:#2e3036;
+  --accent:#8fb0ff; --accent-ink:#0c1222; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#141518; --panel:#1c1d21; --ink:#eceae6; --muted:#a3a7ae; --line:#2e3036;
+  --accent:#8fb0ff; --accent-ink:#0c1222; --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 var(--f);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 0 72px}
+header{display:grid;gap:12px;margin-bottom:22px}
+.eyebrow{font:500 12px/1.2 var(--m);letter-spacing:.09em;text-transform:uppercase;color:var(--muted)}
+h1{margin:0;font-size:clamp(26px,4.4vw,38px);line-height:1.1;letter-spacing:-.015em}
+.lede{margin:0;max-width:62ch;color:var(--muted)}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:5;padding:12px 0;background:var(--bg);border-bottom:1px solid var(--line)}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--panel)}
+.seg button{font:500 13px/1 var(--m);padding:9px 13px;border:0;background:transparent;color:var(--muted);cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
+.seg button:focus-visible,a:focus-visible,figure:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+h2{margin:34px 0 12px;font-size:19px;letter-spacing:-.01em}
+h2 span{font:400 13px/1 var(--m);color:var(--muted);margin-left:8px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+figure{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;
+  box-shadow:var(--shadow);cursor:zoom-in;display:flex;flex-direction:column}
+figure img{display:block;width:100%;height:300px;object-fit:cover;object-position:top center;background:#1f1e1d}
+figcaption{padding:11px 13px 13px;display:grid;gap:3px}
+figcaption b{font-size:14px;font-weight:600}
+figcaption span{font-size:12.5px;color:var(--muted);line-height:1.4}
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,440px);max-height:94vh}
+dialog::backdrop{background:rgba(0,0,0,.72)}
+dialog img{display:block;width:100%;height:auto;border-radius:12px}
+dialog .cap{margin-top:10px;color:#fff;font-size:13.5px;text-align:center}
+dialog button{position:fixed;top:14px;right:14px;border:0;border-radius:8px;padding:8px 12px;
+  background:rgba(255,255,255,.14);color:#fff;font:500 13px var(--m);cursor:pointer}
+footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:13.5px}
+footer a{color:var(--accent)}
+.note{margin-top:6px}
+@media (max-width:520px){figure img{height:240px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="eyebrow">SunoForge v5.0.0</div>
+  <h1 id="h1">Every screen, at phone width</h1>
+  <p class="lede" id="lede">Forty screens of SunoForge as you see them in the chat: the menu and its submenus,
+  the Suno panel, your songs and the editor. Taken at 360 px with the host's dark colours — the width where
+  text gets clipped and buttons wrap if anything is wrong.</p>
+</header>
+
+<div class="bar">
+  <div class="seg" id="langs" role="group" aria-label="Language"></div>
+  <div class="seg">
+    <button id="theme" type="button">light / dark</button>
+  </div>
+</div>
+
+<main id="main"></main>
+
+<footer>
+  <div><a href="https://github.com/sanic732/SunoForge">github.com/sanic732/SunoForge</a> · Apache 2.0</div>
+  <div class="note" id="note">Screens only — nothing here runs, sends or spends anything.</div>
+</footer>
+</div>
+
+<dialog id="big">
+  <button type="button" id="close">esc</button>
+  <img id="bigimg" alt="">
+  <div class="cap" id="bigcap"></div>
+</dialog>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  var D = window.SF, cur = 'en';
+  var TXT = {
+    en:{h1:'Every screen, at phone width',
+        lede:"Forty screens of SunoForge as you see them in the chat: the menu and its submenus, the Suno panel, your songs and the editor. Taken at 360 px with the host's dark colours — the width where text gets clipped and buttons wrap if anything is wrong.",
+        note:'Screens only — nothing here runs, sends or spends anything.'},
+    ru:{h1:'Все экраны, в ширину телефона',
+        lede:'Сорок экранов SunoForge такими, какими их видно в чате: меню и подменю, панель Suno, твои песни и редактор. Сняты на 360 px в тёмных цветах хоста — на той ширине, где текст обрезается, а кнопки переносятся, если что-то не так.',
+        note:'Это только снимки — здесь ничего не запускается, не отправляется и не тратится.'},
+    uk:{h1:'Усі екрани, в ширину телефона',
+        lede:'Сорок екранів SunoForge такими, якими їх видно в чаті: меню та підменю, панель Suno, твої пісні та редактор. Зняті на 360 px у темних кольорах хоста — на тій ширині, де текст обрізається, а кнопки переносяться, якщо щось не так.',
+        note:'Це лише знімки — тут нічого не запускається, не надсилається і не витрачається.'}
+  };
+  var NAMES = {en:'English', ru:'Русский', uk:'Українська'};
+
+  var segs = document.getElementById('langs');
+  D.langs.forEach(function(l){
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = NAMES[l] || l;
+    b.setAttribute('aria-pressed', l === cur ? 'true' : 'false');
+    b.onclick = function(){ cur = l; draw(); };
+    segs.appendChild(b);
+  });
+
+  var big = document.getElementById('big'), bigimg = document.getElementById('bigimg'), bigcap = document.getElementById('bigcap');
+  document.getElementById('close').onclick = function(){ big.close(); };
+  big.addEventListener('click', function(e){ if (e.target === big) big.close(); });
+
+  function open(s){
+    bigimg.src = s.f; bigimg.alt = s.t;
+    bigcap.textContent = s.t + (s.s ? ' — ' + s.s : '');
+    if (big.showModal) big.showModal();
+  }
+
+  function draw(){
+    document.documentElement.lang = cur;
+    var t = TXT[cur];
+    document.getElementById('h1').textContent = t.h1;
+    document.getElementById('lede').textContent = t.lede;
+    document.getElementById('note').textContent = t.note;
+    [].forEach.call(segs.children, function(b, i){
+      b.setAttribute('aria-pressed', D.langs[i] === cur ? 'true' : 'false');
+    });
+
+    var main = document.getElementById('main');
+    main.textContent = '';
+    var rows = D.shots[cur] || [], order = ['menu','suno','songs','editor'];
+    order.forEach(function(g){
+      var items = rows.filter(function(r){ return r.g === g; });
+      if (!items.length) return;
+      var h = document.createElement('h2');
+      h.textContent = (D.groups[g] || {})[cur] || g;
+      var c = document.createElement('span'); c.textContent = items.length;
+      h.appendChild(c); main.appendChild(h);
+
+      var grid = document.createElement('div'); grid.className = 'grid';
+      items.forEach(function(s){
+        var f = document.createElement('figure');
+        f.tabIndex = 0;
+        var im = document.createElement('img');
+        im.src = s.f; im.alt = s.t; im.loading = 'lazy'; im.width = s.w; im.height = s.h;
+        var cap = document.createElement('figcaption');
+        var b = document.createElement('b'); b.textContent = s.t;
+        var sp = document.createElement('span'); sp.textContent = s.s;
+        cap.appendChild(b); cap.appendChild(sp);
+        f.appendChild(im); f.appendChild(cap);
+        f.onclick = function(){ open(s); };
+        f.onkeydown = function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(s); } };
+        grid.appendChild(f);
+      });
+      main.appendChild(grid);
+    });
+  }
+
+  var th = document.getElementById('theme');
+  th.onclick = function(){
+    var r = document.documentElement;
+    var now = r.getAttribute('data-theme');
+    if (!now) now = matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', now === 'dark' ? 'light' : 'dark');
+  };
+
+  draw();
+})();
+</script>
+</body>
+</html>
