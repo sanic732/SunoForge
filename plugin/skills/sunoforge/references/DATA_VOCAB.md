@@ -1,7 +1,7 @@
-<sunoforge_file id="DATA_VOCAB" version="4.0" layer="data" role="vocab" source="DATA_VOCAB.md">
+<sunoforge_file id="DATA_VOCAB" version="5.0" layer="data" role="vocab" source="DATA_VOCAB.md">
 <file_meta>
 file_id: DATA_VOCAB
-version: "4.0"
+version: "5.0"
 layer: data
 role: vocab
 description: >
@@ -10,17 +10,14 @@ description: >
   language by genre, a flat list of instrument names, and how to combine words.
   Undated — it describes sound, not platforms. Read to sharpen any description.
 scope: timbre · dynamics · groove · space · instrument_descriptors · production_character · key_tempo · modes · theory_to_prompt
-key_concepts: [timbre, spectral_centroid, adsr, compression, groove, pocket, swing, stereo, depth, reverb, instrument_descriptors, mix_character, key_mood, bpm_genre, modal_language, theory_translation]
 depends_on: [CORE_01_STYLE]
 used_by: [CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_RECIPES, DATA_POSTPROD]
-rag_priority: high
 redundancy: high
-updated: "2026-09-30"
-changelog: "v4.0 — key and tempo now numeric on every covered platform (Google and ElevenLabs document it) · Studio reference updated · v3.0 — undated: this file describes sound, not platforms · all parametric tag forms converted to prose · instrument descriptor catalogue moved here from the style engine · theory→tag table rewritten as theory→prompt-language · pipe-stacked examples unstacked"
+updated: "2026-11-04"
 </file_meta>
 
-# 🔊 SUNOFORGE v4.0 — SOUND VOCABULARY
-# File 9 of 12 · DATA layer · undated
+# 🔊 SUNOFORGE v5.0 — SOUND VOCABULARY
+# File 9 of 14 · DATA layer · undated
 
 > **Why this file has no expiry date.** It describes how sound works and what
 > to call it. Spectral centroid, ADSR, pocket and reverb decay do not change
@@ -35,9 +32,6 @@ changelog: "v4.0 — key and tempo now numeric on every covered platform (Google
 > syntax belongs to structural labels in the Lyrics field only (CORE_02 §1).
 
 <section id="§1" title="HOW TO USE THIS">
-
-<!-- rag_anchor: how_to_use -->
-<rag_zone id="how_to_use">
 
 Four axes describe almost any recorded sound. Between them they cover what a
 listener notices and what a producer adjusts:
@@ -67,14 +61,9 @@ Two or three of these per prompt. This is a catalogue to select from, not a
 list to exhaust. Ten descriptors pulling in different directions produce an
 average, and the average of everything is nothing (CORE_01 §13).
 
-</rag_zone>
-
 </section>
 
 <section id="§2" title="TIMBRE — the colour of a sound">
-
-<!-- rag_anchor: timbre_core -->
-<rag_zone id="timbre_core">
 
 ### THE CORE WORDS
 
@@ -100,11 +89,6 @@ average, and the average of everything is nothing (CORE_01 §13).
   THIN        lacking body, weight missing
   LUSH        dense, layered, harmonically rich
   STERILE     technically clean and emotionally flat
-
-</rag_zone>
-
-<!-- rag_anchor: timbre_spectral -->
-<rag_zone id="timbre_spectral">
 
 ### SPECTRAL CHARACTER, PRECISELY
 
@@ -147,14 +131,9 @@ correcting a mix afterward (DATA_POSTPROD).
   MUDDY        excess in the low midrange
   AIR          lifted extreme top
 
-</rag_zone>
-
 </section>
 
 <section id="§3" title="DYNAMICS — how a sound moves">
-
-<!-- rag_anchor: dynamics_adsr -->
-<rag_zone id="dynamics_adsr">
 
 ### THE SHAPE OF A NOTE
 
@@ -180,11 +159,6 @@ instrument.
   Two shorthand words cover most cases:
     PERCUSSIVE  fast attack, fast decay — hits and plucks
     SUSTAINED   slow attack, long hold — pads, strings, drones
-
-</rag_zone>
-
-<!-- rag_anchor: dynamics_compression -->
-<rag_zone id="dynamics_compression">
 
 ### COMPRESSION CHARACTER
 
@@ -216,14 +190,10 @@ instrument.
   explicitly: it is the defining feature of several genres and the model will
   not infer it from the genre name alone.
 
-</rag_zone>
-
 </section>
 
 <section id="§4" title="GROOVE — how it sits against the beat">
 
-<!-- rag_anchor: groove_feel -->
-<rag_zone id="groove_feel">
 The most underused axis in prompt writing, and the one that most determines
 whether music feels alive.
 
@@ -239,11 +209,6 @@ whether music feels alive.
   MACHINE-TIGHT  quantised, deliberately inhuman
   LOOSE / HUMAN  small timing variations left in
 
-</rag_zone>
-
-<!-- rag_anchor: groove_feel_pocket_where_notes_sit_relative_to_the_beat -->
-<rag_zone id="groove_feel_pocket_where_notes_sit_relative_to_the_beat">
-
 ### POCKET — where notes sit relative to the beat
 
   IN THE POCKET     locked and natural, neither early nor late
@@ -257,11 +222,6 @@ whether music feels alive.
   This single choice changes a track's whole character more than most
   instrument decisions. The same notes at the same tempo, played behind the
   beat instead of on it, become a different genre.
-
-</rag_zone>
-
-<!-- rag_anchor: groove_feel_groove_character -->
-<rag_zone id="groove_feel_groove_character">
 
 ### GROOVE CHARACTER
 
@@ -287,19 +247,15 @@ whether music feels alive.
   7/8      progressive, tense, off-balance
   odd meter, changing meter — describe the effect as well as the number
 
-  Suno Studio supports meters beyond 4/4 [OFFICIAL]; details in DATA_SUNO §9.
+  Suno Studio supports meters beyond 4/4 [OFFICIAL for Studio 1.2; not re-listed for
+  2.0]; details in DATA_SUNO §9.
   MiniMax Music 3.0 names time signature as part of its captions [OFFICIAL]. In a prompt, saying "in a rolling 6/8" usually
   works better than the number alone, because the description carries the feel
   and the number does not.
 
-</rag_zone>
-
 </section>
 
 <section id="§5" title="SPACE — where the sound is">
-
-<!-- rag_anchor: spatial -->
-<rag_zone id="spatial">
 
 ### STEREO PLACEMENT
 
@@ -352,14 +308,9 @@ Naming a space carries reverb, tone and era in one phrase:
   a stone church · a scoring stage · an empty stadium
   a parked car · a bedroom with a duvet on the wall
 
-</rag_zone>
-
 </section>
 
 <section id="§6" title="INSTRUMENT DESCRIPTORS — the catalogue">
-
-<!-- rag_anchor: instruments_guitars -->
-<rag_zone id="instruments_guitars">
 
 The instrument name is a category. The adjective is the record. Method for
 choosing between these: CORE_01 §5.
@@ -390,11 +341,6 @@ choosing between these: CORE_01 §5.
   resonator slide                         blues, americana
   twelve-string shimmer                   1970s folk rock
   travis-picked alternating bass          country, folk
-
-</rag_zone>
-
-<!-- rag_anchor: instruments_keys -->
-<rag_zone id="instruments_keys">
 
 ### PIANO AND KEYBOARDS
 
@@ -428,11 +374,6 @@ choosing between these: CORE_01 §5.
   arpeggiated sequence, tight and driving  synthwave, Berlin school
   tape-warped mellotron strings            prog rock, cinematic
   glassy FM electric piano                 1980s ballad
-
-</rag_zone>
-
-<!-- rag_anchor: instruments_drums -->
-<rag_zone id="instruments_drums">
 
 ### DRUMS, ACOUSTIC
 
@@ -474,11 +415,6 @@ choosing between these: CORE_01 §5.
   fretless bass, sliding between notes    jazz fusion, 1980s ballad
   tuba or sousaphone as the bass          new orleans brass
 
-</rag_zone>
-
-<!-- rag_anchor: instruments_orchestral -->
-<rag_zone id="instruments_orchestral">
-
 ### STRINGS
 
   sweeping cinematic swells               trailer, epic
@@ -515,11 +451,6 @@ choosing between these: CORE_01 §5.
   throat singing, low and overtone-rich   world, cinematic
   spoken crowd chant                      anthem, stadium
 
-</rag_zone>
-
-<!-- rag_anchor: instruments_world -->
-<rag_zone id="instruments_world">
-
 ### INSTRUMENTS THAT CARRY A PLACE WITH THEM
 
 Naming one of these does more genre work than an adjective can, because each
@@ -545,14 +476,9 @@ arrives with a tradition attached.
   ⚠️ These carry cultural weight, not just a timbre. Use them because the
   music belongs there, not as decoration.
 
-</rag_zone>
-
 </section>
 
 <section id="§7" title="PRODUCTION AND MIX CHARACTER">
-
-<!-- rag_anchor: production_character -->
-<rag_zone id="production_character">
 
 ### OVERALL CHARACTER, IN ONE PHRASE
 
@@ -608,19 +534,15 @@ Each of these carries a full production aesthetic:
   2010s     very loud, very wide, heavily tuned vocals
   2020s     deliberately imperfect again, lo-fi textures on clean recordings
 
-</rag_zone>
-
 </section>
 
 <section id="§8" title="KEY AND TEMPO">
 
-<!-- rag_anchor: key_tempo -->
-<rag_zone id="key_tempo">
-
 Written as prose inside the description — "96 BPM, A minor". Numbers work on
 every covered platform now: Google's Lyria guide asks for "Tempo (BPM)" and "Key
 and Scale", ElevenLabs says its model "accurately follows BPM and often captures
-the intended musical key" [OFFICIAL]. Add a feel word when the number alone
+the intended musical key" [OFFICIAL for Lyria, ElevenMusic, MiniMax; COMMUNITY
+for Suno]. Add a feel word when the number alone
 does not say how the beat sits ("a lazy 96 BPM, behind the beat").
 
 ### KEY AND ITS ASSOCIATIONS
@@ -660,20 +582,24 @@ same conventions.
   ⚠️ Tempo and feel interact. Trap written at 140 with a half-time feel sounds
   slower than folk at 90. Say the feel as well as the number.
 
+### SUNO'S OWN TEMPO TERMS
+
+  Suno, Music Glossary [OFFICIAL, help ed. 2025-11-17, pre-v6]:
+    Adagio 66–76 · Andante 76–108 · Allegro 120–168 · Presto 168–200 BPM
+  Suno's tip wording: "upbeat allegro pop", "slow adagio ballad".
+  These are definitions Suno offers as vocabulary "to try out". They are not
+  evidence that Suno follows a BPM number; for Suno that stays [COMMUNITY]
+  (top of this section).
+
 ### LENGTH AND MATERIAL
 
 A minute of song holds about one verse and one chorus at a moderate tempo (CORE_02 §12). This
 is the arithmetic that decides whether a long target produces a full song or
 padding (CORE_02 §12).
 
-</rag_zone>
-
 </section>
 
 <section id="§9" title="MODES AND SCALES">
-
-<!-- rag_anchor: modal_language -->
-<rag_zone id="modal_language">
 
 Mode names are not reliably understood [COMMUNITY]. Describe the effect
 instead — and if you want to name the mode, do both.
@@ -709,14 +635,9 @@ Often more effective than naming a mode at all:
   Chord progressions themselves, and how to write them into a lyric, are in
   CORE_02 §10.
 
-</rag_zone>
-
 </section>
 
 <section id="§10" title="THEORY → PROMPT LANGUAGE, BY GENRE">
-
-<!-- rag_anchor: theory_to_prompt -->
-<rag_zone id="theory_to_prompt">
 
 What actually makes each genre recognisable, translated into words that go
 into a Style description. Written as prose — the previous edition presented
@@ -758,11 +679,6 @@ syntax (CORE_02 §4).
   Post-punk        angular and cold     angular scratchy guitar, melodic high
                                         bass, deadpan vocal, dry production
 
-</rag_zone>
-
-<!-- rag_anchor: theory_to_prompt_hiphop_electronic -->
-<rag_zone id="theory_to_prompt_hiphop_electronic">
-
 ### Hip-hop and electronic
 
   GENRE            WHAT DEFINES IT      WRITE THIS
@@ -787,11 +703,6 @@ syntax (CORE_02 §4).
                                         drums, neon 1980s atmosphere
   Hyperpop         joyful damage        pitch-shifted vocals, distorted 808,
                                         glitching, deliberately overloaded
-
-</rag_zone>
-
-<!-- rag_anchor: theory_to_prompt_roots_world_classical -->
-<rag_zone id="theory_to_prompt_roots_world_classical">
 
 ### Roots, world, jazz, cinematic and classical
 
@@ -832,14 +743,9 @@ syntax (CORE_02 §4).
   Classical        idiom by period      name the period — baroque counterpoint,
                                         romantic sweep, minimalist repetition
 
-</rag_zone>
-
 </section>
 
 <section id="§11" title="INSTRUMENT NAMES — a flat reference">
-
-<!-- rag_anchor: instrument_names -->
-<rag_zone id="instrument_names">
 
 For recall. Combine with a descriptor from §6 before use — a bare name is a
 category, not a sound.
@@ -884,14 +790,9 @@ category, not a sound.
   section labels in a Lyrics field depends on the field, not the instrument —
   CORE_01 §5 and CORE_02 §3.
 
-</rag_zone>
-
 </section>
 
 <section id="§12" title="PUTTING WORDS TOGETHER">
-
-<!-- rag_anchor: combining -->
-<rag_zone id="combining">
 
 ### A DESCRIPTOR STACK THAT WORKS
 
@@ -929,14 +830,10 @@ Pick one word from each axis rather than three from one:
   Ready-made genre configurations           DATA_RECIPES
   Correcting a mix after generation         DATA_POSTPROD
 
-</rag_zone>
-
 </section>
 
 // ═══════════════════════════════════════════════════════════════
-// END OF DATA_VOCAB.md · SunoForge v4.0
+// END OF DATA_VOCAB.md · SunoForge v5.0
 // Next: DATA_RECIPES.md
 // ═══════════════════════════════════════════════════════════════
-
-<tags>vocabulary, descriptors, timbre, bright, dark, warm, spectral, dynamics, adsr, attack, compression, groove, swing, pocket, behind the beat, space, stereo width, depth, reverb types, decay, instrument descriptors, guitars, keys, synths, strings, brass, drums, production character, mix, key and mood, bpm by genre, time signatures, modes, scales, theory to prompt language, instrument names, combining words</tags>
 </sunoforge_file>

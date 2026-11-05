@@ -1,14 +1,47 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "sunoforge",
-  "version": "4.0.0",
-  "description": "AI music prompt orchestrator: ready-to-paste prompts, lyrics markup, prompt repair, rights and post-production for Suno v6, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models.",
+  "displayName": "SunoForge",
+  "version": "5.0.0",
+  "description": "AI music prompt orchestrator: ready-to-paste prompts, lyrics markup, speech scripts, prompt repair, rights and post-production for Suno v6 and Suno Speech, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models. Sends a blueprint to any music-generation MCP the session shows, Suno's included, only after you say yes. Works in any language the user writes in.",
   "author": {
     "name": "sanic732",
     "url": "https://github.com/sanic732"
   },
   "homepage": "https://github.com/sanic732/SunoForge",
   "repository": "https://github.com/sanic732/SunoForge",
-  "license": "MIT",
-  "keywords": ["music", "suno", "lyria", "prompt-engineering", "songwriting", "ai-music"]
+  "license": "Apache-2.0",
+  "keywords": [
+    "music",
+    "suno",
+    "lyria",
+    "prompt-engineering",
+    "songwriting",
+    "ai-music",
+    "mcp",
+    "generator"
+  ],
+  "privacyPolicyUrl": "https://github.com/sanic732/SunoForge/blob/main/PRIVACY.md",
+  "supportUrl": "https://github.com/sanic732/SunoForge/issues",
+  "documentationUrl": "https://github.com/sanic732/SunoForge/blob/main/plugin/README.md",
+  "userConfig": {
+    "library_dir": {
+      "type": "directory",
+      "title": "Folder for your SunoForge data",
+      "description": "Optional: your own folder for settings.md and library.md, e.g. D:\\SunoForge. It survives uninstalling or updating the plugin. Leave empty for the plugin's data folder, deleted on uninstall.",
+      "default": ""
+    },
+    "language": {
+      "type": "string",
+      "title": "SunoForge language",
+      "description": "Menus and answers in this language; auto follows the language you write in. Typing set lang in the chat overrides it.",
+      "options": [
+        "auto",
+        "en",
+        "ru",
+        "uk"
+      ],
+      "default": "auto"
+    }
+  }
 }

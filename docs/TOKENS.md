@@ -1,68 +1,68 @@
-# Токены и объём · Tokens and size
+# Tokens and size
 
-Замер 30.09.2026 по файлам обеих редакций. Кодировка `o200k_base`, для сравнения `cl100k_base`.
-Measured 30 September 2026 against both editions. Encoding `o200k_base`, with `cl100k_base` alongside.
+Measured 29 October 2026 against both editions. Encoding `o200k_base`, with `cl100k_base` alongside.
 
 ---
 
 ## Claude Edition (XML)
 
-| Файл · File | КБ · KB | Строк · Lines | `o200k` | `cl100k` |
+| File | KB | Lines | `o200k` | `cl100k` |
 |---|---:|---:|---:|---:|
-| `CORE_00_ENTRY.md` | 38.1 | 786 | 10 137 | 10 314 |
-| `CORE_01_STYLE.md` | 48.3 | 1 229 | 11 878 | 12 044 |
-| `CORE_02_LYRICS.md` | 37.8 | 1 107 | 9 680 | 9 846 |
-| `CORE_03_DIAGNOSE.md` | 45.0 | 1 017 | 11 160 | 11 243 |
-| `CORE_04_WHY.md` ⏸ | 38.8 | 882 | 9 152 | 9 242 |
-| `DATA_GOOGLE_2026-09.md` | 33.2 | 736 | 8 668 | 8 844 |
-| `DATA_LEGAL_2026-09.md` ⏸ | 27.1 | 531 | 6 520 | 6 641 |
-| `DATA_OTHER_2026-09.md` | 32.6 | 725 | 8 300 | 8 448 |
-| `DATA_POSTPROD.md` | 29.9 | 754 | 7 077 | 7 179 |
-| `DATA_RECIPES.md` | 49.2 | 1 985 | 13 012 | 13 138 |
-| `DATA_SUNO_2026-09.md` | 36.5 | 787 | 9 330 | 9 404 |
-| `DATA_VOCAB.md` | 40.3 | 943 | 9 239 | 9 394 |
-| **Итого · Total** | **456.8** | **11 482** | **114 153** | **115 737** |
+| `CORE_00_ENTRY.md` | 47.8 | 844 | 12 690 | 12 885 |
+| `CORE_01_STYLE.md` | 44.1 | 1 059 | 10 839 | 11 015 |
+| `CORE_02_LYRICS.md` | 37.8 | 1 041 | 9 702 | 9 872 |
+| `CORE_03_DIAGNOSE.md` | 44.3 | 908 | 11 003 | 11 106 |
+| `CORE_04_WHY.md` ⏸ | 36.7 | 758 | 8 555 | 8 658 |
+| `DATA_GOOGLE_2026-10.md` | 33.2 | 657 | 8 709 | 8 897 |
+| `DATA_LEGAL_2026-10.md` ⏸ | 29.5 | 500 | 7 031 | 7 168 |
+| `DATA_OTHER_2026-10.md` | 33.6 | 659 | 8 503 | 8 658 |
+| `DATA_POSTPROD.md` | 27.0 | 652 | 6 370 | 6 470 |
+| `DATA_RECIPES.md` | 44.4 | 1 731 | 11 680 | 11 829 |
+| `DATA_SUNO_2026-10.md` | 48.1 | 888 | 12 288 | 12 387 |
+| `DATA_SUNO_LIVE_2026-10.md` | 20.4 | 307 | 5 693 | 5 777 |
+| `DATA_VOCAB.md` | 38.0 | 835 | 8 667 | 8 828 |
+| **Total** | **484.9** | **10 839** | **121 730** | **123 550** |
 
-Без ленивых файлов · without lazy files: **98 481** (`o200k`).
+Without lazy files: **106 144** (`o200k`).
 
-| Окно · Window | Полный комплект · Full | Без ленивых · Without lazy |
+| Window | Full | Without lazy |
 |---|---:|---:|
-| 1000K | 11.4% | 9.8% |
-| 200K | 57.1% | 49.2% |
-| 128K | 89.2% | 76.9% |
+| 1000K | 12.2% | 10.6% |
+| 200K | 60.9% | 53.1% |
+| 128K | 95.1% | 82.9% |
 
 ---
 
 ## Gemini Edition (Markdown)
 
-| Файл · File | КБ · KB | Строк · Lines | `o200k` | `cl100k` |
+| File | KB | Lines | `o200k` | `cl100k` |
 |---|---:|---:|---:|---:|
-| `CORE_00_ENTRY.md` | 35.7 | 679 | 9 527 | 9 706 |
-| `CORE_01_STYLE.md` | 43.9 | 1 032 | 10 746 | 10 922 |
-| `CORE_02_LYRICS.md` | 35.0 | 960 | 8 958 | 9 123 |
-| `CORE_03_DIAGNOSE.md` | 40.2 | 823 | 9 901 | 9 994 |
-| `CORE_04_WHY.md` ⏸ | 35.3 | 719 | 8 180 | 8 280 |
-| `DATA_GOOGLE_2026-09.md` | 30.8 | 603 | 8 027 | 8 207 |
-| `DATA_LEGAL_2026-09.md` ⏸ | 25.4 | 433 | 6 055 | 6 175 |
-| `DATA_OTHER_2026-09.md` | 30.1 | 593 | 7 659 | 7 811 |
-| `DATA_POSTPROD.md` | 27.4 | 634 | 6 423 | 6 525 |
-| `DATA_RECIPES.md` | 44.2 | 1 711 | 11 615 | 11 765 |
-| `DATA_SUNO_2026-09.md` | 34.2 | 648 | 8 711 | 8 788 |
-| `DATA_VOCAB.md` | 37.8 | 809 | 8 587 | 8 749 |
-| **Итого · Total** | **419.9** | **9 644** | **104 389** | **106 045** |
+| `CORE_00_ENTRY.md` | 47.3 | 821 | 12 563 | 12 760 |
+| `CORE_01_STYLE.md` | 43.6 | 1 030 | 10 682 | 10 856 |
+| `CORE_02_LYRICS.md` | 37.2 | 1 008 | 9 533 | 9 704 |
+| `CORE_03_DIAGNOSE.md` | 43.9 | 889 | 10 884 | 10 991 |
+| `CORE_04_WHY.md` ⏸ | 36.4 | 747 | 8 470 | 8 571 |
+| `DATA_GOOGLE_2026-10.md` | 32.8 | 634 | 8 582 | 8 767 |
+| `DATA_LEGAL_2026-10.md` ⏸ | 29.0 | 477 | 6 904 | 7 039 |
+| `DATA_OTHER_2026-10.md` | 33.1 | 636 | 8 372 | 8 528 |
+| `DATA_POSTPROD.md` | 26.6 | 629 | 6 243 | 6 343 |
+| `DATA_RECIPES.md` | 44.0 | 1 714 | 11 577 | 11 726 |
+| `DATA_SUNO_2026-10.md` | 47.4 | 853 | 12 118 | 12 214 |
+| `DATA_SUNO_LIVE_2026-10.md` | 20.0 | 290 | 5 586 | 5 667 |
+| `DATA_VOCAB.md` | 37.5 | 810 | 8 534 | 8 697 |
+| **Total** | **478.7** | **10 538** | **120 048** | **121 863** |
 
-Без ленивых файлов · without lazy files: **90 154** (`o200k`).
+Without lazy files: **104 674** (`o200k`).
 
-| Окно · Window | Полный комплект · Full | Без ленивых · Without lazy |
+| Window | Full | Without lazy |
 |---|---:|---:|
-| 1000K | 10.4% | 9.0% |
-| 200K | 52.2% | 45.1% |
-| 128K | 81.6% | 70.4% |
+| 1000K | 12.0% | 10.5% |
+| 200K | 60.0% | 52.3% |
+| 128K | 93.8% | 81.8% |
 
 ---
 
-⏸ — ленивые файлы, по умолчанию не грузятся · lazy files, not loaded by default.
+⏸ — lazy files, not loaded by default
 
-XML-разметка Claude Edition добавляет около 10 % токенов к той же информации; за это Claude получает
-явные границы разделов и зон. The Claude Edition's XML adds about 10 % tokens for the same content;
-in exchange Claude gets explicit section and zone boundaries.
+The Claude Edition's XML adds about 10 % tokens for the same content; in exchange Claude gets explicit
+section and zone boundaries.

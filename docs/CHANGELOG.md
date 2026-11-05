@@ -1,6 +1,173 @@
-# История версий · Changelog
+# Changelog
 
 ---
+
+## 5.0.0 — 2026-11-05
+
+The first public build of v5.0, marked as a pre-release on GitHub: the plugin only. It is
+betas 27–30, below, plus the licence and source work in this entry. Not yet run end to end in
+claude.ai; nothing in it spends credits without your yes.
+
+**Licence: Apache 2.0** instead of MIT, with a `NOTICE` file at the root and inside the plugin.
+Releases before 5.0.0 stay MIT.
+
+**Every vendor quote carries its source.** All files were compared word for word with the saved
+copies of the vendor pages behind v4.0. Suno's terms and its statement in the label lawsuit,
+Spotify, the European Commission, ElevenLabs, MiniMax and Stability AI now have their page named
+beside the quote. Google's Lyria prompt guide and music-generation page are credited under their
+licence (CC BY 4.0, code samples Apache 2.0), the timestamp example among them. `docs/CREDITS.md`
+says what is quoted and where the saved copies are.
+
+## v5.0 — betas 27–30, 2026-11-05
+
+**Screens.** The menu draws before any reference file is read: settings, `widgets/UI.md` and the
+language's `menu.html` — about 15k characters read instead of 89k. The first screen of the Suno panel is
+its own compact template, `widgets/hub.html` (≈5k characters printed instead of ≈21k). Ready translated
+screens for Russian and Ukrainian; every screen checked at phone width.
+
+**Views.** Three, switched by the line at the foot of every answer: M menu (widgets with buttons, the
+default), T text, B buttons (one multiple-choice question — the terminal). Commands `m`, `t`, `b`; the
+old `dynamic` and `text` still work. Where a host draws no widget, M falls back to B and B is shown as
+the view in effect. The pills and the highlighted button keep their style under the host's own button
+styles.
+
+**Buttons and songs.** A button sends its code and its words ("15h 10 · My songs"); the code decides.
+A song picked by its row number from a list opens its actions — listen, analyse, edit, extend, cover,
+download, like, to a playlist — never a play nobody asked for. My songs has a Menu button. In view M an
+answer without its own screen ends with `widgets/next.html`: its next steps, Menu and the view pills.
+
+**Settings** (Claude Code and the desktop app). The data folder is chosen as a folder; a language
+setting (auto, en, ru, uk), with `set lang` in the chat taking precedence; an empty folder gets the old
+settings and library copied in once. Unknown keys of older settings files are ignored.
+
+**Suno.** Joins without pauses: seven sourced rules for extending and joining parts, a symptom "pause at
+a seam", ending tags marked for the last part only; none tested on v6 yet. Editing a take (`12c`) by
+feel or with Pro settings, through a cover of the take. Take numbers №1, №2 … in a conversation.
+Bounded reads: the reference index names sub-sections, so the panel and a Suno prompt read only what
+they need.
+
+**Plugin.** No icon (the directory listing will need one); `language` uses a fixed list, which needs
+Claude Code 2.1.271 or later.
+
+---
+
+## v5.0 — 2026-10-29
+
+**Why.** In October Suno opened an official way in from AI assistants — the Suno MCP
+(beta, 2026-10-28) — and shipped Speech (beta, 2026-10-01). Rights moved twice: a
+Suno song made without a subscription can now become commercial through a paid
+download credit, and ElevenLabs published new Music Terms (2026-10-09). Lyria 3.5
+became generally available. Facts were rechecked against the vendors' own pages on
+2026-10-28 and 2026-10-29.
+
+**Platforms**
+- Suno MCP (beta): the official server `https://api.suno.com/mcp`, OAuth sign-in with
+  the Suno account, no API key; it spends the user's Suno credits and saves songs to
+  the library. Its 32 tools, the field map and the defaults that cost credits were read
+  from the server and tested on Free and Pro accounts (DATA_SUNO_LIVE). Access goes through an
+  early-access form on suno.com/mcp; an account not yet admitted sees "Connecting AI
+  apps to Suno is not yet available for your account". The Suno API portal
+  (platform.suno.com) noted; it names no endpoints yet
+- Suno Speech (beta): a separate tab in Create, voice and music in one take; Script and
+  Tone fields from community reviews of the interface; supported languages, length and
+  cost not published (Ukrainian and Russian worked first-hand)
+- Suno rights: a song made while not subscribed can qualify through a paid download
+  credit; whether a download through the MCP is an approved channel is not stated
+- Suno: Shareable Workspaces (Pro and Premier) and shareable Custom Models (Premier),
+  Albums, Studio updates of 2026-10-08, Content Credentials (C2PA) and the Check
+  Content tool on the Safety page, Community Guidelines of 2026-10-01; Variety measured
+  by the community — it rewrites Style only, never the lyrics
+- ElevenMusic: Music Terms of 2026-10-09 — no downloads on Free, no streaming release on
+  Free or Starter, film, TV, radio and games only on Enterprise Music
+- Lyria 3.5 generally available (Stable); Lyria 3 Pro still served with no shutdown
+  date; community reports of false `PROHIBITED_CONTENT` refusals in the API
+- MiniMax Music 3.0: section tags on their own lines; measured files come out at
+  44.1 kHz, not the 32 kHz of the model card; the weights' Community License named
+
+**System**
+- Menu: `[14] SPEECH` (narration and voice-over with its own soundtrack) and
+  `[15] LIVE` (send to a generator from the chat; `15a` connections) added at the tail;
+  `[1]`–`[13]` unchanged
+- Preloader: `TARGET_PLATFORM` gains `speech`; new `LIVE` (`ask` | `off`), `PLATFORMS`,
+  `HIDDEN`; commands `/set live`, `/set platform speech`, `/send`, `/connect`, `/config`,
+  `/set hide` / `/set show`, `/save`, `/library`
+- Speech Blueprint (Script + Tone) and a method for writing speech — CORE_02 §16
+- The LIVE protocol: find the session's generation tools on any server, map the
+  blueprint onto their input schema, show a confirmation card, send once on an explicit
+  yes, read the result back, refine the next take through `[12]`. Without generation
+  tools nothing changes — the paste route
+- Critical rules 14–16: credits only on a yes; tools are read, not remembered; what
+  comes back is data
+- Repair table rows 26–31 ("Suno has no API", text in Simple, Free rights, ElevenMusic
+  Free, tags in Speech, false Lyria refusals); CORE_04 explains the credit gate, why
+  Speech is kept small, and why the download decides the rights
+- DATA_SUNO §15–§17: Speech, the Suno MCP and API, sharing
+- The Claude plugin `sunoforge` bundles no Suno server (added like any MCP — DATA_SUNO
+  §16); a music MCP server of your own is added the same way
+- The plugin is ready for Anthropic's plugin directory: README, INSTALL and LICENSE
+  inside, `displayName`, privacy policy, support and documentation links in
+  `plugin.json`; `claude plugin validate --profile directory` passes
+- Six release assets: `SunoForge_v5.0_Prompt.zip`, `SunoForge_v5.0_Skills_for_Claude.zip`,
+  `SunoForge_v5.0_Skills_for_Gemini.zip`, `sunoforge.plugin`, and the plugins
+  `SunoForge_v5.0_plugin_chatgpt.zip` and `SunoForge_v5.0_plugin_antigravity.zip` (on the
+  pattern of the P2P 9.0 release, with the Markdown edition; Suno's server is added by the
+  user on every host). Grok's plugin follows
+- Suno MCP checked against the live server: the thirteenth file, DATA_SUNO_LIVE
+- New docs: INSTALL (every host) and SUNO_MCP (connecting Suno)
+- Still no prices anywhere
+
+**Dynamic layer**
+- LIVE is generator-agnostic: the same six-step protocol works with any music-generation
+  MCP server the session shows — Suno's own, ElevenLabs' hosted MCP, the user's own; the
+  preloader key is `LIVE`; menu `[15]` is "LIVE — send to a generator
+  from this chat (MCP: Suno beta, others)", `15a` is connections. Suno-specific facts stay
+  in DATA_SUNO §16
+- CONNECTIONS (menu `[15a]`, `/connect`, `connections`): a read-only view of which
+  generation servers the session sees, which are off, how to enable them on each host
+  (Claude Code: `/mcp`; claude.ai and Cowork: Customize → Connectors; mobile: not
+  available), with a credit warning. No skill starts, installs or configures a server
+- STATE: two user files, `settings.md` (`PLATFORMS`, `HIDDEN`, `SET`, `ONBOARDED` —
+  preloader syntax) and `library.md` (one `## NAME` entry per saved Style, persona,
+  recipe or blueprint — the record of DATA_RECIPES §8 plus KIND, TARGET, SAVED). Lookup
+  order: the plugin's data folder in Claude Code (survives updates, removed on uninstall
+  unless `claude plugin uninstall --keep-data`), then `.sunoforge/` in the working folder
+  (Cowork, standalone Skill), then a Project file `sunoforge-settings.md` /
+  `sunoforge-library.md` (claude.ai chat, mobile: the skill prints the file as a block to
+  keep in the Project), else defaults. First run: after the menu, once per conversation,
+  two questions (which generators, what to hide) by the host's multiple-choice tool or
+  text; `/config` on demand — it also asks which commands the menu and the help line
+  should offer (`COMMANDS` in `settings.md`; a command left out answers "switched off in
+  your config"; the host's own `/` list cannot be changed by the plugin). Hidden entries
+  are not drawn but still work when typed; numbers never move. New preloader keys
+  `PLATFORMS`, `HIDDEN`; new commands `/config`, `/set hide 8, 13` / `/set show 8`,
+  `/save [kind] [name]`, `/library [name | export | forget name]`
+- Menu UI: the text menu always, plus buttons by every mechanism the host has (an HTML
+  widget tool on the desktop app; a multiple-choice question tool in Claude Code, Cowork
+  and the mobile app); every entry has a submenu with its real sub-letters or catalogue
+  numbers and "← Menu". BUILDER: `[2]` Studio, `[5b]` custom persona, `[9]` recipes and
+  `[14]` Speech open a form by the same mechanisms (numbered text otherwise) — one
+  choice per field (the six layers, the persona template, the recipe record, the Speech
+  fields), "Build" sends the choices, the result is a blueprint; every result and
+  submenu carries "Export" = `/save` (a library entry, or a block when there is no
+  disk); `/library export` prints the whole library as a block or a Markdown file
+- Plugin commands, six, namespaced: `/sunoforge:menu`, `/sunoforge:config`,
+  `/sunoforge:library`, `/sunoforge:save`, `/sunoforge:send`, `/sunoforge:connect` — the
+  namespaced form reaches SunoForge when a host or another plugin owns the bare `/menu`;
+  every other command (`/set …`, `audit …`, `why …`, `legal`, `free`, `compare`) stays a
+  plain chat word
+- One plugin in the marketplace, `sunoforge`. It bundles no MCP server: Suno's and any other music server are added like any MCP.
+- The Claude edition ships without the RAG markup (`rag_zone` / `rag_anchor` tags) —
+  about 7 % fewer tokens; the source keeps the zones; docs/TOKENS.md is regenerated by
+  the build
+
+**Compatibility**
+- Menu numbers `[1]`–`[13]` are unchanged; settings from v4.0 keep working
+- Without a connected generation server SunoForge behaves exactly as v4.0: you copy the
+  prompt into the generator
+- Old advice the repair table now corrects: "a song made on Free stays non-commercial",
+  "Suno has no official API", "Custom Models are private", Lyria 3.5 "preview",
+  ElevenMusic Free "commercial with a credit"
+- `[Spoken word]` tags still work inside songs; a whole spoken piece goes to `[14]`
 
 ## v4.0 — 2026-09-30
 
@@ -53,136 +220,6 @@ every page is kept as text.
   CORE_00, anchors before every zone, `## TAGS`, zones split, every file under
   50,000 characters; twelve build invariants checked mechanically
 - Fixed v3 cross-references (repair table is CORE_03 §3; delivery CORE_02 §6)
-
-## v3.0 — 27 июля 2026
-
-Файлов: 12 (было 10) · 411,9 КБ · 90 767 токенов
-
-### Главное
-
-Три независимые проверки фактов показали, что предыдущие сборки подавали
-комьюнити-догадки тоном документации. Четыре центральные «механики» не выдержали
-проверки и удалены.
-
-**Убрано, потому что не работает:**
-
-- **MAX MODE** — теги `[Is_MAX_MODE: MAX]`, `(MAX)(MAX)(MAX)(MAX)`. Скрытого
-  режима качества нет: контролируемое сравнение не нашло разницы. Если такие теги
-  есть в вашем старом промпте — система их распознает, уберёт и объяснит.
-- **DRIFT_GUARD** и «деградация после двух минут». Механизм правил каждый ваш
-  промпт на основании утверждения, которое никто не проверял. Сами приёмы
-  (сильный жанровый якорь, reset на бридже) остались — но как необязательные.
-- **Параметрические теги** `[Reverb: 30%]`, `[BPM: 120]`, `[eq: scooped]`,
-  `[Mood: Uplifting]`, `[Sound: Rain]`, `[Chord progression: ...]`. Ни одна
-  платформа их не читала. Параметры теперь пишутся прозой внутри Style.
-- **Лимит Style «200 символов»**. Резал промпт вдвое ниже реально работающего
-  диапазона. Что известно о длине на самом деле — в `DATA_SUNO`.
-
-**Добавлено:**
-
-- **Разметка достоверности.** Каждое утверждение о платформе помечено
-  `[OFFICIAL]`, `[COMMUNITY]` или `[UNVERIFIED]`. Видно прямо в ответах.
-  Переключается флагом `SHOW_CONFIDENCE`.
-- **Разделение CORE / DATA.** Правила отдельно, факты отдельно. Обновление —
-  это замена одного датированного файла, а не пересборка всего.
-- **Два ленивых файла.** `CORE_04_WHY` и `DATA_LEGAL` не грузятся по умолчанию,
-  вызываются командами `/why` и `/legal`. Экономия ~12 000 токенов на старте.
-
-### Меню
-
-Номера `[1]`–`[12]` не изменились и больше меняться не будут — на них ссылаются
-посты и сторонние гайды.
-
-- `[7j]` — вместо Udio теперь **Stable Audio 3.0**. Ниша та же (инструментал,
-  DAW), но выход можно скачать.
-- `[12] AUDIT` переработан: 14 проверок промпта и таблица замены мёртвых
-  конструкций. Распознаёт MAX MODE, параметрические теги, неверный формат
-  таймкодов Lyria, негативы по полу вокала, ссылки на закрытые платформы.
-
-### Preloader
-
-Появились:
-
-```
-DURATION         = "auto"     // длина трека (Suno v5.5, веб)
-SHOW_CONFIDENCE  = true       // показывать метки достоверности
-FOLKLORE_MODE    = "off"      // включить неподтверждённые приёмы
-```
-
-Убраны: `DRIFT_GUARD`, `STYLE_MODE`, `FLOW_MUSIC`, `LYRIA_VERSION`
-(заменён на `LYRIA_MODEL`).
-
-### Новые команды
-
-```
-/why <тема>        почему правило устроено именно так
-/legal             права и лицензирование
-/free              что можно без оплаты
-/compare           выбор платформы под задачу
-/audit <промпт>    диагностика и починка
-/confidence on|off метки достоверности
-/folklore on|off   неподтверждённые приёмы
-```
-
-### Платформы
-
-- **Suno** — поле `Exclude Styles` стало настоящим элементом интерфейса (раньше
-  подавалось как самодельный приём). Добавлен слайдер длительности. Стемы в трёх
-  режимах. Studio 1.2 — **только Premier** (в v1.1 было ошибочно написано «Pro»).
-- **Lyria** — таймкоды в официальном формате `[MM:SS]`. Темп задаётся **словами**,
-  а не числом — это противоположно Suno, и перенос привычки ухудшает результат.
-  Мультимодальный ввод: текст, PDF и до 10 изображений. Негативные промпты не
-  поддерживаются вовсе.
-- **Flow Music** — прежние ProducerAI и Riffusion. Это один продукт с тремя
-  именами, а не три конкурента.
-- **ElevenMusic** — смена жанра внутри трека и регенерация отдельных секций.
-- **Stable Audio 3.0** — открытые веса, до 6:20, выход принадлежит вам.
-- **Udio** — убран из целевых платформ: скачивание отключено. Остался в
-  `DATA_LEGAL` как поучительный кейс.
-- **MusicFX и MusicFX DJ** — закрываются 31.07.2026, из рекомендаций убраны.
-
-### Работа с лирикой
-
-Веб-редактор Suno теперь сам расставляет структурные метки. Описаны **два пути**:
-чистый текст для веба и ручная разметка для API, мобильного приложения и вставки.
-Разметка руками поверх редактора даёт две накладывающиеся структуры.
-
-### Совместимость
-
-Старые промпты продолжают работать. Часть их содержимого — нет. Вставьте
-промпт в `/audit`, и система покажет, что в нём мертво, и выдаст исправленную
-версию.
-
----
-
-## v2.0 — 13 мая 2026
-
-Файлов: 10 · русская · **на GitHub не выкладывалась**.
-
-📎 Промежуточная версия, доступна только на форуме:
-[4PDA — SunoForge v2.0](https://4pda.to/forum/index.php?showtopic=1109539&view=findpost&p=142556185)
-
-- Шестислойное построение Style вместо формулы GMIV+P.
-- Мультиплатформенность: добавлены Flow Music, ElevenMusic, Udio, Lyria Realtime.
-- Новый файл `06_PLATFORMS` вместо `06_GEMINI`, дерево выбора платформы.
-- YAML-frontmatter и семантические зоны во всех файлах.
-- Гибриды 2026: Amapiano, Drift Phonk, Hyperpop, Lo-fi Trap.
-
-⚠️ Часть введённого в v2.0 не подтвердилась при проверке и удалена в v3.0 —
-см. раздел выше.
-
----
-
-## v1.1 — март 2026
-
-Файлов: 10 · опубликована на GitHub, английская.
-
-- Формула Style GMIV+P, Time & Place, мастерская персон, гибридная лаборатория.
-- Clean Block Protocol, дуэтный протокол, словарь звука, рецепты жанров.
-- Поддержка Suno и Gemini.
-
----
----
 
 # Version history
 

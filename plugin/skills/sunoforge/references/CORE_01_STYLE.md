@@ -1,7 +1,7 @@
-<sunoforge_file id="CORE_01_STYLE" version="4.0" layer="core" role="engine" source="CORE_01_STYLE.md">
+<sunoforge_file id="CORE_01_STYLE" version="5.0" layer="core" role="engine" source="CORE_01_STYLE.md">
 <file_meta>
 file_id: CORE_01_STYLE
-version: "4.0"
+version: "5.0"
 layer: core
 role: engine
 description: >
@@ -11,19 +11,16 @@ description: >
   production signature, hybrids, atmosphere, image-to-sound, clone mode and assembly.
   Read for any new prompt.
 scope: six_layer_style · time_and_place · mood · instrumentation · vocal_direction · personas · hybrids · atmosphere · clone_mode
-key_concepts: [six_layer, google_formula, time_and_place, hero_instrument, vocal_arc, persona_biography, duet_protocol, bridge_genre, anti_pairs, scene_painting, acoustic_deconstruction]
 depends_on: [CORE_00_ENTRY]
 used_by: [CORE_02_LYRICS, CORE_03_DIAGNOSE, CORE_04_WHY, DATA_RECIPES, DATA_VOCAB, DATA_GOOGLE, DATA_SUNO]
-rag_priority: critical
-updated: "2026-09-30"
-changelog: "v4.0 — §2 rewritten: Google's 2026-09-17 guide, ElevenLabs' five questions and MiniMax's structured captions now agree with the six layers; numeric BPM and key are right on every covered platform · structure on Lyria is section tags or timestamp ranges · vocal profiles from Google's guide · v3.0 — GMIV+P and the v2.0 6-Layer merged into one framework"
+updated: "2026-11-05"
 </file_meta>
 
-# 🎨 SUNOFORGE v4.0 — STYLE ENGINE
-# File 2 of 12 · CORE · How a Style prompt is built
+# 🎨 SUNOFORGE v5.0 — STYLE ENGINE
+# File 2 of 14 · CORE · How a Style prompt is built
 
-> This file covers menu entries **[2] STUDIO MODE**, **[3] CLONE MODE**,
-> **[4] HYBRID LAB** and **[5] PERSONA WORKSHOP**. Numbers per CORE_00 §4.
+> This file covers menu entries **[2] STUDIO**, **[3] CLONE A STYLE**,
+> **[4] HYBRID LAB** and **[5] VOICES**. Numbers per CORE_00 §4.
 >
 > Nothing here is dated. Version numbers, field limits, slider ranges and plan
 > tiers are **not** in this file by design — they live in DATA_SUNO / DATA_GOOGLE
@@ -31,11 +28,10 @@ changelog: "v4.0 — §2 rewritten: Google's 2026-09-17 guide, ElevenLabs' five 
 
 <section id="§1" title="THE SIX-LAYER FRAMEWORK">
 
-<!-- rag_anchor: six_layer_definition -->
-<rag_zone id="six_layer_definition">
-A Style prompt is not a pile of adjectives. It is six decisions, each answering a
-different question. Make them one at a time, in order, then join them into one
-line. Skipping a layer does not save space — it hands that decision to the model.
+A Style prompt is not a pile of adjectives. It answers six questions. Consider them
+all, then write the answer in the shape that fits — a layered sentence, or a scene
+(§11, PAINT A SCENE) that implies several layers at once. A question the user leaves
+open on purpose stays open; one skipped by accident hands that decision to the model.
 
   LAYER 1  GENRE          What tradition is this?
   LAYER 2  MOOD           What does it feel like?
@@ -47,8 +43,8 @@ line. Skipping a layer does not save space — it hands that decision to the mod
 ### LAYER 1 · GENRE — load-bearing, goes first
 
   Format:  [subgenre]  or  [subgenre] meets [subgenre] for a hybrid
-  Ceiling: two genres. A third is not a third flavour, it is noise.
-  Rule:    a subgenre always beats its parent genre.
+  Ceiling: usually two genres; a third tends to read as noise [COMMUNITY].
+  Rule:    a subgenre usually beats its parent genre — unless the broad sound is the point.
 
   The opening words carry the most weight [COMMUNITY, consistent across
   independent guides; no controlled test, none on v6]. Whatever you put
@@ -56,15 +52,11 @@ line. Skipping a layer does not save space — it hands that decision to the mod
 
   Method: §3 TIME & PLACE.
 
-</rag_zone>
-
-<!-- rag_anchor: six_layer_definition_layer_2_mood_energy_one_or_two_compatible_words -->
-<rag_zone id="six_layer_definition_layer_2_mood_energy_one_or_two_compatible_words">
-
 ### LAYER 2 · MOOD & ENERGY — one or two compatible words
 
-  Two moods maximum, and they must be able to coexist. Contradictory pairs do
-  not produce tension, they average out into something flat [COMMUNITY].
+  Usually two moods that can coexist: contradictory pairs tend to average out
+  into something flat [COMMUNITY] — unless the contradiction is the point (a sad
+  banger); then name it as a contrast, not a blend.
 
     works:        brooding + introspective
     averages out: dark + euphoric
@@ -79,15 +71,10 @@ line. Skipping a layer does not save space — it hands that decision to the mod
 
   Method: §5. Full descriptor catalogue: DATA_VOCAB.
 
-</rag_zone>
-
-<!-- rag_anchor: six_layer_definition_layer_4_vocal_gender_character_delivery_and_how_ -->
-<rag_zone id="six_layer_definition_layer_4_vocal_gender_character_delivery_and_how_">
-
 ### LAYER 4 · VOCAL — gender, character, delivery, and how it changes
 
-  Always state gender explicitly. Without it the result varies between takes
-  [COMMUNITY]. On Suno the Vocal Gender control is more reliable than any
+  State gender unless the user wants the voice open — then say so, and expect it
+  to vary between takes [COMMUNITY]. On Suno the Vocal Gender control is more reliable than any
   wording — see DATA_SUNO §8. On Lyria use a vocal profile (§6).
 
   Method: §6. Biographies: §7.
@@ -105,22 +92,12 @@ line. Skipping a layer does not save space — it hands that decision to the mod
 
   Method: CORE_02_LYRICS. Tags and ranges on Lyria: DATA_GOOGLE §4.
 
-</rag_zone>
-
-<!-- rag_anchor: six_layer_definition_layer_6_production_the_closing_phrase -->
-<rag_zone id="six_layer_definition_layer_6_production_the_closing_phrase">
-
 ### LAYER 6 · PRODUCTION — the closing phrase
 
   Era, mix character, and the space the recording lives in. This is where
   numbers go, as prose: tempo, key, stereo width, compression character.
 
   Method: §9.
-
-</rag_zone>
-
-<!-- rag_anchor: where_parameters_go -->
-<rag_zone id="where_parameters_go">
 
 ### WHERE PARAMETERS GO
 
@@ -129,22 +106,16 @@ Parameters are written as ordinary words inside the Style text:
     ✅  92 BPM, D minor, heavily compressed, wide stereo field
     ❌  [BPM: 92] [Key: D minor] [compression: heavy] [wide stereo field]
 
-Bracketed parameter syntax was never parsed by any covered platform
-[UNVERIFIED — no vendor documentation, no controlled test showing an effect].
-It circulated for years, it is in the previous editions of this system, and it
-does nothing. Square brackets have one documented job: section labels — in
+No covered platform documents bracketed parameter syntax, and no controlled test
+shows an effect [COMMUNITY]. It circulated for years, it is in the previous
+editions of this system, and nothing shows it doing anything. Square brackets have one documented job: section labels — in
 Suno's Lyrics field (CORE_02), in Lyria 3.5 prompts, in MiniMax and local-model
 lyrics — plus timestamp ranges on Lyria (DATA_GOOGLE §4). Repair table for
 prompts that still contain parameters: CORE_03 §3.
 
-</rag_zone>
-
 </section>
 
 <section id="§2" title="ONE FRAMEWORK, FOUR VENDOR GUIDES">
-
-<!-- rag_anchor: vendor_formulas_compared -->
-<rag_zone id="formula_comparison">
 
 Three vendors publish prompt guides, and they describe the same ingredients as
 this system's six layers:
@@ -158,11 +129,11 @@ this system's six layers:
     vocal profile (gender, range, timbre) → structure as section tags or
     timestamps → lyrics under "Lyrics:"
 
-  ELEVENLABS, Eleven Music best practices [OFFICIAL]
+  ELEVENLABS, Eleven Music best practices [OFFICIAL,
+  https://elevenlabs.io/docs/overview/capabilities/music/best-practices]
     "A prompt answers five questions, whether you intend it to or not: genre, mood,
-    instrumentation, tempo, and production era." Anything left open, the model
-    answers "with the most statistically likely choice — which is to say, the most
-    average one."
+    instrumentation, tempo, and production era." The rest of the guidance, quoted:
+    DATA_OTHER §1.
 
   MINIMAX, Music 3.0 [OFFICIAL]
     "Structured Captions" naming genre, tempo, time signature, key, use case and
@@ -182,14 +153,9 @@ WHAT DIFFERS is packaging, not thinking:
   - Google files mood after tempo; we put it second. Both work — front-load the
     genre, and the rest is a matter of reading well.
 
-</rag_zone>
-
-<!-- rag_anchor: formula_per_platform -->
-<rag_zone id="formula_per_platform">
-
 ### WHICH SHAPE PER TARGET
 
-  SUNO → six layers in our order, one sentence in Style. Structure in the Lyrics
+  SUNO → the six layers, in one or two sentences or a scene in Style. Structure in the Lyrics
     field. "92 BPM, D minor" in Layer 6 [COMMUNITY]. Variety 0 if the sentence was
     engineered (DATA_SUNO §4).
 
@@ -208,19 +174,15 @@ WHAT DIFFERS is packaging, not thinking:
   MINIMAX 3.0 AND LOCAL MODELS → a detailed caption (the six layers with BPM and
     key) plus tagged lyrics. DATA_OTHER §3, §5.
 
-TEMPO: write the BPM as a number on every covered platform, and add a
+TEMPO: when tempo matters, give the BPM as a number on every covered platform, and add a
 descriptive phrase when it carries feel the number cannot ("a slow, swaying pace
 at 72 BPM"). A tempo given only in words still works; the repair engine keeps the
 words and adds the number (CORE_03 §3 row 11). Why the rule changed: CORE_04_WHY.
-
-</rag_zone>
 
 </section>
 
 <section id="§3" title="TIME &amp; PLACE — Layer 1 in practice · menu [2a]">
 
-<!-- rag_anchor: time_and_place -->
-<rag_zone id="time_and_place">
 A genre name is a category. An era plus a place plus a scene is a recording —
 with a specific room, specific gear, a specific production aesthetic and a
 cultural code attached. The second gives the model far more to work with than
@@ -253,11 +215,6 @@ the first, and it costs the same number of words [COMMUNITY].
   garage             →  early-2000s UK garage
   funk               →  1970s New Orleans funk
 
-</rag_zone>
-
-<!-- rag_anchor: time_and_place_construction -->
-<rag_zone id="time_and_place_construction">
-
 ### CONSTRUCTION
 
   [decade or era] + [city or region] + [scene or subculture] + [core genre]
@@ -287,11 +244,6 @@ wants, which is why this system offers variants rather than one answer
     → late-70s Italian giallo score
     → 2020s dark fantasy cinematic
 
-</rag_zone>
-
-<!-- rag_anchor: time_and_place_when_to_skip_it -->
-<rag_zone id="time_and_place_when_to_skip_it">
-
 ### WHEN TO SKIP IT
 
 Some subgenre names already carry their era, and adding one is redundant:
@@ -308,14 +260,9 @@ Time & Place fails when the era and the instrumentation contradict each other.
 incompatible recordings in mind, and it will pick one. If you want the
 collision, that is a hybrid and it needs a bridge — §10.
 
-</rag_zone>
-
 </section>
 
 <section id="§4" title="MOOD &amp; ENERGY — Layer 2 · menu [2a]">
-
-<!-- rag_anchor: mood_palette -->
-<rag_zone id="mood_palette">
 
 ### THE PALETTE
 
@@ -377,14 +324,9 @@ defects and appear to summon them. That list lives in exactly one place,
 CORE_03_DIAGNOSE §4, so it cannot drift out of sync across files. Do not
 reproduce it here.
 
-</rag_zone>
-
 </section>
 
 <section id="§5" title="INSTRUMENTATION — Layer 3 · menu [2b]">
-
-<!-- rag_anchor: instrumentation_method -->
-<rag_zone id="instrumentation_method">
 
 ### HERO INSTRUMENTS
 
@@ -432,14 +374,10 @@ Two or three hero instruments, one playing-style adjective each, one texture
 word. That is five to seven words carrying nearly all the sonic identity of the
 track — and it leaves room for the other five layers.
 
-</rag_zone>
-
 </section>
 
 <section id="§6" title="VOCAL DIRECTION — Layer 4 · menu [2c]">
 
-<!-- rag_anchor: vocal_direction -->
-<rag_zone id="vocal_direction">
 ### THE FOUR PARTS
 
   1. GENDER      stated explicitly, always
@@ -467,18 +405,12 @@ positive. See DATA_SUNO §8 for the control and §3 for the Exclude Styles field
 
 On Lyria, start from one of Google's vocal profiles and adjust it [OFFICIAL]:
 "Female Alto: Rich, warm, and husky lower range. Smoky timbre with a soulful,
-resonant chest voice." The full five: DATA_GOOGLE §5.
+resonant chest voice." (Google's Lyria prompt guide, CC BY 4.0:
+https://ai.google.dev/gemini-api/docs/lyria-prompt-guide) The full five: DATA_GOOGLE §5.
 
-  ⚠️ Earlier editions of this system carried an elaborate three-tier workaround
-  for vocal gender — positive framing, then stacked negatives, then bracketed
-  voice tags. Two of those three tiers were working around a problem the
-  interface now solves directly. The whole procedure reduces to: use the
-  selector, phrase positively, never stack gender negatives.
-
-</rag_zone>
-
-<!-- rag_anchor: vocal_direction_vocal_arc_how_the_voice_changes_across_the_track -->
-<rag_zone id="vocal_direction_vocal_arc_how_the_voice_changes_across_the_track">
+  Vocal gender: use the selector, phrase the vocal positively, never stack
+  gender negatives. Stacked negatives and bracketed voice tags were workarounds
+  for a selector that did not exist; they now only fight it.
 
 ### VOCAL ARC — how the voice changes across the track
 
@@ -500,11 +432,6 @@ in Style (CORE_02 §6, delivery direction). Same intent, different field.
 This is the long-form relative of per-line emotion delivery. Emotion delivery
 shapes a line; the vocal arc shapes the song.
 
-</rag_zone>
-
-<!-- rag_anchor: vocal_direction_what_vocal_description_cannot_do -->
-<rag_zone id="vocal_direction_what_vocal_description_cannot_do">
-
 ### WHAT VOCAL DESCRIPTION CANNOT DO
 
 It cannot reproduce a specific person. It is directional. Asking for a named
@@ -518,14 +445,9 @@ requirements and consent step — DATA_SUNO §5. It is a platform feature, not a
 prompting technique, which is why it is documented there and only referenced
 here (menu [5e]).
 
-</rag_zone>
-
 </section>
 
-<section id="§7" title="PERSONA WORKSHOP — menu [5]">
-
-<!-- rag_anchor: persona_method -->
-<rag_zone id="persona_method">
+<section id="§7" title="VOICES AND PERSONAS — menu [5]">
 
 ### A PERSON, NOT A SETTING
 
@@ -561,13 +483,23 @@ sharpening and starts averaging [COMMUNITY].
 Both describe the same singer. The short form is a compression of the long one,
 and writing the long one first makes the short one better.
 
-</rag_zone>
-
-<!-- rag_anchor: persona_library -->
-<rag_zone id="persona_library">
 ### PERSONA LIBRARY — menu [5a]
 
-Ten starting points. They are meant to be edited, not pasted unchanged.
+Ten starting points. They are meant to be edited, not pasted unchanged. On the
+catalogue screen each one is a card: number, name, the voice in a few words.
+
+| NN | Name | The voice |
+|---|---|---|
+| 01 | Soul alto | female, warm alto, intimate, church and jazz-lounge phrasing |
+| 02 | Bedroom indie | young, small and fragile, lo-fi, close to the mic |
+| 03 | Weathered baritone | male, gravelly, behind the beat, dry room |
+| 04 | Polished pop soprano | female, bright and precise, stacked hooks |
+| 05 | Latin tenor | male, smooth, gentle vibrato, nylon guitar behind |
+| 06 | Operatic soprano | female, full vibrato, concert hall |
+| 07 | Extreme metal vocalist | male growl and shrieks, no melody |
+| 08 | Rap storyteller | male, conversational flow, behind the beat |
+| 09 | Whisper / ASMR | female, whispered, almost spoken |
+| 10 | Gospel powerhouse | female, chest voice, runs, a choir answering |
 
 **01 · SOUL ALTO**
 ```
@@ -616,11 +548,6 @@ sensual, unhurried delivery. Sings the way a warm evening feels. Natural room
 reverb, nylon-string guitar and upright bass close behind the voice.
 ```
 
-</rag_zone>
-
-<!-- rag_anchor: persona_library_06_10 -->
-<rag_zone id="persona_library_2">
-
 **06 · OPERATIC SOPRANO**
 ```
 Classically trained female soprano, powerful projection, full operatic
@@ -660,10 +587,16 @@ rather than starting at full power. Choir answering on the chorus, Hammond
 organ, hand claps, room alive with people.
 ```
 
-</rag_zone>
+### YOUR OWN PERSONAS — 5b builds, `save` keeps, 5a lists
 
-<!-- rag_anchor: persona_library_building_a_custom_persona_menu_5b -->
-<rag_zone id="persona_library_building_a_custom_persona_menu_5b">
+A persona the user builds (5b) or adapts ("04 adapt") is kept with `save persona NAME`: one
+library entry, KIND persona, long and short form (CORE_00 §9 STATE). From then on the 5a
+screen shows it under YOURS after the ten, read from the library's `## ` lines; it is picked
+by name ("Mara", "Mara adapt") exactly like a numbered one, and `library forget Mara` removes
+it. No library yet → the line "Your own: 5b builds one, `save persona NAME` keeps it". In
+Suno, Personas became Voices in March 2026 and Style Personas live on in the Voices menu
+(DATA_SUNO §5): those are Suno's, kept in the Suno app; your recorded voice is `5e`. A
+SunoForge persona is text and works on every generator.
 
 ### BUILDING A CUSTOM PERSONA — menu [5b]
 
@@ -681,11 +614,6 @@ sung, and it is expressed per-section in the Lyrics field, not in Style. Full
 notation, including the rule that delivery direction goes on its own line above
 the text it governs, is in **CORE_02 §6**; the symbols inside the words in §5.
 
-</rag_zone>
-
-<!-- rag_anchor: duet_pointer -->
-<rag_zone id="duet_pointer">
-
 ### DUET — menu [5c]
 
 A duet needs the same cast information in three places: the Style field, the
@@ -702,14 +630,9 @@ Two personas can be built from §7 and assigned to the two parts. Keep them
 audibly different — two voices in the same range blur together regardless of
 how carefully the lyrics are labelled.
 
-</rag_zone>
-
 </section>
 
 <section id="§8" title="STRUCTURE — Layer 5, and where it actually goes">
-
-<!-- rag_anchor: structure_in_style -->
-<rag_zone id="structure_in_style">
 
 Structure is the one layer that usually does not belong in the Style field.
 
@@ -742,14 +665,9 @@ Long-track consistency — what happens to arrangement and character over three
 or four minutes, and what to do about it — is a failure-mode question rather
 than a construction question. It is handled in **CORE_03 §5**.
 
-</rag_zone>
-
 </section>
 
 <section id="§9" title="PRODUCTION SIGNATURE — Layer 6 · menu [2e]">
-
-<!-- rag_anchor: production_environments -->
-<rag_zone id="production_environments">
 
 The closing phrase of a Style prompt answers one question: what does this
 recording sound like as an object? Not the notes — the tape, the room, the
@@ -814,14 +732,10 @@ matters more than the count: `unhurried, with a heavy backbeat, 92 BPM`.
 Which keys and tempos suit which genres is reference material and lives in
 **DATA_VOCAB**.
 
-</rag_zone>
-
 </section>
 
 <section id="§10" title="HYBRID LAB — menu [4]">
 
-<!-- rag_anchor: hybrid_method -->
-<rag_zone id="hybrid_method">
 ### STACKING DOES NOT BLEND
 
     ❌  phonk, jazz, lo-fi
@@ -857,11 +771,6 @@ quantitatively. It is a craft heuristic with good demonstrations behind it.
 It is offered because it reliably produces a better *prompt*, whatever the
 model does with it.]
 
-</rag_zone>
-
-<!-- rag_anchor: hybrid_method_hybrids_worth_knowing -->
-<rag_zone id="hybrid_method_hybrids_worth_knowing">
-
 ### HYBRIDS WORTH KNOWING
 
   AMAPIANO FUSION
@@ -889,11 +798,6 @@ model does with it.]
     low conversational voice over sustained pads, a single repeating piano
     note, rain in the distance
 
-</rag_zone>
-
-<!-- rag_anchor: hybrid_method_pairs_that_blend_freely_menu_4a -->
-<rag_zone id="hybrid_method_pairs_that_blend_freely_menu_4a">
-
 ### PAIRS THAT BLEND FREELY — menu [4a]
 
   rap + trap · lo-fi + chill · metal + rock · orchestral + cinematic
@@ -919,13 +823,9 @@ IF A USER ASKS FOR ONE ANYWAY:
   2. Offer the bridge genre as an alternative.
   3. If they still want it — raise the experimental slider, lower the
      literalness slider (values by goal: DATA_SUNO §8), or hand it to v6-wild,
-     which is built for genre-blending; and split the genres across sections
+     which Suno describes as "built for exploration… less predictable and more
+     varied" [OFFICIAL]; and split the genres across sections
      rather than layering them.
-
-</rag_zone>
-
-<!-- rag_anchor: hybrid_method_distributing_a_hybrid_across_a_song -->
-<rag_zone id="hybrid_method_distributing_a_hybrid_across_a_song">
 
 ### DISTRIBUTING A HYBRID ACROSS A SONG
 
@@ -939,14 +839,9 @@ Genres blend better in sequence than in a stack:
 
 Section-level instructions are written in the Lyrics field — CORE_02.
 
-</rag_zone>
-
 </section>
 
 <section id="§11" title="ATMOSPHERE AND SCENE">
-
-<!-- rag_anchor: atmosphere -->
-<rag_zone id="atmosphere">
 
 ### PAINT A SCENE, NOT A SPEC SHEET
 
@@ -1001,14 +896,10 @@ in the picture:
   faded photograph         → vintage instruments, tape warmth, nostalgic
   rain and fog             → melancholic, reverb-forward, intimate
 
-</rag_zone>
-
 </section>
 
-<section id="§12" title="CLONE MODE — menu [3]">
+<section id="§12" title="CLONE A STYLE — menu [3]">
 
-<!-- rag_anchor: clone_mode -->
-<rag_zone id="clone_mode">
 Cloning here means reproducing a *sound* — production, texture, groove, space.
 Never a melody, never a specific person's voice. That boundary is not
 squeamishness; it is the line between a usable track and an unusable one
@@ -1032,11 +923,6 @@ reverb types — is catalogued in **DATA_VOCAB**. Translate what you heard into
 those words, then assemble them through the six layers.
 
 Output the vibe and the production. Do not transcribe the tune.
-
-</rag_zone>
-
-<!-- rag_anchor: clone_mode_3b_from_an_artist_without_naming_the_artist -->
-<rag_zone id="clone_mode_3b_from_an_artist_without_naming_the_artist">
 
 ### [3b] FROM AN ARTIST — without naming the artist
 
@@ -1064,11 +950,6 @@ actually wanted rather than gesturing at a catalogue.
       fingerpicked acoustic guitar and a single brushed snare, close-mic in a
       dry wooden room, arrangements that stay almost empty until the last chorus
 
-</rag_zone>
-
-<!-- rag_anchor: clone_mode_3c_from_a_description_like_that_track_but -->
-<rag_zone id="clone_mode_3c_from_a_description_like_that_track_but">
-
 ### [3c] FROM A DESCRIPTION — "like that track, but…"
 
 The user has a reference in their head. Extract it with the fewest questions:
@@ -1081,14 +962,10 @@ Then build normally, holding the kept element in Layer 1 or Layer 3 and putting
 the changed element wherever it belongs. Change one thing per generation
 (CORE_00 §7 rule 9) — otherwise the next take teaches you nothing.
 
-</rag_zone>
-
 </section>
 
 <section id="§13" title="ASSEMBLY">
 
-<!-- rag_anchor: assembly -->
-<rag_zone id="assembly">
 ### ORDER OF OPERATIONS
 
   1  Genre via Time & Place              §3
@@ -1120,11 +997,6 @@ unpolished and conversational, close-mic, warm analog tape, dry room,
 78 BPM, G major
 ```
 
-</rag_zone>
-
-<!-- rag_anchor: assembly_the_same_brief_lyria_3_5 -->
-<rag_zone id="assembly_the_same_brief_lyria_3_5">
-
 ### THE SAME BRIEF · LYRIA 3.5
 
 Google's order, production folded into the instruments, structure inside the prompt:
@@ -1150,11 +1022,6 @@ first chorus, then a distant pedal steel. A female alto, unpolished and close.
 Warm analog tape, dry room.
 ```
 
-</rag_zone>
-
-<!-- rag_anchor: assembly_length_discipline -->
-<rag_zone id="assembly_length_discipline">
-
 ### LENGTH DISCIPLINE
 
 Front-loading matters more than word count [COMMUNITY — the one point every
@@ -1170,11 +1037,6 @@ What is not version-specific: past roughly ten descriptors, they start
 contradicting each other. Adding a word that does not change the sound in your
 head does not change the sound coming out.
 
-</rag_zone>
-
-<!-- rag_anchor: assembly_variants_not_answers -->
-<rag_zone id="assembly_variants_not_answers">
-
 ### VARIANTS, NOT ANSWERS
 
 Deliver two or three readings of the brief, not one (CORE_00 §3). The layers
@@ -1185,14 +1047,9 @@ a genuinely different record built from the same emotional intent.
   B  early-90s slowcore                the same feeling, more space, more weight
   C  1970s Nashville outlaw country    the same story, told by someone harder
 
-</rag_zone>
-
 </section>
 
 <section id="§14" title="CHECKLIST">
-
-<!-- rag_anchor: style_checklist -->
-<rag_zone id="style_checklist">
 
 Before a Style prompt goes out:
 
@@ -1215,14 +1072,10 @@ Before a Style prompt goes out:
 If a prompt fails any of these and it came from a user rather than from this
 system, that is an audit — menu [12], engine in CORE_03.
 
-</rag_zone>
-
 </section>
 
 // ═══════════════════════════════════════════════════════════════
-// END OF CORE_01_STYLE.md · SunoForge v4.0
+// END OF CORE_01_STYLE.md · SunoForge v5.0
 // Next: CORE_02_LYRICS.md
 // ═══════════════════════════════════════════════════════════════
-
-<tags>style prompt, six layers, genre first, time and place, era, mood, instrumentation, hero instruments, vocal direction, vocal gender, vocal profiles, vocal arc, persona biography, duet cast, structure placement, production signature, tempo bpm, key, hybrid lab, bridge genre, anti-pairs, atmosphere, scene painting, image to sound, clone mode, acoustic deconstruction, artist trait translation, assembly, google prompt guide, elevenlabs five questions, minimax structured captions, variety 0, checklist</tags>
 </sunoforge_file>
