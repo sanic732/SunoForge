@@ -96,7 +96,7 @@ your settings and library — unless you add `--keep-data`.
 
 **Settings.** `/plugin` → SunoForge → configure, or in the desktop app the plugin's
 **Settings** tab: a folder for your settings and library (it survives an uninstall) and
-the language (auto, en, ru, uk). They are kept on that computer; the web and phone apps
+the language (auto, en, ru, uk, de, es, fr, it, pt-BR, id). They are kept on that computer; the web and phone apps
 and Cowork have neither — there `set lang` and a Project file do the same.
 
 ---
