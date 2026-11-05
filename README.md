@@ -54,19 +54,20 @@ Udio is not a target: downloads stayed disabled after its settlement.
 
 ## Hosts
 
-| Host | v5.0 package | How |
+| Host | What you install today | How |
 |---|---|---|
-| Claude — chat on the web, Claude Desktop, Cowork | `sunoforge.plugin` or the marketplace `sanic732/SunoForge` · `SunoForge_v5.0_Skills_for_Claude.zip` · `SunoForge_v5.0_Prompt.zip` (`claude/`) | plugin (paid plans) · Skill · Project |
+| Claude — chat on the web, Claude Desktop, Cowork | `sunoforge.plugin`, or the marketplace `sanic732/SunoForge` | plugin (paid plans) |
 | Claude Code | the marketplace `sanic732/SunoForge` | plugin |
-| Gemini | `SunoForge_v5.0_Skills_for_Gemini.zip` · `SunoForge_v5.0_Prompt.zip` (`gemini/`) | Skill · files in a chat |
-| ChatGPT | `SunoForge_v5.0_plugin_chatgpt.zip` | plugin |
-| Antigravity | `SunoForge_v5.0_plugin_antigravity.zip` | plugin |
-| grok.com, other long-context assistants | `SunoForge_v5.0_Prompt.zip` (`gemini/`) | Project or attached files |
+| Gemini | — *the 5.0 Skill package is not out yet; the 4.0 one still works* | Skill · files in a chat |
+| ChatGPT | — *the 5.0 plugin is not out yet* | plugin |
+| Antigravity | — *the 5.0 plugin is not out yet* | plugin |
+| grok.com, other long-context assistants | — *the 5.0 prompt package is not out yet; the 4.0 one still works* | Project or attached files |
 
-The **Grok** plugin follows; until then Grok runs SunoForge from the Markdown files.
-
-**Release 5.0.0 ships the plugin only** — `sunoforge.plugin` and the
-marketplace. The other packages in this table come with 5.0.0.
+**Release 5.0.0 is the Claude plugin, and nothing else yet.** The Skill packages for Claude and
+Gemini, the ChatGPT, Antigravity and Grok plugins and `Prompt.zip` are built separately and are
+still to come. Until they do, the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) carries working packages for
+those hosts — older content, but they run.
 
 ---
 
@@ -136,22 +137,23 @@ Update: `claude plugin update sunoforge@sunoforge`.
 - **Plugin** (paid plans): **Customize → Plugins → Add → Add marketplace** →
   `sanic732/SunoForge` → install **SunoForge**. Without GitHub: **Upload plugin** →
   `sunoforge.plugin` from the release page.
-- **Skill**: turn on Code execution, then **Customize → Skills → Upload a skill** →
-  `SunoForge_v5.0_Skills_for_Claude.zip`.
-- **Project**: upload the thirteen files from `claude/` to Project knowledge; instructions:
-  `Read CORE_00_ENTRY.md first and follow it.`
+- **Skill** and **Project**: the 5.0 packages are not out yet. Until they are, use the ones from
+  the [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
 Check: in a new chat, type `start`.
 
 ### Gemini
 
-Unpack `SunoForge_v5.0_Skills_for_Gemini.zip`, then **Skills → Upload** → the whole
-`sunoforge` folder. The folder name must stay `sunoforge`.
+The 5.0 Skill package for Gemini is not out yet. The 4.0 one still works: unpack
+`SunoForge_v4.0_Skills_for_Gemini.zip` from the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0), then **Skills → Upload** →
+the whole `sunoforge` folder. The folder name must stay `sunoforge`.
 
 ### ChatGPT, grok.com, anything else
 
-Upload the thirteen `.md` files from `gemini/` in `SunoForge_v5.0_Prompt.zip` to a Project
-(or attach them), and tell the assistant to read `CORE_00_ENTRY.md` first.
+The 5.0 prompt package is not out yet. Take `SunoForge_v4.0_Prompt.zip` from the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0), upload the `.md` files from
+`gemini/` to a Project (or attach them), and tell the assistant to read `CORE_00_ENTRY.md` first.
 
 ### Suno, optional (beta)
 
@@ -188,14 +190,18 @@ the files a task needs. Details: [docs/TOKENS.md](docs/TOKENS.md).
 
 ## Release files
 
+On the [5.0.0 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.0):
+
 | File | What it is |
 |---|---|
-| `sunoforge.plugin` | the Claude plugin as one file |
-| `SunoForge_v5.0_Skills_for_Claude.zip` | the Skill for Claude: `SKILL.md` and the thirteen files |
-| `SunoForge_v5.0_Skills_for_Gemini.zip` | the same Skill with the Markdown files |
-| `SunoForge_v5.0_plugin_chatgpt.zip` | the ChatGPT plugin, Markdown edition |
-| `SunoForge_v5.0_plugin_antigravity.zip` | the Antigravity plugin, Markdown edition |
-| `SunoForge_v5.0_Prompt.zip` | both editions (`claude/`, `gemini/`), docs, README |
+| `sunoforge.plugin` | the Claude plugin as one file, nine interface languages |
+| `SHA256.txt` | its checksum |
+| `SunoForge_v5.0.0_screens.zip` | all forty screens, to look at before installing |
+
+Still to come, built separately: the Skill packages for Claude and Gemini, the ChatGPT, Antigravity
+and Grok plugins, and `Prompt.zip` with both editions. Until they are out, the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) carries working versions of
+all of them.
 
 This repository is also the Claude plugin marketplace: `.claude-plugin/marketplace.json`
 and the plugin in `plugin/`. Privacy: [PRIVACY.md](PRIVACY.md).

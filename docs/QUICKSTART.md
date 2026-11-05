@@ -1,5 +1,11 @@
 # Quick start — from nothing, in ten minutes
 
+> **Note on packages.** Release 5.0.0 ships the Claude plugin only
+> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
+> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> that is the working package you can download today, from the
+> [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
+
 For people who have never used a music generator. If you have,
 [ADVANCED.md](ADVANCED.md) is the one you want.
 
@@ -33,13 +39,13 @@ That lets you skip steps 2 and 3. The Gem is refreshed separately from the relea
 
 Every host, step by step, is in [INSTALL.md](INSTALL.md). In short:
 
-- **Claude** — the plugin or the Skill, `SunoForge_v5.0_Skills_for_Claude.zip`; or the
-  thirteen files from the `claude/` folder of `SunoForge_v5.0_Prompt.zip` in a Project.
+- **Claude** — the plugin or the Skill, `SunoForge_v4.0_Skills_for_Claude.zip`; or the
+  thirteen files from the `claude/` folder of `SunoForge_v4.0_Prompt.zip` in a Project.
   Details in [CLAUDE.md](CLAUDE.md).
-- **Gemini** — the Skill, `SunoForge_v5.0_Skills_for_Gemini.zip`, on the Skills page.
+- **Gemini** — the Skill, `SunoForge_v4.0_Skills_for_Gemini.zip`, on the Skills page.
   Details in [GEMINI.md](GEMINI.md).
-- **ChatGPT, Antigravity** — their plugins, `SunoForge_v5.0_plugin_chatgpt.zip` and
-  `SunoForge_v5.0_plugin_antigravity.zip` ([INSTALL.md](INSTALL.md)).
+- **ChatGPT, Antigravity** — their plugins, `SunoForge_v5.0_plugin_chatgpt.zip` *(not released yet)* and
+  `SunoForge_v5.0_plugin_antigravity.zip` *(not released yet)* ([INSTALL.md](INSTALL.md)).
 - **Grok** — the files from the `gemini/` folder of the prompt archive in a project.
 - **If you cannot attach files** — paste the contents as the first message,
   starting with `CORE_00_ENTRY.md`, which is the entry point.

@@ -4,6 +4,10 @@
 
 ## 5.0.0 — 2026-11-05
 
+> Released: the Claude plugin (`sunoforge.plugin`) with nine interface
+> languages, and the screens archive. The other packages listed below are built separately and are
+> still to come.
+
 **Six more interface languages:** German, Spanish, French, Italian, Brazilian Portuguese and Indonesian,
 next to English, Russian and Ukrainian. Every screen exists ready-made in each of them, so nothing is
 translated on the fly; the language setting lists all nine. Each copy is checked against the English one
@@ -118,11 +122,10 @@ became generally available. Facts were rechecked against the vendors' own pages 
 - The plugin is ready for Anthropic's plugin directory: README, INSTALL and LICENSE
   inside, `displayName`, privacy policy, support and documentation links in
   `plugin.json`; `claude plugin validate --profile directory` passes
-- Six release assets: `SunoForge_v5.0_Prompt.zip`, `SunoForge_v5.0_Skills_for_Claude.zip`,
-  `SunoForge_v5.0_Skills_for_Gemini.zip`, `sunoforge.plugin`, and the plugins
-  `SunoForge_v5.0_plugin_chatgpt.zip` and `SunoForge_v5.0_plugin_antigravity.zip` (on the
-  pattern of the P2P 9.0 release, with the Markdown edition; Suno's server is added by the
-  user on every host). Grok's plugin follows
+- Release assets: `sunoforge.plugin`, its `SHA256.txt` and `SunoForge_v5.0.0_screens.zip`.
+  The Skill packages for Claude and Gemini, `Prompt.zip` and the ChatGPT, Antigravity and Grok
+  plugins are built separately and are still to come; their 4.0 versions still work. Suno's
+  server is added by the user on every host
 - Suno MCP checked against the live server: the thirteenth file, DATA_SUNO_LIVE
 - New docs: INSTALL (every host) and SUNO_MCP (connecting Suno)
 - Still no prices anywhere

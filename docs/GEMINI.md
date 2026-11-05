@@ -1,5 +1,11 @@
 # Running in Gemini
 
+> **Note on packages.** Release 5.0.0 ships the Claude plugin only
+> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
+> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> that is the working package you can download today, from the
+> [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
+
 A ready-made Gem, everything loaded:
 [SunoForge Gem](https://gemini.google.com/gem/17bBfa7ucT2IjbKVLxPjz7NRuy8LSixdE?usp=sharing)
 Refreshed separately from the release
@@ -17,7 +23,7 @@ them — from 17 November 2026, by the notice in the app. The SunoForge Skill is
 `SKILL.md` plus the thirteen files, which Gemini opens as it needs them instead of
 holding them all at once.
 
-1. Unpack `SunoForge_v5.0_Skills_for_Gemini.zip`. Inside is a folder `sunoforge` holding
+1. Unpack `SunoForge_v4.0_Skills_for_Gemini.zip`. Inside is a folder `sunoforge` holding
    `SKILL.md` and the thirteen files.
 2. The **Skills** page → **Upload** → choose the whole `sunoforge` folder. The folder
    name must match the skill name, `sunoforge`; Gemini refuses any other.
