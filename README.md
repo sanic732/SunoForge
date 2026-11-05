@@ -69,7 +69,7 @@ Udio is not a target: downloads stayed disabled after its settlement.
 
 The **Grok** plugin follows; until then Grok runs SunoForge from the Markdown files.
 
-**Release 5.0.1 ships the plugin only** — `sunoforge.plugin` and the
+**Release 5.0.0 ships the plugin only** — `sunoforge.plugin` and the
 marketplace. The other packages in this table come with 5.0.0.
 
 ---

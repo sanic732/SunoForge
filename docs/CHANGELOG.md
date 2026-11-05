@@ -2,7 +2,7 @@
 
 ---
 
-## 5.0.1 — 2026-11-05
+## 5.0.0 — 2026-11-05
 
 **Six more interface languages:** German, Spanish, French, Italian, Brazilian Portuguese and Indonesian,
 next to English, Russian and Ukrainian. Every screen exists ready-made in each of them, so nothing is
