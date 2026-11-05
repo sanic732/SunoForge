@@ -3,16 +3,16 @@
 # SunoForge v5.0 — AI Music Prompt Orchestrator
 
 SunoForge is a set of instructions that turns a chat assistant into a prompt engineer for
-music generation. Describe what you want in plain words — or hand it a photo, a video or a
-voice memo — and get finished prompts, ready to paste: Style, lyrics markup, speech
-scripts, edits, repair of old prompts, rights and post-production notes.
+music generation. Describe what you want in plain words or show it a photo, and get finished
+prompts, ready to paste: Style, lyrics markup, speech scripts, edits, repair of old prompts,
+rights and post-production notes. With Suno's server connected, a recording of your own goes in
+through Suno's uploader.
 
-Fourteen files, two editions, one principle: **never present a guess as a fact**.
+Fourteen files, one principle: **never present a guess as a fact**.
 
-- **Claude Edition** — XML, for Claude: a plugin, a Skill or a Project.
-- **Gemini Edition** — plain Markdown, for Gemini and any long-context assistant.
-
-Same content, same menu, same rules; only the packaging differs.
+Version 5.0 is out as the **Claude plugin**. The Markdown edition for Gemini and other
+long-context assistants is built from the same files and is still to come; until then, the
+[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) has it.
 
 ---
 
@@ -25,13 +25,13 @@ Same content, same menu, same rules; only the packaging differs.
 <td width="33%" valign="top"><img src="assets/screens/editor.webp" alt="The editor, extending a song"></td>
 </tr>
 <tr>
-<td valign="top"><b>The menu.</b> Fifteen entries, buttons instead of a wall of text. English, Russian and Ukrainian.</td>
+<td valign="top"><b>The menu.</b> Fifteen entries, buttons instead of a wall of text. Nine interface languages.</td>
 <td valign="top"><b>The price card.</b> Model, length, takes, credits — shown <i>before</i> anything is spent. Nothing goes without your yes.</td>
 <td valign="top"><b>The editor.</b> Extending a song without a gap at the seam.</td>
 </tr>
 </table>
 
-All forty screens, in three languages:
+All forty screens, in English, Russian and Ukrainian:
 **[SunoForge_v5.0.0_screens.zip](https://github.com/sanic732/SunoForge/releases/latest)** — unpack,
 open `index.html`, works offline.
 
@@ -48,7 +48,7 @@ open `index.html`, works offline.
 | **Stable Audio 3.0** | licensed data, open weights, a DAW plugin |
 | **MiniMax Music 3.0** | open weights, full songs with vocals |
 | **Local models** | ACE-Step 1.5 and YuE2 on your own GPU |
-| **Any music-generation MCP server** | Suno's own (beta), ElevenLabs' hosted MCP or your own — send from the chat, menu `[15] LIVE` |
+| **Any music-generation MCP server** | Suno's own (beta), ElevenLabs' hosted MCP or your own — send from the chat, menu `[15] Suno + MCP` |
 
 Udio is not a target: downloads stayed disabled after its settlement.
 
@@ -104,13 +104,14 @@ gate, not a SunoForge fault.
 Without a generation server nothing changes: you copy the prompt into the generator.
 
 The Suno MCP layer ships in 5.0: the protocol in CORE_00 §6 LIVE, the Suno facts — tools,
-field map, defaults that cost credits, plan gating — in `DATA_SUNO_LIVE_2026-10.md`, a
-snapshot of 2026-10-29. The ChatGPT and Antigravity plugins ship in the same release;
-on every host you add Suno's server yourself.
+field map, defaults that cost credits, plan gating — in `DATA_SUNO_LIVE_2026-10.md`, read
+from the server's own schemas: 35 tools, valid as of 2026-11-05. You add Suno's server
+yourself.
 
 Also new: menu `[14] SPEECH` (Speech Blueprint: Script and Tone), the words `send` and
 `mcp-info`, and two small files of your own data — `settings.md` and `library.md` — via
-`config`, `save` and `library`. Menu entries `[1]`–`[13]` are unchanged. Still no prices anywhere.
+`config`, `save` and `library`. Menu entries `[1]`–`[13]` do the same jobs as in 4.0, several under
+clearer names. Still no prices anywhere.
 
 ---
 
@@ -135,8 +136,10 @@ Update: `claude plugin update sunoforge@sunoforge`.
 ### Claude chat, Claude Desktop, Cowork
 
 - **Plugin** (paid plans): **Customize → Plugins → Add → Add marketplace** →
-  `sanic732/SunoForge` → install **SunoForge**. Without GitHub: **Upload plugin** →
-  `sunoforge.plugin` from the release page.
+  `sanic732/SunoForge` → install **SunoForge**. Without GitHub: **Add → Upload a plugin** →
+  `sunoforge.plugin` from the release page. Anthropic is replacing **Customize** with one
+  **Plugins** page that holds plugins, skills and connectors (most plans by 9 November 2026,
+  Enterprise from 30 November). If your sidebar already shows **Plugins**, start there.
 - **Skill** and **Project**: the 5.0 packages are not out yet. Until they are, use the ones from
   the [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
@@ -159,7 +162,7 @@ The 5.0 prompt package is not out yet. Take `SunoForge_v4.0_Prompt.zip` from the
 
 - Claude Code: `claude mcp add --transport http suno https://api.suno.com/mcp`, then
   `/mcp` → `suno` → sign in to Suno.
-- Claude chat, Desktop, Cowork: **Customize → Connectors → Add custom connector** →
+- Claude chat, Desktop, Cowork: **Customize → Connectors → + Add → Add custom connector** →
   `https://api.suno.com/mcp` → sign in to Suno.
 
 A music MCP server of your own is added like any MCP server: `claude mcp add` in Claude
@@ -185,8 +188,10 @@ Every host step by step: [docs/INSTALL.md](docs/INSTALL.md) · Suno in detail:
   (widgets with buttons), **T** text, **B** buttons (one multiple-choice question, for the
   terminal). In view M an answer without its own screen ends with its next steps and Menu.
 
-Size: about 116,500 tokens (Claude Edition, o200k_base). A Skill or a plugin opens only
-the files a task needs. Details: [docs/TOKENS.md](docs/TOKENS.md).
+Size: about 150,000 tokens across the fourteen files in `o200k_base` (measured 5 November
+2026); Claude's own tokenizer counts about 1.45 times more — by the
+plugin's estimate about 235,000, more than a 200K window holds with a conversation. So by default the plugin reads only the sections a task needs. Details:
+[docs/TOKENS.md](docs/TOKENS.md).
 
 ## Release files
 
