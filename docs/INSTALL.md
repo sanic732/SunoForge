@@ -1,13 +1,13 @@
 # Installing SunoForge v5.0
 
-> **Note on packages.** Release 5.0.0 ships the Claude plugin only
+> **Note on packages.** Version 5.0 ships the Claude plugin only
 > (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
 > plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
 > that is the working package you can download today, from the
 > [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
 One page for every assistant: which file to take, the steps, and how to check that it
-works. Release 5.0.0 ships one file: the Claude plugin, `sunoforge.plugin`. The packages for the
+works. Version 5.0 ships one file: the Claude plugin, `sunoforge.plugin`. The packages for the
 other hosts — the Skills for Claude and Gemini, `Prompt.zip` and the ChatGPT, Antigravity and Grok
 plugins — are built separately and are still to come; until they are out, their 4.0 versions still
 work. Connecting a music-generation MCP server — Suno's own or
