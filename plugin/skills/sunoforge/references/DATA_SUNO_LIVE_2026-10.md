@@ -342,7 +342,7 @@ that sounds wrong goes to `12b` and CORE_03, not to a silent re-roll.
 ### CHAINS
 
 ```
-[15a] status       account-usage → plan, credits, downloads, models; tool set vs §1 (account-me only when asked)
+[15a] status       account-usage → plan, credits, downloads, models; tool set vs §1 (account-me only when asked) — the answer SAYS them, one line each: plan · credits left · used of the month's limit · download credits left · renews on · models; in view W also the hub with that status line; a tail alone is never the answer [Master, 2026-11-06]
       upgrade      account-upgrade → Suno's buy button (also at once on a 402)
 [15b] send         PRE-FLIGHT → card → yes → audio-create | speech-create → audio-wait (all ids)
 [15c] listen       audio-wait (`ids` ≤4) → the connector's own player; `15c #a #b №n №m play` (the take card's Listen to all takes) = one audio-wait with every id; never audio-listen, which is `15g … ask`; `15c #id8 lyrics` = the stored lyrics and style as text (audio-retrieve, free) · audio-retrieve → analysis + alignment (§5) → [12] → next blueprint

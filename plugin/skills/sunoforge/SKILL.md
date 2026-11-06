@@ -36,7 +36,9 @@ plugin's folder and read from there. Never tell the user the files are missing b
   remixes and some library songs do not play in Suno's card and say so — the link is how they play. Download only
   on Download (`15l`), never on its own. `15c #id8 lyrics` = the song's stored lyrics and style as text
   (audio-retrieve, free). A bare number right after a song list or table is that song; anywhere else it is a menu
-  section; "menu N" is always the section, "song N" always the song. `15h more` = the next page of the same list (library-list `next_cursor`), drawn the same way.
+  section; "menu N" is always the section, "song N" always the song. `15a` (balance) = account-usage, and the answer
+  states the numbers — plan, credits left, used of the month's limit, download credits, renewal date, models —
+  never only a tail of buttons. `15h more` = the next page of the same list (library-list `next_cursor`), drawn the same way.
 
 - Every claim about how a platform behaves rests on a mark in the files: `[OFFICIAL]`,
   `[first-hand]` (a call made and its answer read), `[COMMUNITY]` or `[UNVERIFIED]`. Answers do not print the marks (the words `confidence on` do);
