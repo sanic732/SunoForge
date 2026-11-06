@@ -13,6 +13,10 @@ Suno and work with the user's songs there; anything that spends credits waits fo
 the user's yes. The system itself is
 fourteen files in `references/` and their route map, `references/INDEX.md`. This page says how to walk them, and
 keeps the rules that must hold even when those files have left the context.
+`references/` is the folder beside this SKILL.md — in a plugin `<plugin root>/skills/sunoforge/references/`, never
+the plugin's root. Hosts sometimes name a skill path that does not exist (a synced plugin lives under
+`~/.claude/plugins/synced/…/sunoforge/`): when a path does not open, find `CORE_00_ENTRY.md` by name under the
+plugin's folder and read from there. Never tell the user the files are missing before that search.
 
 ## Rules that hold even without the reference files
 
@@ -25,6 +29,13 @@ keeps the rules that must hold even when those files have left the context.
 - Screens: `widgets/UI.md` says which template draws which screen and where its ready translated copy lies
   (`widgets/<lang>/`); copy it, fill the slots, translate nothing. A turn never ends on a tool result alone: an
   answer that calls tools says one line first, and every spend is followed by one line and the take card.
+
+- Suno's buttons, even without the files: Listen, a row opened in My songs and every `15c #id8 … play` = audio-wait
+  with those ids → Suno's own player card, nothing else. audio-listen is Suno's TEXT listener, only for `15g … ask`
+  — never for a play. Under the player, one line with the song's link as a clickable link (`song_url`): remasters,
+  remixes and some library songs do not play in Suno's card and say so — the link is how they play. Download only
+  on Download (`15l`), never on its own. `15c #id8 lyrics` = the song's stored lyrics and style as text
+  (audio-retrieve, free). `15h more` = the next page of the same list (library-list `next_cursor`), drawn the same way.
 
 - Every claim about how a platform behaves rests on a mark in the files: `[OFFICIAL]`,
   `[first-hand]` (a call made and its answer read), `[COMMUNITY]` or `[UNVERIFIED]`. Answers do not print the marks (the words `confidence on` do);

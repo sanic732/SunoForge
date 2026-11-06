@@ -345,7 +345,7 @@ that sounds wrong goes to `12b` and CORE_03, not to a silent re-roll.
 [15a] status       account-usage → plan, credits, downloads, models; tool set vs §1 (account-me only when asked)
       upgrade      account-upgrade → Suno's buy button (also at once on a 402)
 [15b] send         PRE-FLIGHT → card → yes → audio-create | speech-create → audio-wait (all ids)
-[15c] listen       audio-wait (`ids` ≤4) → the connector's own player; `15c #a #b №n №m play` (the take card's Listen to all takes) = one audio-wait with every id · audio-retrieve → analysis + alignment (§5) → [12] → next blueprint
+[15c] listen       audio-wait (`ids` ≤4) → the connector's own player; `15c #a #b №n №m play` (the take card's Listen to all takes) = one audio-wait with every id; never audio-listen, which is `15g … ask`; `15c #id8 lyrics` = the stored lyrics and style as text (audio-retrieve, free) · audio-retrieve → analysis + alignment (§5) → [12] → next blueprint
 [15d] remix        library-search → id → covers | extensions | mashups (§3) → audio-wait
 [15e] upload       audio-upload-create at once → Suno's uploader → upload-complete → audio-analysis → [3a]
       voices       voices-list (own, loved) → voice_id; `15e voice`: voices-start → a button to suno.com
@@ -415,10 +415,10 @@ widget (CORE_00 §9 SPEED AND SCREENS); the count and the filter stay
 together (`15h liked 50`). A row picked from a text table or a list, by its number or `#id8` ("32", "the 32nd",
 "#74ca93b5"), opens that song's SONG ACTIONS: view M — `widgets/songs.html` with that one row and
 `data-open="1"`; view B — the four likeliest actions and "Menu" as one question; view T — the actions as a
-numbered list with their codes. A play only when the user said "listen" or tapped it; after the player, the tail
+numbered list with their codes. A play when the user said "listen", tapped Listen or opened a row of the widget (it sends `15c #id8 play`: audio-wait, and under the player the song's link, clickable — remasters and remixes do not play in the card; download only on Download) [Master, 2026-11-06]; after the player, the tail
 (CORE_00 §9 TAIL) offers the same song's next steps. One row a song: number · title · length · date · kind when not plain (cover,
-extension, upload, remaster) · liked. A tap shows the SONG ACTIONS; a tap spends nothing and
-in the widget sends nothing. More: `15h more` (next_cursor) · `15h find <words>`
+extension, upload, remaster) · liked. A tap shows the SONG ACTIONS and sends the row's play (free); closing a row sends nothing and
+spends nothing. More: `15h more` (next_cursor; the widget's Load more button under the rows: the next 10 rows, the widget again, `data-more="0"` when there is no next page) · `15h find <words>`
 (library-search). FILTERS, all free, the panel comes back with the filter named over the list:
 `15h liked` (your own songs you liked: library-list `liked`) · `15h liked all` (anyone's songs
 you liked: library-liked) · `15h downloaded` · `15h covers` | `extensions` | `uploads` |

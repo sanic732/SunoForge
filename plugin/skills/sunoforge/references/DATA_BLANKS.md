@@ -382,7 +382,7 @@ EXAMPLES — one filled line each:
 <section id="§10" title="[9] RECIPES">
 
 SUB-ENTRIES — genres · hybrids · duet · 45 presets by group · task scenarios (an ad, a lullaby,
-a game loop); a catalogue item sends "recipe <name>" / "preset <N>" / "task <name>"
+a game loop); the buttons send `9 recipes` · `9 hybrids` · `9 presets` · `9 tasks` — that group of DATA_RECIPES (§2 · §3 · §5 · §6) as a numbered list; a catalogue item sends "recipe <name>" / "preset <N>" / "task <name>"
 
 The catalogue (DATA_RECIPES §2–§6) with its own numbers; a pick is `preset ⟨N⟩`, `recipe
 ⟨name⟩`, `task ⟨name⟩`. BLANK after a pick: `⟨preset⟩ for ⟨my song: subject · voice ·
