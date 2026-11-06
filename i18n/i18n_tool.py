@@ -1,4 +1,4 @@
-"""SunoForge widget translation pack (Master 05.11.2026: «общий файл с переводами, макет — не тратить время»).
+"""SunoForge widget translation pack: one shared file of translations, built into ready screens.
 
   python3 -I -X utf8 i18n_tool.py extract   once: English templates -> plugin/widgets_src/*.src.html (tokens) + i18n/en.json
   python3 -I -X utf8 i18n_tool.py build     src + i18n/<lang>.json -> plugin/widgets/<file> (en) and plugin/widgets/<lang>/<file>
@@ -20,13 +20,13 @@ MIRROR = os.path.join(ROOT, '..', 'plugin', 'skills', 'sunoforge', 'references',
 SRC = os.path.join(ROOT, 'widgets_src')
 I18N = os.path.join(ROOT, 'widgets_i18n')
 FILES = ['menu.html', 'hub.html', 'mcp.html', 'editor.html', 'take.html', 'edit.html', 'songs.html', 'voices.html', 'next.html']
-LANGS = ['en', 'ru', 'uk', 'de', 'es', 'fr', 'it', 'pt-BR', 'id']   # 5.0.0-rc.2: + six languages (Master 05.11.2026)
+LANGS = ['en', 'ru', 'uk', 'de', 'es', 'fr', 'it', 'pt-BR', 'id']   # nine interface languages
 NAMES = {'en': 'English', 'ru': 'Русский', 'uk': 'Українська', 'de': 'Deutsch', 'es': 'Español', 'fr': 'Français',
          'id': 'Indonesia', 'it': 'Italiano', 'pt-BR': 'Português', 'hi': 'हिन्दी', 'ko': '한국어', 'ja': '日本語', 'zh': '简体中文'}
 RTL = set()
 # text that never changes: codes, numbers, product names, the languages' own names, the view names (commands)
 KEEP = set(NAMES.values()) | {'Suno', 'OK', 'BPM', 'mp3', 'wav', 'v6', 'MCP', 'Max Mode', 'suno.com'}
-# word messages a button sends: shown in the user's chat bubble, so they go in the user's language (beta26 T13)
+# word messages a button sends: shown in the user's chat bubble, so they go in the user's language
 WORD_SENDS = {'edit the card', 'cancel', 'save'}
 # example slot values of the live root (the model copies them): shown in the output language, so translated too
 EXAMPLE_ATTRS = {'hub.html': ('data-st',), 'next.html': ('data-b',), 'edit.html': ('data-title', 'data-inst'), 'take.html': ('data-title', 'data-sub', 'data-t'), 'songs.html': ('data-t', 'data-d'), 'menu.html': ('data-l',)}
@@ -188,7 +188,7 @@ def build():
                 os.makedirs(od, exist_ok=True)
                 open(os.path.join(od, f), 'w', encoding='utf-8', newline='\n').write(s)
             sizes[(lang, f)] = len(s)
-    # one common file with every language (Master: «общий файл с переводами»), next to the templates
+    # one common file with every language, next to the templates
     allp = {l: json.load(open(os.path.join(I18N, f'{l}.json'), encoding='utf-8')) for l in langs}
     json.dump(allp, open(os.path.join(ROOT, 'all_languages.json'), 'w', encoding='utf-8', newline='\n'), ensure_ascii=False, indent=0)
     print('built', len(langs), 'languages:', ' '.join(langs), '+ widgets/i18n.json')
