@@ -2,6 +2,35 @@
 
 ---
 
+## 5.0.3 — 2026-11-06
+
+**Listen plays the song again.** In a chat where the model did not find the reference files, Listen
+(`15c … play`) was answered by Suno's text listener, audio-listen, instead of the player. Since
+2026-11-04 Suno's server has a tool literally named "listen", and without the files the model picked it
+by name. Two fixes, in SKILL.md, which is always loaded:
+- where the reference files are (`<plugin root>/skills/sunoforge/references/`, never the plugin's root),
+  and to find `CORE_00_ENTRY.md` by name before ever saying the files are missing;
+- Listen, an opened song and every `15c … play` = audio-wait, Suno's player — never audio-listen,
+  which stays on `15g … ask`.
+
+**Under the player, the song's link.** Remasters, remixes and some library songs do not play in Suno's
+card; the link is how they play. Download only on Download, never on its own.
+
+**My songs:**
+- opening a song sends its play: Suno's player comes under the list;
+- **Load more** under the rows: the next 10 (`15h more`), hidden when there is no next page;
+- an opened song shows its style, **Lyrics** (`15c #id lyrics`, the stored words, free) and
+  **Open on suno.com**.
+
+**Menu [9]:** what the four buttons do — `9 recipes`, `9 hybrids`, `9 presets`, `9 tasks` show that
+group of the catalogue. Every other command a screen sends was already described.
+
+Checked: the route map (362 line ranges, 652 cross references, every file's line count), every button of
+40 screens pressed and its 214 distinct messages matched to the files, the screenshot stand on all nine
+languages, both screen folders identical.
+
+---
+
 ## 5.0.2 — 2026-11-06
 
 **The 5.0.1 screens now reach the model.** The plugin keeps every screen in two folders: `widgets/`, which

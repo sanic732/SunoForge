@@ -2,7 +2,7 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin.json",
   "name": "sunoforge",
   "displayName": "SunoForge",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "AI music prompt orchestrator: ready-to-paste prompts, lyrics markup, speech scripts, prompt repair, rights and post-production for Suno v6 and Suno Speech, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models. Sends a blueprint to any music-generation MCP the session shows, Suno's included, only after you say yes. Works in any language the user writes in.",
   "author": {
     "name": "sanic732",
