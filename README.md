@@ -32,7 +32,7 @@ long-context assistants is built from the same files and is still to come; until
 </table>
 
 All forty screens, in English, Russian and Ukrainian:
-**[SunoForge_v5.0.2_screens.zip](https://github.com/sanic732/SunoForge/releases/latest)** — unpack,
+**[SunoForge_v5.0.3_screens.zip](https://github.com/sanic732/SunoForge/releases/latest)** — unpack,
 open `index.html`, works offline.
 
 
@@ -199,13 +199,13 @@ plugin's estimate about 235,000, more than a 200K window holds with a conversati
 
 ## Release files
 
-On the [5.0.2 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.2):
+On the [5.0.3 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.3):
 
 | File | What it is |
 |---|---|
 | `sunoforge.plugin` | the Claude plugin as one file, nine interface languages |
 | `SHA256.txt` | its checksum |
-| `SunoForge_v5.0.2_screens.zip` | all forty screens, to look at before installing |
+| `SunoForge_v5.0.3_screens.zip` | all forty screens, to look at before installing |
 
 Still to come, built separately: the Skill packages for Claude and Gemini, the ChatGPT, Antigravity
 and Grok plugins, and `Prompt.zip` with both editions. Until they are out, the
