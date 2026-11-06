@@ -1,0 +1,21 @@
+{
+"back": "Menu",
+"open": "Blank and tips",
+"open_n": "the section’s fill-in blank, an example, a tip",
+"app": "Suno app",
+"panel": "Open the Suno panel",
+"status": "SUNOFORGE v5.0 — AI music producer and prompt engineer · {{PLATFORM}} · MCP:",
+"on": "connected",
+"off": "off",
+"lang": "Language: {{LANG}}",
+"auto": "Auto",
+"auto_n": "by your words",
+"other": "another language",
+"lang_n": "Becomes the default: written to your settings file where there is one, otherwise shown as a line to keep in your Project.",
+"intro": "A metaprompt for AI music: describe a song in your own words, get a ready prompt for Suno, Lyria and other generators.",
+"notice": "SunoForge writes prompts; it sends, spends and publishes nothing without your yes. Platform facts are dated and change. You answer for what you generate and release: rights, the platform’s terms, your credits. Not legal advice.",
+"view": "View:",
+"vm": "W widgets",
+"vt": "T text",
+"vb": "B buttons"
+}

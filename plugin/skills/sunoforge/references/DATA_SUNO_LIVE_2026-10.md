@@ -385,7 +385,7 @@ server: status line from account-usage (free; the balance lags 1–2 min, so "�
 refresh): plan · credits · monthly use · download credits · models · renews on · tools: 35 as
 in §1 (or "changed: …"). One screen at a time, as in the Suno app: the HUB shows the status
 line and the sections — Create (`15m`) · My songs with the count 10 · 50 · 100 · Liked · Mix two
-songs (`15n`) · Sounds (`15m loop`) · From my songs (`15o`) · Playlists · Workspaces · My voices · New voice (`15e voice`) · Upload audio or video · Credits · More credits (`15a upgrade`, on the first screen) · Send the last prompt — and
+songs (`15n`) · Sounds (`15m loop`) · From my songs (`15o`) · Compose (the menu's [1]–[6] and [9]; the prompt then offers `15b`) · Playlists · Workspaces · My voices · New voice (`15e voice`) · Upload audio or video · Credits · More credits (`15a upgrade`, on the first screen) · Send the last prompt — and
 NO song; the songs load only when one of those is picked (MY SONGS). The groups, every item with
 its code:
   Create   `15m` the Create screen and the song editor · `15b` song · `14` speech · `15d` cover ·
@@ -413,7 +413,7 @@ filter → `widgets/songs.html` (numbered takes, the actions under a tapped row)
 pick-two, playlists and workspaces → `widgets/mcp.html`; 50 and 100 → a text table, never a
 widget (CORE_00 §9 SPEED AND SCREENS); the count and the filter stay
 together (`15h liked 50`). A row picked from a text table or a list, by its number or `#id8` ("32", "the 32nd",
-"#74ca93b5"), opens that song's SONG ACTIONS: view M — `widgets/songs.html` with that one row and
+"#74ca93b5") — a bare number right after a list or table is a song, anywhere else a menu section; "menu N" / "song N" always decide; a table ends with that one line — opens that song's SONG ACTIONS: view W — `widgets/songs.html` with that one row and
 `data-open="1"`; view B — the four likeliest actions and "Menu" as one question; view T — the actions as a
 numbered list with their codes. A play when the user said "listen", tapped Listen or opened a row of the widget (it sends `15c #id8 play`: audio-wait, and under the player the song's link, clickable — remasters and remixes do not play in the card; download only on Download) [Master, 2026-11-06]; after the player, the tail
 (CORE_00 §9 TAIL) offers the same song's next steps. One row a song: number · title · length · date · kind when not plain (cover,

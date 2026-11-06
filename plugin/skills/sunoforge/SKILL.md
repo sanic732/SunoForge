@@ -20,11 +20,11 @@ plugin's folder and read from there. Never tell the user the files are missing b
 
 ## Rules that hold even without the reference files
 
-- Every answer ends with the small view line `_View: M menu · T text · B buttons_` in the output language, the
+- Every answer ends with the small view line `_View: W widgets · T text · B buttons_` in the output language, the
   letters unchanged; the view in effect is bold — M by default, B where the host draws no widget (a terminal), T
-  when chosen — whether or not this answer drew a widget; a widget at the end carries it as pills instead. `m`, `t`
-  and `b` switch the view: M menu (widgets with buttons), T text only, B buttons (one multiple-choice question
-  under the text); the older words `dynamic` and `text` still work (CORE_00 §9 MENU UI). In view M an answer with no widget of its own
+  when chosen — whether or not this answer drew a widget; a widget at the end carries it as pills instead. `w` (the older `m` too), `t`
+  and `b` switch the view: W widgets (screens with buttons), T text only, B buttons (one multiple-choice question
+  under the text); the older words `dynamic` and `text` still work (CORE_00 §9 MENU UI). In view W an answer with no widget of its own
   ends with `widgets/next.html` — its next steps, "Menu" and the pills — in place of the line (CORE_00 §9 TAIL).
 - Screens: `widgets/UI.md` says which template draws which screen and where its ready translated copy lies
   (`widgets/<lang>/`); copy it, fill the slots, translate nothing. A turn never ends on a tool result alone: an
@@ -35,7 +35,8 @@ plugin's folder and read from there. Never tell the user the files are missing b
   — never for a play. Under the player, one line with the song's link as a clickable link (`song_url`): remasters,
   remixes and some library songs do not play in Suno's card and say so — the link is how they play. Download only
   on Download (`15l`), never on its own. `15c #id8 lyrics` = the song's stored lyrics and style as text
-  (audio-retrieve, free). `15h more` = the next page of the same list (library-list `next_cursor`), drawn the same way.
+  (audio-retrieve, free). A bare number right after a song list or table is that song; anywhere else it is a menu
+  section; "menu N" is always the section, "song N" always the song. `15h more` = the next page of the same list (library-list `next_cursor`), drawn the same way.
 
 - Every claim about how a platform behaves rests on a mark in the files: `[OFFICIAL]`,
   `[first-hand]` (a call made and its answer read), `[COMMUNITY]` or `[UNVERIFIED]`. Answers do not print the marks (the words `confidence on` do);
@@ -94,7 +95,7 @@ rewritten, what nobody has verified) and the tested catalogues. So the files are
 
 1. Once per conversation, at the first message, read the user's settings file — the first hit in the order of
    "Where state lives" below. A greeting or a bare call (the word SunoForge alone, `start`, `menu`) draws the main
-   screen at once, before any reference file: view M from `widgets/UI.md` and the language's `menu.html` — they
+   screen at once, before any reference file: view W from `widgets/UI.md` and the language's `menu.html` — they
    carry the intro, every entry and the view pills; view T or B from CORE_00 §4 MAIN MENU alone, read by its line
    range in `references/INDEX.md` §5 (offset/limit); B adds one question under the text — "What are we doing?" with
    [1] Quick start · [5] Voices · [12] Fix a prompt · [15] Suno + MCP ([9] Recipes when no Suno server is visible).
