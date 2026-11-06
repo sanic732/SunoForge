@@ -2,6 +2,18 @@
 
 ---
 
+## 5.0.2 — 2026-11-06
+
+**The 5.0.1 screens now reach the model.** The plugin keeps every screen in two folders: `widgets/`, which
+the skill reads first, and `references/widgets/`, the fall-back. 5.0.1 updated only the fall-back, so the
+take card, the Suno panel, the song sheet, the price card and the menu label of `15e` were still those of
+5.0.0 wherever the first folder is found. Both folders are identical now, and the build refuses to make a
+plugin when they differ.
+
+Nothing else changed: the data, the screens' content and the nine languages are those of 5.0.1.
+
+---
+
 ## 5.0.1 — 2026-11-05
 
 Suno's server, checked again: every one of its 35 tools called on a Pro account, its uploader page read.

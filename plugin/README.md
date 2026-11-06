@@ -8,7 +8,7 @@ repairs old prompts, checks rights before a release and plans stems and masterin
 Suno's connector in the session it sends the prompt to Suno and works with your songs
 there — only after your yes.
 
-Version 5.0.1 · Apache 2.0 licence · [repository](https://github.com/sanic732/SunoForge) ·
+Version 5.0.2 · Apache 2.0 licence · [repository](https://github.com/sanic732/SunoForge) ·
 [installation](INSTALL.md) · [privacy](https://github.com/sanic732/SunoForge/blob/main/PRIVACY.md) ·
 [support](https://github.com/sanic732/SunoForge/issues)
 
