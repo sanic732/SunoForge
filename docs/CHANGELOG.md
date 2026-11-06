@@ -22,7 +22,7 @@ card; the link is how they play. Download only on Download, never on its own.
 - an opened song shows its style, **Lyrics** (`15c #id lyrics`, the stored words, free) and
   **Open on suno.com**.
 
-**The menu, from Master's review:**
+**The menu:**
 - **W widgets · T text · B buttons.** The first view was called "M menu", which read as the menu command; it
   is W now and its pill sends `w`. The old `m` still works.
 - **A number means what you see.** A bare number right after a song list or table is that song; anywhere
