@@ -2,11 +2,16 @@
 
 # SunoForge v5.0 — AI Music Prompt Orchestrator
 
-SunoForge is a set of instructions that turns a chat assistant into a prompt engineer for
-music generation. Describe what you want in plain words or show it a photo, and get finished
-prompts, ready to paste: Style, lyrics markup, speech scripts, edits, repair of old prompts,
-rights and post-production notes. With Suno's server connected, a voice memo or a video goes in
-too, through Suno's uploader (audio, MP4, MOV, WebM, up to 100 MB), and Suno listens to it.
+SunoForge is a meta-prompt for AI music, built the same way as [P2P](https://github.com/sanic732/P2P):
+a reference and a prompt in one. It does not hand you a fixed template. It reads your idea and writes
+the prompt for *this* song: Style, lyrics markup, speech scripts, edits, repair of old prompts, rights
+and post-production notes. Describe what you want in plain words or show it a photo.
+
+**It works through Suno's official MCP connector.** Add Suno's server to Claude, and SunoForge goes all
+the way from idea to finished track: it sends the prompt to Suno, sees your library and remaining
+credits, and shows a cost card before every generation, so nothing is spent without your yes. A voice
+memo or a video can go in too, through Suno's uploader (audio, MP4, MOV, WebM, up to 100 MB), and Suno
+listens to it.
 
 Fourteen files, one principle: **never present a guess as a fact**.
 
