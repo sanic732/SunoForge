@@ -14,7 +14,7 @@ widget.
 | [15] Suno panel: a filtered list, a song's actions, mix two, playlists / workspaces (PICK), price card | `mcp.html` | as its header comment says |
 | The take card — after EVERY spend | `take.html` | `data-title`, `data-sub`, `data-wait`, one `<b>` per take |
 | My songs, 10 rows, no filter (`15h`); one song picked from a text table (`data-open="1"`, its actions open) | `songs.html` | one `<b>` per song, `data-open` |
-| The tail of an answer with no widget of its own, view M: next steps, Menu, view pills | `next.html` | `data-b` |
+| The tail of an answer with no widget of its own, view W: next steps, Menu, view pills | `next.html` | `data-b` |
 | Edit a take `12c` | `edit.html` | `data-n`, `data-id`, `data-title`, `data-inst` |
 | `15m` Create and the song editor | `editor.html` | `{{SONG}}` (JSON), `{{MODE}}` |
 
@@ -39,7 +39,7 @@ Indonesian); English is
   the credit line) is in that language too.
 - No copy (any other language) → the English template; translate its visible labels and the values of its
   script dictionaries, as its header says.
-- The view pills are translated (`M menu · T text · B buttons`, the letters stay); they send `m`, `t`, `b`, commands in
+- The view pills are translated (`W widgets · T text · B buttons`, the letters stay); they send `m`, `t`, `b`, commands in
   every language. They and the highlighted button carry inline styles: the desktop host restyles `<button>`.
 - One source for every language: `widgets_i18n/<lang>.json` in the plugin's source; the copies are built
   from it by a script. A wrong word is fixed there, never by hand in a copy.

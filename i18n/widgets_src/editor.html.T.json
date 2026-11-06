@@ -1,0 +1,230 @@
+{
+"play": "Listen",
+"view": "View:",
+"from_two": "from two songs",
+"an_s": "Analysis",
+"an": "Analysis: tempo, key, sections, the words as sung",
+"map": "Song map",
+"create": "Create",
+"credits": "credits",
+"m_simple": "Simple",
+"m_simple_n": "a description",
+"m_new": "Song",
+"m_new_n": "lyrics + styles",
+"m_speech": "Speech",
+"m_speech_n": "voice over music",
+"m_loop": "Sound",
+"m_loop_n": "one-shot or loop",
+"m_extend": "Extend",
+"m_extend_n": "from a point",
+"m_cover": "Cover",
+"m_cover_n": "the whole song",
+"m_mashup": "Mashup",
+"m_mashup_n": "with a 2nd song",
+"m_replace": "Replace a part",
+"m_replace_n": "Suno app",
+"m_text": "Lyrics only",
+"m_text_n": "in the library",
+"m_reuse": "New from this",
+"m_reuse_n": "same prompt",
+"h_simple": "Describe the song in a sentence; Suno writes the lyrics and the style itself.",
+"h_new": "Lyrics and styles of your own, like Advanced in the Suno app.",
+"h_speech": "A script read over music. Suno rewrites the Tone in every take: treat it as a wish.",
+"h_loop": "Suno Sounds: two sound effects, one-shots or loops, at your BPM and key; 1 credit a sound (Pro and up).",
+"isloop": "Loop",
+"h_extend": "Continue from one point. The new part replaces everything after it; the take holds only the continuation, and 15f joins it into one song for free. The point is sent in seconds with milliseconds; how finely Suno cuts was not tested.",
+"h_cover": "A cover sings the whole song again: through the connector no part can be chosen. The lyrics below go in; without them the cover comes out instrumental.",
+"h_mashup": "Two songs blended into one. It sings only with lyrics. The second song is picked from your list after the button.",
+"h_replace": "Replacing a part is done only in the Suno app (the song menu, Edit, Replace section). Set the exact times here and copy them with the new words.",
+"h_text": "Changes the title and lyrics stored in your library. The sound stays the same.",
+"h_reuse": "A new song from this one’s lyrics and styles, like \"reuse prompt\" in the Suno app.",
+"t_part": "Part",
+"t_more": "More",
+"lyrics": "Lyrics",
+"desc": "Description",
+"script": "Script",
+"styles": "Styles",
+"tone": "Tone",
+"sound": "Sound",
+"part": "Part of the song",
+"snap": "Snap to",
+"s_bar": "bar",
+"s_line": "line",
+"s_free": "free",
+"from": "From",
+"to": "To",
+"point": "Point",
+"fine": "Fine ±2 s",
+"nudge_n": "−1 / +1 — one bar · −.1 / +.1 — a tenth of a second · type m:ss.mmm for milliseconds",
+"len": "length",
+"kept": "kept",
+"dropped": "replaced",
+"ext_len": "Length of the new part",
+"w_none": "No sung lines here.",
+"instr": "Instrumental",
+"undo": "Undo",
+"restore": "Original",
+"refill": "Lines of the chosen part",
+"syl": "Syllables",
+"ask": "Ask SunoForge",
+"bpm": "BPM",
+"key": "Key",
+"k_any": "any",
+"k_major": "major",
+"k_minor": "minor",
+"more": "More options",
+"model": "Model",
+"exclude": "Exclude styles",
+"gender": "Vocal gender",
+"auto": "auto",
+"g_m": "male",
+"g_f": "female",
+"dur": "Duration",
+"voice": "Voice",
+"v_source": "as in the song",
+"v_new": "no voice",
+"v_mine": "one of my voices",
+"bg": "Background music",
+"suno_n": "Suno sliders stay \"auto\" until moved; Variety 0 keeps your Style as written. Max Mode: ask for it in words (twice the credits).",
+"title": "Song title",
+"ws": "Save to a workspace",
+"app": "In the Suno app only: Personalize, Inspiration, image, video and MIDI as input, recording audio, saved lyrics and styles.",
+"copy": "Copy",
+"copied": "Copied",
+"copyhint": "Select the text below and copy it",
+"go_card": "Build the card",
+"go_replace": "Steps for the Suno app",
+"go_text": "Save to Suno",
+"go_prompt": "Ready prompt",
+"sent": "Written into the chat. Nothing is sent to Suno and nothing is spent until the card and your yes.",
+"ph_desc": "A song about…, mood, genre, who sings",
+"ph_ext": "Lyrics for the new part. Empty: Suno writes them; Instrumental: none.",
+"ph_sound": "What it should sound like: instruments, groove, texture",
+"ph_script": "The text to be read",
+"ph_tone": "Voice, pace, mood, setting",
+"wd": "Weirdness",
+"si": "Style influence",
+"ai": "Audio influence",
+"va": "Variety",
+"vl": [
+"0 Off",
+"1 Normal",
+"2 High",
+"3 Extra",
+"4 Max"
+],
+"lt": [
+"[Intro]",
+"[Verse]",
+"[Pre-Chorus]",
+"[Chorus]",
+"[Bridge]",
+"[Outro]",
+"[Spoken]",
+"[Instrumental]"
+],
+"la": [
+[
+"rhyme",
+"Tighten the rhymes"
+],
+[
+"short",
+"Shorten long lines"
+],
+[
+"stress",
+"Check the stresses"
+],
+[
+"new",
+"Write a new part"
+]
+],
+"sa": [
+[
+"short",
+"Shorter, under 400 characters"
+],
+[
+"genre",
+"Another genre, same song"
+]
+],
+"qa": {
+"rhyme": "Lyrics: tighten the rhymes, keep the meaning and the number of lines",
+"short": "Lyrics: shorten the long lines to fit the beat",
+"stress": "Lyrics: check where the stresses fall against the beat",
+"new": "Lyrics: write a new part in the same voice and meter",
+"s_short": "Style: make it shorter, under 400 characters, keep the sound",
+"s_genre": "Style: the same song in another genre — ask me which"
+},
+"D": [
+[
+"Darker",
+"Brighter",
+[
+"dark, brooding",
+"moody, bittersweet",
+"",
+"bright, playful",
+"joyful, euphoric"
+]
+],
+[
+"Calmer",
+"More energy",
+[
+"calm, laid-back",
+"relaxed groove",
+"",
+"bouncy, energetic",
+"high-energy, driving"
+]
+],
+[
+"Slower",
+"Faster",
+[
+-0.2,
+-0.1,
+0,
+0.1,
+0.2
+]
+],
+[
+"Live",
+"Electronic",
+[
+"live band, acoustic drums, real bass",
+"organic instruments with light electronics",
+"",
+"glossy synths, punchy electronic drums",
+"fully electronic, synth-driven"
+]
+],
+[
+"Sparser",
+"Denser",
+[
+"minimal, sparse arrangement",
+"light arrangement",
+"",
+"layered arrangement",
+"big, dense wall of sound"
+]
+],
+[
+"Rougher",
+"Cleaner",
+[
+"lo-fi, gritty, saturated",
+"warm, slightly gritty",
+"",
+"clean, polished mix",
+"crystal-clear hi-fi mix"
+]
+]
+]
+}

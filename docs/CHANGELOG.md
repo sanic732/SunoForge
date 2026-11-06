@@ -22,6 +22,20 @@ card; the link is how they play. Download only on Download, never on its own.
 - an opened song shows its style, **Lyrics** (`15c #id lyrics`, the stored words, free) and
   **Open on suno.com**.
 
+**The menu, from Master's review:**
+- **W widgets · T text · B buttons.** The first view was called "M menu", which read as the menu command; it
+  is W now and its pill sends `w`. The old `m` still works.
+- **A number means what you see.** A bare number right after a song list or table is that song; anywhere
+  else it is a menu section. "menu 3" is always the section, "song 3" always the song.
+- **Compose, in the Suno panel:** the menu's own [1]–[6] and [9] — quick start, studio, clone a style,
+  hybrids, voices, lyrics, recipes. With a Suno server connected a finished prompt always offers Send to
+  Suno (`15b`).
+- **A producer's word after a Suno result.** The answer frame every prompt already has — why it works,
+  then one next step — now also follows a take, a listen or an analysis: one or two lines about that
+  result, from the reference files.
+- **The translations are in the repository**, in `i18n/`: the templates, one dictionary per language and the
+  build script. The plugin does not read the folder; the build writes the screens into both folders.
+
 **Menu [9]:** what the four buttons do — `9 recipes`, `9 hybrids`, `9 presets`, `9 tasks` show that
 group of the catalogue. Every other command a screen sends was already described.
 
