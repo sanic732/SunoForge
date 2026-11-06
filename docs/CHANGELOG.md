@@ -36,6 +36,8 @@ card; the link is how they play. Download only on Download, never on its own.
 - **The translations are in the repository**, in `i18n/`: the templates, one dictionary per language and the
   build script. The plugin does not read the folder; the build writes the screens into both folders.
 
+**Balance (`15a`)** states the numbers — plan, credits left, used of the month's limit, download credits, renewal, models. It used to end on a row of buttons without them.
+
 **Menu [9]:** what the four buttons do — `9 recipes`, `9 hybrids`, `9 presets`, `9 tasks` show that
 group of the catalogue. Every other command a screen sends was already described.
 
