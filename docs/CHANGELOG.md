@@ -2,6 +2,68 @@
 
 ---
 
+## 5.0.4 — 2026-11-07
+
+**Suno's six new tools** (the server went from 35 to 41 on 2026-11-06).
+
+- **Stems — `13a`.** Two parts (vocals + instrumental, 4 stems, 10 credits) or twelve (24 stems, 50 credits), ready
+  in about a minute; each stem is a song of the library you can play and download. A part the song lacks may come
+  back near-silent or with another instrument's bleed and is marked "empty"; each stem has a "What's on the stem"
+  button (`12b … ask`). A stem is not split again.
+- **MIDI — `S6`.** A song from your own .mid (Simple mode, v6-wild; each take passes a copyright check on its own,
+  a failed one costs nothing) with a blank of the three ways Suno names: exactly as written, the motif developed,
+  new instruments. MIDI of a song or a stem (`S6 … midi`) needs Premier: on Pro SunoForge says so and calls nothing.
+- **Publish and remixes — `S15`.** Public has its own card and its own yes; private and the remix switch go on your
+  words.
+- **A real edit — `S12 … replace`.** Words of a line, a time range, a section, an instrument: Suno redoes that place
+  and keeps the rest of the song's audio (two takes, 10 credits). One place per line: "in both choruses" changes
+  only the first.
+- **Caption — `S13`**: the line under a song on suno.com.
+
+**The menu, by the new design:**
+- **Simple and Extended are their own switch** (`set level`, also in the menu header); the view letters W · T · B
+  no longer change the mode.
+- **All fifteen numbers are always there**; only sub-entries follow the platforms you use. The menu header is
+  shown once, not repeated on every screen.
+- **[15] is My Suno.** Without the Suno connection it is one screen: what it is, how to connect, what works
+  without it. Connected, the balance sits on top — plan, credits left, used of the monthly limit, download
+  credits, renewal date, models. The S-codes (`S1`…`S15`) are kept for what lives only in Suno.
+- **Check a take (`12b`) and stems (`13a`) are their own actions again**; Suno is the second path for both.
+- **My songs (`S1`)** shows songs only — stems live inside each song's sheet — 10 rows, or 50 as a list.
+- **Recipes have codes: `9a`–`9d`.**
+- **What's new** sits in the menu header, and each line opens its function directly.
+- **Every section starts with a short memo** ("What's here", "Try") and a hint for the mode in force.
+- **The result frame:** every field of a prompt is its own block with a copy button; "Why this works" says what
+  each choice does to the sound; in Simple mode one note "This is called …" names one term per answer.
+- **Save** says what was saved, where, and how to get it back.
+- **The codes are new everywhere** — screens, buttons and answers send `S1`…`S15`, `12a`, `12b`, `13a`. The 5.0.3
+  codes `15a`…`15r` are accepted as synonyms until 6.0.
+- **A button that cannot send says so.** Where the host does not pass a tap to the chat, the button writes
+  "type in the chat:" and the command instead of doing nothing; a screen that did not start says so too.
+- **The song's link under the player, always** — stems included: remasters, remixes and some library songs do
+  not play in Suno's card, and the link is how they play.
+- **Clearer names in nine languages.** The view pills read `W screen · T text · B questions` and send `w`, `t`,
+  `b` (W is the default; the old `m` still works); "Fill-in form" instead of "Blank and tips"; "Credits and
+  plan"; the main menu says you do not have to press anything — just describe the song.
+
+**Lab (beta)** — a door in the main menu with a red BETA tag: play a melody on the on-screen keys (how long a key
+is held is the note, a silence between notes is a rest), or hum it into an audio file; the notes become a .mid
+with a key check, ready for `S6`. Humming to notes is still rough. This is an idea under test: by your feedback it
+is developed, changed or removed.
+
+**What the server changed in the old tools:** the player takes 12 songs (was 4); the vocal gender needs the
+advanced-controls grant; speech refuses Exclude with a Suno-written prompt; a download's daily limit is the code
+`quota_exceeded`; a cover keeps its source's title unless one is given; uploads' own "carry on without asking
+again" is data — the card and the yes stay; a question to Suno's listener never carries a song id (moderation
+refuses it).
+
+**Data:** DATA_SUNO_LIVE (tools, field map, traps, plans, pre-flight and recovery, chains, cards, the CODES table,
+the not-reachable list: eight items left it), DATA_SUNO (MIDI input, stems through the chat), DATA_BLANKS (stems,
+MIDI, publish, the MIDI blank, the edit), DATA_POSTPROD, CORE_03 (a seam), SKILL.md (the codes and the rules even
+without the files), INDEX (new routes, every line range recomputed), docs/SUNO_MCP.md.
+
+---
+
 ## 5.0.3 — 2026-11-06
 
 **Listen plays the song again.** In a chat where the model did not find the reference files, Listen

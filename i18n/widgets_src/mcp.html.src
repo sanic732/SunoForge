@@ -2,31 +2,38 @@
 Rendered through the host's widget tool (the one whose notes name a global sendPrompt). Laid out like the Suno app, one
 screen at a time, nothing loaded that was not asked for. KEEP EXACTLY ONE SCREEN and drop the others:
   HUB             — [15], `mcp-menu`, "15": widgets/hub.html (the status line and the sections), not this file.
-  LIST (#sm-list) — after a filter, `find`, `liked`, a playlist's or a workspace's songs, `15n` (pick two); a plain
-                    `15h` (10 rows, no filter) is widgets/songs.html:
+  LIST (#sm-list) — after a filter, `find`, `liked`, a playlist's or a workspace's songs, `S4 two` (pick two); a plain
+                    `S1` (10 rows, no filter) is widgets/songs.html:
                     the rows of library-list (`limit` = n: 10 or 50; 100 = two pages with next_cursor).
-  PICK (#sm-pl)   — `15i` / `15j` (open one), a song's "To a playlist" / "To a workspace" (`15i #id8 …` / `15j #id8 …`,
+  PICK (#sm-pl)   — `S9` / `S10` (open one), a song's "To a playlist" / "To a workspace" (`S9 #id8 …` / `S10 #id8 …`,
                     the song goes into the one tapped), the editor's `workspace: pick`: the user's EXISTING playlists
                     (playlists-list, free) or workspaces (workspaces-list, free) as rows, and under them a name field
                     for a new one. None yet → no rows; the field stays.
+  CARDS (commented blocks at the end, each drawn INSTEAD of LIST and PICK, uncommented, slots filled):
+    PRICE CARD · SHORT OF CREDITS · STEMS CHOICE `13a #id8` · STEMS `13a #id8 two|twelve` done · MIDI `S6` ·
+    MIDI BLANK (after `S6 upload` / `S6 notes`) · PUBLISH `S15 #id8 public`. Their slots: {{TITLE}} the song's title,
+    {{ID}} the first 8 characters of its clip id; STEMS: one .sm-g line per take ("Take 1", "Take 2") and under it one
+    row per stem — {{STEM_ID}} the stem's id8, {{PART}} its part in the output language (vocals, drums …), {{M:SS}};
+    mark a stem whose `audio-analysis` labels `content:silence` as "empty" (`data-empty="1"` on `.sm-row`). The
+    "What's on the stem" button sends `12b #{{STEM_ID}} ask`.
 Fill the slots, strip the comments. TRANSLATED COPIES: widgets/<lang>/ holds this template already translated (ru uk; other languages: translate this English copy) — take that copy and only fill the slots; this English one is for English and for a language without a copy, where you translate every visible label (the L object of the script included).
 ESCAPING — every slot is escaped for where it lands: in HTML text and in attributes replace & < > " ' with entities.
 Song titles and styles come from the server and may be anyone's: they go only into HTML text or data-* attributes,
 never into the script. Labels in L are SunoForge's own words: write them without the ASCII apostrophe (use ’).
 WHAT THE WIDGET DOES — it never calls a tool and never spends. A tap on a row opens its action sheet inside the
-widget, grouped as the Suno app's song menu (Remix · Edit · Look inside · Keep; Remix and Edit send `15m`, which
+widget, grouped as the Suno app's song menu (Remix · Edit · Look inside · Keep; Remix and Edit send `S12`, which
 opens widgets/editor.html in that mode); an action sends "<code> #<first 8 characters of the id> <row> [<what>] ·
 <label>" with sendPrompt (the label is cleaned of line breaks, brackets, # and quotes and cut to 60 characters).
-"Listen" sends `15c #id8 <row> play` (audio-wait: Suno's player in the chat); "Open on suno.com" opens the page with
+"Listen" sends `S1 #id8 <row> play` (audio-wait: Suno's player in the chat); "Open on suno.com" opens the page with
 openLink (the host asks first) — some library songs do not play in the card (DATA_SUNO_LIVE §7). "Link" copies the address. MIX: "Pick two" turns the rows into a choice
-of two songs (A, then B); three buttons then send `15n #A8 #B8 mashup|style|cover · <A> + <B>`. No cover images and
+of two songs (A, then B); three buttons then send `S4 two #A8 #B8 mashup|style|cover · <A> + <B>`. No cover images and
 no audio: the sandbox loads nothing from suno.com's servers.
 No Suno server in the session: the HUB only, every item that needs it marked "needs the Suno connector".
 SLOTS — LIST: {{LIST}} what is shown (my songs, liked, a filter, a playlist, search words); on #sm-list data-n = the count
-shown (10 · 50 · 100), data-f = the filter word of `15h` in force ("" for all), data-list="playlist" or "workspace"
+shown (10 · 50 · 100), data-f = the filter word of `S1` in force ("" for all), data-list="playlist" or "workspace"
 for a playlist's or a workspace's songs (the sheet then offers "remove from it"), data-pick="<code #id8 what with>"
 when one second song must be picked for an editor (a tap sends that prefix with the song), data-mix="1" to open
-straight in "pick two" (`15n`). SONG ROWS: one <button class="sm-row"> per song, newest first — data-id = the clip
+straight in "pick two" (`S4 two`). SONG ROWS: one <button class="sm-row"> per song, newest first — data-id = the clip
 id, data-u = its song_url, data-k = its kind when not plain (cover, extension, upload, remaster) else empty,
 data-lk="1" when liked, data-own="0" for someone else's song (from library-liked); inside: the row number, the
 title, length m:ss and date, the heart only when liked.
@@ -36,8 +43,8 @@ workspace"; on #sm-pl data-kind="playlist" or "workspace", data-song = the song'
 the tool returned next_cursor. ROWS: one <button class="sm-row sm-pl"> per playlist or workspace, as the tool lists
 them — data-id = its id, data-name = its name (escaped); inside the name and one line: the clip count and, for a
 playlist, its visibility.
-VIEW LINE — the three small pills at the foot (M menu · T text · B buttons) are the view switch of CORE_00 §9; in a
-widget M is the one in force. -->
+VIEW LINE — the three small pills at the foot (W widgets · T text · B buttons) are the view switch of CORE_00 §9; in a
+widget W is the one in force. -->
 
 <h2 class="sr-only">{{t:suno_panel_your_suno_section}}</h2>
 <style>
@@ -59,7 +66,7 @@ widget M is the one in force. -->
 .sm-cnt span{font-size:12px;color:var(--text-secondary)}
 .sm-head{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:0 0 8px}
 .sm-head b{font-weight:500}
-.sm-row{width:100%;display:flex;gap:10px;align-items:center;text-align:left;padding:8px 10px;border:0.5px solid var(--border);border-radius:var(--radius);background:transparent;margin:0 0 6px;min-height:44px}
+.sm-row{width:100%;box-sizing:border-box;display:flex;gap:10px;align-items:center;text-align:left;padding:8px 10px;border:0.5px solid var(--border);border-radius:var(--radius);background:transparent;margin:0 0 6px;min-height:44px}
 .sm-row:hover{border-color:var(--border-strong)}
 .sm-row.sel{border-color:var(--border-accent);background:var(--bg-accent)}
 .sm-n{font-family:var(--font-mono);font-size:12px;color:var(--text-accent);min-width:18px}
@@ -103,7 +110,7 @@ widget M is the one in force. -->
     <button class="sm-row" data-id="{{CLIP_ID}}" data-u="{{SONG_URL}}" data-k="{{KIND}}" data-lk="{{LIKED}}" data-own="1"><span class="sm-n">1</span><span class="sm-t"><span class="sm-tt">{{TITLE}}</span><span class="sm-sub">{{M:SS}} · {{DATE}} · <span class="sm-kd">{{KIND}}</span></span></span><i class="ti ti-heart" aria-label="{{t:liked}}"></i><i class="ti ti-dots-vertical" aria-hidden="true"></i></button>
   </div>
   <div class="sm-grid" style="margin-top:4px">
-    <button class="sm-btn" data-send="15h more"><i class="ti ti-list" aria-hidden="true"></i><span>{{t:more_songs}}</span></button>
+    <button class="sm-btn" data-send="S1 more"><i class="ti ti-list" aria-hidden="true"></i><span>{{t:more_songs}}</span></button>
     <button class="sm-btn" id="sm-mixgo"><i class="ti ti-git-merge" aria-hidden="true"></i><span>{{t:pick_two}}<br><span class="sm-note">{{t:to_mix_them}}</span></span></button>
   </div>
 </div>
@@ -146,7 +153,60 @@ widget M is the one in force. -->
 </div>
 -->
 <!-- SHORT OF CREDITS (the balance after this send would fall below zero): the same card, with this button INSTEAD of Send:
-  <button class="sm-btn" data-send="15a upgrade"><i class="ti ti-coins" aria-hidden="true"></i><span>{{t:more_credits}}</span></button>
+  <button class="sm-btn" data-send="S11 upgrade"><i class="ti ti-coins" aria-hidden="true"></i><span>{{t:more_credits}}</span></button>
+-->
+
+<!-- STEMS CHOICE (`13a #id8`, free): the two splits, each with its price; a tap sends `13a #id8 two|twelve`. On `twelve`: parts the song does not have come back almost silent. -->
+<!--
+<div class="sm-head"><b>{{t:stems}} · {{TITLE}}</b><button class="sm-f" data-send="15"><i class="ti ti-arrow-left" aria-hidden="true"></i> Suno</button></div>
+<div class="sm-sheet">
+  <button class="sm-act" data-send="13a #{{ID}} two"><i class="ti ti-microphone-2" aria-hidden="true"></i><span>{{t:2_parts_vocals_instrumental}}</span><span class="sm-cost" style="white-space:nowrap;padding-left:8px">{{t:10_credits}}</span></button>
+  <button class="sm-act" data-send="13a #{{ID}} twelve"><i class="ti ti-layers-subtract" aria-hidden="true"></i><span>{{t:12_parts}}</span><span class="sm-cost" style="white-space:nowrap;padding-left:8px">{{t:50_credits}}</span></button>
+  <div class="sm-hint">{{t:12_parts_list}}</div>
+  <div class="sm-hint">{{t:stems_note}}</div>
+</div>
+-->
+<!-- STEMS (after `13a #id8 two|twelve`): the stems grouped by take, the .sm-g line and its rows once per take. Mark a stem whose `audio-analysis` labels `content:silence` as "empty" (`data-empty="1"`). -->
+<!--
+<div class="sm-head"><b>{{t:stems}} · {{TITLE}}</b><button class="sm-f" data-send="15"><i class="ti ti-arrow-left" aria-hidden="true"></i> Suno</button></div>
+<div class="sm-g">{{t:take_1}}</div>
+<div class="sm-row" data-empty="0"><span class="sm-t"><span class="sm-tt">{{PART}}</span><span class="sm-sub">{{M:SS}}</span></span><button class="sm-f" data-send="S1 #{{STEM_ID}} play" aria-label="{{t:listen}}">▶</button><button class="sm-f" data-send="12b #{{STEM_ID}} ask">{{t:whats_on_the_stem}}</button><button class="sm-f" data-send="S6 #{{STEM_ID}} midi">MIDI</button></div>
+<div class="sm-g">{{t:take_2}}</div>
+<div class="sm-row" data-empty="0"><span class="sm-t"><span class="sm-tt">{{PART}}</span><span class="sm-sub">{{M:SS}}</span></span><button class="sm-f" data-send="S1 #{{STEM_ID}} play" aria-label="{{t:listen}}">▶</button><button class="sm-f" data-send="12b #{{STEM_ID}} ask">{{t:whats_on_the_stem}}</button><button class="sm-f" data-send="S6 #{{STEM_ID}} midi">MIDI</button></div>
+<p class="sm-note">{{t:stems_done_note}}</p>
+-->
+<!-- MIDI (`S6`, free): a melody of your own into a song. -->
+<!--
+<div class="sm-head"><b>{{t:my_melody_midi}}</b><button class="sm-f" data-send="15"><i class="ti ti-arrow-left" aria-hidden="true"></i> Suno</button></div>
+<div class="sm-sheet">
+  <button class="sm-act" data-send="S6 upload"><i class="ti ti-upload" aria-hidden="true"></i><span>{{t:upload_a_mid}}</span></button>
+  <button class="sm-act" data-send="S6 keys"><i class="ti ti-piano" aria-hidden="true"></i><span>{{t:play_it_on_keys}}</span><span class="sm-cost">{{t:lab}}</span></button>
+  <button class="sm-act" data-send="S6 hum"><i class="ti ti-microphone" aria-hidden="true"></i><span>{{t:hum_or_attach_audio}}</span><span class="sm-cost">{{t:lab}}</span></button>
+  <div class="sm-hint">{{t:midi_note}}</div>
+</div>
+-->
+<!-- MIDI BLANK (the .mid is uploaded): how Suno uses the notes; a tap sends `S6 way exact|motif|instruments`. -->
+<!--
+<div class="sm-head"><b>{{t:your_melody}}</b><button class="sm-f" data-send="S6"><i class="ti ti-arrow-left" aria-hidden="true"></i> MIDI</button></div>
+<div class="sm-sheet">
+  <div class="sm-sh">{{t:three_ways}}</div>
+  <button class="sm-act" data-send="S6 way exact"><i class="ti ti-music" aria-hidden="true"></i><span>{{t:exactly_as_written}}<br><span class="sm-note">{{t:exact_n}}</span></span></button>
+  <button class="sm-act" data-send="S6 way motif"><i class="ti ti-sparkles" aria-hidden="true"></i><span>{{t:develop_the_motif}}<br><span class="sm-note">{{t:motif_n}}</span></span></button>
+  <button class="sm-act" data-send="S6 way instruments"><i class="ti ti-adjustments" aria-hidden="true"></i><span>{{t:new_instruments}}<br><span class="sm-note">{{t:instruments_n}}</span></span></button>
+  <div class="sm-hint">{{t:midi_blank_note}}</div>
+</div>
+-->
+<!-- PUBLISH (`S15 #id8 public`, free but public): its own card and its own yes. -->
+<!--
+<div class="sm-sheet">
+  <div class="sm-sh">{{t:publish}}</div>
+  <p style="margin:2px 6px 4px;font-weight:500">{{TITLE}}</p>
+  <p class="sm-note" style="margin:0 6px 6px">{{t:anyone_can_find_it}}</p>
+</div>
+<div class="sm-grid">
+  <button class="sm-btn" data-send="[suno] publish #{{ID}}"><i class="ti ti-world-upload" aria-hidden="true"></i><span>{{t:publish}}</span></button>
+  <button class="sm-btn" data-send="{{t:cancel}}"><i class="ti ti-x" aria-hidden="true"></i><span>{{t:cancel_2}}</span></button>
+</div>
 -->
 
 <!-- TAKE CARD: widgets/take.html (DATA_SUNO_LIVE §7) — not drawn from this template. -->
@@ -155,12 +215,12 @@ widget M is the one in force. -->
 <script>
 (function(){
 var L=%%L%%;
-var A=[{h:'g_remix'},{c:'15m',a:'cover',l:'cover',i:'arrows-shuffle',s:'card'},{c:'15m',a:'new',l:'reuse',i:'copy',own:1},{c:'mix',l:'mixwith',i:'git-merge'},{c:'15o',l:'fromsong',i:'sparkles',s:'card',own:1},{c:'15m',a:'mashup',l:'mashup',i:'git-merge',s:'card'},{c:'15m',a:'cover voice',l:'myvoice',i:'microphone-2',s:'card'},{c:'15e',a:'voice',l:'voice',i:'microphone',own:1},
-{h:'g_edit'},{c:'15m',a:'extend',l:'extend',i:'player-track-next',s:'card'},{c:'15m',a:'replace',l:'replace',i:'scissors',s:'appt',own:1},{c:'15m',a:'text',l:'rename',i:'edit',own:1},{c:'15f',l:'join',i:'link',only:'extension'},
-{h:'g_info'},{c:'15g',l:'analyse',i:'wave-sine'},{c:'15g',a:'ask',l:'ask',i:'message-question'},{c:'15c',l:'next',i:'arrow-forward-up'},
-{h:'g_file'},{c:'15l',a:'mp3',l:'mp3',i:'download',s:'dl',own:1},{c:'15l',a:'wav',l:'wav',i:'download',s:'dl',own:1},{c:'15j',l:'workspace',i:'folders',own:1},{c:'15h',a:'dislike',l:'dislike',i:'thumb-down'},{c:'15i',a:'remove',l:'rmpl',i:'playlist-x',ctx:'playlist'},{c:'15j',a:'remove',l:'rmws',i:'folder-minus',ctx:'workspace',own:1}];
+var A=[{h:'g_remix'},{c:'S12',a:'cover',l:'cover',i:'arrows-shuffle',s:'card'},{c:'S12',a:'new',l:'reuse',i:'copy',own:1},{c:'mix',l:'mixwith',i:'git-merge'},{c:'S4',l:'fromsong',i:'sparkles',s:'card',own:1},{c:'S12',a:'mashup',l:'mashup',i:'git-merge',s:'card'},{c:'S12',a:'cover voice',l:'myvoice',i:'microphone-2',s:'card'},{c:'S8',a:'new',l:'voice',i:'microphone',own:1},
+{h:'g_edit'},{c:'S12',a:'extend',l:'extend',i:'player-track-next',s:'card'},{c:'S12',a:'replace',l:'replace',i:'scissors',s:'card',own:1},{c:'S12',a:'text',l:'rename',i:'edit',own:1},{c:'S13',a:'caption',l:'caption',i:'message',own:1},{c:'S5',l:'join',i:'link',only:'extension'},
+{h:'g_info'},{c:'12b',l:'analyse',i:'wave-sine'},{c:'12b',a:'ask',l:'ask',i:'message-question'},{c:'12a',l:'next',i:'arrow-forward-up'},{c:'13a',l:'stems',i:'layers-subtract',s:'card',own:1},{c:'S6',a:'midi',l:'midi',i:'piano',s:'card',own:1},
+{h:'g_file'},{c:'S14',a:'mp3',l:'mp3',i:'download',s:'dl',own:1},{c:'S14',a:'wav',l:'wav',i:'download',s:'dl',own:1},{c:'S10',l:'workspace',i:'folders',own:1},{c:'S15',a:'public',l:'publish',i:'world-upload',own:1},{c:'S1',a:'dislike',l:'dislike',i:'thumb-down'},{c:'S9',a:'remove',l:'rmpl',i:'playlist-x',ctx:'playlist'},{c:'S10',a:'remove',l:'rmws',i:'folder-minus',ctx:'workspace',own:1}];
 function $(q){return document.getElementById(q);}
-function say(t){if(typeof sendPrompt==='function')sendPrompt(t);}
+function say(t){if(typeof sendPrompt==='function'){sendPrompt(t);return;}var p=$('sm-fb')||el('p','sm-status');p.id='sm-fb';p.textContent=L.type+' '+t;document.querySelector('.sm').appendChild(p);}
 function go(u){if(u&&/^https:\/\/suno\.com\//.test(u)&&typeof openLink==='function')openLink(u);}
 function label(t){return String(t).replace(/[\r\n\[\]#«»"<>]/g,' ').replace(/\s+/g,' ').trim().slice(0,60);}
 function el(tag,cls,txt){var e=document.createElement(tag);if(cls)e.className=cls;if(txt!=null)e.textContent=txt;return e;}
@@ -169,8 +229,9 @@ function copyLink(u,sp){function fb(){var b=$('sm-buf');b.value=u;b.style.height
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(u).then(function(){sp.textContent=L.copied;},fb);}else fb();}
 document.querySelectorAll('[data-send]').forEach(function(b){b.addEventListener('click',function(e){e.stopPropagation();say(b.getAttribute('data-send'));});});
 document.querySelectorAll('.sm-kd,.sm-vis').forEach(function(x){var k=(x.className==='sm-kd'?'k_':'v_')+x.textContent.trim().toLowerCase();if(L[k])x.textContent=L[k];});
+document.querySelectorAll('.sm-row[data-empty="1"],.sm-row[data-labels*="content:silence"]').forEach(function(r){var s=r.querySelector('.sm-sub');if(s&&L.empty&&s.textContent.indexOf(L.empty)<0)s.textContent+=(s.textContent?' · ':'')+L.empty;});
 var pl=$('sm-pl');
-if(pl){var kind=pl.getAttribute('data-kind')==='workspace'?'workspace':'playlist',code=kind==='workspace'?'15j':'15i',ws=kind==='workspace';
+if(pl){var kind=pl.getAttribute('data-kind')==='workspace'?'workspace':'playlist',code=kind==='workspace'?'S10':'S9',ws=kind==='workspace';
 var song=(pl.getAttribute('data-song')||'').replace(/[^0-9a-f]/gi,'').slice(0,8),ppick=pl.getAttribute('data-pick')||'';
 var rows=pl.querySelectorAll('.sm-pl');
 $('sm-plnote').textContent=rows.length?(ppick?L.pick_one:song?(ws?L.ws_add:L.pl_add):(ws?L.ws_open:L.pl_open)):(ws?L.ws_none:L.pl_none);
@@ -185,9 +246,9 @@ $('sm-plgo').addEventListener('click',mk);$('sm-plname').addEventListener('keydo
 var list=$('sm-list');if(!list)return;
 var box=$('sm-songs'),ctx=list.getAttribute('data-list')||'',pick=list.getAttribute('data-pick')||'',N=list.getAttribute('data-n')||'10',FL=list.getAttribute('data-f')||'';
 var FS=['','liked','public','private','uploads','covers','extensions','remasters','downloaded'];
-if(!ctx){FS.forEach(function(f){var b=el('button','sm-f'+(f===FL?' sm-on':''),L['f_'+(f||'all')]);b.addEventListener('click',function(){say(('15h '+f+' '+N).replace(/\s+/g,' '));});$('sm-filt').appendChild(b);});
-var fb=el('button','sm-f',L.f_find);fb.insertBefore(icon('search'),fb.firstChild);fb.addEventListener('click',function(){say('15h find');});$('sm-filt').appendChild(fb);
-$('sm-cnt').appendChild(el('span','sm-note',L.show));['10','50','100'].forEach(function(n){var b=el('button','sm-f'+(n===N?' sm-on':''),n);b.addEventListener('click',function(){say(('15h '+FL+' '+n).replace(/\s+/g,' '));});$('sm-cnt').appendChild(b);});}
+if(!ctx){FS.forEach(function(f){var b=el('button','sm-f'+(f===FL?' sm-on':''),L['f_'+(f||'all')]);b.addEventListener('click',function(){say(('S1 '+f+' '+N).replace(/\s+/g,' '));});$('sm-filt').appendChild(b);});
+var fb=el('button','sm-f',L.f_find);fb.insertBefore(icon('search'),fb.firstChild);fb.addEventListener('click',function(){say('S1 find');});$('sm-filt').appendChild(fb);
+$('sm-cnt').appendChild(el('span','sm-note',L.show));['10','50','100'].forEach(function(n){var b=el('button','sm-f'+(n===N?' sm-on':''),n);b.addEventListener('click',function(){say(('S1 '+FL+' '+n).replace(/\s+/g,' '));});$('sm-cnt').appendChild(b);});}
 else{$('sm-filt').style.display='none';$('sm-cnt').style.display='none';}
 var mix=null;
 function rowInfo(r){return {id8:(r.getAttribute('data-id')||'').slice(0,8),n:r.querySelector('.sm-n').textContent,t:label(r.querySelector('.sm-tt').textContent)};}
@@ -195,7 +256,7 @@ function mixDraw(){var bar=$('sm-mixbar');bar.innerHTML='';if(!mix){bar.style.di
 bar.style.display='';document.querySelectorAll('#sm-songs .sm-row').forEach(function(r){r.classList.remove('sel');var ab=r.querySelector('.sm-ab');if(ab)ab.remove();});
 [['A',mix.a],['B',mix.b]].forEach(function(x){if(!x[1])return;x[1].r.classList.add('sel');var ab=el('span','sm-ab',x[0]);x[1].r.insertBefore(ab,x[1].r.firstChild);});
 bar.appendChild(el('p',null,!mix.a?L.mix_a:!mix.b?L.mix_b:L.mix_ok));
-if(mix.a&&mix.b){var g=el('div','sm-chips');[['mashup',L.mx_mashup],['style',L.mx_style],['cover',L.mx_cover]].forEach(function(x){var b=el('button','sm-f sm-on',x[1]);b.addEventListener('click',function(){say('15n #'+mix.a.id8+' #'+mix.b.id8+' '+x[0]+' · '+mix.a.t+' + '+mix.b.t);});g.appendChild(b);});
+if(mix.a&&mix.b){var g=el('div','sm-chips');[['mashup',L.mx_mashup],['style',L.mx_style],['cover',L.mx_cover]].forEach(function(x){var b=el('button','sm-f sm-on',x[1]);b.addEventListener('click',function(){say('S4 two #'+mix.a.id8+' #'+mix.b.id8+' '+x[0]+' · '+mix.a.t+' + '+mix.b.t);});g.appendChild(b);});
 var sw=el('button','sm-f',L.mx_swap);sw.addEventListener('click',function(){var t=mix.a;mix.a=mix.b;mix.b=t;mixDraw();});g.appendChild(sw);bar.appendChild(g);bar.appendChild(el('p',null,L.mx_note));}
 var c=el('button','sm-f',L.mx_cancel);c.addEventListener('click',function(){mix=null;mixDraw();});bar.appendChild(c);}
 $('sm-mixgo').addEventListener('click',function(){document.querySelectorAll('#sm-songs .sm-sheet').forEach(function(x){x.remove();});mix={a:null,b:null};mixDraw();});
@@ -210,9 +271,9 @@ document.querySelectorAll('#sm-songs .sm-row').forEach(function(r){r.addEventLis
   var u=r.getAttribute('data-u')||'',k=r.getAttribute('data-k')||'',lk=r.getAttribute('data-lk')==='1',own=r.getAttribute('data-own')!=='0',id8=me.id8;
   function msg(c,a){return c+' #'+id8+' '+me.n+(a?' '+a:'')+' · '+me.t;}
   var p=el('div','sm-sheet'),tiles=el('div','sm-tiles');
-  [['listen',L.listen,'player-play'],['15i',L.playlist,'playlist-add'],['15h',lk?L.unlike:L.like,'heart'],['link',L.link,'share']].forEach(function(x){
+  [['listen',L.listen,'player-play'],['S9',L.playlist,'playlist-add'],['S1',lk?L.unlike:L.like,'heart'],['link',L.link,'share']].forEach(function(x){
     var b=el('button','sm-tile'+(x[0]==='listen'?' sm-play':''));var sp=el('span',null,x[1]);b.appendChild(icon(x[2]));b.appendChild(sp);
-    b.addEventListener('click',function(e){e.stopPropagation();if(x[0]==='listen')say(msg('15c','play'));else if(x[0]==='link'){if(u)copyLink(u,sp);}else if(x[0]==='15h')say(msg('15h',lk?'unlike':'like'));else say(msg(x[0],''));});
+    b.addEventListener('click',function(e){e.stopPropagation();if(x[0]==='listen')say(msg('S1','play'));else if(x[0]==='link'){if(u)copyLink(u,sp);}else if(x[0]==='S1')say(msg('S1',lk?'unlike':'like'));else say(msg(x[0],''));});
     tiles.appendChild(b);});
   p.appendChild(tiles);p.appendChild(el('div','sm-hint',L.nplay));
   var o=el('button','sm-act');o.appendChild(icon('external-link'));o.appendChild(el('span',null,L.open));o.addEventListener('click',function(e){e.stopPropagation();go(u);});

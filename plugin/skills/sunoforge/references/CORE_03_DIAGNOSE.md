@@ -652,7 +652,9 @@ Matched by what the user describes hearing.
               boundary, or cut the gap (editor Remove, Studio delete time)
               [OFFICIAL tools] — not a fade-out plus a fade-in.
             - Through Suno's tools (15m): continue_at before the tail; how finely
-              Suno cuts there is not tested (DATA_SUNO_LIVE §8).
+              Suno cuts there is not tested (DATA_SUNO_LIVE §8). A gap already in
+              the joined song: `15m … replace` names the range across the seam
+              (an edit, two takes, a card; DATA_SUNO_LIVE §2) — not tried on a seam.
   NOTE      Not tested on v6 — listen to the seam ±10–20 s. Rules and sources:
             DATA_SUNO §7 JOINS AND SEAMS.
 

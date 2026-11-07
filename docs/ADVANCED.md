@@ -124,7 +124,7 @@ memory. Each time:
 6. **You listen.** Symptoms go to `[12]`; one change per take; the next send waits
    for a new yes.
 
-`15a` connections is a reading of state, never a change of it: one row per server —
+`mcp-info` (or "connections") is a reading of state, never a change of it: one row per server —
 which it serves, whether its tools are visible, installed but not connected, not
 installed or off in this project, how to enable it on this host (Claude Code: `/mcp`;
 claude.ai and Cowork: Customize → Connectors; the mobile app: connectors for

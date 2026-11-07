@@ -220,7 +220,9 @@ crisper, free from artifacts" [OFFICIAL]. Whether the top mode regenerates stems
 with the model rather than filtering them is not confirmed by Suno [UNVERIFIED].
 The artefacts that once made external separation the default are reported much
 lower. Modes, what each does, which plans have them and what they cost:
-**DATA_SUNO §10** (menu [13a]).
+**DATA_SUNO §10** (menu [13a]). With a Suno server in the session the Get Stems split runs from the chat —
+`15p`: vocals + instrumental (10 credits) or 12 parts (50), each stem a song of the library, playable and
+downloadable like any song; MIDI of a stem is free on Premier (`15q … midi`) (DATA_SUNO_LIVE §3).
 
   ORDER OF PREFERENCE:
   1. The platform's own separation, where available

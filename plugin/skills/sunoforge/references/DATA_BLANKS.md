@@ -147,7 +147,8 @@ EXAMPLES — one filled line each:
 
 SUB-ENTRIES — `3a` from an audio file (your own audio: a Suno MCP upload returns its sung
 lyrics and style, free) · `3b` from an artist, copyright-safe · `3c` "like that track, but…" · `3d` cover in
-another style · `3e` mashup of exactly two songs · `3f` sample a riff and build a new beat ·
+another style · `3e` mashup of exactly two songs (with Suno it goes straight to `S4 two`; without Suno its
+info-line says "needs Suno connected — how: [15]") · `3f` sample a riff and build a new beat ·
 `3g` Inspire — a playlist of 3–5 of your own songs steers the new one (Suno app)
 
 `3a` FROM AN AUDIO FILE — ASK: attach the file (or paste what you hear) — what in it do
@@ -232,7 +233,7 @@ EXAMPLES — one filled line each:
 
 SUB-ENTRIES — `5a` ten ready voices — pick one and adapt it · `5b` your own singer from a
 description · `5c` duet — two voices that stay apart · `5d` emotion delivery · `5e` your own
-recorded voice (Suno Voices; used through the MCP, recorded in the Suno app) · `5f` Custom
+recorded voice (Suno Voices; used through the MCP — with Suno it goes straight to `S8` — recorded on suno.com) · `5f` Custom
 Models — a model trained on your catalogue (Suno Pro/Premier, Suno app) · `5g` Google vocal
 profiles for Lyria
 
@@ -381,8 +382,9 @@ EXAMPLES — one filled line each:
 
 <section id="§10" title="[9] RECIPES">
 
-SUB-ENTRIES — genres · hybrids · duet · 45 presets by group · task scenarios (an ad, a lullaby,
-a game loop); the buttons send `9 recipes` · `9 hybrids` · `9 presets` · `9 tasks` — that group of DATA_RECIPES (§2 · §3 · §5 · §6) as a numbered list; a catalogue item sends "recipe <name>" / "preset <N>" / "task <name>"
+SUB-ENTRIES — `9a` genres · `9b` genre pairs (hybrids, duet) · `9c` 45 presets by group · `9d` scenarios (a toast,
+an ad, a lullaby, a game loop); the buttons send `9a` · `9b` · `9c` · `9d` (the 5.0.3 words `9 recipes` · `9 hybrids` ·
+`9 presets` · `9 tasks` stay synonyms) — that group of DATA_RECIPES (§2 · §3 · §5 · §6) as a numbered list; a catalogue item sends "recipe <name>" / "preset <N>" / "task <name>"
 
 The catalogue (DATA_RECIPES §2–§6) with its own numbers; a pick is `preset ⟨N⟩`, `recipe
 ⟨name⟩`, `task ⟨name⟩`. BLANK after a pick: `⟨preset⟩ for ⟨my song: subject · voice ·
@@ -434,10 +436,11 @@ EXAMPLES — one filled line each:
 
 </section>
 
-<section id="§13" title="[12] FIX A PROMPT">
+<section id="§13" title="[12] FIX AND CHECK">
 
 SUB-ENTRIES — `12a` fix a prompt · `12b` check a finished take: tempo, key, the words actually
-sung — MCP clips and, since 04.11.2026, songs from your suno.com library (= `15g`) · `12c` edit a
+sung — a real action in both cases: with Suno the free analysis (the panel's Check button is this same `12b`;
+`15g` is its old synonym), without Suno by ear · `12c` edit a
 take: by feel or pro, then a cover of it (CORE_00 §9 EDIT A TAKE)
 
 `12a` — ASK: paste the prompt (Style, Lyrics, Exclude — whatever you have) and say what
@@ -445,8 +448,10 @@ went wrong, if you know. BLANK: `⟨the prompt⟩ · ⟨the symptom: "ignores my
 in the intro", "cuts off"⟩ · ⟨platform and model⟩`. Output: the diagnosis and the
 repaired prompt (CORE_03 §2–§3). `12b` CHECK A TAKE — BLANK: `⟨the take: a link, an id, or
 "the last one"⟩ · ⟨what to check: tempo · key · the words sung · the tags⟩`. With a Suno
-server: analysis and alignment, free (DATA_SUNO_LIVE §5); without one, by ear against the
-failure modes of CORE_03 §5. `12c` EDIT A TAKE — BLANK: `⟨the take: №, an id, or "the last
+server: analysis and alignment, free (DATA_SUNO_LIVE §5), `12b #id8 ask` a question to Suno's listener; without one
+— never "go to the Suno panel" — four quick questions with an example answer each (tempo: "too fast"; the voice:
+"not the one I asked for"; the words: "swallowed in the chorus"; the mood), then the diagnosis by the failure modes
+of CORE_03 §5 and the repaired prompt. `12c` EDIT A TAKE — BLANK: `⟨the take: №, an id, or "the last
 one"⟩ · ⟨by feel: brighter, warmer, more energy … · pro: remove or add an instrument, BPM, key,
 vocal, sliders⟩`. With a Suno server: the editor widget, then a cover of the take with the
 edited Style and its own lyrics — a card first; without one, the edited Style as text.
@@ -460,12 +465,15 @@ EXAMPLES — one filled line each:
 
 <section id="§14" title="[13] AFTER THE TAKE">
 
-SUB-ENTRIES — `13a` which stem split: Auto, Split from Mix, Advanced (Suno app) · `13b` Suno
+SUB-ENTRIES — `13a` stems: split a take — with Suno the split itself (2 parts, 10 credits, or 12, 50 — a card),
+without it which split to pick in the app (Auto, Split from Mix, Advanced) · `13b` Suno
 Studio 2.0 — MIDI, chat bar, effects (Suno app) · `13c` mastering and loudness for release ·
 `13d` hand-off to a DAW
 
 `13a` STEMS — BLANK: `⟨the take⟩ → ⟨a quick vocal/instrumental split · full stems · one
-instrument⟩` → which Suno split (DATA_SUNO §10, DATA_POSTPROD §4), in the app. `13b` STUDIO 2.0 — BLANK:
+instrument⟩` → which Suno split (DATA_SUNO §10, DATA_POSTPROD §4). With a Suno server `13a #id8 two|twelve` IS the
+split: vocals + instrumental or the 12 parts (a card: 10 or 50 credits; parts the song does not have come almost
+silent; `15p` is its old synonym, the same chain); one instrument (Split from Mix, Advanced) stays in the app. `13b` STUDIO 2.0 — BLANK:
 `⟨the take⟩ → ⟨what to do: MIDI · effects · a second take on one track⟩`, in the app.
 `13c` MASTERING — BLANK: `⟨target: streaming · a video bed · a podcast · a club⟩` → the
 chain (DATA_POSTPROD §2) and the loudness target (DATA_POSTPROD §9). `13d` TO A DAW — BLANK: `⟨DAW⟩ · ⟨what you
@@ -510,23 +518,31 @@ EXAMPLES — one filled line each:
 
 </section>
 
-<section id="§16" title="[15] SUNO + MCP — your songs and the send sheet">
+<section id="§16" title="[15] MY SUNO — your songs and the send sheet">
 
-SUB-ENTRIES — `15a` Suno in this chat: status, balance, how to connect it · `15b` send the last prompt
-— the card first: two takes a call, never fewer, the credits, then your yes · `15c` listen and
-check the take · `15d` cover, extend or mash up a library song · `15e` start from your own
-audio or your Voice · `15f` a song longer than 6 minutes — extend, then a free join · `15g`
-check a take (= `12b`); `15g … ask` a question to Suno's own listener, free · `15h` your songs: a list, a tap shows all one song can do; find, liked
+SUB-ENTRIES (5.0.4) — via the main menu: `[1]` · `[2]` · `[14]` · `12b` check a take · `13a` stems; Suno only:
+`S1` my songs · `S2` send the last prompt · `S3` sounds · `S4` from my songs (`S4 two`: two → one) · `S5` longer than
+6 min · `S6` my melody · MIDI · `S7` upload · `S8` my Suno voices · `S9` playlists · `S10` workspaces · `S11` credits
+and plan; in a song's sheet `S12` editor · `S13` title, lyrics, caption · `S14` download · `S15` publish. Not connected:
+one screen (DATA_SUNO_LIVE §7 MCP MENU). The blanks below still name the 5.0.3 codes; read them through the CODES
+table of DATA_SUNO_LIVE §7 (`15b` = `S2`, `15g` = `12b`, `15p` = `13a` …).
+
+5.0.3 SUB-ENTRIES — `15a` credits and plan · `15b` send the last prompt
+— the card first: two takes a call, never fewer, the credits, then your yes · `15c` listen (`take apart → new prompt`) · `15d` cover · extend · mashup · `15e` upload your audio/video, or my Suno voices · `15f` a song longer than 6 minutes — extend, then a free join · `15g`
+analysis: tempo, key, words (= `12b`); `15g … ask` ask Suno's listener (free) · `15p` stems: vocals +
+instrumental (10) or 12 parts (50) · `15q` MIDI: a song from your .mid (LAB: play it on keys, hum it), or MIDI of a
+song (Premier) · `15r` publish or hide a song, allow or stop remixes · `15h` your songs: a list, a tap shows all one song can do; find, liked
 · `15i` playlists · `15j` workspaces · `15k` fix a title or the stored lyrics · `15l` download
 (a download credit) · `15m` one screen like Suno's Create page: a new song (simple, song,
 speech, loop) or one of yours in the editor — extend from a point to the millisecond, cover,
-mashup, exact times for Replace Section, the lyrics and the styles each in its own tab; a sound (one-shot or loop, Suno Sounds) · `15n` mix two of your songs: a mashup, the style of one with the lyrics of
+mashup, replace (an edit: words, a time range, a section, an instrument), the lyrics and the styles each in its
+own tab; a sound (one-shot or loop, Suno Sounds) · `15n` two of my songs → one: a mashup, the style of one with the lyrics of
 the other, or a cover of one with the other's lyrics · `15o` a new song from up to ten of your songs:
 sample the hook, restyle, remaster, drop or keep a part — one sentence says what to do. With a
-Suno server this screen is the MCP MENU with your songs (DATA_SUNO_LIVE §7)
+Suno server this screen is the MCP MENU (DATA_SUNO_LIVE §7: no song on the first screen; the songs load on pick)
 
-`15a` CONNECT AND BALANCE — no blank: the status line (plan · credits · this month ·
-download credits · models · tools vs DATA_SUNO_LIVE §1), free; no server → how to add it.
+`15a` CONNECT AND BALANCE — no blank: call account-usage (free) and ALWAYS state the numbers in visible text — plan · credits left · used of the monthly limit ·
+download credits · renewal date · models · tools vs DATA_SUNO_LIVE §1 — plus in view W `hub.html` with `data-st` (or `data-st` on `next.html`; `next.html` alone is never the whole answer to `15a`); no server → how to add it.
 
 `15b` SEND — the card is the blank, filled from the last blueprint (DATA_SUNO_LIVE §7):
 ```
@@ -554,19 +570,39 @@ sounds⟩ (`15g … ask`, free). `15n` MIX TWO SONGS — pick A and B in the lis
 (private by default; public only when you say so) · add ⟨songs⟩ · remove ⟨songs⟩ · show ⟨playlist⟩`. `15j` WORKSPACES — BLANK:
 `⟨workspace: one per album or project⟩ · move ⟨songs⟩ in · take ⟨songs⟩ out` — a song lives in
 one workspace at a time. `15k` FIX A TITLE OR THE STORED LYRICS — BLANK: `⟨song⟩ → title
-⟨new title⟩ · lyrics ⟨the corrected text⟩` — the library entry only, the song is not re-sung;
-read the stored text first and show "was → will be" before the write, which cannot be undone.
-To change what is sung: a cover with the new lyrics, an extension from a second, or `2i` /
-`6g` in the app (DATA_SUNO_LIVE §7 SONG ACTIONS). `15l` DOWNLOAD — BLANK: `⟨song⟩ · ⟨mp3 |
+⟨new title⟩ · lyrics ⟨the corrected text⟩ · caption ⟨the line under the song on suno.com⟩` — the library
+entry only, the song is not re-sung; read the stored text first and show "was → will be" before the write, which
+cannot be undone. To change what is sung: `15m … replace` (an edit through Suno, a card), a cover with the new
+lyrics, or an extension from a second (DATA_SUNO_LIVE §7 SONG ACTIONS). `15l` DOWNLOAD — BLANK: `⟨song⟩ · ⟨mp3 |
 wav⟩` → a card: one download credit. Whether a download through the MCP carries the rights of
 a download on suno.com is not stated — for a release, download on suno.com (DATA_SUNO §12).
 `15m` CREATE AND EDIT — the screen is the blank (DATA_SUNO_LIVE §7 CREATE AND EDITOR); in text:
-`⟨song or new⟩ · ⟨extend from mm:ss.mmm for N s | cover | mashup with ⟨song⟩ | replace mm:ss.mmm–
-mm:ss.mmm | lyrics only⟩ · lyrics ⟨…⟩ · style ⟨…⟩ · options ⟨model, exclude, sliders, Variety 0–4, voice⟩`. `15o` FROM YOUR SONGS — BLANK: `⟨up to ten of your
+`⟨song or new⟩ · ⟨extend from mm:ss.mmm for N s | cover | mashup with ⟨song⟩ | replace ⟨one place a line:
+"chorus 1, line 4: old → new" · mm:ss.mmm–mm:ss.mmm → what it becomes · add or cut ⟨section⟩ · add or drop
+⟨instrument⟩⟩ | lyrics only⟩ · lyrics ⟨…⟩ · style ⟨…⟩ · options ⟨model, exclude, sliders, Variety 0–4, voice⟩`. A
+replace is a card: two takes, 10 credits, the rest of the song kept; more than 5 places re-sings it whole. `15o` FROM YOUR SONGS — BLANK: `⟨up to ten of your
 songs, by title or row⟩ → ⟨what to do: sample the hook · a new style · remaster · drop the vocals · keep only the
 drums · take it as inspiration⟩` → one sentence for Suno that names the songs by title, never an id or a link;
 Simple mode, so no Style or Lyrics of your own; then the card (two takes, 10 credits). Tried once on
 2026-11-05 (Pro): a restyle kept the source's tempo, key and piano; dropping or keeping a part is not tried yet.
+`15p` STEMS — BLANK: `⟨song⟩ → ⟨two: vocals + instrumental · twelve: the 12 parts (parts the song does not have come back almost silent)⟩` → a card (10 or 50 credits);
+then the stems by take, each with ▶, "What's on the stem" (`15g … ask`) and MIDI; a stem whose `audio-analysis` labels `content:silence` is marked "empty". Parts the song does not have come back almost silent or with another
+instrument's bleed; a stem is not split again.
+`15q` MIDI — the MIDI screen: a song from your MIDI (`15q upload`; LAB: `15q keys` play it on the screen's
+keys, `15q hum` hum it or attach a melody) or MIDI of a song or stem (`15q ⟨song⟩ midi`, Premier, 10 credits;
+free for a stem). The MIDI blank, after the file is in — BLANK:
+```
+the way        — ⟨exact: the notes and chords as written · motif: the top line developed into new ideas ·
+                  instruments: the same notes on ⟨ensemble⟩⟩
+played on      — ⟨instruments: "the file tells Suno what to play; the prompt tells it what to play it on"⟩
+the feel       — ⟨mood, groove, space — not only a genre⟩
+length         — ⟨M:SS⟩
+```
+→ one `description` for Suno (Simple mode, v6-wild) → the card: two takes, 10 credits, each take passes a
+copyright check on its own (a failed one costs nothing). The three ways and the line in quotes are Suno's own
+(DATA_SUNO §7, MIDI AS A CREATE INPUT).
+`15r` PUBLISH AND REMIXES — BLANK: `⟨song⟩ → public | private · remixes on | off`. Public has its own card —
+"anyone can find it on your profile and in search" — and its own yes; the rest is done on your words, free.
 
 EXAMPLES — one filled line each:
 - `15a`: "15a" → Pro · ≈2 345 credits · 155 of 2 500 this month · 20 downloads
@@ -584,9 +620,13 @@ EXAMPLES — one filled line each:
 - `15m`: "Neon Rain" · extend from 2:31.250 for 60 s · lyrics [Bridge] … · the same style
 - `15n`: A "Neon Rain" + B "Kitchen at 2 a.m." · style: the sound of A with the lyrics of B
 - `15o`: "Neon Rain" and "Kitchen at 2 a.m." → chop the vocal hook of Neon Rain into a lo-fi beat, the piano of Kitchen at 2 a.m. under it
+- `15m … replace`: "Neon Rain" · chorus 1, line 4: "the light is gone" → "the light came home"
+- `15p`: "Neon Rain" → twelve (the drums and the bass for a remix)
+- `15q`: my sketch.mid · motif · a string quartet, then the full band · slow, intimate, wide room · 2:30
+- `15r`: "Neon Rain" → public
 
 MCP MENU (`[15]`, `mcp-menu`) — no blank: the panel of DATA_SUNO_LIVE §7 — the status line
-(plan · credits · downloads · models), your latest songs, then every capability by its code;
+(plan · credits · downloads · models), no song; the songs load on pick, and every capability by its code;
 a pick opens its blank above. Without a Suno server: the same panel marked "needs the Suno connector".
 
 ADAPT ("N adapt", "preset 12 for my song", "recipe lo-fi for this") — BLANK:

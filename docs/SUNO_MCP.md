@@ -24,7 +24,12 @@ What the server can do, per Suno's help center ("Suno MCP (Beta)"): turn ideas, 
 and conversations into songs; make covers, extensions and mashups of songs in your
 library; Speech; upload audio and build on it; add songs to playlists from the chat;
 show your plan and remaining credits. The product page adds singing with your own
-Suno Voice.
+Suno Voice. Since 6 November 2026 (Suno's email "Suno MCP: new features & improvements"):
+stems (2 or 12 parts), MIDI from a song or a stem, a song from your own MIDI file, edits of a
+song (words, a part redone, a section added or cut), publishing and the remix setting, and the
+player for songs, covers and stems in the chat. SunoForge reaches them as `13a` stems, `S6` MIDI,
+`S15` publish and remixes, and `S12 … replace` for an edit; MIDI out needs a Premier plan
+(refused on Pro, tried 7 November 2026).
 
 When you connect, Suno's consent screen asks to act through the Suno API, spend
 credits, download songs with download credits, view and search your library and liked
@@ -120,6 +125,9 @@ Suno.
   descriptions changed since the last session, SunoForge says so before generating.
 - **Library tools only on request.** Editing titles or lyrics, organising playlists or
   workspaces, downloading — only when you ask for exactly that.
+- **Publishing has its own yes.** Making a song public shows it on your profile and in
+  search; SunoForge does it only when you ask for that song, with its own card — a yes to
+  credits never covers it.
 - **For a release, download in Suno.** Rights on Suno follow a download made with a
   paid download credit. Whether a download through the MCP counts as an approved
   channel is not stated, so download the song in Suno itself.

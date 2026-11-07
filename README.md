@@ -36,9 +36,7 @@ long-context assistants is built from the same files and is still to come; until
 </tr>
 </table>
 
-All forty screens, in English, Russian and Ukrainian:
-**[SunoForge_v5.0.3_screens.zip](https://github.com/sanic732/SunoForge/releases/latest)** — unpack,
-open `index.html`, works offline.
+Screenshots: [assets/screens](assets/screens).
 
 
 ## Generators
@@ -122,6 +120,21 @@ Also new: menu `[14] SPEECH` (Speech Blueprint: Script and Tone), the words `sen
 `config`, `save` and `library`. Menu entries `[1]`–`[13]` do the same jobs as in 4.0, several under
 clearer names. Still no prices anywhere.
 
+## Lab (beta)
+
+A proof of concept, visible in the menu as **Lab** with a BETA tag. What it does today:
+
+- **keys** — play a melody on the on-screen piano; it is recorded with note lengths and rests,
+  turned into notes and then into a MIDI file you can give Suno as your melody;
+- **humming** — sing or hum into an audio file and get notes from it; for now this is rough
+  and often inexact.
+
+Its stability is not confirmed, and what happens next depends on your feedback: it gets
+developed, changed or removed. Tell me what helped and what is missing — for example,
+connecting your own synth or MIDI keyboard — in the
+[4PDA forum thread](https://4pda.to/forum/index.php?showtopic=1109539) or in this
+repository's [Issues](../../issues).
+
 ---
 
 ## Install
@@ -204,13 +217,12 @@ plugin's estimate about 235,000, more than a 200K window holds with a conversati
 
 ## Release files
 
-On the [5.0.3 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.3):
+On the [5.0.4 release page](https://github.com/sanic732/SunoForge/releases/tag/v5.0.4):
 
 | File | What it is |
 |---|---|
 | `sunoforge.plugin` | the Claude plugin as one file, nine interface languages |
 | `SHA256.txt` | its checksum |
-| `SunoForge_v5.0.3_screens.zip` | all forty screens, to look at before installing |
 
 Still to come, built separately: the Skill packages for Claude and Gemini, the ChatGPT, Antigravity
 and Grok plugins, and `Prompt.zip` with both editions. Until they are out, the

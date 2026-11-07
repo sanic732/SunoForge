@@ -2,15 +2,16 @@
 SunoForge command `config` — a word typed in the chat once SunoForge is active (no slash command of its own).
 
 
-1. No argument → the question of CORE_00 §9 FIRST RUN (the generators) plus three more:
-   the view (M = menu: widgets with buttons, the default — they draw in the web, desktop and phone apps and Cowork;
+1. No argument → the question of CORE_00 §9 FIRST RUN (the generators) plus four more:
+   the mode (`USER_LEVEL`: Simple = beginner, Extended = pro, or auto — a new user starts in Simple),
+   the view (W = widgets with buttons, the default — they draw in the web, desktop and phone apps and Cowork;
    T = text only; B = buttons: one multiple-choice question under the text, for a host with no widgets, like the
    terminal), whether a confirmation card shows the price (PRICE;
    the yes stays) and how the reference is loaded (LOAD: by section as the task needs, or
    the thirteen files at the start of a conversation — DATA_OTHER still waits for a yes — ≈235k tokens (estimated from CORE_00, measured at 21.7k), more
    than a 200k window holds). Ask by the mechanisms
    the host offers (a multiple-choice tool where there is one, text otherwise). With an
-   argument (`platforms …`, `ui …`, `price …`, `load …`, or any `set` key) → apply it.
+   argument (`platforms …`, `level …`, `ui …`, `price …`, `load …`, or any `set` key) → apply it.
    Several views picked at once → `ui widget`: it falls back to buttons and
    then text by itself. A question left unanswered writes nothing for its key; never write a
    value the user did not pick.

@@ -494,7 +494,9 @@ what to play; the prompt tells it what to play it on" — and describe the feel,
 genre (help). Suno's example prompts (blog): "Arrange this MIDI for a full orchestra, with
 strings, brass, woodwinds and percussion." · "Transform this MIDI into a gospel choir with
 piano accompaniment." · "Transform this MIDI into a string quartet. Use the notes and chord
-progressions exactly as they appear in the MIDI file." MCP: not reachable (DATA_SUNO_LIVE §9).
+progressions exactly as they appear in the MIDI file." MCP: since 2026-11-06 midi-upload-create and
+`midi_upload_id` on audio-create (`15q upload`; DATA_SUNO_LIVE §2, §3) — a song from an original score was made
+first-hand on Pro, 2026-11-07.
 
 INSPIRE [OFFICIAL, help center "Inspire", tag 4.5+]: a playlist of the user's own songs
 guides a new one — Custom mode, "+Inspo" above the lyrics box, or the Inspire button on a
@@ -739,6 +741,11 @@ WHEN TO USE WHICH:
   the full band laid out for a DAW          → Auto Split
   one clean instrument, artifacts unacceptable → Advanced Split
 
+THROUGH THE MCP (since 2026-11-06, `15p`): audio-stems-create with `two` (vocals + instrumental, two takes, 4
+stems, 10 credits) or `twelve` (two takes of 12 parts, 24 stems, 50 credits) — the Get Stems split; Split from Mix
+and Advanced Split are not offered [first-hand, Pro, 2026-11-07; DATA_SUNO_LIVE §3]. MIDI of a song or a stem
+(audio-midi, `15q … midi`) needs Premier; free for a Get Stems stem [OFFICIAL; refused on Pro first-hand].
+
 External separation tools are the fallback, not the default — DATA_POSTPROD says when
 leaving Suno still wins.
 
@@ -872,6 +879,8 @@ WHAT THIS CHANGES FOR PROMPTING:
   2026-10-29  Studio: Clip Settings sidebar (volume, pitch, loop, reverse, stretch), auto-stretch
               of library and uploaded clips to the project tempo, fine pitch in cents
   2026-11-04  Suno MCP schema change: clip_count gone (two takes a call), max_mode added
+  2026-11-06  Suno MCP: stems, MIDI out and in, publish and remixes, song edits through
+              reference_audio_ids, a caption, a 12-song player (DATA_SUNO_LIVE)
               (DATA_SUNO_LIVE §3)
 
   No patch to the v6 models themselves has been announced since 2026-09-09.

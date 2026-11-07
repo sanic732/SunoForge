@@ -22,7 +22,7 @@
 "m_mashup": "Mashup",
 "m_mashup_n": "with a 2nd song",
 "m_replace": "Replace a part",
-"m_replace_n": "Suno app",
+"m_replace_n": "words, a part, an instrument",
 "m_text": "Lyrics only",
 "m_text_n": "in the library",
 "m_reuse": "New from this",
@@ -32,10 +32,10 @@
 "h_speech": "A script read over music. Suno rewrites the Tone in every take: treat it as a wish.",
 "h_loop": "Suno Sounds: two sound effects, one-shots or loops, at your BPM and key; 1 credit a sound (Pro and up).",
 "isloop": "Loop",
-"h_extend": "Continue from one point. The new part replaces everything after it; the take holds only the continuation, and 15f joins it into one song for free. The point is sent in seconds with milliseconds; how finely Suno cuts was not tested.",
+"h_extend": "Continue from one point. The new part replaces everything after it; the take holds only the continuation, and S5 joins it into one song for free. The point is sent in seconds with milliseconds; how finely Suno cuts was not tested.",
 "h_cover": "A cover sings the whole song again: through the connector no part can be chosen. The lyrics below go in; without them the cover comes out instrumental.",
 "h_mashup": "Two songs blended into one. It sings only with lyrics. The second song is picked from your list after the button.",
-"h_replace": "Replacing a part is done only in the Suno app (the song menu, Edit, Replace section). Set the exact times here and copy them with the new words.",
+"h_replace": "Suno redoes the chosen place and keeps the rest of the song’s own audio. One change per place: a line, a time range, a section, an instrument. More than 5 changed places re-sing the whole song as a cover. 10 credits, two takes.",
 "h_text": "Changes the title and lyrics stored in your library. The sound stays the same.",
 "h_reuse": "A new song from this one’s lyrics and styles, like \"reuse prompt\" in the Suno app.",
 "t_part": "Part",
@@ -88,12 +88,11 @@
 "suno_n": "Suno sliders stay \"auto\" until moved; Variety 0 keeps your Style as written. Max Mode: ask for it in words (twice the credits).",
 "title": "Song title",
 "ws": "Save to a workspace",
-"app": "In the Suno app only: Personalize, Inspiration, image, video and MIDI as input, recording audio, saved lyrics and styles.",
+"app": "In the Suno app only: Personalize, Inspiration, image and video as input, recording audio, saved lyrics and styles.",
 "copy": "Copy",
 "copied": "Copied",
 "copyhint": "Select the text below and copy it",
 "go_card": "Build the card",
-"go_replace": "Steps for the Suno app",
 "go_text": "Save to Suno",
 "go_prompt": "Ready prompt",
 "sent": "Written into the chat. Nothing is sent to Suno and nothing is spent until the card and your yes.",
@@ -226,5 +225,6 @@
 "crystal-clear hi-fi mix"
 ]
 ]
-]
+],
+"type": "Type in the chat:"
 }

@@ -38,7 +38,8 @@
 "f6a": "Slower",
 "f6b": "Faster",
 "view": "View:",
-"vm": "W widgets",
+"vm": "W screen",
 "vt": "T text",
-"vb": "B buttons"
+"vb": "B questions",
+"type": "Type in the chat:"
 }

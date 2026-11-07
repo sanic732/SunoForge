@@ -26,7 +26,8 @@
 "none": "Your own: 5b builds one, “save persona NAME” keeps it.",
 "voices": "Voices",
 "view": "View:",
-"vm": "W widgets",
+"vm": "W screen",
 "vt": "T text",
-"vb": "B buttons"
+"vb": "B questions",
+"type": "Type in the chat:"
 }

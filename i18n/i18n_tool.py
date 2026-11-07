@@ -31,7 +31,7 @@ WORD_SENDS = {'edit the card', 'cancel', 'save'}
 # example slot values of the live root (the model copies them): shown in the output language, so translated too
 EXAMPLE_ATTRS = {'hub.html': ('data-st',), 'next.html': ('data-b',), 'edit.html': ('data-title', 'data-inst'), 'take.html': ('data-title', 'data-sub', 'data-t'), 'songs.html': ('data-t', 'data-d'), 'menu.html': ('data-l',)}
 CUR = {'f': ''}
-KEEP_RE = re.compile(r'^(\[?\d{1,2}[a-p]?\]?|\d+([.,:]\d+)*|[\W\d_]+|m:ss\.mmm|\{\{[A-Z_:]+\}\})$')
+KEEP_RE = re.compile(r'^(\[?\d{1,2}[a-r]?\]?|\d+([.,:]\d+)*|[\W\d_]+|m:ss\.mmm|\{\{[A-Z_:]+\}\})$')
 
 def is_text(t):
     t = t.strip()
@@ -139,7 +139,7 @@ def extract():
 def esc(v):
     return v.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
 
-PH = re.compile(r'\{\{[A-Z_:]+\}\}|`[^`]*`|\b\d{1,2}[a-p]\b|\[\d{1,2}\]')
+PH = re.compile(r'\{\{[A-Z_:]+\}\}|`[^`]*`|\b\d{1,2}[a-r]\b|\[\d{1,2}\]')
 
 def check(verbose=True):
     en = json.load(open(os.path.join(I18N, 'en.json'), encoding='utf-8')); bad = []
@@ -154,6 +154,11 @@ def check(verbose=True):
             if a != b: bad.append(f'{lang}: {k} placeholders {a} -> {b}')
         for k in tr:
             if k not in en: bad.append(f'{lang}: unknown key {k}')
+    # the menu's status line names the exact build: it must match plugin.json, or a user cannot tell an old plugin from a new one
+    ver = json.load(open(os.path.join(ROOT, '..', 'plugin', '.claude-plugin', 'plugin.json'), encoding='utf-8'))['version']
+    for lang in LANGS:
+        st = json.load(open(os.path.join(I18N, f'{lang}.json'), encoding='utf-8')).get('js.menu.html.UI.status', '')
+        if f'SUNOFORGE v{ver} ' not in st: bad.append(f'{lang}: menu status line does not name v{ver} (plugin.json)')
     if verbose:
         for b in bad[:60]: print(' -', b)
         print('check:', len(bad), 'problems')

@@ -1,19 +1,23 @@
 {
 "listen": "Listen",
-"analyse": "Analysis and words",
+"analyse": "analysis: tempo, key, words",
 "extend": "Extend",
 "edit": "Edit",
 "download": "Download",
-"next": "Next take",
+"next": "take apart → new prompt",
 "check": "Check now",
 "save": "Keep the prompt in SunoForge",
 "take": "take",
 "view": "View:",
-"vm": "W widgets",
+"vm": "W screen",
 "vt": "T text",
-"vb": "B buttons",
+"vb": "B questions",
 "listen_all": "Listen to all takes",
 "like": "Like",
 "playlist": "To a playlist",
-"cover": "Cover"
+"cover": "Cover",
+"stems": "Stems",
+"midi": "MIDI",
+"publish": "Publish",
+"type": "Type in the chat:"
 }
