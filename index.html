@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SunoForge</title>
+<meta name="description" content="SunoForge — a meta-prompt for AI music: describe a song in your own words, get a ready prompt for Suno, Lyria and other generators.">
+<style>
+:root{--bg:#f7f6f3;--fg:#1f1e1c;--muted:#5f5b55;--card:#fff;--line:#e3e0da;--accent:#2b6cb0}
+@media (prefers-color-scheme:dark){:root{--bg:#1d1c1a;--fg:#ece9e4;--muted:#a8a39b;--card:#262522;--line:#3a3834;--accent:#8ab4f8}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:920px;margin:0 auto;padding:24px 16px 64px}
+img.banner{width:100%;height:auto;border-radius:12px}
+h1{font-size:2rem;margin:28px 0 4px}
+.lead{color:var(--muted);margin:0 0 24px}
+h2{font-size:1.2rem;margin:36px 0 10px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0}
+.btns a{display:inline-block;padding:10px 16px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--fg);text-decoration:none}
+.btns a.main{border-color:var(--accent);color:var(--accent);font-weight:600}
+pre{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;overflow-x:auto;font-size:.9rem}
+.shots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.shots figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px}
+.shots img{width:100%;height:auto;border-radius:8px}
+.shots figcaption{color:var(--muted);font-size:.9rem;margin-top:6px}
+ul{padding-left:20px}
+footer{color:var(--muted);font-size:.85rem;margin-top:48px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<main>
+<img class="banner" src="banner.png" alt="SunoForge">
+<h1>SunoForge</h1>
+<p class="lead">A meta-prompt for AI music. Describe a song in your own words — SunoForge writes the prompt for this song, not a template, and explains why it works. With Suno's official MCP connector it can send it to Suno and work with your songs there; nothing is spent without your yes.</p>
+
+<div class="btns">
+<a class="main" href="https://github.com/sanic732/SunoForge/releases/latest">Download the latest release</a>
+<a href="https://github.com/sanic732/SunoForge">Repository</a>
+<a href="https://github.com/sanic732/SunoForge/blob/main/docs/CHANGELOG.md">What's new</a>
+</div>
+
+<h2>What it looks like</h2>
+<div class="shots">
+<figure><img src="screens/menu.webp" alt="Main menu"><figcaption>The menu — or just describe the song.</figcaption></figure>
+<figure><img src="screens/price-card.webp" alt="Price card"><figcaption>A card before every spend: nothing goes without your yes.</figcaption></figure>
+<figure><img src="screens/editor.webp" alt="Song editor"><figcaption>The song editor: extend, cover, replace a part.</figcaption></figure>
+</div>
+
+<h2>Install in Claude Code</h2>
+<pre>/plugin marketplace add sanic732/SunoForge
+/plugin install sunoforge@sunoforge</pre>
+<p>Then open a new chat and type <code>SunoForge</code>. In the Claude app: Customize → Plugins → Add → Upload, with <code>sunoforge.plugin</code> from the release.</p>
+
+<h2>Who it is for</h2>
+<ul>
+<li><strong>Not a musician?</strong> Say it in plain words — "happier", "a younger voice". SunoForge offers a few readings, asks one question, and names what you liked so you learn the words.</li>
+<li><strong>A musician?</strong> Key, tempo, structure, sliders, your own melody — the short path, in your terms.</li>
+</ul>
+
+<footer>Apache-2.0 · SunoForge is not affiliated with Suno, Google or Anthropic.</footer>
+</main>
+</body>
+</html>
