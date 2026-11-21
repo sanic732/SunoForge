@@ -275,10 +275,11 @@ Grok. Пока их нет, в
 [релизе 4.0](https://github.com/sanic732/SunoForge/releases/tag/v4.0) есть рабочие версии всех.
 
 Этот репозиторий — ещё и маркетплейс плагина для Claude: `.claude-plugin/marketplace.json` и
-плагин в `plugin/`. Приватность: [PRIVACY.md](PRIVACY.md).
+плагин в `plugin/`. Папка `catalog/` — текстовая редакция того же плагина для каталога плагинов Claude: только
+файлы Markdown, меню текстом, без экранов и Лаборатории. Приватность: [PRIVACY.md](PRIVACY.md).
 
-Подробно: [docs/QUICKSTART.ru.md](docs/QUICKSTART.ru.md) · для опытных:
-[docs/ADVANCED.ru.md](docs/ADVANCED.ru.md)
+Подробно: [docs/QUICKSTART.ru.md](docs/QUICKSTART.ru.md) · что менялось от версии к версии:
+[docs/CHANGELOG.md](docs/CHANGELOG.md)
 
 ---
 

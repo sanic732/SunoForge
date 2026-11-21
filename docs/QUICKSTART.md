@@ -8,8 +8,8 @@
 > that is the working package you can download today, from the
 > [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
-For people who have never used a music generator. If you have,
-[ADVANCED.md](ADVANCED.md) is the one you want.
+For people who have never used a music generator. If you have, what changed from version to version is in
+[CHANGELOG.md](CHANGELOG.md).
 
 ---
 

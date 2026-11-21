@@ -288,7 +288,8 @@ and Grok plugins. Until they are out, the
 all of them.
 
 This repository is also the Claude plugin marketplace: `.claude-plugin/marketplace.json`
-and the plugin in `plugin/`. Privacy: [PRIVACY.md](PRIVACY.md).
+and the plugin in `plugin/`. The folder `catalog/` is the text edition of the same plugin for Claude's plugin
+directory: Markdown files only, menus as text, no screens and no Lab. Privacy: [PRIVACY.md](PRIVACY.md).
 
 ---
 

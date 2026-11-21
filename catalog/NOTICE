@@ -1,0 +1,30 @@
+SunoForge
+Copyright 2026 Sanic (sanic732)
+
+Licensed under the Apache License, Version 2.0 (the "License"); see the LICENSE
+file. Releases published before 5.0.0 were under the MIT License, and copies
+obtained under it stay under MIT.
+
+Quoted third-party material
+---------------------------
+SunoForge quotes short passages from vendors' terms, documentation and
+announcements, so that each rule about a platform can be checked against its
+source. Every such passage is marked and its source is named next to it. These
+passages belong to their owners and are not licensed under the Apache License:
+
+- Suno, Inc.: Terms of Service, help center, blog and release notes.
+- ElevenLabs: music terms, documentation and blog.
+- MiniMax, Stability AI, Spotify, Believe, the European Commission, and the
+  press cited in the files (Variety, Music Business Worldwide).
+- Google: text from ai.google.dev ("Lyria prompt guide", "Generate music with
+  Lyria"), used under the Creative Commons Attribution 4.0 International
+  License, https://creativecommons.org/licenses/by/4.0/ ; code samples from
+  those pages are under the Apache License 2.0. Quoted word for word or
+  shortened: cuts are marked with "…" and lists are abridged.
+
+Trademarks
+----------
+Suno, Google, Gemini, Lyria, Flow Music, ElevenLabs, ElevenMusic, Stability AI,
+Stable Audio, MiniMax, Udio, Spotify, YouTube, Anthropic, Claude, OpenAI,
+ChatGPT and other names belong to their owners. SunoForge is not affiliated
+with, endorsed by or supported by any of them.
