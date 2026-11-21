@@ -4,16 +4,6 @@
 
 ## 5.0.5 — 2026-11-20
 
-**A genre the way you mean it, not its cliché.** Asked for a regional or intimate genre, the model drifted to its
-loudest, most famous version — an Odessa chanson came out as émigré-restaurant swing, a chamber ballad as stadium
-rock. LAYER 1 · GENRE now reads the authentic form and closes the door on the cliché with tempo and instruments:
-- **Odessa / Ukrainian chanson** — about 95–100 BPM, courtyard guitar, bandura, tsymbaly, sopilka, accordion, a
-  storytelling voice; no fast klezmer or cabaret bounce, nothing near 118 BPM.
-- **A chamber ballad in the spirit of "Nothing Else Matters"** — fingerpicked clean guitar, a close vocal, strings
-  or a soft choir, room reverb; no distorted wall, no arena reverb, no big drum fills.
-- When the request could mean either, the authentic reading comes first and the famous one is the contrasting
-  second variant.
-
 **Lab: humming without a pause.** A recording with no silence anywhere — one long note, a legato line, a clip
 trimmed to the tune — came back "no notes found": the loudness threshold was taken from the quietest tenth of the
 recording, which in such a file is the tune itself. The threshold is capped now; recordings with pauses read as
