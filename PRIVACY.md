@@ -22,6 +22,10 @@ The plugin is text plus small local helpers:
   only where the session has a shell, and make no network requests. `audio2notes.py` reads the
   audio file you name and calls your own `ffmpeg`, if installed, to read a file that is not WAV.
 
+The text edition in the `catalog/` folder, the one listed in Claude's plugin directory, is only the
+first of these: one skill and its Markdown reference files, with no screens and no scripts. Nothing in
+it runs on your machine.
+
 There are no hooks, no analytics, no telemetry and no MCP server of SunoForge's own. The
 assistant you run SunoForge in (Claude, Gemini or another) processes your messages under that
 host's own privacy policy.
