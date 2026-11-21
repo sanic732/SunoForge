@@ -221,7 +221,9 @@ def track(x, a):
     floor = np.percentile(rms, 10)
     if peak <= 1e-5:
         raise Refuse("the recording is silent")
-    e_thr = max(floor * 2.5, peak * 0.05)
+    # the floor is the quietest tenth of the frames: in a recording with no silence (one long note, legato, a clip
+    # trimmed to the tune) it is the tune itself, and 2.5 x floor would mark every frame unvoiced. Capped at 0.3 x peak.
+    e_thr = min(max(floor * 2.5, peak * 0.05), peak * 0.3)
     voiced = (ap < 0.3) & (rms > e_thr) & (f0 >= a.fmin * 0.97) & (f0 <= a.fmax * 1.03)
     # bridge 1-2 frame dropouts, drop 1-2 frame blips
     v = voiced.copy()

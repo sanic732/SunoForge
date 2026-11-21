@@ -14,7 +14,7 @@ description: >
 scope: pedagogy · rule_rationale · consequences · architecture_rationale
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE]
 used_by: [CORE_00_ENTRY]
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 🎓 SUNOFORGE v5.0 — WHY
@@ -600,7 +600,7 @@ what changed. Do not imply they should have known better.
 
 ### WHY THE MENU NUMBERS ARE FROZEN
 
-**THE DECISION.** Entries [1]–[15] never change number. New entries go at the
+**THE DECISION.** Entries [1]–[16] never change number. New entries go at the
 end — [13] arrived that way in v4.0, [14] and [15] in v5.0. A retired entry keeps its number. The menu
 shows only what can be used today; outdated names live in the repair table.
 

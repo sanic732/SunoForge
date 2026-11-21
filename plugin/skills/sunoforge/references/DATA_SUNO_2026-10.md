@@ -17,7 +17,7 @@ scope: suno_v6 · fields · max_mode · variety · duration · sliders · voices
 depends_on: [CORE_00_ENTRY]
 used_by: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_RECIPES, DATA_POSTPROD, DATA_LEGAL, DATA_OTHER]
 authority: "THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR SUNO VERSIONS, LIMITS AND PLAN GATING"
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 🟠 SUNOFORGE v5.0 — SUNO PLATFORM DATA

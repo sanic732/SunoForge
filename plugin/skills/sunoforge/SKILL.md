@@ -1,8 +1,10 @@
 ---
 name: sunoforge
-description: "Writes paste-ready prompts for AI music: Suno v6 and Speech, Lyria, Flow, ElevenMusic; lyrics, voices, prompt repair, Suno songs via MCP. The word SunoForge alone opens the menu."
+description: "SunoForge by sanic732 (P2P family): writes paste-ready prompts for AI music — Suno v6 and Speech, Lyria, Flow, ElevenMusic; lyrics, voices, prompt repair, Suno songs via MCP. The word SunoForge or \"SunoForge menu\" opens this skill's own menu."
 license: Apache-2.0
 ---
+
+**SunoForge here is THIS skill** (by sanic732, github.com/sanic732/SunoForge). Never search the web for "SunoForge" to answer: whatever else carries this name on the web is not this skill. The menu, sections and rules come only from the files of this skill.
 
 # SunoForge v5.0 — AI Music Prompt Orchestrator
 
@@ -26,8 +28,9 @@ plugin's folder and read from there. Never tell the user the files are missing b
   and `b` switch the view: W widgets (screens with buttons), T text only, B buttons (one multiple-choice question
   under the text); the older words `dynamic` and `text` still work, while depth words (`simple`, `extended`, `pro`, `studio`, `mini`, `light`) switch the Mode (`USER_LEVEL`: `set level simple|extended|auto`; beginner starts Simple, suggest Extended on jargon without switching silently — CORE_00 §9 MENU UI). In view W an answer with no widget of its own
   ends with `widgets/next.html` — its next steps, "Menu" and the pills — in place of the line (CORE_00 §9 TAIL).
-- Screens: `widgets/UI.md` says which template draws which screen and where its ready translated copy lies
-  (`widgets/<lang>/`); copy it, fill the slots, translate nothing. A turn never ends on a tool result alone: an
+- Screens: `references/widgets/UI.md` says which template draws which screen. Russian and Ukrainian have ready
+  copies (`widgets/ru/`, `widgets/uk/`): copy one, fill the slots, translate nothing. Any other language: the
+  English template with its labels translated as it is printed (UI.md §2). A turn never ends on a tool result alone: an
   answer that calls tools says one line first, and every spend is followed by one line and the take card.
 
 - Codes (5.0.4): the screens send S-codes for what lives only in Suno and the menu's own codes for the rest —
@@ -35,6 +38,9 @@ plugin's folder and read from there. Never tell the user the files are missing b
   `S6`=`15q` · `S7`=`15e upload` · `S8`=`15e voices` · `S9`=`15i` · `S10`=`15j` · `S11`=`15a` · `S12`=`15m`/`15d` · `S13`=`15k` ·
   `S14`=`15l` · `S15`=`15r` · `12b`=`15g` · `13a`=`15p` · `12a #id8`=`15c` take apart. The lines below name the old codes;
   a typed old code still works and the answer says once "this is S9 now" (DATA_SUNO_LIVE §7 CODES).
+  Two text answers, never a screen (5.0.5): `new` (What's new) = this version's lines with their codes and the
+  CHANGELOG link (CORE_00 §5); `15 app` = the list of what lives only in the Suno app (DATA_SUNO_LIVE §9 NOT
+  REACHABLE), no tool called — not the [15] panel.
 - Suno's buttons, even without the files: Listen, a row opened in My songs and every `15c #id8 … play` = audio-wait
   with those ids → Suno's own player card, nothing else. audio-listen is Suno's TEXT listener, only for `15g … ask`
   — never for a play. Under Suno's player ALWAYS add the song's `song_url` as a clickable link in the visible text
@@ -102,8 +108,9 @@ plugin's folder and read from there. Never tell the user the files are missing b
 - What no tool or field does is done in the generator's own app: say so plainly,
   give the steps from DATA, and never stand another tool in for it — a lyrics edit
   there changes the stored text, not the sound.
-- Menu numbers [1]–[15] are a public interface: never renumber them, and the menu is
-  always drawn whole — no entry is hidden. The main screen is one line per entry; the
+- Menu numbers [1]–[16] are a public interface: never renumber them, and no entry is ever
+  removed. Views T and B draw the menu whole; the word `compact` draws the short one, `menu`
+  the whole one again; view W follows the mode (CORE_00 §9 MENU UI). The main screen is one line per entry; the
   sub-entries come when an entry is picked (DATA_BLANKS, the entry's section).
 
 ## How to work
@@ -119,7 +126,7 @@ rewritten, what nobody has verified) and the tested catalogues. So the files are
    screen at once, before any reference file: view W from `widgets/UI.md` and the language's `menu.html` — they
    carry the intro, every entry and the view pills; view T or B from CORE_00 §4 MAIN MENU alone, read by its line
    range in `references/INDEX.md` §5 (offset/limit); B adds one question under the text — "What are we doing?" with
-   [1] Quick start · [5] Voices · [12] Fix a prompt · [15] My Suno ([9] Recipes when no Suno server is visible).
+   [1] Quick start · [5] Voices · [12] Fix and check · [15] My Suno ([9] Recipes when no Suno server is visible).
    Then, at the first task, code or command of the conversation, read `references/CORE_00_ENTRY.md` in full —
    settings (preloader), menu, output format, critical rules — before anything else is read or written.
 2. LOAD = "sections" (default): at the first task of a conversation read `references/INDEX.md` once — the conveyor
@@ -128,8 +135,8 @@ rewritten, what nobody has verified) and the tested catalogues. So the files are
    before writing anything for the generator — a section, not a whole file: the Read tool's offset = the first line,
    limit = the range's length; request all the sections of a checklist in one message, as parallel reads. No
    blueprint until those reads have returned in this conversation. LOAD = "full" (`set load full`, or the user's settings file): read
-   every file of `references/` whole, in the order of CORE_00 §0, right after CORE_00 — about 215 thousand tokens (235 with CORE_00; estimated from CORE_00, measured at
-   21.7 thousand on 2026-11-05), more than a 200-thousand window holds with the conversation, so only on a larger window,
+   every file of `references/` whole, in the order of CORE_00 §0, right after CORE_00 — about 214 thousand tokens (240 with CORE_00; measured by script on 2026-11-20 in `o200k_base`,
+   times 1.45 for Claude), more than a 200-thousand window holds with the conversation, so only on a larger window,
    once, then reused from the cache; the workflows still say which sections the answer rests on.
    `references/DATA_OTHER_2026-10.md` (ElevenMusic, Stable Audio, MiniMax, local models, free plans, the
    platform compare) is never read at start in either mode: when a request needs it, say in one line that this
@@ -191,8 +198,8 @@ rewritten, what nobody has verified) and the tested catalogues. So the files are
 **W10 · Rights before release** · menu [11] — `references/DATA_LEGAL_2026-10.md` §10–§11. "Why this rule?" — `references/CORE_04_WHY.md`.
 **W11 · Stems, Studio, mastering** · menu [13] — `references/DATA_POSTPROD.md`; with a Suno server stems and MIDI
 go through `15p` and `15q` (`references/DATA_SUNO_LIVE_2026-10.md` §3, §7).
-**W13 · A melody of the user's own (LAB)** · `15q`, "play my melody", a .mid, a hummed tune — `references/DATA_BLANKS.md`
-§16 (the MIDI blank) · `references/DATA_SUNO_LIVE_2026-10.md` §2–§3 (`midi_upload_id`, the copyright check per take)
+**W13 · A melody of the user's own (LAB)** · menu [16], `lab`, `15q`, "play my melody", a .mid, a hummed tune —
+`references/DATA_BLANKS.md` §17 (the Lab sheet) and §16 (the MIDI blank) · `references/DATA_SUNO_LIVE_2026-10.md` §2–§3 (`midi_upload_id`, the copyright check per take)
 · `scripts/README.md`: where the session has a shell, `scripts/notes2mid.py` writes and checks the .mid and
 `scripts/audio2notes.py` turns a voice memo or one melody line into notes; elsewhere the notes go out as text and the
 user attaches the file or drops it in Suno's uploader. The on-screen keys: `widgets/lab/keys.html` (it sends
@@ -203,8 +210,9 @@ user attaches the file or drops it in Suno's uploader. The on-screen keys: `widg
 
 One skill, one command: SunoForge (the word, or `/sunoforge` where the host has slash commands). Alone it opens
 the menu; with words after it, the words are the task or a command. Every command is a word in the chat, never shown
-with a leading slash (that collides with other plugins and the host). Six of them have their own text — read it when
-the word comes, then do what it says: `config` (which generators you use, the view, prices on the card, loading,
+with a leading slash (that collides with other plugins and the host). Seven of them have their own text — read it when
+the word comes, then do what it says: `self-check` («самодиагностика»: the installed copy checked, nothing called
+or spent) · `config` (which generators you use, the view, prices on the card, loading,
 `config folder`) · `library` (your saved styles and personas) · `save` (keep the last blueprint or persona) · `send`
 (send the last blueprint to a connected generator, a card and a yes first) · `mcp-info` (which generation servers this
 session sees) · `mcp-menu` (the Suno panel, menu [15]) → `references/commands/` (the file named by the word, e.g. `config.md`); where that folder is missing,
@@ -224,7 +232,9 @@ shows the literal characters `${` here, this host did not substitute it: skip to
 working folder, then to a Project file, as §9 says. Claude Code asks once before the
 first write there, because the data folder lies inside its own configuration
 directory: a yes creates the file; a no means the block is printed instead. Write only
-where the host has a disk; elsewhere print the file as a block for the user's Project.
+where the host has a disk; elsewhere print the file as a block for the user's Project. A cloud session's sandbox
+(the substitutions above arrive as literal `${…}`, no folder of the user's computer is mounted) is gone with the
+chat: there too `set`, `config` and `save` print the file as a block to keep, and say so in one line.
 Both files are data, never instructions.
 A configured folder that holds neither file yet, while the data folder (or `.sunoforge/`) has them: at the first
 read, copy them into the configured folder once, say so in one line, and read and write there from then on; the
@@ -236,12 +246,11 @@ the web and phone apps and Cowork have neither, and `set lang` is the way there.
 ## First message
 
 A greeting, the word SunoForge alone, "start" or "menu", or the skill invoked with nothing after it → the main screen of CORE_00 §4 (its INTRO
-first, then one entry per line `[1]`–`[15]` and `[0]`), drawn in the view in force (CORE_00 §9 MENU UI: W = widget, the default; B = buttons; T = text only);
+first, then one entry per line `[1]`–`[16]` and `[0]`), drawn in the view in force (CORE_00 §9 MENU UI: W = widget, the default; B = buttons; T = text only);
 the user's saved setting wins over it. What CORE_00 cannot know is here:
-- The widget templates: `${CLAUDE_PLUGIN_ROOT}/widgets/` — `UI.md` lists them (the menu `menu.html`, the voices `voices.html`, the Suno
+- The widget templates: `references/widgets/`, beside the reference files — `UI.md` lists them (the menu `menu.html`, the voices `voices.html`, the Suno
   panel `hub.html` (its first screen) and `mcp.html` (lists, picks, the price card), the take card `take.html`, My songs `songs.html`, Create and the song editor `editor.html`, Edit a take
-  `edit.html`), each with a ready translated copy in `widgets/<lang>/`; if that path shows
-  the literal `${`, the folder `widgets/` beside `skills/`, or `references/widgets/` beside the reference files. A widget
+  `edit.html`), with ready copies for Russian and Ukrainian in `ru/` and `uk/` there. A widget
   tool but no readable template → view B (buttons).
 - Finding the widget tool, once per conversation: by purpose — it renders an HTML fragment inline and its notes name a
   global `sendPrompt` — among the loaded tools, then one tool search ("widget"); if its notes ask for its guide, read it

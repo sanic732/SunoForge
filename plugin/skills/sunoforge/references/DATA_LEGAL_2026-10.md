@@ -18,7 +18,7 @@ expires: "the fastest-moving and highest-consequence file in the system — term
 scope: commercial_rights · ownership_vs_licence · download_bound_rights · custom_models · voice_consent · litigation · platform_policies · distributors · udio_case · watermarking · eu_ai_act
 depends_on: [DATA_SUNO, DATA_GOOGLE, DATA_OTHER]
 used_by: [CORE_00_ENTRY, CORE_01_STYLE, CORE_03_DIAGNOSE, DATA_POSTPROD]
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # ⚖️ SUNOFORGE v5.0 — RIGHTS AND POLICIES

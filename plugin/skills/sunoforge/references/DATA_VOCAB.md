@@ -13,7 +13,7 @@ scope: timbre · dynamics · groove · space · instrument_descriptors · produc
 depends_on: [CORE_01_STYLE]
 used_by: [CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_RECIPES, DATA_POSTPROD]
 redundancy: high
-updated: "2026-11-04"
+updated: "2026-11-05"
 </file_meta>
 
 # 🔊 SUNOFORGE v5.0 — SOUND VOCABULARY

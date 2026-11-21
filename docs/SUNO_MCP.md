@@ -62,8 +62,8 @@ Some AI apps allow custom connectors only on their own paid plans.
 |---|---|---|
 | Claude — chat, Claude Desktop, Cowork | **Customize** → **Connectors** → **Add custom connector** → `https://api.suno.com/mcp` → sign in | on Suno's setup page |
 | Claude Code | `claude mcp add --transport http suno https://api.suno.com/mcp`, then `/mcp` → `suno` → sign in | on Suno's setup page |
-| ChatGPT | **Plugins** → **Add** → **Add custom MCP server**, name "Suno", Server URL `https://api.suno.com/mcp`; create it as a plugin, connect, authorize | on Suno's setup page; plans and developer mode not confirmed |
-| Gemini | **Gemini** → **Customize** → **Connectors** → **+** → URL → **Create**; mention **@Suno** in the chat | on Suno's setup page; plans not confirmed |
+| ChatGPT | **Plugins** → **Add** → **Add custom MCP server**, name "Suno", Server URL `https://api.suno.com/mcp`; create it as a plugin, connect, authorize | on Suno's setup page; tried on 20 November 2026 — as a plugin it works next to SunoForge, as a bare MCP server it did not; plans not confirmed |
+| Gemini | **Gemini** → **Customize** → **Connectors** → **+** → URL → **Create**; mention **@Suno** in the chat | on Suno's setup page; tried on 20 November 2026 — the **+** button was there only with the browser in English and a connection from the US; plans not confirmed |
 | Antigravity | `~/.gemini/antigravity/mcp_config.json` → `"suno": { "serverUrl": "https://api.suno.com/mcp" }` | Suno's sign-in server accepts dynamic client registration, so no client id of your own should be needed — not tried yet |
 | Grok (grok.com) | **Connectors** → **New Connector** → **Custom**, URL `https://api.suno.com/mcp`, sign in with Suno | plans not confirmed |
 | Cursor and other MCP clients | the same URL, as the client adds remote servers | on Suno's setup page |
@@ -111,6 +111,10 @@ host; with the Claude plugin `/sunoforge` opens the menu.
 
 Without Suno's tools SunoForge works exactly as before: you copy the blueprint into
 Suno.
+
+**Inventories of the server.** The 41 song tools, one row each — what it does, costs, returns, its trap, how it
+was checked: `DATA_SUNO_LIVE_2026-10.md` §10 in the reference. The server's 18 image and video tools:
+[SUNO_MCP_VISUALS.md](SUNO_MCP_VISUALS.md).
 
 ---
 

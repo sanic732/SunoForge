@@ -1,8 +1,10 @@
 # Running in Gemini
 
-> **Note on packages.** Version 5.0 ships the Claude plugin only
-> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
-> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> **Note on packages.** Version 5.0.5 ships four: the Claude plugin (`sunoforge.plugin`), the Gemini skill
+> (`SunoForge_v5.0.5_Skill_for_Gemini.zip`), the ChatGPT plugin (`SunoForge_v5.0.5_Plugin_for_ChatGPT.zip`) and the prompt
+> with RAG markup, the file edition (`SunoForge_v5.0.5_Prompt_RAG.zip`: plain Markdown files for a Gemini notebook, NotebookLM,
+> a Project or a chat that takes attachments). The Skill package for Claude and the Antigravity and Grok plugins are built separately and are
+> still to come. Where this page names a `v4.0` file,
 > that is the working package you can download today, from the
 > [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 

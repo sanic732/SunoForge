@@ -2,6 +2,122 @@
 
 ---
 
+## 5.0.5 — 2026-11-20
+
+**A genre the way you mean it, not its cliché.** Asked for a regional or intimate genre, the model drifted to its
+loudest, most famous version — an Odessa chanson came out as émigré-restaurant swing, a chamber ballad as stadium
+rock. LAYER 1 · GENRE now reads the authentic form and closes the door on the cliché with tempo and instruments:
+- **Odessa / Ukrainian chanson** — about 95–100 BPM, courtyard guitar, bandura, tsymbaly, sopilka, accordion, a
+  storytelling voice; no fast klezmer or cabaret bounce, nothing near 118 BPM.
+- **A chamber ballad in the spirit of "Nothing Else Matters"** — fingerpicked clean guitar, a close vocal, strings
+  or a soft choir, room reverb; no distorted wall, no arena reverb, no big drum fills.
+- When the request could mean either, the authentic reading comes first and the famous one is the contrasting
+  second variant.
+
+**Lab: humming without a pause.** A recording with no silence anywhere — one long note, a legato line, a clip
+trimmed to the tune — came back "no notes found": the loudness threshold was taken from the quietest tenth of the
+recording, which in such a file is the tune itself. The threshold is capped now; recordings with pauses read as
+before, and pure noise is still refused. Checked on synthetic recordings: the 5.0.4 set (4 of 4) and three with no
+silence (3 of 3).
+
+**The Lab tile** in the main menu lost its emoji: the screen's own rule is "no emoji".
+
+**A leaner menu: two things 5.0.4 added are gone from the screen.** The main menu had grown to about 17,400
+characters — nearly a minute of printing — against the 10,000 the speed table still said. Now it is about 13,100
+(39–53 s); the style sheet lost the rules the screen's own inline styles already overrode (the screens look the same,
+pixel for pixel, in the checks):
+- **A section no longer opens with a memo** ("What's here", "Try", a hint for the mode). The same words now head
+  the section's fill-in form (DATA_BLANKS §1, MEMOS), so they come when you ask for the form, not with every menu.
+- **"What's new" is a text answer, not a screen.** The header button sends `new`; the answer lists this version's
+  changes, each with the code that opens it, and links the CHANGELOG. The 5.0.4 screen of eight buttons is gone; each
+  of those functions is still where it lives — in its section or in My Suno.
+Every other button sends what it sent in 5.0.4: checked in Microsoft Edge by pressing every button of the menu in
+nine languages, both modes, Suno on and off, with and without Suno among your platforms.
+
+**The [15] panel** went from about 7,500 to 6,700 characters the same way: its memo heads the [15] fill-in form,
+and the long "In the Suno app only" list is a button now (`15 app`), answered as text from the reference files —
+the old list still named Replace Section, which the connector has done since 5.0.4.
+The speed table (`widgets/UI.md`) is now measured by a script, not filled in by hand.
+
+**Suno's connector, re-read on 2026-11-19.** The 41 song tools keep their fields. What changed in their
+descriptions is in DATA_SUNO_LIVE: a song's settings (model, negative style, Max Mode, controls) now come back with
+it; lyrics alignment of an older song starts a run and takes up to ten minutes instead of failing at once; the
+balance carries a second counter, `visuals_credits_remaining`. The check before a card covers the song tools;
+the server's other tools do not stop it.
+
+**Every Suno tool on one page.** DATA_SUNO_LIVE §10 lists the 41 song tools of the connector — what each does, what it
+costs and on which plan, what it returns, its trap, and how it was checked: free reads called on 2026-11-20, the
+song tools first-hand since 2026-11-04, every paid tool and every free write from its own description, not called.
+The server's 18 image and video tools (Visuals: images, clips, music-video Sequences, characters) have their own page,
+`docs/SUNO_MCP_VISUALS.md`, with prices and the paid calls of 2026-11-20.
+A trap found on the way: images listed by visuals-library with ids `lgen_…` / `lasset_…` are
+refused by visuals-show, -wait and -download. Gemini's connector lists one tool more than Claude's session — 60, with `visuals-upload-consent`: by its
+schema, the uploader's own call when the user accepts Suno's upload notice, never the model's.
+
+**The Lab is entry `[16]`.** The melody Lab — play or hum a tune of your own, get its notes and a MIDI file for Suno —
+was a button under the menu in the Claude plugin and a line of its own in the other editions. It is now `[16] LAB` in
+the menu itself, the same number in every edition; `16` or `lab` opens it, and its sheet is DATA_BLANKS §17. Still a
+beta.
+
+**The screens: one folder, three ready languages.** The plugin kept every screen twice, in nine languages — 166 files,
+three quarters of the archive. It now keeps one folder, `references/widgets/`, with ready copies in English, Russian and
+Ukrainian. Any other language is drawn from the English template with its labels translated as the screen is printed —
+the way a tenth language always was. The plugin archive went from 1.3 MB to about a third of that.
+
+**Two readings in either mode; the menu whole or compact.** A blueprint comes in as many readings as VARIANT_COUNT
+says, two by default, in Simple and in Extended mode alike. In the text views the main menu is drawn whole; the word
+`compact` draws the short one, `menu` the whole one again.
+
+**`self-check` — «самодиагностика».** One word (in any of the nine menu languages) checks the copy of SunoForge
+this session runs: the same version in `plugin.json`, the menu and CORE_00; three to five route-map ranges read and
+found on their sections; the Suno tools the session shows against the reference files, by name; whether the
+settings substitutions arrived and where your settings would be written; the screen folder, whole. One table — checked, differs, not checked — with a fix under each difference. It calls no Suno tool and
+spends nothing (`references/commands/self-check.md`).
+
+**A Gemini skill of 5.0.5** is built from the plugin's own files: the fourteen reference files and
+the seven command pages in Markdown without XML, flat, with a SKILL.md of its own — the menu as text, Suno through
+Gemini's Suno connector by its tool names, a card and a yes before every spend.
+Left out: the screens, the plugin's
+settings tab, the Lab's on-screen keys; the Lab's two scripts are in as a trial, entry [16] of the menu. It is installed from the archive of the release page
+(Skills → Upload, the folder `sunoforge`); call it with
+`@Suno @sunoforge` (add Suno once in Customize → Connectors → **+**; on 20 November 2026 that button was there only
+with the browser in English and a connection from the US).
+
+**A prompt with RAG markup (file edition) of 5.0.5** — `SunoForge_v5.0.5_Prompt_RAG.zip`, built from the same
+reference files: eighteen Markdown files for any chat that takes attachments, a Project, or a notebook that reads its
+sources in parts. It carries retrieval markup — a YAML header on every file (its key concepts, the words a user is
+likely to say, a token estimate), an anchor on every heading, tags at the end — and `_preloader.md` as its entry: the
+load order, the menu, the rules of this edition. No file is split and no sentence rewritten, so a reference `FILE §N`
+means the same as in every other edition. This is the `Prompt.zip` the earlier notes promised. Tried in a Gemini
+notebook on 21 November 2026: the menu with [16], the language switch, the settings block; in NotebookLM and in a
+Project it has not been run yet.
+
+**A ChatGPT plugin of 5.0.5** is built from the same files: the text edition packaged
+the way OpenAI lays a plugin out — `plugin.json`, `.codex-plugin/plugin.json`, one skill, the icon. It is published as the archive of the release page only. It carries no MCP server: Suno is a plugin of its own. Install: ChatGPT →
+Plugins → Add → Upload plugin archive → `SunoForge_v5.0.5_Plugin_for_ChatGPT.zip`; for Suno, Add → Add custom MCP
+server → name Suno, `https://api.suno.com/mcp`, **Create as a plugin** — as a bare MCP server it did not work with SunoForge.
+Call it with `@SunoForge`, with Suno `@Suno @SunoForge`. Tried in the ChatGPT app on 20 November 2026: the menu with its
+question, [15] with the balance and the S-codes. Its main menu stands in SKILL.md word for word, so that a
+smaller model draws these entries and not a menu of its own. Left out: the screens, the settings tab and the Lab's on-screen keys.
+The Lab is entry [16] of its menu, a trial: two scripts — a recording of one melody line and `15q hum` give the notes, `15q notes` a
+`.mid` — run in ChatGPT's code-execution tool; installed and opened on 20 November 2026, the scripts not run there yet.
+
+**One name, one project.** Every edition now says first that SunoForge here is this skill by sanic732 and never to
+search the web for the name: an assistant once answered with the menu of another product it had found there.
+The icon of the ChatGPT plugin is the SF monogram with headphones and a wave.
+
+**Tidying after the self-check.** [12] and [15] are called FIX AND CHECK and MY SUNO everywhere now — the route
+map, the B-view question, SKILL.md, CORE_03, both READMEs, the panel template's header. `set load full` is measured
+again on this build: about 214,000 Claude tokens, 240,000 with CORE_00. A cloud session
+whose sandbox goes with the chat prints `set`, `config` and `save` as a block to keep. Every reference file's
+`updated` field names its last edit.
+
+**Data:** CORE_01 (LAYER 1 · GENRE), DATA_SUNO_LIVE (§1, §5, §6, §10), DATA_BLANKS (§1 MEMOS), CORE_00 (§5: `new`,
+`15 app`), INDEX (line ranges recomputed, a route to §10). The menu's status
+line names v5.0.5 in each ready language.
+
+---
+
 ## 5.0.4 — 2026-11-07
 
 **Suno's six new tools** (the server went from 35 to 41 on 2026-11-06).
@@ -95,8 +211,8 @@ card; the link is how they play. Download only on Download, never on its own.
 - **A producer's word after a Suno result.** The answer frame every prompt already has — why it works,
   then one next step — now also follows a take, a listen or an analysis: one or two lines about that
   result, from the reference files.
-- **The translations are in the repository**, in `i18n/`: the templates, one dictionary per language and the
-  build script. The plugin does not read the folder; the build writes the screens into both folders.
+- **The translations have one source**: the templates and one dictionary per language, from which the screens
+  are built.
 
 **Balance (`15a`)** states the numbers — plan, credits left, used of the month's limit, download credits, renewal, models. It used to end on a row of buttons without them.
 

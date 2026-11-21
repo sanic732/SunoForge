@@ -1,14 +1,16 @@
 # Installing SunoForge v5.0
 
-> **Note on packages.** Version 5.0 ships the Claude plugin only
-> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
-> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> **Note on packages.** Version 5.0.5 ships four: the Claude plugin (`sunoforge.plugin`), the Gemini skill
+> (`SunoForge_v5.0.5_Skill_for_Gemini.zip`), the ChatGPT plugin (`SunoForge_v5.0.5_Plugin_for_ChatGPT.zip`) and the prompt
+> with RAG markup, the file edition (`SunoForge_v5.0.5_Prompt_RAG.zip`: plain Markdown files for a Gemini notebook, NotebookLM,
+> a Project or a chat that takes attachments). The Skill package for Claude and the Antigravity and Grok plugins are built separately and are
+> still to come. Where this page names a `v4.0` file,
 > that is the working package you can download today, from the
 > [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
 One page for every assistant: which file to take, the steps, and how to check that it
-works. Version 5.0 ships one file: the Claude plugin, `sunoforge.plugin`. The packages for the
-other hosts — the Skills for Claude and Gemini, `Prompt.zip` and the ChatGPT, Antigravity and Grok
+works. Version 5.0.5 ships four: the Claude plugin, the Gemini skill, the ChatGPT plugin and the prompt with RAG markup (file edition). The
+packages for the other hosts — the Skill for Claude and the Antigravity and Grok
 plugins — are built separately and are still to come; until they are out, their 4.0 versions still
 work. Connecting a music-generation MCP server — Suno's own or
 yours — is optional; Suno's has its own page: [SUNO_MCP.md](SUNO_MCP.md).
@@ -23,15 +25,17 @@ yours — is optional; Suno's has its own page: [SUNO_MCP.md](SUNO_MCP.md).
 | Claude Code | the marketplace `sanic732/SunoForge` | plugin |
 | Claude Code, optional: your own music MCP server | added like any MCP server; the plugin starts none | `claude mcp add` |
 | Claude, optional Suno link | nothing extra: Suno's MCP server is added like any other — [SUNO_MCP.md](SUNO_MCP.md) | connector · `claude mcp add` |
-| Gemini | `SunoForge_v4.0_Skills_for_Gemini.zip` · `SunoForge_v4.0_Prompt.zip` (`gemini/`) | Skill · files in a chat or a Gem |
-| ChatGPT, grok.com | `SunoForge_v4.0_Prompt.zip` (`gemini/`) | Project or custom GPT · Project |
-| anything else with a long context | `SunoForge_v4.0_Prompt.zip` (`gemini/`) | files attached or pasted |
+| Gemini | `SunoForge_v5.0.5_Skill_for_Gemini.zip` · `SunoForge_v5.0.5_Prompt_RAG.zip` | skill · files in a chat or a notebook |
+| ChatGPT | `SunoForge_v5.0.5_Plugin_for_ChatGPT.zip` · `SunoForge_v5.0.5_Prompt_RAG.zip` | plugin from an archive · Project or custom GPT |
+| grok.com | `SunoForge_v5.0.5_Prompt_RAG.zip` | Project |
+| A Gemini notebook, NotebookLM | `SunoForge_v5.0.5_Prompt_RAG.zip` — Prompt with RAG markup (file edition) | the files as the notebook's sources; tried in a Gemini notebook, not yet in NotebookLM |
+| anything else with a long context | `SunoForge_v5.0.5_Prompt_RAG.zip` | files attached or pasted |
 
 Claude gets the Claude Edition (XML); every other host gets the Markdown edition.
 Take one way per host: two copies of the `sunoforge` skill in one place compete.
 
 **Check, on any host.** Type `SunoForge` (or `start`, `menu`): the menu shows entries
-`[1]`–`[15]`. Commands are words typed without a slash — `menu`, `set lang ru`, `send`,
+`[1]`–`[16]`. Commands are words typed without a slash — `menu`, `set lang ru`, `send`,
 `mcp-info`, `config`; with the Claude plugin `/sunoforge` opens the menu too. On the first
 run SunoForge asks one question after the menu — which generators you use; `config` asks
 again and also sets the view (M menu · T text · B buttons), prices on the card and loading.
@@ -55,7 +59,7 @@ instructions: `Read CORE_00_ENTRY.md first and follow it.`
 **The mobile app.** Install on the web or in Claude Desktop. Whether the phone app
 picks up the account's skills, plugins and connectors is not confirmed yet.
 
-**Check.** In a new chat: `start` → the menu `[1]`–`[15]`.
+**Check.** In a new chat: `start` → the menu `[1]`–`[16]`.
 
 **Suno, optional.** **Customize** → **Connectors** → **Add custom connector** →
 `https://api.suno.com/mcp` → sign in to Suno. The plugin does not bundle Suno's server.
@@ -110,9 +114,14 @@ and Cowork have neither — there `set lang` and a Project file do the same.
 
 ## Gemini
 
-**Skill.** Unpack `SunoForge_v4.0_Skills_for_Gemini.zip`. The **Skills** page →
+**Skill.** Unpack `SunoForge_v5.0.5_Skill_for_Gemini.zip`. The **Skills** page →
 **Upload** → choose the whole `sunoforge` folder → **Create**. The folder name must stay
-`sunoforge`.
+`sunoforge`. An older SunoForge skill is deleted first: they share the name.
+
+**Suno.** Once: `gemini.google.com/customize/connectors` (**Customize → Connectors**) → **+** → `https://api.suno.com/mcp` →
+**Create**, then **Connect** and sign in to Suno. On 20 November 2026 the **+** button was there only with the
+browser's language set to English and a connection from the US. In a chat call both:
+`@Suno @sunoforge`.
 
 **Without the Skill.** From `gemini/`: the five `CORE_*` files and `DATA.zip`, into a
 chat or a Gem's knowledge. Google moves Gems to skills from November 2026 and carries
@@ -125,23 +134,41 @@ More: [GEMINI.md](GEMINI.md).
 
 ---
 
-## ChatGPT and Antigravity — the plugins
+## ChatGPT — the plugin
 
-These two plugins are not built yet, so there is nothing to upload for them.
+`SunoForge_v5.0.5_Plugin_for_ChatGPT.zip` from the release page. Done this way in the ChatGPT app on 20 November 2026:
 
-Until they are out, both hosts run SunoForge from the Markdown files: take
-`SunoForge_v4.0_Prompt.zip` from the
-[4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0) and use the thirteen
-`.md` files from its `gemini/` folder — in ChatGPT as a Project or a custom GPT (next
-section), in Antigravity as files in the project. Suno's MCP server is added by hand on
-either host: [SUNO_MCP.md](SUNO_MCP.md).
+1. ChatGPT → **Plugins** in the left sidebar → **Add** → **Upload plugin archive** → choose the zip. The
+   SunoForge page opens: install the plugin.
+2. Suno, optional — the same **Add** menu → **Add custom MCP server**: name `Suno`, server URL `https://api.suno.com/mcp`,
+   leave the rest as it is, tick **I understand and want to continue**, then **Create as a plugin**. Connect
+   Suno and sign in with your Suno account. Created as a plugin, Suno sits next to SunoForge — two plugins —
+   and they work together; added as a bare MCP server it did not work with SunoForge.
+3. A new chat: `@SunoForge` and your words — `@Suno @SunoForge` with Suno.
+
+**Check.** `@SunoForge` opens the menu as text, with one question to pick from; `self-check` checks the
+installed copy. If the first answer says SunoForge has no tools, send `@SunoForge` once more.
+
+The plugin carries no MCP server of its own. An archive does not update itself: upload the next version again.
+The phone app takes the plugin from the same account: the menu, [15] and the song editor worked in the Android app
+on 20 November 2026; the skill shows there as `$sunoforge`.
+
+---
+
+## Antigravity — the plugin
+
+This plugin is not built yet, so there is nothing to upload for it. Until it is out, Antigravity runs
+SunoForge from the Markdown files: take `SunoForge_v5.0.5_Prompt_RAG.zip` from the release page and use its
+`.md` files as files in the project, `_preloader.md` first. Suno's MCP server is added by hand:
+[SUNO_MCP.md](SUNO_MCP.md).
 
 ---
 
 ## ChatGPT and grok.com — a Project or a custom GPT
 
 **Project or custom GPT** (ChatGPT), **Project** (grok.com) — on any plan that has them.
-Upload the thirteen `.md` files from the `gemini/` folder of `SunoForge_v4.0_Prompt.zip`
+Upload the `.md` files of `SunoForge_v5.0.5_Prompt_RAG.zip` (the prompt with RAG markup: eighteen files;
+`_preloader.md` is its entry and already says what the lines below say)
 and paste into the instructions:
 
 ```
@@ -197,9 +224,9 @@ instructions.
 - **Tools and fields.** As this edition saw them on 29 October 2026, on Free and Pro
   accounts: `DATA_SUNO_LIVE_2026-10.md`. SunoForge still reads the tools the session
   shows, maps the blueprint onto them and says what could not be passed.
-- **Other hosts.** Suno's setup page also covers ChatGPT (a custom MCP server added as a
-  plugin) and Gemini (a custom MCP server, then mention @Suno). SunoForge has not been run
-  against Suno on those hosts.
+- **Other hosts.** Suno's setup page also covers ChatGPT (a custom MCP server created as a
+  plugin) and Gemini (a custom connector, then mention @Suno). SunoForge ran against Suno on
+  both on 20 November 2026; the steps are in their sections above.
 
 `mcp-info` lists which generation servers the session sees, which are off and how this
 host enables them — it connects nothing itself. Everything else: [SUNO_MCP.md](SUNO_MCP.md).

@@ -13,7 +13,7 @@ description: >
 scope: blanks · entry_screens · asks · fill_in_skeletons · examples · tips
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS]
 used_by: [CORE_00_ENTRY]
-updated: "2026-11-05"
+updated: "2026-11-20"
 </file_meta>
 
 # 🧩 SUNOFORGE v5.0 — BLANKS
@@ -53,6 +53,27 @@ allowed); otherwise the blank stays text. An entry without its own ASK or TIP sh
 nothing is invented to fill the shape. Every code has an EXAMPLE (the EXAMPLES list at the
 end of its section, or a catalogue of ready items); a pick shows its example under its blank,
 and "this one" or "like the example" fills the blank with it.
+
+MEMOS — what each entry is for, one thing to try and a hint for each mode. Until 5.0.4 the menu printed them on
+every section screen; since 5.0.5 they head the entry's blank: the "one or two sentences" line is WHAT'S HERE,
+then the TRY line, then the hint for the mode in force (USER_LEVEL: Simple or Extended) — translated into OUTPUT_LANG.
+
+| Entry | What's here | Try | Hint · Simple | Hint · Extended |
+|---|---|---|---|---|
+| [2] By hand | every parameter by your own hand. | 2a and 2c — they weigh the most. | you can leave the sliders (2g) alone: I set safe values. | 2g: Weirdness, Style Influence, Variety 0–4; Free does not take them (403) — SunoForge drops them itself. |
+| [3] Clone a style | the sound of someone else’s track without its melody. | “like this artist, but slower”. | an artist’s name never goes into the prompt — Suno refuses it; I turn it into era, instruments and voice. | 3a: an upload of your own audio reads its lyrics and style for free. |
+| [4] Hybrid lab | two genres that will not mix on their own. | “phonk and jazz, phonk leads”. | it needs a bridge genre — I will pick it, or it turns to mush. | 4b works out the bridge; 4d is v6-wild for experiments. |
+| [5] Voices | the same singer in every song. | 5a → “04 adapt”. | a “younger” voice is timbre and delivery; I show 2–3 options, you pick by ear. | 5c duet: contrast in Style plus tags in the lyrics, or Suno sings it with one voice. |
+| [6] Lyrics and markup | the words and how they will be sung. | “write a chorus about…”. | what is in square brackets is not sung; what is in round brackets is sung by the backing voices. | 6d: chords in round brackets before the syllable. |
+| [7] Other generators | other generators: Lyria, Flow, ElevenMusic, Stable Audio, MiniMax. | 7b Lyria 3.5. | not sure which one — [10], three questions. | 7f: timecodes for a video edit. |
+| [8] Compare generators | one idea — prompts for two or for every generator. | 8a with Suno and Lyria. | handy for comparing by ear. | 8b — every generator at once. |
+| [9] Recipes | ready setups with tempo, key and sliders. | 9c, then “adapt it to my song”. | take the closest one and say “adapt it to my song”. | 9c: 45 presets by group. |
+| [12] Fix and check | paste a prompt → diagnosis, or check a finished take. | 12b on your last take. | tell me what sounds wrong: “too fast”, “not that voice” — I turn it into a fix. | 12b with Suno: tempo, key, beats, the words sung; a neighbouring key (A minor ↔ C major) or double tempo is an observation, not an error. |
+| [13] After the take | after the take: stems, mastering, a DAW. | 13a on your last take. | stems are the song taken apart: voice, drums, bass… | 13d: BPM, time signature, beats, sections for a DAW. |
+| [14] Speech | a voice-over: a toast, an ad, a story. | 14c — a toast for a birthday. | about 60 words make 45 seconds. | Suno always rewrites the tone: treat it as a wish (Suno Speech, beta). |
+| [15] My Suno (the panel) | Your things in Suno — songs, credits, voices. | My songs → open any → Check a take: free, shows tempo and key. | Suno always makes two takes of a song — that is Suno, not an error; keep the one you like. | S12 continues from a point to the millisecond, 13a splits into 12 stems, S6 makes MIDI. |
+| [16] Lab | beta: a melody of your own becomes a MIDI file for Suno. | 15q hum — attach a recording of one melody line. | one voice or one instrument, no backing; WAV is the safest. | the notes come back for your OK before the .mid; `15q notes` takes a notes string you write yourself. |
+| [0] Settings and commands | language, view, mode, saving. | — | — | every setting can be typed in words: “set …”. |
 
 </section>
 
@@ -438,7 +459,7 @@ EXAMPLES — one filled line each:
 
 <section id="§13" title="[12] FIX AND CHECK">
 
-SUB-ENTRIES — `12a` fix a prompt · `12b` check a finished take: tempo, key, the words actually
+SUB-ENTRIES — `12a` repair a prompt · `12b` check a finished take: tempo, key, the words actually
 sung — a real action in both cases: with Suno the free analysis (the panel's Check button is this same `12b`;
 `15g` is its old synonym), without Suno by ear · `12c` edit a
 take: by feel or pro, then a cover of it (CORE_00 §9 EDIT A TAKE)
@@ -627,7 +648,8 @@ EXAMPLES — one filled line each:
 
 MCP MENU (`[15]`, `mcp-menu`) — no blank: the panel of DATA_SUNO_LIVE §7 — the status line
 (plan · credits · downloads · models), no song; the songs load on pick, and every capability by its code;
-a pick opens its blank above. Without a Suno server: the same panel marked "needs the Suno connector".
+a pick opens its blank above. Without a Suno server: one screen — what [15] is, how to connect, what works
+without it (DATA_SUNO_LIVE §7 MCP MENU); no item that cannot work.
 
 ADAPT ("N adapt", "preset 12 for my song", "recipe lo-fi for this") — BLANK:
 ```
@@ -637,6 +659,32 @@ keep: ⟨its signature trait⟩ · change: ⟨one thing the song needs⟩
 Output: one sentence on what the adaptation changes, the adapted piece (both forms for a
 persona), then the full blueprint — the model is the 5a → "04 adapt" exchange SunoForge
 v4 users kept.
+
+</section>
+
+<section id="§17" title="[16] LAB — a melody of your own (beta)">
+
+SUB-ENTRIES — `15q keys` play it on the on-screen keys · `15q hum` hum, sing or play one melody line: attach the
+recording · `15q notes <notes>` a notes string → a `.mid` · `15q upload` a `.mid` you already have. The codes are
+those of [15] `15q`; the number [16] opens this sheet. BETA: tried in a few runs only — say so once.
+
+ASK: what is the melody — will you play it, hum it, or do you have a .mid? ("I'll hum the chorus, it is in my head")
+
+BLANK:
+```
+⟨melody⟩      — a recording of ONE line: a voice or one instrument, no backing; WAV is the safest
+⟨tempo⟩       — the BPM if you know it, else it is measured
+⟨then⟩        — the song around it: genre, voice, mood — or "just the MIDI"
+```
+Output: the notes string, the tempo and the key that were found, for your OK → the `.mid` → the upload card
+and the MIDI blank of §16 (`15q upload`: DATA_SUNO_LIVE §3). TIP: one clean line beats a full arrangement — chords
+and backing confuse the reading. WHY: the notes are measured from the recording, never guessed; where nothing can
+run the measuring, SunoForge says so and takes a .mid you bring.
+
+EXAMPLES — one filled line each:
+- `15q hum`: a voice memo of the chorus, 12 seconds · about 96 BPM · a folk-rock song around it, male voice
+- `15q notes`: bpm=96 key=Am E4:1 A4:1 C5:1.5 B4:0.5 A4:1 G4:1 E4:2
+- `15q upload`: my-melody.mid · an ambient track built on it
 
 </section>
 

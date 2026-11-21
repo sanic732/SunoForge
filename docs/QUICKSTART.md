@@ -1,8 +1,10 @@
 # Quick start — from nothing, in ten minutes
 
-> **Note on packages.** Version 5.0 ships the Claude plugin only
-> (`sunoforge.plugin`). The Skill packages, `Prompt.zip` and the ChatGPT, Antigravity and Grok
-> plugins for 5.0 are built separately and are still to come. Where this page names a `v4.0` file,
+> **Note on packages.** Version 5.0.5 ships four: the Claude plugin (`sunoforge.plugin`), the Gemini skill
+> (`SunoForge_v5.0.5_Skill_for_Gemini.zip`), the ChatGPT plugin (`SunoForge_v5.0.5_Plugin_for_ChatGPT.zip`) and the prompt
+> with RAG markup, the file edition (`SunoForge_v5.0.5_Prompt_RAG.zip`: plain Markdown files for a Gemini notebook, NotebookLM,
+> a Project or a chat that takes attachments). The Skill package for Claude and the Antigravity and Grok plugins are built separately and are
+> still to come. Where this page names a `v4.0` file,
 > that is the working package you can download today, from the
 > [4.0 release](https://github.com/sanic732/SunoForge/releases/tag/v4.0).
 
@@ -42,18 +44,22 @@ Every host, step by step, is in [INSTALL.md](INSTALL.md). In short:
 - **Claude** — the plugin or the Skill, `SunoForge_v4.0_Skills_for_Claude.zip`; or the
   thirteen files from the `claude/` folder of `SunoForge_v4.0_Prompt.zip` in a Project.
   Details in [CLAUDE.md](CLAUDE.md).
-- **Gemini** — the Skill, `SunoForge_v4.0_Skills_for_Gemini.zip`, on the Skills page.
+- **Gemini** — the skill, `SunoForge_v5.0.5_Skill_for_Gemini.zip`, on the Skills page.
   Details in [GEMINI.md](GEMINI.md).
-- **ChatGPT, Antigravity** — their plugins are not out yet; until then both run from the
-  Markdown files of `SunoForge_v4.0_Prompt.zip` ([INSTALL.md](INSTALL.md)).
-- **Grok** — the files from the `gemini/` folder of the prompt archive in a project.
+- **ChatGPT** — the plugin, `SunoForge_v5.0.5_Plugin_for_ChatGPT.zip`: Plugins → Add → Upload plugin archive
+  ([INSTALL.md](INSTALL.md)).
+- **Antigravity** — its plugin is not out yet; until then it runs from the
+  Markdown files of `SunoForge_v5.0.5_Prompt_RAG.zip` ([INSTALL.md](INSTALL.md)).
+- **A Gemini notebook, NotebookLM, Grok, any other chat** — the prompt with RAG markup (file edition),
+  `SunoForge_v5.0.5_Prompt_RAG.zip`: its files as a notebook's sources, in a project or attached to the chat,
+  `_preloader.md` first; then type `SunoForge`.
 - **If you cannot attach files** — paste the contents as the first message,
   starting with `CORE_00_ENTRY.md`, which is the entry point.
 
 ## Step 3. Language
 
 Nothing to set: SunoForge answers, menu included, in the language you write in. To
-pin one language, type `/set lang en` or `/set lang ru`; `/set lang auto` goes back.
+pin one language, type `set lang en` or `set lang ru`; `set lang auto` goes back.
 
 The prompts themselves stay English regardless — the generators understand it
 best.
@@ -64,7 +70,8 @@ best.
 start
 ```
 
-A fifteen-entry menu appears. You do not need to read all of it.
+A sixteen-entry menu appears. You do not need to read all of it. The word `compact` shows the short menu, `menu` the
+whole one again.
 
 ## Step 5. Just describe what you want
 
@@ -74,16 +81,17 @@ Naming a menu number is optional.
 A calm song about leaving home. Female voice, guitar.
 ```
 
-You get two or three variants back, each with two blocks:
+You get two variants back, each as ready blocks:
 
 - **Style** — paste into the "Style of Music" field
 - **Lyrics** — paste into the lyrics field
+- **Exclude** — into "Exclude Styles", when it is needed
 
 Copy, paste, generate.
 
 ---
 
-## Two new entries: [14] and [15]
+## More in the menu: [14], [15], [16]
 
 **`[14] SPEECH` — a voice-over with its own music.** Suno Speech (beta) makes a
 spoken piece and its soundtrack in one take: a bedtime story over soft piano, an
@@ -96,9 +104,9 @@ piano" — and you get a **Speech Blueprint** with two blocks:
 
 Which languages Speech supports is not published — try a short take first.
 
-**`[15] LIVE` — send to a generator from the chat.** If your assistant shows a
-music-generation MCP server — Suno's own (beta), ElevenLabs' hosted MCP or your own —
-SunoForge can send the prompt for you. It always asks first: a card shows what will be
+**`[15] MY SUNO` — your songs from the chat.** If your assistant shows a
+music-generation MCP server that you added — Suno's own (beta), ElevenLabs' hosted MCP or your own —
+SunoForge can send the prompt for you and work with your songs there. It always asks first: a card shows what will be
 sent and that it spends your credits, and nothing happens until you say yes. The song
 lands where that service keeps it — on Suno, in your library.
 
@@ -110,6 +118,10 @@ Without a server nothing changes: you copy the prompt as before. Setting up Suno
 [SUNO_MCP.md](SUNO_MCP.md). Suno lets accounts into this beta through an early-access
 form on suno.com/mcp.
 
+**`[16] LAB` (beta) — a melody of your own.** Hum or play one melody line and attach the recording: you get its
+notes, and from the notes a MIDI file to give to Suno. The Claude plugin also has on-screen keys. It needs a chat
+that can run code; where there is none, SunoForge says so.
+
 **The first run.** After the menu SunoForge asks one question, once: which generators you
 use. The menu always shows every entry. `config` asks again and also sets the view and
 prices on the card. `save` keeps a Style or a persona you liked; `library` lists them and
@@ -120,25 +132,25 @@ a form — a widget on the desktop app, multiple-choice questions elsewhere, a n
 text otherwise: one choice per field, **Build** sends them, the result is a blueprint.
 Any result can be kept with `save`.
 
-Commands are words without a slash: `send`, `mcp-info`, `config`, `menu`; with the Claude
+Commands are words without a slash: `send`, `mcp-info`, `config`, `menu`, `self-check`; with the Claude
 plugin `/sunoforge` opens the menu. The line at the foot of every answer switches the view:
-M menu (widgets), T text, B buttons (the terminal).
+W screens with buttons, T text, B questions with options.
 
 ---
 
 ## Reading the output
 
-You will see marks in the answers:
+Every claim about how a generator behaves is marked in SunoForge's files with where it comes from:
 
 - `[OFFICIAL]` — stated in the platform's own documentation. Trust it.
 - `[COMMUNITY]` — independent testing and guides. Usually right, not guaranteed.
 - `[UNVERIFIED]` — widely repeated, no primary source. May do nothing at all.
 
 This is not decoration. In previous versions of this system several "rules"
-turned out to be inventions that everyone had been copying from each other. Now
-you can see which is which.
+turned out to be inventions that everyone had been copying from each other.
 
-If they make output harder to read: `/confidence off`.
+The marks are hidden in answers by default, and what is untested is said in words. `confidence on` shows them,
+`confidence off` hides them again.
 
 ---
 
@@ -179,6 +191,7 @@ three shots and pick.
 | An old prompt behaves oddly | Type `audit` and paste the prompt |
 | "Not yet available for your account" when connecting Suno | Suno has not admitted your account to the MCP beta yet — the form is on suno.com/mcp |
 | A menu entry is missing | The menu is always whole since 5.0: update the plugin or the files |
+| Not sure which version is installed | Type `self-check` |
 
 The full version is `CORE_03_DIAGNOSE.md`, which is also menu entry `[12]`.
 
@@ -186,13 +199,13 @@ The full version is `CORE_03_DIAGNOSE.md`, which is also menu entry `[12]`.
 
 ## Where to go next
 
-- `/why <topic>` — why a rule is shaped that way
-- `/free` — what you can do without paying
-- `/compare` — which platform fits the task
-- `/legal` — whether you can publish and monetise this
+- `why <topic>` — why a rule is shaped that way
+- `free` — what you can do without paying
+- `compare` — which platform fits the task
+- `legal` — whether you can publish and monetise this
 
 One thing worth knowing **before** you publish anything: free plans generally do
 **not** grant commercial rights, and each platform settles it its own way. On Suno a
 song made without a subscription can become commercial later — by downloading it
 with a paid download credit. On ElevenMusic the Free plan allows no downloads at all.
-If a track might ever be used for work, check `/legal` first.
+If a track might ever be used for work, check `legal` first.

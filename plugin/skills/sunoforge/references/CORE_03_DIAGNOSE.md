@@ -5,7 +5,7 @@ version: "5.0"
 layer: core
 role: troubleshoot
 description: >
-  The engine behind menu [12] FIX A PROMPT and every "why does it sound like this": a symptom
+  The engine behind menu [12] FIX AND CHECK and every "why does it sound like this": a symptom
   index, fifteen diagnostic checks, the repair table for dead and stale constructs
   (MAX tags, parametric tags, retired Suno models, old Lyria timestamp forms, prices),
   the single trigger-word list, failure modes including early Suno v6 reports, what is
@@ -14,13 +14,13 @@ scope: audit_protocol · repair_engine · failure_modes · trigger_words · sess
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS]
 used_by: [CORE_00_ENTRY, CORE_04_WHY, DATA_SUNO, DATA_GOOGLE, DATA_OTHER]
 authority: "THIS FILE IS THE SINGLE SOURCE FOR THE TRIGGER-WORD LIST"
-updated: "2026-11-05"
+updated: "2026-11-20"
 </file_meta>
 
 # 🩺 SUNOFORGE v5.0 — DIAGNOSE & REPAIR
-# File 4 of 14 · CORE · The engine behind menu [12] FIX A PROMPT
+# File 4 of 14 · CORE · The engine behind menu [12] FIX AND CHECK
 
-> Menu entry **[12] FIX A PROMPT** per CORE_00 §4: the user pastes a prompt, gets a
+> Menu entry **[12] FIX AND CHECK** per CORE_00 §4: the user pastes a prompt, gets a
 > diagnosis and a repaired version. This file is that engine.
 >
 > 📌 **Single source.** The trigger-word list (§4) exists here and nowhere else.

@@ -16,7 +16,7 @@ scope: lyria_3_5 · lyria_clip · lyria_realtime · gemini_app · gemini_api · 
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS]
 used_by: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_OTHER, DATA_POSTPROD, DATA_LEGAL]
 authority: "THIS FILE IS THE SINGLE SOURCE OF TRUTH FOR LYRIA AND FLOW MUSIC SPECIFICATIONS"
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 🔵 SUNOFORGE v5.0 — GOOGLE PLATFORM DATA

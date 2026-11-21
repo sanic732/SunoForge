@@ -286,14 +286,15 @@ including previous versions of this system.
 
 ## Tokens
 
-v5.0: Claude Edition ~123,600 tokens (o200k_base), ~106,600 without the lazy files;
-Gemini Edition ~113,400 / ~97,900. Breakdown in [TOKENS.md](TOKENS.md).
+v5.0.5: the fourteen reference files of the Claude plugin are about 165,500 tokens (`o200k_base`), about 141,500
+without the on-request files; Claude's own tokenizer counts about 1.45 times more — about 240,000. The Gemini skill
+and the ChatGPT plugin are about 190,000 each with their own pages and the Lab's scripts; the prompt with RAG markup
+(file edition) is about 205,000. Breakdown in [TOKENS.md](TOKENS.md).
 
-On a 128K window the Gemini Edition takes 89 % in full and 77 % without the lazy
-files, which is a lot: keep the lazy files
-unloaded (they are by default) and consider skipping the `DATA_VOCAB` and
-`DATA_RECIPES` catalogues, which are not needed in every session. At 200K and
-above, load everything.
+That is more than a 200K window holds together with a conversation, so nothing is loaded whole by default: the
+plugin and the skills read the sections a task needs, and a notebook retrieves parts of the file edition. Attaching
+every file of the file edition to one chat needs a window well above 200K; on a smaller one attach `_preloader.md`,
+`_index.md`, `CORE_00_ENTRY.md` and the files the task names, and leave the on-request files out.
 
 ---
 

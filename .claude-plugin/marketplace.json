@@ -11,7 +11,7 @@
       "name": "sunoforge",
       "source": "./plugin",
       "displayName": "SunoForge",
-      "description": "AI music prompt orchestrator: ready-to-paste prompts, lyrics markup, speech scripts, prompt repair, rights and post-production for Suno v6 and Suno Speech, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models. Sends a blueprint to any music-generation MCP the session shows, Suno's included, only after you say yes. Works in any language the user writes in.",
+      "description": "AI music prompt orchestrator by sanic732 (P2P family): ready-to-paste prompts, lyrics markup, speech scripts, prompt repair, rights and post-production for Suno v6 and Suno Speech, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models. Sends a blueprint to any music-generation MCP the session shows, Suno's included, only after you say yes. Works in any language the user writes in.",
       "category": "music",
       "tags": [
         "music",

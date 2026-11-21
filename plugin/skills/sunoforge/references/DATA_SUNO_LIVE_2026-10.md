@@ -5,23 +5,23 @@ version: "5.0"
 layer: data
 role: adapter
 description: >
-  The Suno MCP server as the session sees it, as of 2026-11-07: the 41 tools and their
+  The Suno MCP server as the session sees it, as of 2026-11-19: the 41 song tools and their
   fields, which blueprint field goes to which schema field, defaults that cost credits,
   plan gating seen first-hand, error codes, what a take can be checked with, and the chains
-  from the menu to the tools, what fixes itself, and everything the server can do. Read when LIVE (menu
+  from the menu to the tools, what fixes itself, everything the server can do, and every tool on one page (§10). Read when LIVE (menu
   [15], send, mcp-menu) meets a Suno server.
   The method is CORE_00 §6; this file holds the Suno facts it needs.
-valid_as_of: "2026-11-07"
+valid_as_of: "2026-11-19"
 expires: "the Suno MCP is a beta — the fields changed between 2026-10-29 and 2026-11-04; re-read the schemas when a field is refused, re-snapshot after 2026-12"
 scope: suno_mcp · tools · field_map · defaults · plan_gating · read_back · preflight · auto_recovery · chains · mcp_menu · capabilities
 depends_on: [CORE_00_ENTRY, DATA_SUNO]
 used_by: [CORE_00_ENTRY, CORE_03_DIAGNOSE]
 authority: "Suno MCP facts only; models, plans and rights stay in DATA_SUNO"
-updated: "2026-11-07"
+updated: "2026-11-20"
 </file_meta>
 
 # 🟠 SUNOFORGE v5.0 — SUNO MCP, LIVE DATA
-# File 13 of 14 · DATA layer · valid as of 2026-11-07
+# File 13 of 14 · DATA layer · valid as of 2026-11-19
 
 > ⚠️ **Expiry notice.** A beta snapshot, read from the server's own tool schemas on 2026-11-04
 > (32 tools in the morning; by the evening 35 — sounds-create, audio-listen and audio-listen-wait were
@@ -34,10 +34,13 @@ updated: "2026-11-07"
 > audio-stems-retrieve), MIDI out (audio-midi), MIDI in (midi-upload-create, midi-upload-complete and
 > `midi_upload_id` on create), song settings (audio-settings: publish, unpublish, remixes); `reference_audio_ids`
 > now edits a song; `caption` on audio-edit; audio-wait takes 12 ids (§1, §3, §9).
+> Re-read 2026-11-19 from the schemas, no paid call: the same 41
+> song tools with the same fields. New in the descriptions: audio-retrieve's `metadata` carries the song's settings; lyrics alignment
+> starts a run for an older song (§5); `visuals_credits_remaining` in account-usage.
 > [OFFICIAL] below means the server's own tool descriptions; [first-hand] means a call made and
-> its answer read. The check before generating is the FIELD LIST of §1, not a hash: a tool the
-> session shows that §1 does not name, a named one missing, or a field that differs, is said out
-> loud before any card.
+> its answer read. The check before generating is the FIELD LIST of §1, not a hash: within the
+> tool families §1 covers, a tool the session shows that §1 does not name, a named one missing, or
+> a field that differs, is said out loud before any card.
 
 <section id="§1" title="TOOLS — what each one does to the account">
 
@@ -47,9 +50,9 @@ field (`additionalProperties: false`; audio-wait's schema does not say so): a fi
 
 | Tool | Class | Fields (2026-11-07) |
 |---|---|---|
-| account-usage | read | — (plan, allowed_models, features, credits, download credits); uploads, library reads and organizing spend no credits, and uploads have no count limit [OFFICIAL, the tool description, 2026-11-05] |
+| account-usage | read | — (plan, allowed_models, features, credits, download credits, `visuals_credits_remaining` — a separate counter, not song credits: never added to the balance and not part of the status line, since 2026-11-19 [first-hand]); uploads, library reads and organizing spend no credits, and uploads have no count limit [OFFICIAL, the tool description, 2026-11-05] |
 | account-me | read | — |
-| account-upgrade | read | — (a link or button to buy credits; on 402) |
+| account-upgrade | read | — (a link or button to buy song credits; on 402) |
 | audio-create | **spend** | controls {audio_influence, style_influence, variety 0–4, weirdness}, description ≤3000, duration 15–360, duration_guidance, duration_strict, idempotency_key, instrumental, lyrics ≤5000, max_mode, midi_upload_id (Simple mode, v6-wild only), model, negative_style ≤1000, reference_audio_ids ≤10 (Simple mode only; also edits a song, §3), style ≤1000, title ≤256, vocal_gender (needs controls.advanced), voice_id, workspace_id |
 | speech-create | **spend** | backing_music, duration, duration_guidance, duration_strict, idempotency_key, negative_style, prompt ≤2947 (2887 with backing_music), script ≤5000, style ≤1000, title, vocal_gender (needs controls.advanced), voice_id, workspace_id — `negative_style` with `prompt` is a 400 [OFFICIAL, 2026-11-07] |
 | audio-covers-create | **spend** | **id**, controls, duration, idempotency_key, lyrics, max_mode, model, negative_style, style, title, voice_id, workspace_id — "A cover takes its source's title unless you set `title`"; without `lyrics` it comes out instrumental unless `voice_id` is set [OFFICIAL, 2026-11-07] |
@@ -58,7 +61,7 @@ field (`additionalProperties: false`; audio-wait's schema does not say so): a fi
 | audio-download | **spend** only with `confirm: true` | **id**, confirm, format (mp3, wav) |
 | audio-full-song | read (free join) | **id**, idempotency_key |
 | audio-wait | read | id or ids (≤12; was ≤4 until 2026-11-06), until (playable, complete) — 12 stems of a take came back in one call [first-hand, 2026-11-07] |
-| audio-retrieve | read | **id** |
+| audio-retrieve | read | **id** — a suno.com song's `metadata` also carries the settings its Song Details shows: `model`, `negative_style`, `max_mode`, `controls` [OFFICIAL, 2026-11-19]; library-list items leave out `metadata.lyrics`, audio-retrieve has them |
 | audio-analysis · audio-lyrics-alignment | read (free run) | **id** |
 | audio-listen · audio-listen-wait | read (free; 5 open at once, 200 a day) | **id**, **question** ≤2000 / **id** of the listen |
 | sounds-create | **spend** (two sounds a call, 1 credit each; Pro and up) | **description** ≤500, loop, tempo 1–300, key (C … B, Cm … Bm), title, idempotency_key |
@@ -68,7 +71,7 @@ field (`additionalProperties: false`; audio-wait's schema does not say so): a fi
 | workspaces-list | read | cursor, query ≤200 |
 | voices-list | read | collection (own, loved), cursor, limit ≤100, query — a name is searched within `collection` (no match in own → try loved); a voice id finds the user's own voice or any public one they may sing in [OFFICIAL, the tool description, 2026-11-05] |
 | voices-start | read | — (a suno.com link to make a voice; where the host shows apps, a button "Create your voice on Suno") |
-| audio-edit | write | **id**, title, lyrics, caption ≤500 (the song's description on its suno.com page; "" clears it) — the library entry only, never the audio; audio-retrieve does not show the caption [first-hand, 2026-11-07] |
+| audio-edit | write | **id**, title, lyrics, caption ≤500 (the song's description on its suno.com page; "" clears it) — the library entry only, never the audio; audio-retrieve does not show the caption [first-hand, 2026-11-07]. Title, lyrics and caption pass suno.com's content check (disallowed text → 400); new lyrics are aligned again [OFFICIAL, 2026-11-19] |
 | audio-settings | write (`public` goes outside: its own card) | **id**, visibility (public, private), can_remix — anything left out stays as it is |
 | audio-stems-create | **spend** (10 for `two`, 50 for `twelve`) | **id**, **mode** (two, twelve), idempotency_key |
 | audio-stems-retrieve | read | **id** (the source), **group_id** |
@@ -84,11 +87,16 @@ now (§3). NEW: `max_mode` on create, cover, extension and mashup (§3). NEW 202
 inside `controls` on the same four tools, `reference_audio_ids` on create, `dislike` on audio-like. NEW 2026-11-06
 (the email "Suno MCP: new features & improvements (11/6)"): six tools — audio-stems-create, audio-stems-retrieve,
 audio-midi, audio-settings, midi-upload-create, midi-upload-complete — and `midi_upload_id` on create, `caption` on
-audio-edit, `ids` ≤12 on audio-wait. The tool name never
+audio-edit, `ids` ≤12 on audio-wait. NEW 2026-11-19: `visuals_credits_remaining` in account-usage, Song Details
+settings in audio-retrieve's `metadata`, an alignment run for older songs (§5). The tool name never
 carries "suno": the prefix depends on the host (`mcp__<uuid>__` for the claude.ai connector,
 `mcp__Suno__` or `mcp__claude_ai_Suno__` in Code and Cowork). Recognise the server by this
 tool set and by "suno.com" in the descriptions. The host shows no annotations, so the
 classes above come from the descriptions, not from server flags.
+
+SCOPE — the table above is the whole check: the tool families account-, audio-, speech-, sounds-, library-,
+playlists-, workspaces-, voices- and midi-. A tool of the server with another name is outside it: its presence
+is not a field-list mismatch, and what it does is read from its own description.
 
 </section>
 
@@ -346,8 +354,10 @@ names what the server knows, not what the plan allows.
   chorus line sung twice and an outro never sung, while `metadata.lyrics` still held the written text
   [first-hand]. It does not prove a changed line was sung: after an edit it placed the new stored line, as written,
   within a minute [first-hand, 2026-11-07] — listen to the edited place. Ukrainian aligned in full, song and speech [first-hand]. A suno.com
-  library song gets the alignment suno.com stored for it; one never aligned is `unavailable`
-  [OFFICIAL, 2026-11].
+  library song gets the alignment suno.com stored for it [OFFICIAL, 2026-11]. Since 2026-11-19 [OFFICIAL]: a song
+  made in the last ten minutes reads `processing` while suno.com aligns it; an older song with lyrics that was never
+  aligned starts a run, at most once a day, reads `processing` for about ten minutes, then `unavailable` if nothing
+  landed — so poll it like analysis instead of giving up at once; an upload never aligned stays `unavailable`.
 - Symptoms these give to [12]: CORE_03 — "tags do not match the Style", "sung words differ
   from the lyrics".
 
@@ -418,7 +428,7 @@ is a new card.
 | a timeout, no answer | the job may exist | audio-retrieve, or library-list for the title | a repeat only with the same key |
 | `status: error` on a take | the generator failed | audio-retrieve for the reason | new card for a new take |
 | audio-wait still pending after ~50 s | normal for long clips | call audio-wait again | — |
-| analysis or alignment `processing` | the run is under way | poll for about a minute | — |
+| analysis or alignment `processing` | the run is under way | poll for about a minute; alignment of an older song never aligned: up to ten minutes, say so once (§5) | — |
 | audio-download `requires_credit` | a download credit is needed | the card: one download credit, mp3 or wav | `confirm: true` after the yes |
 | audio-download `processing` | the file is being prepared | call again (the tool waits ~50 s itself) | — |
 | audio-download 429 `quota_exceeded`, reason `daily_limit_exceeded` | the day's downloads are used | stop | after the reset |
@@ -808,7 +818,7 @@ album, a playlist for the running order) · move a song made on suno.com into an
 chain, a cover or a mashup (any song the user may remix there, by id).
 
 NOT REACHABLE THROUGH THE MCP [OFFICIAL by absence; the app's menus first-hand, 2026-11-04; re-checked against the
-41 tools 2026-11-07]:
+41 tools 2026-11-07 and 2026-11-19]:
 Create — Personalize · Inspiration (a playlist) · an image as input (a video goes in only as a file through the uploader; whether Suno uses its picture or only its sound is not checked) ·
 recording audio · saved lyrics and styles · Style Personas (Voices menu) · Custom Models (making one) · Lyricist · visibility at creation (songs land
 private; audio-settings publishes them afterwards). A song — queue · song radio · report ·
@@ -823,6 +833,58 @@ a new pair of takes, not the app's editor). `15o` makes a new song from up to te
 restyled, remastered, a part dropped or kept: a new take, not the app's own Sample or Remaster [OFFICIAL, the
 schema's description; a restyle tried first-hand 2026-11-05]. A stem is downloaded like any song (audio-download),
 not tried.
+
+</section>
+
+<section id="§10" title="EVERY TOOL ON ONE PAGE — the 41 tools of §1, 2026-11-20">
+
+The tools of §1 as the connector showed them on 2026-11-20, one row each: what it does, what it costs and on
+which plan, what it returns, the trap. The hosts' sets can differ; a tool listed here that this session does not
+show is not a mismatch. Fields are in §1; detail lives where the last column points.
+CHECK: **call** = called on 2026-11-19…20 and its answer read (only free reads were called); **earlier** = a first-hand
+call of 2026-11-04…07 recorded in §1–§9; **description** = the server's own tool description, not called (every
+paid tool, every free write — a free write still changes the user's account). Plan facts are first-hand on one
+account only, Pro (§4). **paid call** = run with the author's yes on 2026-11-20 (balance read before and after).
+
+### SONG TOOLS (41) — used by this edition
+
+| Tool | Does | Cost · plan | Returns | Trap | Check |
+|---|---|---|---|---|---|
+| account-usage | plan and balance | free | plan, allowed_models, features, credits, monthly limit and use, download credits, renewal, `visuals_credits_remaining` | the balance lags 1–2 min | call |
+| account-me | the public profile | free | handle, display name, avatar, profile link | personal: never into a prompt or the library | call |
+| account-upgrade | Suno's buy button | free | a button and its `url` | sells song credits only | description |
+| audio-create | a song: Simple (`description`) or Custom (`lyrics`, `style`); also edit, remix, sample, split from ≤10 own songs (`reference_audio_ids`); a song from MIDI (`midi_upload_id`) | 10 credits for two takes (Pro, first-hand); Max Mode multiplies · `generate.simple` / `generate.custom`, models per plan | `clip_ids` (two) | mixing the modes is 400; `negative_style`, `vocal_gender`, controls need advanced controls (403); an edit takes no duration, instrumental or vocal_gender; Max Mode only when named (§3) | earlier |
+| speech-create | spoken word: `script` (verbatim) or `prompt` (AI words) | 10 credits for two takes (375 → 365), model v6-mini · `speech` | `clip_ids` (two), `status: submitted` | `style` only with `script`; `negative_style` with `prompt` is 400 (§1). A 4-second script sent without `duration` came back 75.7 s and 480 s long: send `duration` (≥15) with `duration_strict` for a short line | paid call |
+| audio-covers-create | a cover of a finished song | 10 credits, two takes [description] · `generate.cover` | `clip_ids` | the source's lyrics are not carried: no `lyrics` and no voice → instrumental | description |
+| audio-extensions-create | continue a song from `continue_at` | 10 credits, two continuations [description] · `generate.extend` | `clip_ids` | the new clip is only the continuation: join with audio-full-song | description |
+| audio-mashups-create | blend two songs | 10 credits [description] · `generate.mashup` | `clip_ids` | exactly two parents, both finished | description |
+| audio-download | mp3 or wav link of an own song | free, or one download credit after `requires_credit` + yes (`confirm: true`) · `audio.download` | `url` (a download button where the host shows apps) | 429 `quota_exceeded` = daily limit, stop until reset (§3) | description |
+| audio-full-song | join an extension chain into one track | free · `generate.extend` | a clip | ≤20 segments, 3 retries per chain | earlier |
+| audio-wait | wait until playable or complete | free | the clip(s); Suno's player card | ≤12 ids; calls again after ~50 s pending | earlier |
+| audio-retrieve | one clip's state | free | the clip; own songs carry `metadata.lyrics` and the Song Details settings (model, controls, negative style, Max Mode — absent when unset) | library lists leave the lyrics out | call |
+| audio-analysis | what the take sounds like and its timing map | free run | bpm, key, meter, beats, sections, terms and labels | parts arrive as each run ends; 5 library songs at a time (§5) | earlier |
+| audio-lyrics-alignment | each sung word with its time span | free run | words with spans, `success` per word | an older song never aligned: up to ten minutes, once a day; uploads stay `unavailable` (§5) | earlier |
+| audio-listen | a question to Suno's listener | free; 5 open, 200 a day | a listen id | never an id or a link in the question (§1) | description |
+| audio-listen-wait | the listener's answer | free | text, optional JSON block | answer kept a day | description |
+| sounds-create | two short sounds, one-shot or loop | 1 credit each · Pro and up | `clip_ids` | not for songs | earlier |
+| library-list | own finished songs, newest first | free · `library:read` | items (no lyrics), `next_cursor` | stems are songs too: filter by title suffix (§7 MY SONGS) | call |
+| library-search | own songs whose title or style holds `query` | free · `library:search` | as library-list | — | description |
+| library-liked | songs the user liked, anyone's | free · `library:read` | items with the creator's handle | hidden or blocked songs leave short pages | call |
+| playlists-list | own playlists | free | id, name, clip count, link, visibility | — | call |
+| playlists-list-clips | the songs of one own playlist | free | items | another user's playlist or an album is 404 | description |
+| playlists-create · -add-clips · -remove-clips | make and fill a playlist | free write | the playlist / `failed` per song | changes the account: only when asked | description |
+| workspaces-list | own and shared workspaces | free | id, name, description, clip count | — | call |
+| workspaces-create · workspaces-update-clips | make a workspace, move songs | free write | the workspace / `skipped` | a song is in one workspace at most: adding moves it | description |
+| voices-list | own or loved voices | free | id, name, source, public | personal names: not into prompts | call |
+| voices-start | a link to make a voice on suno.com | free | `url` (a button) | never ask for recordings | description |
+| audio-edit | title, lyrics, caption of a song | free write · `library:write` | the song | content check (400); not the audio (§1) | earlier |
+| audio-settings | publish, unpublish, remixes | free write; `public` has its own card · `library:write` | the settings; `publish_pending` | 100 publishes a UTC day | earlier |
+| audio-stems-create | split into stems | 10 (`two`) or 50 (`twelve`) · `generate.stems` | a group id | parts the song lacks come back near silent; ≤16 min source (§3) | earlier |
+| audio-stems-retrieve | the stem group | free | stems by take, `status` | poll until it leaves `pending` | earlier |
+| audio-midi | a song or stem to multi-track MIDI | 10, free for a Get Stems stem · Premier | `url`, instruments | on Pro: say so, call nothing (§4) | earlier |
+| midi-upload-create · midi-upload-complete | upload a .mid (≤256 KB) | free write | `midi_upload_id` | `upload_url` is a credential (§3) | earlier |
+| audio-like · audio-unlike | like, dislike, clear | free write | — | changes the account: only when asked | description |
+| audio-upload-create · audio-upload-complete | upload own audio or video (≤100 MB) | free write · `audio.upload` | a clip id; the uploader | rights: only the user's own; `upload_url` is a credential; lyrics are transcribed and may be misheard | earlier |
 
 </section>
 

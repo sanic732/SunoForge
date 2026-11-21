@@ -14,7 +14,7 @@ description: >
 scope: bracket_rule · two_paths · section_labels · performance_notation · delivery · adlibs · spoken_word · duet · chords · structure_templates · speech_scripts
 depends_on: [CORE_00_ENTRY, CORE_01_STYLE]
 used_by: [CORE_03_DIAGNOSE, CORE_04_WHY, DATA_RECIPES, DATA_SUNO, DATA_GOOGLE]
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 📝 SUNOFORGE v5.0 — LYRICS ENGINE

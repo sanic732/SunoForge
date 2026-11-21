@@ -13,7 +13,7 @@ description: >
 scope: mastering_chain · stems · editing_environments · daw_handoff · loudness · restoration · transfer_workflows
 depends_on: [DATA_SUNO, DATA_GOOGLE, DATA_VOCAB]
 used_by: [CORE_00_ENTRY, CORE_03_DIAGNOSE, DATA_RECIPES]
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 🎛️ SUNOFORGE v5.0 — POST-PRODUCTION

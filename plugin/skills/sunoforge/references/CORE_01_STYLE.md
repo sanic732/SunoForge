@@ -13,7 +13,7 @@ description: >
 scope: six_layer_style · time_and_place · mood · instrumentation · vocal_direction · personas · hybrids · atmosphere · clone_mode
 depends_on: [CORE_00_ENTRY]
 used_by: [CORE_02_LYRICS, CORE_03_DIAGNOSE, CORE_04_WHY, DATA_RECIPES, DATA_VOCAB, DATA_GOOGLE, DATA_SUNO]
-updated: "2026-11-05"
+updated: "2026-11-19"
 </file_meta>
 
 # 🎨 SUNOFORGE v5.0 — STYLE ENGINE
@@ -51,6 +51,24 @@ open on purpose stays open; one skipped by accident hands that decision to the m
   first is what the model commits to before it has read the rest.
 
   Method: §3 TIME & PLACE.
+
+  Read the genre the way the user means it, not its most famous cliché.
+  The model, and Claude, drift to the loudest version of a named genre;
+  when a request names a regional or intimate genre, write its authentic
+  form and close the door on the cliché with tempo and instruments:
+
+    Odessa / Ukrainian chanson   ~95–100 BPM, courtyard guitar, bandura,
+                                 tsymbaly, sopilka, accordion; storytelling
+                                 voice. NOT émigré-restaurant (Brighton
+                                 Beach) swing: no fast klezmer or cabaret
+                                 bounce, nothing near 118+ BPM.
+    "Nothing Else Matters"-style chamber ballad: fingerpicked clean guitar,
+    ballad, soft choir         close vocal, strings or soft choir, room
+                                 reverb. NOT stadium rock: no distorted
+                                 wall, no arena reverb, no big drum fills.
+
+  If the reading is ambiguous, give the authentic one first and the
+  famous one as the contrasting second variant, not the other way round.
 
 ### LAYER 2 · MOOD & ENERGY — one or two compatible words
 

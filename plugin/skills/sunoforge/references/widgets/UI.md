@@ -8,7 +8,7 @@ widget.
 
 | Screen | File | What you fill |
 |---|---|---|
-| Main menu and all twelve submenus, the mode switch, the language picker (`[15]` sends `"15"` and opens `hub.html`) | `menu.html` | `data-mcp`, `data-screen` (`new` = What's new), `data-mode`, `data-p`, `data-pl`, `data-l` |
+| Main menu and all twelve submenus, the mode switch, the language picker; "What's new" sends `new` (a text answer); a section has no memo — it comes with the fill-in form (`[15]` sends `"15"` and opens `hub.html`) | `menu.html` | `data-mcp`, `data-screen` ("main" or an entry number), `data-mode`, `data-p`, `data-pl`, `data-l` |
 | The voice catalogue `5a` | `voices.html` | `data-mine` |
 | [15] My Suno, the first screen: the numbers as its header, "via the main menu" and "Suno only" (S-codes); not connected = one screen (`S11` in view W = `hub.html` with `data-st` + the numbers as text) | `hub.html` | `data-mcp`, `data-st`, `data-mode`, `data-last` |
 | [15] Suno panel: a filtered list, a song's actions, mix two, playlists / workspaces (PICK), price card, stems choice (`15p #id8`) and the stems by take, MIDI (`15q`) and its blank, publish card (`15r #id8 public`) | `mcp.html` | as its header comment says |
@@ -32,17 +32,19 @@ attributes.
 ## 2. Which language
 
 The screen's language is OUTPUT_LANG (CORE_00 §9). Ready translated copies: `widgets/<lang>/<file>` for
-**ru uk de es fr it pt-BR id** (Russian, Ukrainian, German, Spanish, French, Italian, Brazilian Portuguese,
-Indonesian); English is
+**ru** and **uk** (Russian, Ukrainian); English is
 `widgets/<file>`.
 - A copy exists → take it as it is and fill the attributes or slots. Translate nothing: every label, the
   script dictionaries included, is already in that language. Text you write into a slot (a status, a title,
   the credit line) is in that language too.
 - No copy (any other language) → the English template; translate its visible labels and the values of its
-  script dictionaries, as its header says.
+  script dictionaries, as its header says. Inside a dictionary value write the typographic apostrophe ’
+  (l’idée, dell’idea), never the straight one: a straight apostrophe ends the string and the screen stays
+  empty. Codes, numbers and the keys of a dictionary stay as they are. A screen that will not draw → view B
+  in that language.
 - The view pills are translated (`W screen · T text · B questions`, the letters stay); they send `w`, `t`, `b`, commands in
   every language. They and the highlighted button carry inline styles: the desktop host restyles `<button>`.
-- One source for every language: `widgets_i18n/<lang>.json` in the plugin's source; the copies are built
+- One source for every language: a dictionary per language in the plugin's source; the copies are built
   from it by a script. A wrong word is fixed there, never by hand in a copy.
 
 ## 3. Speed
@@ -58,17 +60,20 @@ characters a second [first-hand, claude.ai data export, 2026-11-05]. Keep it sho
   the wait has not finished (`data-wait="1"`).
 - My songs (S1): one library-list call of 50, stems left out by title suffix, 10 songs in `songs.html`; "50 as a list" is a text table, never a widget; no "Sounds" view.
 
-| Screen (English copy, header stripped) | Characters printed |
-|---|---|
-| `menu.html`, every submenu inside | ≈10.0k |
-| `take.html`, two takes | ≈4.8k |
-| `songs.html`, ten rows | ≈5.9k |
-| `edit.html` | ≈7.1k |
-| `voices.html` | ≈4.1k |
-| `hub.html`, the Suno panel's first screen | ≈5.5k |
-| `next.html`, three steps | ≈2.3k |
-| `mcp.html`, the whole template (one screen is kept: less) | ≈26.8k |
-| `editor.html` | ≈46.5k |
+| Screen (English copy, header stripped; measured by script on 2026-11-20) | Characters printed | Wait at 250–340/s |
+|---|---|---|
+| `menu.html`, every submenu inside | ≈13.1k | 39–53 s |
+| `take.html`, two takes | ≈5.1k | 15–20 s |
+| `songs.html`, ten rows | ≈6.8k | 20–27 s |
+| `edit.html` | ≈7.3k | 22–29 s |
+| `voices.html` | ≈4.4k | 13–18 s |
+| `hub.html`, the Suno panel's first screen | ≈6.7k | 20–27 s |
+| `next.html`, three steps | ≈2.7k | 8–11 s |
+| `mcp.html`, the whole template (one screen is kept: less) | ≈27.7k | 81–111 s |
+| `editor.html` | ≈46.7k | 137–187 s |
+| `lab/keys.html` | ≈15.8k | 46–63 s |
+
+The Russian and Ukrainian copies print under 1 % more; a language translated as it is printed, up to about 4 % more.
 
 ## 4. No external files
 

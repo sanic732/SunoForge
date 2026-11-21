@@ -16,7 +16,7 @@ scope: elevenmusic · stable_audio · minimax · local_open_models · aggregator
 depends_on: [CORE_00_ENTRY, DATA_SUNO, DATA_GOOGLE]
 used_by: [CORE_00_ENTRY, CORE_01_STYLE, CORE_02_LYRICS, CORE_03_DIAGNOSE, DATA_LEGAL, DATA_POSTPROD]
 authority: "SINGLE SOURCE OF TRUTH FOR ELEVENMUSIC, STABLE AUDIO, MINIMAX AND LOCAL MODEL SPECIFICATIONS"
-updated: "2026-11-05"
+updated: "2026-11-07"
 </file_meta>
 
 # 🟣 SUNOFORGE v5.0 — OTHER PLATFORMS

@@ -1,5 +1,5 @@
 <!-- LANGUAGE: this copy is already in Українська (uk) — every label, the script dictionaries included, is translated; do NOT translate again: fill the slots, write slot text in Українська. 
-SunoForge v5.0 · [15] SUNO + MCP panel template · DATA_SUNO_LIVE §7 (MCP MENU, MY SONGS, SONG ACTIONS, MIX, cards), §9
+SunoForge v5.0 · [15] MY SUNO panel template · DATA_SUNO_LIVE §7 (MCP MENU, MY SONGS, SONG ACTIONS, MIX, cards), §9
 Rendered through the host's widget tool (the one whose notes name a global sendPrompt). Laid out like the Suno app, one
 screen at a time, nothing loaded that was not asked for. KEEP EXACTLY ONE SCREEN and drop the others:
   HUB             — [15], `mcp-menu`, "15": widgets/hub.html (the status line and the sections), not this file.
@@ -29,7 +29,8 @@ opens widgets/editor.html in that mode); an action sends "<code> #<first 8 chara
 openLink (the host asks first) — some library songs do not play in the card (DATA_SUNO_LIVE §7). "Link" copies the address. MIX: "Pick two" turns the rows into a choice
 of two songs (A, then B); three buttons then send `S4 two #A8 #B8 mashup|style|cover · <A> + <B>`. No cover images and
 no audio: the sandbox loads nothing from suno.com's servers.
-No Suno server in the session: the HUB only, every item that needs it marked "needs the Suno connector".
+No Suno server in the session: not this template — widgets/hub.html draws ONE screen (what [15] is, how to connect,
+what works without it; DATA_SUNO_LIVE §7 MCP MENU), with no item that cannot work.
 SLOTS — LIST: {{LIST}} what is shown (my songs, liked, a filter, a playlist, search words); on #sm-list data-n = the count
 shown (10 · 50 · 100), data-f = the filter word of `S1` in force ("" for all), data-list="playlist" or "workspace"
 for a playlist's or a workspace's songs (the sheet then offers "remove from it"), data-pick="<code #id8 what with>"
