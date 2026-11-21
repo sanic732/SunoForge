@@ -2,11 +2,13 @@
 
 SunoForge 5.0.5 is a metaprompt for AI music: a reference and a set of prompt-writing practices in Markdown files. You describe a song in your own words — or pick an entry of its menu — and Claude answers with a prompt ready to paste into a music generator: Suno v6 and Suno Speech, Google Lyria 3.5, Flow Music, ElevenMusic, Stable Audio, MiniMax and local models. It also repairs a prompt that misbehaves, marks up lyrics, builds voices and personas, and says what to check about rights before a release.
 
-This folder is the text edition of the plugin: one skill and its Markdown reference files. It has no screens, no scripts, no hooks and no MCP server.
+**Open by design.** This edition is the prompt itself: one skill and its Markdown reference files, which you can open and read line by line before you install it. The plugin is only packaging — the same reference is also published as a plain prompt archive on the [Releases page](https://github.com/sanic732/SunoForge/releases/latest), for a chat or notebook that takes files.
+
+**A prompt that writes prompts.** SunoForge is not what you paste into a generator. It gives Claude research done in advance — genres, instruments, voices, each generator's documented settings, cross-referenced — and Claude writes the prompt for your song from it. What goes into that prompt stays Claude's judgment and your call.
 
 ## What it does and does not do
 
-- You describe a song; Claude answers with a prompt to paste. Before anything costs credits, it asks your yes.
+- Before anything costs credits, Claude asks your yes.
 - If you connected a music generator's own MCP connector to Claude yourself (Suno's, for example), Claude can send a prompt there and work with your songs — only after it shows you what will be sent and what it costs, and you say yes. Without a connector you copy the prompt by hand.
 - It reads and writes two small files of yours, `settings.md` and `library.md` (your saved styles and personas), in the folder you set in the plugin's settings or in the plugin's data folder. Nothing else is stored and nothing is sent anywhere by the plugin.
 
